@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: Arial-Italic;
+    src: url(../assets/fonts/arial-italic.ttf);
+}
+
+@font-face {
+    font-family: Arial-Regular;
+    src: url(../assets/fonts/arial-regular.ttf);
+}
+
+@font-face {
+    font-family: Georgia-Regular;
+    src: url(../assets/fonts/georgia-regular.ttf);
+}
+
+@font-face {
+    font-family: Georgia-Italic;
+    src: url(../assets/fonts/georgia-italic.ttf);
+}
+
+@mixin flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin list {
+    list-style: none;
+    display: flex;
+}
+
+$color-dark-s: #CDCDCD;
+$color-light-s: #FAFAFA;
+$primary-color: #F1CDB3;
+$color-ligth-xl: #FFFFFF;
+
+body {
+    font-size: 15px;
+    font-family: Arial-Regular, sans-serif;
+}
+
+.wrapper {
+    background-image: radial-gradient(circle at top left, #5B483A, #262425);
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.header {
+    @include flex();
+    padding-top: 30px;
+    padding-bottom: 45px;
+
+    .logo {
+        p {
+            font-size: 32px;
+            margin-bottom: 10px;
+            color: $primary-color;
+            font-family: Georgia-Regular, sans-serif;
+        }
+
+        div {
+            color: $color-ligth-xl;
+        }
+    }
+
+    .menu-list {
+        @include list();
+        gap: 35px;
+
+        .menu-item {
+
+            a {
+                text-decoration: none;
+                color: $color-dark-s;
+            }
+
+            &:first-child {
+                a {
+                    color: $color-light-s;
+                    border-bottom: 3px solid $primary-color;
+                    padding-bottom: 4px;
+                }
+            }
+        }
+    }
+}
