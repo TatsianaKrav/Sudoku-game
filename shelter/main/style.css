@@ -26,6 +26,7 @@ body {
 
 .wrapper {
   background-image: radial-gradient(circle at top left, #5B483A, #262425);
+  /*  background: radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20; */
 }
 
 .container {
@@ -38,7 +39,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding-top: 30px;
-  padding-bottom: 45px;
+  padding-bottom: 90px;
 }
 .header .logo p {
   font-size: 32px;
@@ -62,4 +63,46 @@ body {
   color: #FAFAFA;
   border-bottom: 3px solid #F1CDB3;
   padding-bottom: 4px;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 42px;
+}
+.main .main-description {
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 42px;
+}
+.main .main-description .main-title {
+  font-size: 44px;
+  color: #FFFFFF;
+  font-family: Georgia-Regular, sans-serif;
+  max-width: 310px;
+  line-height: 130%;
+}
+.main .main-description .main-text {
+  color: #CDCDCD;
+  line-height: 160%;
+}
+.main .main-description .main-btn {
+  width: 207px;
+}
+.main .main-description .main-btn a {
+  display: inline-block;
+  border-radius: 100px;
+  padding: 15px 45px;
+  background-color: #F1CDB3;
+  font-family: Georgia-Regular, sans-serif;
+  font-size: 17px;
+  line-height: 130%;
+  color: #4C4C4C;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
 }/*# sourceMappingURL=style.css.map */

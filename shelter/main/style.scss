@@ -29,15 +29,37 @@
     justify-content: space-between;
 }
 
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 @mixin list {
     list-style: none;
     display: flex;
+}
+
+@mixin btn {
+    display: inline-block;
+    border-radius: 100px;
+    padding: 15px 45px;
+    background-color: $primary-color;
+    font-family: Georgia-Regular, sans-serif;
+    font-size: 17px;
+    line-height: 130%;
+    color: $color-dark-3xl;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 $color-dark-s: #CDCDCD;
 $color-light-s: #FAFAFA;
 $primary-color: #F1CDB3;
 $color-ligth-xl: #FFFFFF;
+$color-dark-3xl: #4C4C4C;
 
 body {
     font-size: 15px;
@@ -46,6 +68,7 @@ body {
 
 .wrapper {
     background-image: radial-gradient(circle at top left, #5B483A, #262425);
+    /*  background: radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20; */
 }
 
 .container {
@@ -56,7 +79,7 @@ body {
 .header {
     @include flex();
     padding-top: 30px;
-    padding-bottom: 45px;
+    padding-bottom: 90px;
 
     .logo {
         p {
@@ -88,6 +111,38 @@ body {
                     border-bottom: 3px solid $primary-color;
                     padding-bottom: 4px;
                 }
+            }
+        }
+    }
+}
+
+.main {
+    @include flex();
+    gap: 42px;
+
+    .main-description {
+        max-width: 460px;
+        @include flex-column();
+        gap: 42px;
+
+        .main-title {
+            font-size: 44px;
+            color: $color-ligth-xl;
+            font-family: Georgia-Regular, sans-serif;
+            max-width: 310px;
+            line-height: 130%;
+        }
+
+        .main-text {
+            color: $color-dark-s;
+            line-height: 160%;
+        }
+
+        .main-btn {
+            width: 207px;
+
+            a {
+                @include btn();
             }
         }
     }
