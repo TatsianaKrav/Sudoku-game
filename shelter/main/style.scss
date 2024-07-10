@@ -66,20 +66,15 @@ body {
     font-family: Arial-Regular, sans-serif;
 }
 
-.wrapper {
-    background-image: radial-gradient(circle at top left, #5B483A, #262425);
-    /*  background: radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20; */
-}
-
 .container {
     margin: 0 auto;
     max-width: 1200px;
 }
 
-.header {
+.header .container {
     @include flex();
     padding-top: 30px;
-    padding-bottom: 90px;
+    /*    padding-bottom: 90px; */
 
     .logo {
         p {
@@ -116,34 +111,48 @@ body {
     }
 }
 
-.main {
-    @include flex();
-    gap: 42px;
+.page {
+    margin-top: -94px;
+}
 
-    .main-description {
-        max-width: 460px;
-        @include flex-column();
+.main {
+
+    background: radial-gradient(circle at top left, #5B483A, #262425);
+    padding-top: 180px;
+    background: url(../assets/images/noise.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+    background-repeat: repeat;
+
+    .container {
+        @include flex();
         gap: 42px;
 
-        .main-title {
-            font-size: 44px;
-            color: $color-ligth-xl;
-            font-family: Georgia-Regular, sans-serif;
-            max-width: 310px;
-            line-height: 130%;
-        }
+        .main-description {
+            max-width: 460px;
+            @include flex-column();
+            gap: 42px;
 
-        .main-text {
-            color: $color-dark-s;
-            line-height: 160%;
-        }
+            .main-title {
+                font-size: 44px;
+                color: $color-ligth-xl;
+                font-family: Georgia-Regular, sans-serif;
+                max-width: 310px;
+                line-height: 130%;
+            }
 
-        .main-btn {
-            width: 207px;
+            .main-text {
+                color: $color-dark-s;
+                line-height: 160%;
+            }
 
-            a {
-                @include btn();
+            .main-btn {
+                width: 207px;
+
+                a {
+                    @include btn();
+                }
             }
         }
     }
+
+
 }

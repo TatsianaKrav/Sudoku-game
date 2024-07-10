@@ -24,75 +24,80 @@ body {
   font-family: Arial-Regular, sans-serif;
 }
 
-.wrapper {
-  background-image: radial-gradient(circle at top left, #5B483A, #262425);
-  /*  background: radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20; */
-}
-
 .container {
   margin: 0 auto;
   max-width: 1200px;
 }
 
-.header {
+.header .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-top: 30px;
-  padding-bottom: 90px;
+  /*    padding-bottom: 90px; */
 }
-.header .logo p {
+.header .container .logo p {
   font-size: 32px;
   margin-bottom: 10px;
   color: #F1CDB3;
   font-family: Georgia-Regular, sans-serif;
 }
-.header .logo div {
+.header .container .logo div {
   color: #FFFFFF;
 }
-.header .menu-list {
+.header .container .menu-list {
   list-style: none;
   display: flex;
   gap: 35px;
 }
-.header .menu-list .menu-item a {
+.header .container .menu-list .menu-item a {
   text-decoration: none;
   color: #CDCDCD;
 }
-.header .menu-list .menu-item:first-child a {
+.header .container .menu-list .menu-item:first-child a {
   color: #FAFAFA;
   border-bottom: 3px solid #F1CDB3;
   padding-bottom: 4px;
 }
 
+.page {
+  margin-top: -94px;
+}
+
 .main {
+  background: radial-gradient(circle at top left, #5B483A, #262425);
+  padding-top: 180px;
+  background: url(../assets/images/noise.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+  background-repeat: repeat;
+}
+.main .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 42px;
 }
-.main .main-description {
+.main .container .main-description {
   max-width: 460px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 42px;
 }
-.main .main-description .main-title {
+.main .container .main-description .main-title {
   font-size: 44px;
   color: #FFFFFF;
   font-family: Georgia-Regular, sans-serif;
   max-width: 310px;
   line-height: 130%;
 }
-.main .main-description .main-text {
+.main .container .main-description .main-text {
   color: #CDCDCD;
   line-height: 160%;
 }
-.main .main-description .main-btn {
+.main .container .main-description .main-btn {
   width: 207px;
 }
-.main .main-description .main-btn a {
+.main .container .main-description .main-btn a {
   display: inline-block;
   border-radius: 100px;
   padding: 15px 45px;
