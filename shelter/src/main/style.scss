@@ -55,10 +55,31 @@
     text-decoration: none;
 }
 
+@mixin title {
+    font-family: Georgia-Regular, sans-serif;
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: $color-dark-l;
+}
+
+@mixin narrow {
+    position: absolute;
+    top: calc(50% - 20px);
+    border-radius: 100px;
+    border: 2px solid $primary-color;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 $color-dark-s: #CDCDCD;
 $color-light-s: #FAFAFA;
 $primary-color: #F1CDB3;
 $color-ligth-xl: #FFFFFF;
+$color-ligth-l: #f6f6f6;
 $color-dark-3xl: #4C4C4C;
 $color-dark-l: #545454;
 $color-dark-xl: #4c4c4c;
@@ -154,8 +175,6 @@ body {
             }
         }
     }
-
-
 }
 
 .about {
@@ -174,9 +193,7 @@ body {
             max-width: 430px;
 
             .about-title {
-                font-size: 35px;
-                line-height: 130%;
-                color: $color-dark-l;
+                @include title();
                 max-width: 363px;
                 font-family: Georgia-Regular, sans-serif;
             }
@@ -186,8 +203,81 @@ body {
                 color: $color-dark-xl;
             }
         }
-
-
     }
+}
 
+.pets {
+    background-color: $color-ligth-l;
+    padding-top: 80px;
+    padding-bottom: 100px;
+
+    .container {
+        @include flex-column();
+        align-items: center;
+        gap: 60px;
+        position: relative;
+
+        .pets-title {
+            @include title();
+
+            span {
+                display: block;
+                text-align: center;
+            }
+        }
+
+        .narrow {
+            @include narrow();
+
+            &.narrow-back {
+                left: -53px;
+            }
+
+            &.narrow-next {
+                right: -53px;
+            }
+        }
+
+        .pets-cards {
+            @include flex();
+            gap: 90px;
+
+            .card {
+                background-color: $color-light-s;
+                @include flex-column();
+                align-items: center;
+                gap: 30px;
+                border-radius: 9px 9px 0 0;
+                padding-bottom: 30px;
+
+                .pet-name {
+                    font-family: Georgia-Regular, sans-serif;
+                    font-size: 20px;
+                    letter-spacing: 0.06em;
+                    text-align: center;
+                    color: $color-dark-l;
+                }
+
+                .pet-btn {
+                    width: 187px;
+
+                    a {
+                        @include btn();
+                        background-color: transparent;
+                        border: 2px solid $primary-color;
+
+                    }
+
+                }
+            }
+        }
+
+        .pets-btn {
+            width: 261px;
+
+            a {
+                @include btn();
+            }
+        }
+    }
 }

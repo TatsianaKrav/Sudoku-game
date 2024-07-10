@@ -131,8 +131,10 @@ body {
   max-width: 430px;
 }
 .about .container .about-info .about-title {
+  font-family: Georgia-Regular, sans-serif;
   font-size: 35px;
   line-height: 130%;
+  letter-spacing: 0.06em;
   color: #545454;
   max-width: 363px;
   font-family: Georgia-Regular, sans-serif;
@@ -140,4 +142,105 @@ body {
 .about .container .about-info .about-text {
   line-height: 160%;
   color: #4c4c4c;
+}
+
+.pets {
+  background-color: #f6f6f6;
+  padding-top: 80px;
+  padding-bottom: 100px;
+}
+.pets .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  position: relative;
+}
+.pets .container .pets-title {
+  font-family: Georgia-Regular, sans-serif;
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #545454;
+}
+.pets .container .pets-title span {
+  display: block;
+  text-align: center;
+}
+.pets .container .narrow {
+  position: absolute;
+  top: calc(50% - 20px);
+  border-radius: 100px;
+  border: 2px solid #F1CDB3;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pets .container .narrow.narrow-back {
+  left: -53px;
+}
+.pets .container .narrow.narrow-next {
+  right: -53px;
+}
+.pets .container .pets-cards {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 90px;
+}
+.pets .container .pets-cards .card {
+  background-color: #FAFAFA;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  border-radius: 9px 9px 0 0;
+  padding-bottom: 30px;
+}
+.pets .container .pets-cards .card .pet-name {
+  font-family: Georgia-Regular, sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.06em;
+  text-align: center;
+  color: #545454;
+}
+.pets .container .pets-cards .card .pet-btn {
+  width: 187px;
+}
+.pets .container .pets-cards .card .pet-btn a {
+  display: inline-block;
+  border-radius: 100px;
+  padding: 15px 45px;
+  background-color: #F1CDB3;
+  font-family: Georgia-Regular, sans-serif;
+  font-size: 17px;
+  line-height: 130%;
+  color: #4C4C4C;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  background-color: transparent;
+  border: 2px solid #F1CDB3;
+}
+.pets .container .pets-btn {
+  width: 261px;
+}
+.pets .container .pets-btn a {
+  display: inline-block;
+  border-radius: 100px;
+  padding: 15px 45px;
+  background-color: #F1CDB3;
+  font-family: Georgia-Regular, sans-serif;
+  font-size: 17px;
+  line-height: 130%;
+  color: #4C4C4C;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
 }/*# sourceMappingURL=style.css.map */
