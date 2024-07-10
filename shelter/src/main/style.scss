@@ -5,22 +5,22 @@
 
 @font-face {
     font-family: Arial-Italic;
-    src: url(../assets/fonts/arial-italic.ttf);
+    src: url(../../assets/fonts/arial-italic.ttf);
 }
 
 @font-face {
     font-family: Arial-Regular;
-    src: url(../assets/fonts/arial-regular.ttf);
+    src: url(../../assets/fonts/arial-regular.ttf);
 }
 
 @font-face {
     font-family: Georgia-Regular;
-    src: url(../assets/fonts/georgia-regular.ttf);
+    src: url(../../assets/fonts/georgia-regular.ttf);
 }
 
 @font-face {
     font-family: Georgia-Italic;
-    src: url(../assets/fonts/georgia-italic.ttf);
+    src: url(../../assets/fonts/georgia-italic.ttf);
 }
 
 @mixin flex {
@@ -74,7 +74,6 @@ body {
 .header .container {
     @include flex();
     padding-top: 30px;
-    /*    padding-bottom: 90px; */
 
     .logo {
         p {
@@ -119,7 +118,7 @@ body {
 
     background: radial-gradient(circle at top left, #5B483A, #262425);
     padding-top: 180px;
-    background: url(../assets/images/noise.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+    background: url(../../assets/images/noise.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
     background-repeat: repeat;
 
     .container {
