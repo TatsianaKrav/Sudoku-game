@@ -243,4 +243,51 @@ body {
   border: none;
   cursor: pointer;
   text-decoration: none;
+}
+
+.help {
+  padding-top: 80px;
+  padding-bottom: 100px;
+  background-color: #FFFFFF;
+}
+.help .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+}
+.help .container .help-title {
+  font-family: Georgia-Regular, sans-serif;
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #545454;
+  max-width: 308px;
+  text-align: center;
+}
+.help .container .help-items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 120px;
+}
+.help .container .help-items .help-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+.help .container .help-items .help-item .help-item-title {
+  font-family: Georgia-Regular, sans-serif;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  text-align: center;
+  color: #545454;
 }/*# sourceMappingURL=style.css.map */

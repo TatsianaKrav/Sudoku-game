@@ -78,8 +78,8 @@
 $color-dark-s: #CDCDCD;
 $color-light-s: #FAFAFA;
 $primary-color: #F1CDB3;
-$color-ligth-xl: #FFFFFF;
-$color-ligth-l: #f6f6f6;
+$color-light-xl: #FFFFFF;
+$color-light-l: #f6f6f6;
 $color-dark-3xl: #4C4C4C;
 $color-dark-l: #545454;
 $color-dark-xl: #4c4c4c;
@@ -107,7 +107,7 @@ body {
         }
 
         div {
-            color: $color-ligth-xl;
+            color: $color-light-xl;
         }
     }
 
@@ -155,7 +155,7 @@ body {
 
             .main-title {
                 font-size: 44px;
-                color: $color-ligth-xl;
+                color: $color-light-xl;
                 font-family: Georgia-Regular, sans-serif;
                 max-width: 310px;
                 line-height: 130%;
@@ -178,7 +178,7 @@ body {
 }
 
 .about {
-    background-color: $color-ligth-xl;
+    background-color: $color-light-xl;
     padding-top: 80px;
     padding-bottom: 100px;
 
@@ -207,7 +207,7 @@ body {
 }
 
 .pets {
-    background-color: $color-ligth-l;
+    background-color: $color-light-l;
     padding-top: 80px;
     padding-bottom: 100px;
 
@@ -280,4 +280,50 @@ body {
             }
         }
     }
+}
+
+.help {
+    padding-top: 80px;
+    padding-bottom: 100px;
+    background-color: $color-light-xl;
+
+    .container {
+        @include flex-column();
+        align-items: center;
+        gap: 60px;
+
+        .help-title {
+            @include title();
+            max-width: 308px;
+            text-align: center;
+        }
+
+        .help-items {
+            @include flex();
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 120px;
+
+            .help-item {
+                @include flex-column();
+                gap: 30px;
+                align-items: center;
+                justify-content: center;
+
+                .help-item-title {
+                    font-family: Georgia-Regular, sans-serif;
+                    font-size: 20px;
+                    line-height: 115%;
+                    letter-spacing: 0.06em;
+                    text-align: center;
+                    color: $color-dark-l;
+                }
+            }
+
+
+        }
+    }
+
+
 }
