@@ -73,6 +73,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 @mixin contact {
@@ -105,7 +106,8 @@ body {
 
 .container {
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 1280px;
+    padding: 0 40px;
 }
 
 .header .container {
@@ -113,15 +115,20 @@ body {
     padding-top: 30px;
 
     .logo {
-        p {
+        a {
             font-size: 32px;
-            margin-bottom: 10px;
             color: $primary-color;
             font-family: Georgia-Regular, sans-serif;
+            line-height: 110%;
+            letter-spacing: 0.06em;
+            text-decoration: none;
         }
 
         div {
+            margin-top: 10px;
             color: $color-light-xl;
+            letter-spacing: 0.1em;
+            font-size: 13px;
         }
     }
 
@@ -267,6 +274,7 @@ body {
                 gap: 30px;
                 border-radius: 9px 9px 0 0;
                 padding-bottom: 30px;
+                cursor: pointer;
 
                 .pet-name {
                     font-family: Georgia-Regular, sans-serif;
@@ -370,6 +378,7 @@ body {
                 border-radius: 9px;
                 padding: 10px 15px;
                 box-sizing: border-box;
+                text-decoration: none;
 
                 .credit-card-number {
                     font-family: Georgia-Regular, sans-serif;

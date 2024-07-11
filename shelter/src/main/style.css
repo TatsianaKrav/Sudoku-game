@@ -30,7 +30,8 @@ body {
 
 .container {
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1280px;
+  padding: 0 40px;
 }
 
 .header .container {
@@ -39,14 +40,19 @@ body {
   justify-content: space-between;
   padding-top: 30px;
 }
-.header .container .logo p {
+.header .container .logo a {
   font-size: 32px;
-  margin-bottom: 10px;
   color: #F1CDB3;
   font-family: Georgia-Regular, sans-serif;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+  text-decoration: none;
 }
 .header .container .logo div {
+  margin-top: 10px;
   color: #FFFFFF;
+  letter-spacing: 0.1em;
+  font-size: 13px;
 }
 .header .container .menu-list {
   list-style: none;
@@ -185,6 +191,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 .pets .container .narrow.narrow-back {
   left: -53px;
@@ -207,6 +214,7 @@ body {
   gap: 30px;
   border-radius: 9px 9px 0 0;
   padding-bottom: 30px;
+  cursor: pointer;
 }
 .pets .container .pets-cards .card .pet-name {
   font-family: Georgia-Regular, sans-serif;
@@ -334,6 +342,7 @@ body {
   border-radius: 9px;
   padding: 10px 15px;
   box-sizing: border-box;
+  text-decoration: none;
 }
 .donation .container .donation-info .credit-card .credit-card-number {
   font-family: Georgia-Regular, sans-serif;
