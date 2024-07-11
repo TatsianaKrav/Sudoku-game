@@ -83,6 +83,7 @@ $color-light-l: #f6f6f6;
 $color-dark-3xl: #4C4C4C;
 $color-dark-l: #545454;
 $color-dark-xl: #4c4c4c;
+$color-dark-m: #b2b2b2;
 
 body {
     font-size: 15px;
@@ -326,4 +327,52 @@ body {
     }
 
 
+}
+
+.donation {
+    background-color: $color-light-l;
+    padding-top: 91px;
+    padding-bottom: 110px;
+
+    .container {
+        @include flex();
+        justify-content: center;
+        gap: 30px;
+
+        .donation-info {
+            @include flex-column();
+            gap: 20px;
+
+            .donation-title {
+                @include title();
+                max-width: 300px;
+            }
+
+            .credit-card {
+                @include flex();
+                max-width: 349px;
+                background-color: $primary-color;
+                border-radius: 9px;
+                padding: 10px 15px;
+                box-sizing: border-box;
+
+                .credit-card-number {
+                    font-family: Georgia-Regular, sans-serif;
+                    font-size: 20px;
+                    line-height: 115%;
+                    letter-spacing: 0.06em;
+                    color: $color-dark-l;
+                }
+            }
+
+            .donation-text {
+                font-family: Arial-Italic, sans-serif;
+                font-size: 12px;
+                line-height: 150%;
+                color: $color-dark-m;
+                max-width: 380px;
+            }
+        }
+
+    }
 }

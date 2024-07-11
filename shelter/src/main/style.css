@@ -290,4 +290,55 @@ body {
   letter-spacing: 0.06em;
   text-align: center;
   color: #545454;
+}
+
+.donation {
+  background-color: #f6f6f6;
+  padding-top: 91px;
+  padding-bottom: 110px;
+}
+.donation .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  justify-content: center;
+  gap: 30px;
+}
+.donation .container .donation-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+.donation .container .donation-info .donation-title {
+  font-family: Georgia-Regular, sans-serif;
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #545454;
+  max-width: 300px;
+}
+.donation .container .donation-info .credit-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 349px;
+  background-color: #F1CDB3;
+  border-radius: 9px;
+  padding: 10px 15px;
+  box-sizing: border-box;
+}
+.donation .container .donation-info .credit-card .credit-card-number {
+  font-family: Georgia-Regular, sans-serif;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: #545454;
+}
+.donation .container .donation-info .donation-text {
+  font-family: Arial-Italic, sans-serif;
+  font-size: 12px;
+  line-height: 150%;
+  color: #b2b2b2;
+  max-width: 380px;
 }/*# sourceMappingURL=style.css.map */
