@@ -19,6 +19,10 @@
   font-family: Georgia-Italic;
   src: url(../../assets/fonts/georgia-italic.ttf);
 }
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-size: 15px;
   font-family: Arial-Regular, sans-serif;
@@ -64,7 +68,7 @@ body {
 }
 
 .main {
-  background: radial-gradient(circle at top left, #5B483A, #262425);
+  /* background: radial-gradient(circle at top left, #5B483A, #262425); */
   padding-top: 180px;
   background: url(../../assets/images/noise.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
   background-repeat: repeat;
@@ -109,6 +113,9 @@ body {
   border: none;
   cursor: pointer;
   text-decoration: none;
+}
+.main .container .main-image {
+  display: flex;
 }
 
 .about {
@@ -341,4 +348,80 @@ body {
   line-height: 150%;
   color: #b2b2b2;
   max-width: 380px;
+}
+
+.footer {
+  padding-top: 40px;
+  background: url(../../assets/images/noise.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+  background-repeat: repeat;
+}
+.footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer .container .footer-contacts {
+  max-width: 279px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 40px;
+}
+.footer .container .footer-contacts .contacts-title {
+  font-family: Georgia-Regular, sans-serif;
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #545454;
+  color: #FFFFFF;
+}
+.footer .container .footer-contacts .contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 251px;
+}
+.footer .container .footer-contacts .contact a {
+  font-family: Georgia-Regular, sans-serif;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: #F1CDB3;
+  text-decoration: none;
+}
+.footer .container .footer-address {
+  max-width: 302px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+}
+.footer .container .footer-address .address-title {
+  font-family: Georgia-Regular, sans-serif;
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #545454;
+  color: #FFFFFF;
+}
+.footer .container .footer-address .contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  justify-content: flex-start;
+}
+.footer .container .footer-address .contact svg {
+  flex-shrink: 0;
+}
+.footer .container .footer-address .contact a {
+  font-family: Georgia-Regular, sans-serif;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: #F1CDB3;
+  text-decoration: none;
+}
+.footer .container .footer-image {
+  display: flex;
 }/*# sourceMappingURL=style.css.map */
