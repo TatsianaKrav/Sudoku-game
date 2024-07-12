@@ -34,6 +34,9 @@ body {
   padding: 0 40px;
 }
 
+.header {
+  max-height: 90px;
+}
 .header .container {
   display: flex;
   align-items: center;
@@ -49,28 +52,32 @@ body {
   text-decoration: none;
 }
 .header .container .logo div {
-  margin-top: 10px;
+  margin-top: 12px;
   color: #FFFFFF;
-  letter-spacing: 0.1em;
+  letter-spacing: 1.4px;
   font-size: 13px;
+  padding-left: 3px;
 }
 .header .container .menu-list {
   list-style: none;
   display: flex;
   gap: 35px;
+  padding-bottom: 5px;
 }
 .header .container .menu-list .menu-item a {
   text-decoration: none;
   color: #CDCDCD;
+  line-height: 160%;
 }
 .header .container .menu-list .menu-item:first-child a {
   color: #FAFAFA;
   border-bottom: 3px solid #F1CDB3;
   padding-bottom: 4px;
+  letter-spacing: 0.2px;
 }
 
 .page {
-  margin-top: -94px;
+  margin-top: -90px;
 }
 
 .main {
@@ -91,6 +98,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   gap: 42px;
+  padding-bottom: 78px;
 }
 .main .container .main-description .main-title {
   font-size: 44px;
@@ -105,20 +113,25 @@ body {
 }
 .main .container .main-description .main-btn {
   width: 207px;
-}
-.main .container .main-description .main-btn a {
-  display: inline-block;
   border-radius: 100px;
   padding: 15px 45px;
   background-color: #F1CDB3;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  /*     a {
+      @include btn();
+  } */
+}
+.main .container .main-description .main-btn a {
+  display: inline-block;
   font-family: Georgia-Regular, sans-serif;
   font-size: 17px;
   line-height: 130%;
   color: #4C4C4C;
-  outline: none;
-  border: none;
-  cursor: pointer;
   text-decoration: none;
+  letter-spacing: 1px;
 }
 .main .container .main-image {
   display: flex;
@@ -126,7 +139,7 @@ body {
 
 .about {
   background-color: #FFFFFF;
-  padding-top: 80px;
+  padding-top: 79px;
   padding-bottom: 100px;
 }
 .about .container {
@@ -159,7 +172,7 @@ body {
 
 .pets {
   background-color: #f6f6f6;
-  padding-top: 80px;
+  padding-top: 78px;
   padding-bottom: 100px;
 }
 .pets .container {
@@ -183,7 +196,7 @@ body {
 }
 .pets .container .narrow {
   position: absolute;
-  top: calc(50% - 20px);
+  top: calc(50% - 5px);
   border-radius: 100px;
   border: 2px solid #F1CDB3;
   width: 52px;
@@ -192,12 +205,13 @@ body {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  box-sizing: border-box;
 }
 .pets .container .narrow.narrow-back {
-  left: -53px;
+  left: 40px;
 }
 .pets .container .narrow.narrow-next {
-  right: -53px;
+  right: 40px;
 }
 .pets .container .pets-cards {
   display: flex;
@@ -215,6 +229,14 @@ body {
   border-radius: 9px 9px 0 0;
   padding-bottom: 30px;
   cursor: pointer;
+  max-height: 435px;
+  box-sizing: border-box;
+}
+.pets .container .pets-cards .card .pet-image {
+  max-height: 270px;
+}
+.pets .container .pets-cards .card .pet-image img {
+  height: 100%;
 }
 .pets .container .pets-cards .card .pet-name {
   font-family: Georgia-Regular, sans-serif;
@@ -225,39 +247,53 @@ body {
 }
 .pets .container .pets-cards .card .pet-btn {
   width: 187px;
+  border-radius: 100px;
+  padding: 15px 45px;
+  background-color: #F1CDB3;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  background-color: transparent;
+  border: 2px solid #F1CDB3;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 .pets .container .pets-cards .card .pet-btn a {
   display: inline-block;
-  border-radius: 100px;
-  padding: 15px 45px;
-  background-color: #F1CDB3;
   font-family: Georgia-Regular, sans-serif;
   font-size: 17px;
   line-height: 130%;
   color: #4C4C4C;
-  outline: none;
-  border: none;
-  cursor: pointer;
   text-decoration: none;
-  background-color: transparent;
-  border: 2px solid #F1CDB3;
+  letter-spacing: 1px;
+}
+.pets .container .pets-cards .card .pet-btn a {
+  text-align: center;
+  letter-spacing: 0.03em;
 }
 .pets .container .pets-btn {
   width: 261px;
-}
-.pets .container .pets-btn a {
-  display: inline-block;
   border-radius: 100px;
   padding: 15px 45px;
   background-color: #F1CDB3;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.pets .container .pets-btn a {
+  display: inline-block;
   font-family: Georgia-Regular, sans-serif;
   font-size: 17px;
   line-height: 130%;
   color: #4C4C4C;
-  outline: none;
-  border: none;
-  cursor: pointer;
   text-decoration: none;
+  letter-spacing: 1px;
+}
+.pets .container .pets-btn a {
+  text-align: center;
+  letter-spacing: 0.9px;
 }
 
 .help {
@@ -280,6 +316,7 @@ body {
   color: #545454;
   max-width: 308px;
   text-align: center;
+  letter-spacing: 1.9px;
 }
 .help .container .help-items {
   display: flex;
@@ -288,7 +325,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 120px;
+  gap: 55px 120px;
 }
 .help .container .help-items .help-item {
   display: flex;
@@ -309,8 +346,8 @@ body {
 
 .donation {
   background-color: #f6f6f6;
-  padding-top: 91px;
-  padding-bottom: 110px;
+  padding-top: 80px;
+  padding-bottom: 100px;
 }
 .donation .container {
   display: flex;
@@ -324,6 +361,11 @@ body {
   flex-direction: column;
   justify-content: space-between;
   gap: 20px;
+}
+.donation .container .donation-info span {
+  font-family: Georgia-Regular, sans-serif;
+  line-height: normal;
+  letter-spacing: 1px;
 }
 .donation .container .donation-info .donation-title {
   font-family: Georgia-Regular, sans-serif;
@@ -360,7 +402,7 @@ body {
 }
 
 .footer {
-  padding-top: 40px;
+  /*    padding-top: 56px; */
   background: url(../../assets/images/noise.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
   background-repeat: repeat;
 }
@@ -368,13 +410,17 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  align-items: stretch;
+  padding-top: 40px;
 }
 .footer .container .footer-contacts {
   max-width: 279px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  justify-content: initial;
   gap: 40px;
+  padding-top: 16px;
 }
 .footer .container .footer-contacts .contacts-title {
   font-family: Georgia-Regular, sans-serif;
@@ -398,12 +444,18 @@ body {
   color: #F1CDB3;
   text-decoration: none;
 }
+.footer .container .footer-contacts .contact.contact-phone {
+  justify-content: flex-start;
+  gap: 20px;
+}
 .footer .container .footer-address {
   max-width: 302px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  justify-content: initial;
   gap: 32px;
+  padding-top: 16px;
 }
 .footer .container .footer-address .address-title {
   font-family: Georgia-Regular, sans-serif;
@@ -432,5 +484,8 @@ body {
   text-decoration: none;
 }
 .footer .container .footer-image {
-  display: flex;
+  max-height: 310px;
+}
+.footer .container .footer-image img {
+  height: 100%;
 }/*# sourceMappingURL=style.css.map */

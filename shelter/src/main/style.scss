@@ -41,18 +41,23 @@
 }
 
 @mixin btn {
-    display: inline-block;
     border-radius: 100px;
     padding: 15px 45px;
     background-color: $primary-color;
-    font-family: Georgia-Regular, sans-serif;
-    font-size: 17px;
-    line-height: 130%;
-    color: $color-dark-3xl;
     outline: none;
     border: none;
     cursor: pointer;
-    text-decoration: none;
+    box-sizing: border-box;
+
+    a {
+        display: inline-block;
+        font-family: Georgia-Regular, sans-serif;
+        font-size: 17px;
+        line-height: 130%;
+        color: $color-dark-3xl;
+        text-decoration: none;
+        letter-spacing: 1px;
+    }
 }
 
 @mixin title {
@@ -65,7 +70,7 @@
 
 @mixin narrow {
     position: absolute;
-    top: calc(50% - 20px);
+    top: calc(50% - 5px);
     border-radius: 100px;
     border: 2px solid $primary-color;
     width: 52px;
@@ -74,6 +79,7 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    box-sizing: border-box;
 }
 
 @mixin contact {
@@ -110,44 +116,52 @@ body {
     padding: 0 40px;
 }
 
-.header .container {
-    @include flex();
-    padding-top: 30px;
+.header {
+    max-height: 90px;
 
-    .logo {
-        a {
-            font-size: 32px;
-            color: $primary-color;
-            font-family: Georgia-Regular, sans-serif;
-            line-height: 110%;
-            letter-spacing: 0.06em;
-            text-decoration: none;
-        }
+    .container {
+        @include flex();
+        padding-top: 30px;
 
-        div {
-            margin-top: 10px;
-            color: $color-light-xl;
-            letter-spacing: 0.1em;
-            font-size: 13px;
-        }
-    }
-
-    .menu-list {
-        @include list();
-        gap: 35px;
-
-        .menu-item {
-
+        .logo {
             a {
+                font-size: 32px;
+                color: $primary-color;
+                font-family: Georgia-Regular, sans-serif;
+                line-height: 110%;
+                letter-spacing: 0.06em;
                 text-decoration: none;
-                color: $color-dark-s;
             }
 
-            &:first-child {
+            div {
+                margin-top: 12px;
+                color: $color-light-xl;
+                letter-spacing: 1.4px;
+                font-size: 13px;
+                padding-left: 3px;
+            }
+        }
+
+        .menu-list {
+            @include list();
+            gap: 35px;
+            padding-bottom: 5px;
+
+            .menu-item {
+
                 a {
-                    color: $color-light-s;
-                    border-bottom: 3px solid $primary-color;
-                    padding-bottom: 4px;
+                    text-decoration: none;
+                    color: $color-dark-s;
+                    line-height: 160%;
+                }
+
+                &:first-child {
+                    a {
+                        color: $color-light-s;
+                        border-bottom: 3px solid $primary-color;
+                        padding-bottom: 4px;
+                        letter-spacing: 0.2px;
+                    }
                 }
             }
         }
@@ -155,7 +169,7 @@ body {
 }
 
 .page {
-    margin-top: -94px;
+    margin-top: -90px;
 }
 
 .main {
@@ -173,6 +187,7 @@ body {
             max-width: 460px;
             @include flex-column();
             gap: 42px;
+            padding-bottom: 78px;
 
             .main-title {
                 font-size: 44px;
@@ -189,10 +204,12 @@ body {
 
             .main-btn {
                 width: 207px;
+                @include btn();
 
-                a {
+
+                /*     a {
                     @include btn();
-                }
+                } */
             }
         }
 
@@ -204,7 +221,7 @@ body {
 
 .about {
     background-color: $color-light-xl;
-    padding-top: 80px;
+    padding-top: 79px;
     padding-bottom: 100px;
 
     .container {
@@ -233,7 +250,7 @@ body {
 
 .pets {
     background-color: $color-light-l;
-    padding-top: 80px;
+    padding-top: 78px;
     padding-bottom: 100px;
 
     .container {
@@ -255,11 +272,11 @@ body {
             @include narrow();
 
             &.narrow-back {
-                left: -53px;
+                left: 40px;
             }
 
             &.narrow-next {
-                right: -53px;
+                right: 40px;
             }
         }
 
@@ -275,6 +292,16 @@ body {
                 border-radius: 9px 9px 0 0;
                 padding-bottom: 30px;
                 cursor: pointer;
+                max-height: 435px;
+                box-sizing: border-box;
+
+                .pet-image {
+                    max-height: 270px;
+
+                    img {
+                        height: 100%;
+                    }
+                }
 
                 .pet-name {
                     font-family: Georgia-Regular, sans-serif;
@@ -286,23 +313,27 @@ body {
 
                 .pet-btn {
                     width: 187px;
+                    @include btn();
+                    background-color: transparent;
+                    border: 2px solid $primary-color;
+                    padding-top: 12px;
+                    padding-bottom: 12px;
 
                     a {
-                        @include btn();
-                        background-color: transparent;
-                        border: 2px solid $primary-color;
-
+                        text-align: center;
+                        letter-spacing: 0.03em;
                     }
-
                 }
             }
         }
 
         .pets-btn {
             width: 261px;
+            @include btn();
 
             a {
-                @include btn();
+                text-align: center;
+                letter-spacing: 0.9px;
             }
         }
     }
@@ -322,6 +353,7 @@ body {
             @include title();
             max-width: 308px;
             text-align: center;
+            letter-spacing: 1.9px;
         }
 
         .help-items {
@@ -329,7 +361,7 @@ body {
             align-items: center;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 120px;
+            gap: 55px 120px;
 
             .help-item {
                 @include flex-column();
@@ -346,16 +378,14 @@ body {
                     color: $color-dark-l;
                 }
             }
-
-
         }
     }
 }
 
 .donation {
     background-color: $color-light-l;
-    padding-top: 91px;
-    padding-bottom: 110px;
+    padding-top: 80px;
+    padding-bottom: 100px;
 
     .container {
         @include flex();
@@ -365,6 +395,12 @@ body {
         .donation-info {
             @include flex-column();
             gap: 20px;
+
+            span {
+                font-family: Georgia-Regular, sans-serif;
+                line-height: normal;
+                letter-spacing: 1px;
+            }
 
             .donation-title {
                 @include title();
@@ -402,17 +438,21 @@ body {
 }
 
 .footer {
-    padding-top: 40px;
+    /*    padding-top: 56px; */
     background: url(../../assets/images/noise.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
     background-repeat: repeat;
 
     .container {
         @include flex();
+        align-items: stretch;
+        padding-top: 40px;
 
         .footer-contacts {
             max-width: 279px;
             @include flex-column();
+            justify-content: initial;
             gap: 40px;
+            padding-top: 16px;
 
             .contacts-title {
                 @include title();
@@ -427,13 +467,20 @@ body {
                 a {
                     @include contact();
                 }
+
+                &.contact-phone {
+                    justify-content: flex-start;
+                    gap: 20px;
+                }
             }
         }
 
         .footer-address {
             max-width: 302px;
             @include flex-column();
+            justify-content: initial;
             gap: 32px; //+2px
+            padding-top: 16px;
 
             .address-title {
                 @include title();
@@ -456,7 +503,11 @@ body {
         }
 
         .footer-image {
-            display: flex;
+            max-height: 310px;
+
+            img {
+                height: 100%;
+            }
         }
     }
 }
