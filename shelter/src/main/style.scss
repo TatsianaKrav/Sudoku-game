@@ -88,7 +88,6 @@
     line-height: 115%;
     letter-spacing: 0.06em;
     color: $primary-color;
-    text-decoration: none;
 }
 
 $color-dark-s: #CDCDCD;
@@ -123,14 +122,18 @@ body {
         @include flex();
         padding-top: 30px;
 
+
         .logo {
-            a {
+            text-decoration: none;
+
+            h1 {
                 font-size: 32px;
                 color: $primary-color;
                 font-family: Georgia-Regular, sans-serif;
                 line-height: 110%;
                 letter-spacing: 0.06em;
-                text-decoration: none;
+                margin: 0;
+                font-weight: normal;
             }
 
             div {
@@ -174,13 +177,14 @@ body {
 
 .main {
 
-    /* background: radial-gradient(circle at top left, #5B483A, #262425); */
+    background: url(../../assets/images/noise.png), radial-gradient(circle at top left, #5B483A, #262425 85%);
     padding-top: 180px;
-    background: url(../../assets/images/noise.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+    /*  background: url(../../assets/images/noise.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20; */
     background-repeat: repeat;
 
     .container {
         @include flex();
+        flex-wrap: wrap;
         gap: 42px;
 
         .main-description {
@@ -205,11 +209,6 @@ body {
             .main-btn {
                 width: 207px;
                 @include btn();
-
-
-                /*     a {
-                    @include btn();
-                } */
             }
         }
 
@@ -438,8 +437,7 @@ body {
 }
 
 .footer {
-    /*    padding-top: 56px; */
-    background: url(../../assets/images/noise.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+    background: url(../../assets/images/noise.png), radial-gradient(circle at top left, #5B483A, #262425 85%);
     background-repeat: repeat;
 
     .container {
@@ -462,9 +460,10 @@ body {
             .contact {
                 @include flex();
                 max-width: 251px;
+                text-decoration: none;
 
 
-                a {
+                span {
                     @include contact();
                 }
 
@@ -491,12 +490,13 @@ body {
                 @include flex();
                 gap: 20px;
                 justify-content: flex-start;
+                text-decoration: none;
 
                 svg {
                     flex-shrink: 0;
                 }
 
-                a {
+                span {
                     @include contact();
                 }
             }

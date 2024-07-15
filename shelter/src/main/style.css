@@ -43,13 +43,17 @@ body {
   justify-content: space-between;
   padding-top: 30px;
 }
-.header .container .logo a {
+.header .container .logo {
+  text-decoration: none;
+}
+.header .container .logo h1 {
   font-size: 32px;
   color: #F1CDB3;
   font-family: Georgia-Regular, sans-serif;
   line-height: 110%;
   letter-spacing: 0.06em;
-  text-decoration: none;
+  margin: 0;
+  font-weight: normal;
 }
 .header .container .logo div {
   margin-top: 12px;
@@ -81,15 +85,16 @@ body {
 }
 
 .main {
-  /* background: radial-gradient(circle at top left, #5B483A, #262425); */
+  background: url(../../assets/images/noise.png), radial-gradient(circle at top left, #5B483A, #262425 85%);
   padding-top: 180px;
-  background: url(../../assets/images/noise.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+  /*  background: url(../../assets/images/noise.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20; */
   background-repeat: repeat;
 }
 .main .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 42px;
 }
 .main .container .main-description {
@@ -120,9 +125,6 @@ body {
   border: none;
   cursor: pointer;
   box-sizing: border-box;
-  /*     a {
-      @include btn();
-  } */
 }
 .main .container .main-description .main-btn a {
   display: inline-block;
@@ -402,8 +404,7 @@ body {
 }
 
 .footer {
-  /*    padding-top: 56px; */
-  background: url(../../assets/images/noise.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+  background: url(../../assets/images/noise.png), radial-gradient(circle at top left, #5B483A, #262425 85%);
   background-repeat: repeat;
 }
 .footer .container {
@@ -435,14 +436,14 @@ body {
   align-items: center;
   justify-content: space-between;
   max-width: 251px;
+  text-decoration: none;
 }
-.footer .container .footer-contacts .contact a {
+.footer .container .footer-contacts .contact span {
   font-family: Georgia-Regular, sans-serif;
   font-size: 20px;
   line-height: 115%;
   letter-spacing: 0.06em;
   color: #F1CDB3;
-  text-decoration: none;
 }
 .footer .container .footer-contacts .contact.contact-phone {
   justify-content: flex-start;
@@ -471,17 +472,17 @@ body {
   justify-content: space-between;
   gap: 20px;
   justify-content: flex-start;
+  text-decoration: none;
 }
 .footer .container .footer-address .contact svg {
   flex-shrink: 0;
 }
-.footer .container .footer-address .contact a {
+.footer .container .footer-address .contact span {
   font-family: Georgia-Regular, sans-serif;
   font-size: 20px;
   line-height: 115%;
   letter-spacing: 0.06em;
   color: #F1CDB3;
-  text-decoration: none;
 }
 .footer .container .footer-image {
   max-height: 310px;
