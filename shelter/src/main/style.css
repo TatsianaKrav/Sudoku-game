@@ -14,6 +14,7 @@
 @font-face {
   font-family: Georgia-Regular;
   src: url(../../assets/fonts/georgia-regular.ttf);
+  font-weight: 400;
 }
 @font-face {
   font-family: Georgia-Italic;
@@ -87,17 +88,15 @@ body {
   padding-bottom: 3px;
   transition: 0.3s;
 }
-.header .container .menu-list .menu-item:first-child a {
+.header .container .menu-list .menu-item.active a {
+  cursor: default;
+  pointer-events: none;
   color: #FAFAFA;
   border-bottom: 3px solid #F1CDB3;
   padding-bottom: 3px;
   letter-spacing: 0.2px;
 }
-.header .container .menu-list .menu-item.active a {
-  cursor: default;
-  pointer-events: none;
-}
-.header .container .menu-list .menu-item:hover a {
+.header .container .menu-list .menu-item:hover:not(.active) a {
   color: #FAFAFA;
 }
 .header .container .menu-list .menu-item:active a {
@@ -112,7 +111,6 @@ body {
 .main {
   background: url(../../assets/images/noise.png), radial-gradient(circle at top left, #5B483A, #262425 85%);
   padding-top: 180px;
-  /*  background: url(../../assets/images/noise.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20; */
   background-repeat: repeat;
 }
 .main .container {
@@ -136,6 +134,7 @@ body {
   font-family: Georgia-Regular, sans-serif;
   max-width: 310px;
   line-height: 130%;
+  font-weight: initial;
 }
 .main .container .main-description .main-text {
   color: #CDCDCD;

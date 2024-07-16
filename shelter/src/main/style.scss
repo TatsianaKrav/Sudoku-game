@@ -16,6 +16,7 @@
 @font-face {
     font-family: Georgia-Regular;
     src: url(../../assets/fonts/georgia-regular.ttf);
+    font-weight: 400;
 }
 
 @font-face {
@@ -183,22 +184,18 @@ body {
                     transition: 0.3s;
                 }
 
-                &:first-child {
-                    a {
-                        color: $color-light-s;
-                        border-bottom: 3px solid $primary-color;
-                        padding-bottom: 3px;
-                        letter-spacing: 0.2px;
-                    }
-                }
-
                 &.active a {
                     cursor: default;
                     pointer-events: none;
+                    color: $color-light-s;
+                    border-bottom: 3px solid $primary-color;
+                    padding-bottom: 3px;
+                    letter-spacing: 0.2px;
                 }
 
-                &:hover a {
+                &:hover:not(.active) a {
                     color: $color-light-s;
+
                 }
 
                 &:active a {
@@ -218,7 +215,6 @@ body {
 
     background: url(../../assets/images/noise.png), radial-gradient(circle at top left, #5B483A, #262425 85%);
     padding-top: 180px;
-    /*  background: url(../../assets/images/noise.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20; */
     background-repeat: repeat;
 
     .container {
@@ -238,6 +234,7 @@ body {
                 font-family: Georgia-Regular, sans-serif;
                 max-width: 310px;
                 line-height: 130%;
+                font-weight: initial;
             }
 
             .main-text {
@@ -545,12 +542,14 @@ body {
                     gap: 20px;
                 }
 
-                &:hover span {
-                    color: $color-light-xl;
-                }
+                &:hover {
+                    span {
+                        color: $color-light-xl;
+                    }
 
-                &:hover svg path {
-                    fill: $color-light-xl;
+                    svg path {
+                        fill: $color-light-xl;
+                    }
                 }
             }
         }
@@ -559,7 +558,7 @@ body {
             max-width: 302px;
             @include flex-column();
             justify-content: initial;
-            gap: 32px; //+2px
+            gap: 32px;
             padding-top: 16px;
 
             .address-title {
@@ -586,12 +585,14 @@ body {
                     @include contact();
                 }
 
-                &:hover span {
-                    color: $color-light-xl;
-                }
+                &:hover {
+                    span {
+                        color: $color-light-xl;
+                    }
 
-                &:hover svg path {
-                    fill: $color-light-xl;
+                    svg path {
+                        fill: $color-light-xl;
+                    }
                 }
             }
         }
