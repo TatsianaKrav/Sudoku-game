@@ -1,0 +1,121 @@
+@import '../common/common-styles.scss';
+
+.header {
+    background-color: $color-light-xl;
+    padding-bottom: 30px;
+
+    .container {
+        .logo {
+            .logo-title {
+                color: $color-dark-l;
+            }
+
+            h1 {
+                color: $color-dark-3xl;
+            }
+
+            &:hover {
+
+                span {
+                    color: $color-dark-3xl;
+                }
+
+                h1 {
+                    color: $color-dark-l;
+                }
+            }
+        }
+
+        .menu-list {
+            .menu-item {
+                a {
+                    color: $color-dark-l;
+                }
+
+                &.active {
+                    a {
+                        color: $color-dark-3xl;
+                    }
+                }
+
+                &:hover:not(.active) a {
+                    color: $color-dark-3xl;
+
+                }
+            }
+        }
+    }
+}
+
+.main {
+    padding-top: 80px;
+    padding-bottom: 100px;
+    background-color: $color-light-l;
+
+    .container {
+        @include flex-column();
+        justify-content: center;
+        align-items: center;
+        gap: 45px;
+
+        .main-title {
+            @include title();
+            max-width: 400px;
+
+            span {
+                display: block;
+                text-align: center;
+            }
+        }
+
+        .friends {
+            @include flex();
+            flex-wrap: wrap;
+            gap: 30px 40px;
+
+
+            .card {
+                @include card();
+            }
+        }
+
+        .pagination {
+            @include flex();
+            gap: 20px;
+            max-width: 340px;
+
+            .page {
+                border-radius: 100px;
+                width: 52px;
+                height: 52px;
+                @include flex();
+                justify-content: center;
+                box-sizing: border-box;
+                cursor: pointer;
+
+                &.current-page {
+                    font-family: Georgia-Regular, sans-serif;
+                    font-size: 20px;
+                    line-height: 115%;
+                    letter-spacing: 0.06em;
+                    text-align: center;
+                    color: $color-dark-3xl;
+                    background-color: $primary-color;
+                }
+
+                &.active {
+                    border: 2px solid $primary-color;
+                }
+
+                &.disabled {
+                    border: 2px solid $color-dark-s;
+                    cursor: default;
+                    pointer-events: none;
+                    color: $color-dark-s;
+                }
+            }
+        }
+    }
+
+
+}
