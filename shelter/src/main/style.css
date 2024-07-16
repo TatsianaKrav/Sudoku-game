@@ -46,21 +46,29 @@ body {
 .header .container .logo {
   text-decoration: none;
 }
-.header .container .logo h1 {
+.header .container .logo .logo-title {
   font-size: 32px;
   color: #F1CDB3;
   font-family: Georgia-Regular, sans-serif;
   line-height: 110%;
   letter-spacing: 0.06em;
-  margin: 0;
-  font-weight: normal;
+  transition: 0.5s;
 }
-.header .container .logo div {
+.header .container .logo h1 {
   margin-top: 12px;
   color: #FFFFFF;
   letter-spacing: 1.4px;
   font-size: 13px;
   padding-left: 3px;
+  font-weight: normal;
+  margin-bottom: 0;
+  transition: 0.5s;
+}
+.header .container .logo:hover span {
+  color: #f6f6f6;
+}
+.header .container .logo:hover h1 {
+  color: #fddcc4;
 }
 .header .container .menu-list {
   list-style: none;
@@ -68,16 +76,33 @@ body {
   gap: 35px;
   padding-bottom: 5px;
 }
+.header .container .menu-list .menu-item {
+  transition: 0.5s;
+}
 .header .container .menu-list .menu-item a {
   text-decoration: none;
   color: #CDCDCD;
   line-height: 160%;
+  border-bottom: 3px solid transparent;
+  padding-bottom: 3px;
+  transition: 0.3s;
 }
 .header .container .menu-list .menu-item:first-child a {
   color: #FAFAFA;
   border-bottom: 3px solid #F1CDB3;
-  padding-bottom: 4px;
+  padding-bottom: 3px;
   letter-spacing: 0.2px;
+}
+.header .container .menu-list .menu-item.active a {
+  cursor: default;
+  pointer-events: none;
+}
+.header .container .menu-list .menu-item:hover a {
+  color: #FAFAFA;
+}
+.header .container .menu-list .menu-item:active a {
+  color: #FAFAFA;
+  border-bottom: 3px solid #F1CDB3;
 }
 
 .page {
@@ -125,15 +150,19 @@ body {
   border: none;
   cursor: pointer;
   box-sizing: border-box;
+  transition: 0.5s;
 }
 .main .container .main-description .main-btn a {
   display: inline-block;
   font-family: Georgia-Regular, sans-serif;
   font-size: 17px;
   line-height: 130%;
-  color: #4C4C4C;
+  color: #292929;
   text-decoration: none;
   letter-spacing: 1px;
+}
+.main .container .main-description .main-btn:hover {
+  background-color: #fddcc4;
 }
 .main .container .main-image {
   display: flex;
@@ -164,6 +193,7 @@ body {
   line-height: 130%;
   letter-spacing: 0.06em;
   color: #545454;
+  font-weight: normal;
   max-width: 363px;
   font-family: Georgia-Regular, sans-serif;
 }
@@ -191,6 +221,7 @@ body {
   line-height: 130%;
   letter-spacing: 0.06em;
   color: #545454;
+  font-weight: normal;
 }
 .pets .container .pets-title span {
   display: block;
@@ -208,6 +239,10 @@ body {
   justify-content: center;
   cursor: pointer;
   box-sizing: border-box;
+  transition: 0.5s;
+}
+.pets .container .narrow:hover {
+  background-color: #fddcc4;
 }
 .pets .container .narrow.narrow-back {
   left: 40px;
@@ -228,14 +263,16 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: 30px;
-  border-radius: 9px 9px 0 0;
+  border-radius: 9px;
   padding-bottom: 30px;
   cursor: pointer;
   max-height: 435px;
   box-sizing: border-box;
+  transition: 0.5s;
 }
 .pets .container .pets-cards .card .pet-image {
   max-height: 270px;
+  border-radius: 9px 9px 0 0;
 }
 .pets .container .pets-cards .card .pet-image img {
   height: 100%;
@@ -260,19 +297,27 @@ body {
   border: 2px solid #F1CDB3;
   padding-top: 12px;
   padding-bottom: 12px;
+  transition: 0.5s;
 }
 .pets .container .pets-cards .card .pet-btn a {
   display: inline-block;
   font-family: Georgia-Regular, sans-serif;
   font-size: 17px;
   line-height: 130%;
-  color: #4C4C4C;
+  color: #292929;
   text-decoration: none;
   letter-spacing: 1px;
 }
 .pets .container .pets-cards .card .pet-btn a {
   text-align: center;
   letter-spacing: 0.03em;
+}
+.pets .container .pets-cards .card:hover {
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 35px 14px rgba(13, 13, 13, 0.04);
+}
+.pets .container .pets-cards .card:hover .pet-btn {
+  background-color: #fddcc4;
 }
 .pets .container .pets-btn {
   width: 261px;
@@ -283,19 +328,23 @@ body {
   border: none;
   cursor: pointer;
   box-sizing: border-box;
+  transition: 0.5s;
 }
 .pets .container .pets-btn a {
   display: inline-block;
   font-family: Georgia-Regular, sans-serif;
   font-size: 17px;
   line-height: 130%;
-  color: #4C4C4C;
+  color: #292929;
   text-decoration: none;
   letter-spacing: 1px;
 }
 .pets .container .pets-btn a {
   text-align: center;
   letter-spacing: 0.9px;
+}
+.pets .container .pets-btn:hover {
+  background-color: #fddcc4;
 }
 
 .help {
@@ -316,6 +365,7 @@ body {
   line-height: 130%;
   letter-spacing: 0.06em;
   color: #545454;
+  font-weight: normal;
   max-width: 308px;
   text-align: center;
   letter-spacing: 1.9px;
@@ -375,6 +425,7 @@ body {
   line-height: 130%;
   letter-spacing: 0.06em;
   color: #545454;
+  font-weight: normal;
   max-width: 300px;
 }
 .donation .container .donation-info .credit-card {
@@ -387,6 +438,10 @@ body {
   padding: 10px 15px;
   box-sizing: border-box;
   text-decoration: none;
+  transition: 0.5s;
+}
+.donation .container .donation-info .credit-card:hover {
+  background-color: #fddcc4;
 }
 .donation .container .donation-info .credit-card .credit-card-number {
   font-family: Georgia-Regular, sans-serif;
@@ -429,6 +484,7 @@ body {
   line-height: 130%;
   letter-spacing: 0.06em;
   color: #545454;
+  font-weight: normal;
   color: #FFFFFF;
 }
 .footer .container .footer-contacts .contact {
@@ -437,6 +493,10 @@ body {
   justify-content: space-between;
   max-width: 251px;
   text-decoration: none;
+  transition: 0.5s;
+}
+.footer .container .footer-contacts .contact svg path {
+  transition: 0.5s;
 }
 .footer .container .footer-contacts .contact span {
   font-family: Georgia-Regular, sans-serif;
@@ -444,10 +504,17 @@ body {
   line-height: 115%;
   letter-spacing: 0.06em;
   color: #F1CDB3;
+  transition: 0.5s;
 }
 .footer .container .footer-contacts .contact.contact-phone {
   justify-content: flex-start;
   gap: 20px;
+}
+.footer .container .footer-contacts .contact:hover span {
+  color: #FFFFFF;
+}
+.footer .container .footer-contacts .contact:hover svg path {
+  fill: #FFFFFF;
 }
 .footer .container .footer-address {
   max-width: 302px;
@@ -464,6 +531,7 @@ body {
   line-height: 130%;
   letter-spacing: 0.06em;
   color: #545454;
+  font-weight: normal;
   color: #FFFFFF;
 }
 .footer .container .footer-address .contact {
@@ -473,9 +541,13 @@ body {
   gap: 20px;
   justify-content: flex-start;
   text-decoration: none;
+  transition: 0.5s;
 }
 .footer .container .footer-address .contact svg {
   flex-shrink: 0;
+}
+.footer .container .footer-address .contact svg path {
+  transition: 0.5s;
 }
 .footer .container .footer-address .contact span {
   font-family: Georgia-Regular, sans-serif;
@@ -483,6 +555,13 @@ body {
   line-height: 115%;
   letter-spacing: 0.06em;
   color: #F1CDB3;
+  transition: 0.5s;
+}
+.footer .container .footer-address .contact:hover span {
+  color: #FFFFFF;
+}
+.footer .container .footer-address .contact:hover svg path {
+  fill: #FFFFFF;
 }
 .footer .container .footer-image {
   max-height: 310px;
