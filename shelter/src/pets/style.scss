@@ -92,6 +92,8 @@
                 justify-content: center;
                 box-sizing: border-box;
                 cursor: pointer;
+                color: $color-dark-3xl;
+                transition: 0.5s;
 
                 &.current-page {
                     font-family: Georgia-Regular, sans-serif;
@@ -112,6 +114,10 @@
                     cursor: default;
                     pointer-events: none;
                     color: $color-dark-s;
+                }
+
+                &:hover {
+                    background: $color-primary-light;
                 }
             }
         }

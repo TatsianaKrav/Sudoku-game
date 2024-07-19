@@ -355,6 +355,8 @@ body {
   justify-content: center;
   box-sizing: border-box;
   cursor: pointer;
+  color: #292929;
+  transition: 0.5s;
 }
 .main .container .pagination .page.current-page {
   font-family: Georgia-Regular, sans-serif;
@@ -373,4 +375,7 @@ body {
   cursor: default;
   pointer-events: none;
   color: #CDCDCD;
+}
+.main .container .pagination .page:hover {
+  background: #fddcc4;
 }/*# sourceMappingURL=style.css.map */
