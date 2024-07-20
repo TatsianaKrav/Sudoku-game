@@ -216,161 +216,67 @@ body {
   height: 100%;
 }
 
-.page {
-  margin-top: -90px;
+.header {
+  background-color: #FFFFFF;
+  padding-bottom: 30px;
+}
+.header .container .logo .logo-title {
+  color: #545454;
+}
+.header .container .logo h1 {
+  color: #292929;
+}
+.header .container .logo:hover span {
+  color: #292929;
+}
+.header .container .logo:hover h1 {
+  color: #545454;
+}
+.header .container .menu-list .menu-item a {
+  color: #545454;
+}
+.header .container .menu-list .menu-item.active a {
+  color: #292929;
+}
+.header .container .menu-list .menu-item:hover:not(.active) a {
+  color: #292929;
 }
 
 .main {
-  background: url(../../assets/images/noise.png), radial-gradient(circle at top left, #5B483A, #262425 85%);
-  padding-top: 180px;
-  background-repeat: repeat;
+  padding-top: 80px;
+  padding-bottom: 100px;
+  background-color: #f6f6f6;
 }
 .main .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  gap: 45px;
+}
+.main .container .main-title {
+  font-family: Georgia-Regular, sans-serif;
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #545454;
+  font-weight: normal;
+  max-width: 400px;
+}
+.main .container .main-title span {
+  display: block;
+  text-align: center;
+}
+.main .container .friends {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 42px;
+  gap: 30px 40px;
+  padding: 15px 0;
 }
-.main .container .main-description {
-  max-width: 460px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 42px;
-  padding-bottom: 78px;
-}
-.main .container .main-description .main-title {
-  font-size: 44px;
-  color: #FFFFFF;
-  font-family: Georgia-Regular, sans-serif;
-  max-width: 310px;
-  line-height: 130%;
-  font-weight: initial;
-}
-.main .container .main-description .main-text {
-  color: #CDCDCD;
-  line-height: 160%;
-}
-.main .container .main-description .main-btn {
-  width: 207px;
-  display: inline-block;
-  border-radius: 100px;
-  padding: 15px 45px;
-  background-color: #F1CDB3;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  box-sizing: border-box;
-  font-family: Georgia-Regular, sans-serif;
-  font-size: 17px;
-  line-height: 130%;
-  color: #292929;
-  transition: 0.5s;
-}
-.main .container .main-description .main-btn a {
-  display: inline-block;
-  font-family: Georgia-Regular, sans-serif;
-  font-size: 17px;
-  line-height: 130%;
-  color: #292929;
-  text-decoration: none;
-  letter-spacing: 1px;
-}
-.main .container .main-description .main-btn:hover {
-  background-color: #fddcc4;
-}
-.main .container .main-image {
-  display: flex;
-}
-
-.about {
-  background-color: #FFFFFF;
-  padding-top: 79px;
-  padding-bottom: 100px;
-}
-.about .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  justify-content: center;
-  gap: 120px;
-}
-.about .container .about-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 25px;
-  max-width: 430px;
-}
-.about .container .about-info .about-title {
-  font-family: Georgia-Regular, sans-serif;
-  font-size: 35px;
-  line-height: 130%;
-  letter-spacing: 0.06em;
-  color: #545454;
-  font-weight: normal;
-  max-width: 363px;
-  font-family: Georgia-Regular, sans-serif;
-}
-.about .container .about-info .about-text {
-  line-height: 160%;
-  color: #4c4c4c;
-}
-
-.pets {
-  background-color: #f6f6f6;
-  padding-top: 78px;
-  padding-bottom: 100px;
-}
-.pets .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  gap: 60px;
-}
-.pets .container .pets-title {
-  font-family: Georgia-Regular, sans-serif;
-  font-size: 35px;
-  line-height: 130%;
-  letter-spacing: 0.06em;
-  color: #545454;
-  font-weight: normal;
-}
-.pets .container .pets-title span {
-  display: block;
-  text-align: center;
-}
-.pets .container .pets-cards-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 53px;
-}
-.pets .container .pets-cards-wrapper .narrow {
-  top: calc(50% - 5px);
-  border-radius: 100px;
-  border: 2px solid #F1CDB3;
-  width: 52px;
-  height: 52px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-sizing: border-box;
-  transition: 0.5s;
-}
-.pets .container .pets-cards-wrapper .narrow:hover {
-  background-color: #fddcc4;
-}
-.pets .container .pets-cards-wrapper .pets-cards {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 90px;
-}
-.pets .container .pets-cards-wrapper .pets-cards .card {
+.main .container .friends .card {
   background-color: #FAFAFA;
   display: flex;
   flex-direction: column;
@@ -384,21 +290,21 @@ body {
   box-sizing: border-box;
   transition: 0.5s;
 }
-.pets .container .pets-cards-wrapper .pets-cards .card .pet-image {
+.main .container .friends .card .pet-image {
   max-height: 270px;
   border-radius: 9px 9px 0 0;
 }
-.pets .container .pets-cards-wrapper .pets-cards .card .pet-image img {
+.main .container .friends .card .pet-image img {
   height: 100%;
 }
-.pets .container .pets-cards-wrapper .pets-cards .card .pet-name {
+.main .container .friends .card .pet-name {
   font-family: Georgia-Regular, sans-serif;
   font-size: 20px;
   letter-spacing: 0.06em;
   text-align: center;
   color: #545454;
 }
-.pets .container .pets-cards-wrapper .pets-cards .card .pet-btn {
+.main .container .friends .card .pet-btn {
   display: inline-block;
   border-radius: 100px;
   padding: 15px 45px;
@@ -419,151 +325,54 @@ body {
   line-height: 130%;
   transition: 0.5s;
 }
-.pets .container .pets-cards-wrapper .pets-cards .card:hover {
+.main .container .friends .card:hover {
   background-color: #FFFFFF;
   box-shadow: 0 2px 35px 14px rgba(13, 13, 13, 0.04);
 }
-.pets .container .pets-cards-wrapper .pets-cards .card:hover .pet-btn {
+.main .container .friends .card:hover .pet-btn {
   background-color: #fddcc4;
 }
-.pets .container .pets-btn {
-  width: 261px;
-  display: inline-block;
-  border-radius: 100px;
-  padding: 15px 45px;
-  background-color: #F1CDB3;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  box-sizing: border-box;
-  font-family: Georgia-Regular, sans-serif;
-  font-size: 17px;
-  line-height: 130%;
-  color: #292929;
-  transition: 0.5s;
+.main .container .friends .card .pet-btn {
+  line-height: 138%;
 }
-.pets .container .pets-btn a {
-  display: inline-block;
-  font-family: Georgia-Regular, sans-serif;
-  font-size: 17px;
-  line-height: 130%;
-  color: #292929;
-  text-decoration: none;
-  letter-spacing: 1px;
-  text-align: center;
-  letter-spacing: 0.9px;
-}
-.pets .container .pets-btn:hover {
-  background-color: #fddcc4;
-}
-
-.help {
-  padding-top: 80px;
-  padding-bottom: 100px;
-  background-color: #FFFFFF;
-}
-.help .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  gap: 60px;
-}
-.help .container .help-title {
-  font-family: Georgia-Regular, sans-serif;
-  font-size: 35px;
-  line-height: 130%;
-  letter-spacing: 0.06em;
-  color: #545454;
-  font-weight: normal;
-  max-width: 308px;
-  text-align: center;
-  letter-spacing: 1.9px;
-}
-.help .container .help-items {
+.main .container .pagination {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 55px 120px;
-}
-.help .container .help-items .help-item {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 30px;
-  align-items: center;
-  justify-content: center;
-}
-.help .container .help-items .help-item .help-item-title {
-  font-family: Georgia-Regular, sans-serif;
-  font-size: 20px;
-  line-height: 115%;
-  letter-spacing: 0.06em;
-  text-align: center;
-  color: #545454;
-}
-
-.donation {
-  background-color: #f6f6f6;
-  padding-top: 80px;
-  padding-bottom: 100px;
-}
-.donation .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  justify-content: center;
-  gap: 30px;
-}
-.donation .container .donation-info {
-  display: flex;
-  flex-direction: column;
   justify-content: space-between;
   gap: 20px;
+  max-width: 340px;
 }
-.donation .container .donation-info span {
-  font-family: Georgia-Regular, sans-serif;
-  line-height: normal;
-  letter-spacing: 1px;
-}
-.donation .container .donation-info .donation-title {
-  font-family: Georgia-Regular, sans-serif;
-  font-size: 35px;
-  line-height: 130%;
-  letter-spacing: 0.06em;
-  color: #545454;
-  font-weight: normal;
-  max-width: 300px;
-}
-.donation .container .donation-info .credit-card {
+.main .container .pagination .page {
+  border-radius: 100px;
+  width: 52px;
+  height: 52px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 349px;
-  background-color: #F1CDB3;
-  border-radius: 9px;
-  padding: 10px 15px;
+  justify-content: center;
   box-sizing: border-box;
-  text-decoration: none;
+  cursor: pointer;
+  color: #292929;
   transition: 0.5s;
 }
-.donation .container .donation-info .credit-card:hover {
-  background-color: #fddcc4;
-}
-.donation .container .donation-info .credit-card .credit-card-number {
+.main .container .pagination .page.current-page {
   font-family: Georgia-Regular, sans-serif;
   font-size: 20px;
-  line-height: 115%;
+  line-height: 110%;
   letter-spacing: 0.06em;
-  color: #545454;
+  text-align: center;
+  color: #292929;
+  background-color: #F1CDB3;
 }
-.donation .container .donation-info .donation-text {
-  font-family: Arial-Italic, sans-serif;
-  font-size: 12px;
-  line-height: 150%;
-  color: #b2b2b2;
-  max-width: 380px;
+.main .container .pagination .page.active {
+  border: 2px solid #F1CDB3;
+}
+.main .container .pagination .page.disabled {
+  border: 2px solid #CDCDCD;
+  cursor: default;
+  pointer-events: none;
+  color: #CDCDCD;
+}
+.main .container .pagination .page:hover {
+  background: #fddcc4;
 }/*# sourceMappingURL=style.css.map */
