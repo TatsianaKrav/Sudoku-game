@@ -274,6 +274,7 @@ body {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 30px 40px;
+  padding: 15px 0;
 }
 .main .container .friends .card {
   background-color: #FAFAFA;
@@ -304,7 +305,7 @@ body {
   color: #545454;
 }
 .main .container .friends .card .pet-btn {
-  width: 187px;
+  display: inline-block;
   border-radius: 100px;
   padding: 15px 45px;
   background-color: #F1CDB3;
@@ -312,24 +313,17 @@ body {
   border: none;
   cursor: pointer;
   box-sizing: border-box;
-  background-color: transparent;
-  border: 2px solid #F1CDB3;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  transition: 0.5s;
-}
-.main .container .friends .card .pet-btn a {
-  display: inline-block;
   font-family: Georgia-Regular, sans-serif;
   font-size: 17px;
   line-height: 130%;
   color: #292929;
-  text-decoration: none;
-  letter-spacing: 1px;
-}
-.main .container .friends .card .pet-btn a {
-  text-align: center;
-  letter-spacing: 0.03em;
+  width: 187px;
+  background-color: transparent;
+  border: 2px solid #F1CDB3;
+  letter-spacing: 0.5px;
+  padding: 12px 45px;
+  line-height: 130%;
+  transition: 0.5s;
 }
 .main .container .friends .card:hover {
   background-color: #FFFFFF;
@@ -337,6 +331,9 @@ body {
 }
 .main .container .friends .card:hover .pet-btn {
   background-color: #fddcc4;
+}
+.main .container .friends .card .pet-btn {
+  line-height: 138%;
 }
 .main .container .pagination {
   display: flex;
@@ -361,7 +358,7 @@ body {
 .main .container .pagination .page.current-page {
   font-family: Georgia-Regular, sans-serif;
   font-size: 20px;
-  line-height: 115%;
+  line-height: 110%;
   letter-spacing: 0.06em;
   text-align: center;
   color: #292929;

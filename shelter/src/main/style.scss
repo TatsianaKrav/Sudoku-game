@@ -5,7 +5,6 @@
 }
 
 .main {
-
     background: url(../../assets/images/noise.png), radial-gradient(circle at top left, #5B483A, #262425 85%);
     padding-top: 180px;
     background-repeat: repeat;
@@ -39,6 +38,10 @@
                 width: 207px;
                 @include btn();
                 transition: 0.5s;
+
+                a {
+                    @include btn-link();
+                }
 
                 &:hover {
                     background-color: $color-primary-light;
@@ -90,7 +93,6 @@
         @include flex-column();
         align-items: center;
         gap: 60px;
-        position: relative;
 
         .pets-title {
             @include title();
@@ -101,74 +103,20 @@
             }
         }
 
-        .narrow {
-            @include narrow();
-
-            &.narrow-back {
-                left: 40px;
-            }
-
-            &.narrow-next {
-                right: 40px;
-            }
-        }
-
-        .pets-cards {
+        .pets-cards-wrapper {
             @include flex();
-            gap: 90px;
+            gap: 53px;
 
-            .card {
-                background-color: $color-light-s;
-                @include flex-column();
-                align-items: center;
-                gap: 30px;
-                border-radius: 9px;
-                padding-bottom: 30px;
-                cursor: pointer;
-                max-height: 435px;
-                box-sizing: border-box;
-                transition: 0.5s;
+            .narrow {
+                @include narrow();
+            }
 
-                .pet-image {
-                    max-height: 270px;
-                    border-radius: 9px 9px 0 0;
+            .pets-cards {
+                @include flex();
+                gap: 90px;
 
-                    img {
-                        height: 100%;
-                    }
-                }
-
-                .pet-name {
-                    font-family: Georgia-Regular, sans-serif;
-                    font-size: 20px;
-                    letter-spacing: 0.06em;
-                    text-align: center;
-                    color: $color-dark-l;
-                }
-
-                .pet-btn {
-                    width: 187px;
-                    @include btn();
-                    background-color: transparent;
-                    border: 2px solid $primary-color;
-                    padding-top: 12px;
-                    padding-bottom: 12px;
-                    transition: 0.5s;
-
-                    a {
-                        text-align: center;
-                        letter-spacing: 0.03em;
-                    }
-                }
-
-                &:hover {
-                    background-color: $color-light-xl;
-                    box-shadow: 0 2px 35px 14px rgba(13, 13, 13, 0.04);
-
-                    .pet-btn {
-                        background-color: $color-primary-light;
-                    }
-
+                .card {
+                    @include card();
                 }
             }
         }
@@ -179,13 +127,13 @@
             transition: 0.5s;
 
             a {
+                @include btn-link();
                 text-align: center;
                 letter-spacing: 0.9px;
             }
 
             &:hover {
                 background-color: $color-primary-light;
-
             }
         }
     }
@@ -290,6 +238,5 @@
                 max-width: 380px;
             }
         }
-
     }
 }

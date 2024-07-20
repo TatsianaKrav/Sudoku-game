@@ -40,7 +40,6 @@
 
                 &:hover:not(.active) a {
                     color: $color-dark-3xl;
-
                 }
             }
         }
@@ -72,10 +71,14 @@
             @include flex();
             flex-wrap: wrap;
             gap: 30px 40px;
-
+            padding: 15px 0;
 
             .card {
                 @include card();
+
+                .pet-btn {
+                    line-height: 138%;
+                }
             }
         }
 
@@ -98,7 +101,7 @@
                 &.current-page {
                     font-family: Georgia-Regular, sans-serif;
                     font-size: 20px;
-                    line-height: 115%;
+                    line-height: 110%;
                     letter-spacing: 0.06em;
                     text-align: center;
                     color: $color-dark-3xl;
@@ -122,6 +125,4 @@
             }
         }
     }
-
-
 }

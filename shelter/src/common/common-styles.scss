@@ -42,6 +42,7 @@
 }
 
 @mixin btn {
+    display: inline-block;
     border-radius: 100px;
     padding: 15px 45px;
     background-color: $primary-color;
@@ -49,16 +50,20 @@
     border: none;
     cursor: pointer;
     box-sizing: border-box;
+    font-family: Georgia-Regular, sans-serif;
+    font-size: 17px;
+    line-height: 130%;
+    color: $color-dark-3xl;
+}
 
-    a {
-        display: inline-block;
-        font-family: Georgia-Regular, sans-serif;
-        font-size: 17px;
-        line-height: 130%;
-        color: $color-dark-3xl;
-        text-decoration: none;
-        letter-spacing: 1px;
-    }
+@mixin btn-link {
+    display: inline-block;
+    font-family: Georgia-Regular, sans-serif;
+    font-size: 17px;
+    line-height: 130%;
+    color: $color-dark-3xl;
+    text-decoration: none;
+    letter-spacing: 1px;
 }
 
 @mixin title {
@@ -71,7 +76,6 @@
 }
 
 @mixin narrow {
-    position: absolute;
     top: calc(50% - 5px);
     border-radius: 100px;
     border: 2px solid $primary-color;
@@ -128,18 +132,14 @@
     }
 
     .pet-btn {
-        width: 187px;
         @include btn();
+        width: 187px;
         background-color: transparent;
         border: 2px solid $primary-color;
-        padding-top: 12px;
-        padding-bottom: 12px;
+        letter-spacing: 0.5px;
+        padding: 12px 45px;
+        line-height: 130%;
         transition: 0.5s;
-
-        a {
-            text-align: center;
-            letter-spacing: 0.03em;
-        }
     }
 
     &:hover {
@@ -185,7 +185,6 @@ body {
     .container {
         @include flex();
         padding-top: 30px;
-
 
         .logo {
             text-decoration: none;

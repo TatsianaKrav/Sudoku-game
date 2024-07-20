@@ -254,6 +254,7 @@ body {
 }
 .main .container .main-description .main-btn {
   width: 207px;
+  display: inline-block;
   border-radius: 100px;
   padding: 15px 45px;
   background-color: #F1CDB3;
@@ -261,6 +262,10 @@ body {
   border: none;
   cursor: pointer;
   box-sizing: border-box;
+  font-family: Georgia-Regular, sans-serif;
+  font-size: 17px;
+  line-height: 130%;
+  color: #292929;
   transition: 0.5s;
 }
 .main .container .main-description .main-btn a {
@@ -324,7 +329,6 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: 60px;
-  position: relative;
 }
 .pets .container .pets-title {
   font-family: Georgia-Regular, sans-serif;
@@ -338,8 +342,13 @@ body {
   display: block;
   text-align: center;
 }
-.pets .container .narrow {
-  position: absolute;
+.pets .container .pets-cards-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 53px;
+}
+.pets .container .pets-cards-wrapper .narrow {
   top: calc(50% - 5px);
   border-radius: 100px;
   border: 2px solid #F1CDB3;
@@ -352,22 +361,16 @@ body {
   box-sizing: border-box;
   transition: 0.5s;
 }
-.pets .container .narrow:hover {
+.pets .container .pets-cards-wrapper .narrow:hover {
   background-color: #fddcc4;
 }
-.pets .container .narrow.narrow-back {
-  left: 40px;
-}
-.pets .container .narrow.narrow-next {
-  right: 40px;
-}
-.pets .container .pets-cards {
+.pets .container .pets-cards-wrapper .pets-cards {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 90px;
 }
-.pets .container .pets-cards .card {
+.pets .container .pets-cards-wrapper .pets-cards .card {
   background-color: #FAFAFA;
   display: flex;
   flex-direction: column;
@@ -381,22 +384,22 @@ body {
   box-sizing: border-box;
   transition: 0.5s;
 }
-.pets .container .pets-cards .card .pet-image {
+.pets .container .pets-cards-wrapper .pets-cards .card .pet-image {
   max-height: 270px;
   border-radius: 9px 9px 0 0;
 }
-.pets .container .pets-cards .card .pet-image img {
+.pets .container .pets-cards-wrapper .pets-cards .card .pet-image img {
   height: 100%;
 }
-.pets .container .pets-cards .card .pet-name {
+.pets .container .pets-cards-wrapper .pets-cards .card .pet-name {
   font-family: Georgia-Regular, sans-serif;
   font-size: 20px;
   letter-spacing: 0.06em;
   text-align: center;
   color: #545454;
 }
-.pets .container .pets-cards .card .pet-btn {
-  width: 187px;
+.pets .container .pets-cards-wrapper .pets-cards .card .pet-btn {
+  display: inline-block;
   border-radius: 100px;
   padding: 15px 45px;
   background-color: #F1CDB3;
@@ -404,34 +407,28 @@ body {
   border: none;
   cursor: pointer;
   box-sizing: border-box;
-  background-color: transparent;
-  border: 2px solid #F1CDB3;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  transition: 0.5s;
-}
-.pets .container .pets-cards .card .pet-btn a {
-  display: inline-block;
   font-family: Georgia-Regular, sans-serif;
   font-size: 17px;
   line-height: 130%;
   color: #292929;
-  text-decoration: none;
-  letter-spacing: 1px;
+  width: 187px;
+  background-color: transparent;
+  border: 2px solid #F1CDB3;
+  letter-spacing: 0.5px;
+  padding: 12px 45px;
+  line-height: 130%;
+  transition: 0.5s;
 }
-.pets .container .pets-cards .card .pet-btn a {
-  text-align: center;
-  letter-spacing: 0.03em;
-}
-.pets .container .pets-cards .card:hover {
+.pets .container .pets-cards-wrapper .pets-cards .card:hover {
   background-color: #FFFFFF;
   box-shadow: 0 2px 35px 14px rgba(13, 13, 13, 0.04);
 }
-.pets .container .pets-cards .card:hover .pet-btn {
+.pets .container .pets-cards-wrapper .pets-cards .card:hover .pet-btn {
   background-color: #fddcc4;
 }
 .pets .container .pets-btn {
   width: 261px;
+  display: inline-block;
   border-radius: 100px;
   padding: 15px 45px;
   background-color: #F1CDB3;
@@ -439,6 +436,10 @@ body {
   border: none;
   cursor: pointer;
   box-sizing: border-box;
+  font-family: Georgia-Regular, sans-serif;
+  font-size: 17px;
+  line-height: 130%;
+  color: #292929;
   transition: 0.5s;
 }
 .pets .container .pets-btn a {
@@ -449,8 +450,6 @@ body {
   color: #292929;
   text-decoration: none;
   letter-spacing: 1px;
-}
-.pets .container .pets-btn a {
   text-align: center;
   letter-spacing: 0.9px;
 }
