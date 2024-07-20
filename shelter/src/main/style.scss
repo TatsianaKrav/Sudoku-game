@@ -185,7 +185,7 @@
 .donation {
     background-color: $color-light-l;
     padding-top: 80px;
-    padding-bottom: 100px;
+    padding-bottom: 99px;
 
     .container {
         @include flex();
@@ -196,15 +196,16 @@
             @include flex-column();
             gap: 20px;
 
+            .donation-title {
+                @include title();
+                max-width: 300px;
+            }
+
             span {
                 font-family: Georgia-Regular, sans-serif;
                 line-height: normal;
                 letter-spacing: 1px;
-            }
-
-            .donation-title {
-                @include title();
-                max-width: 300px;
+                line-height: 110%;
             }
 
             .credit-card {
@@ -227,6 +228,10 @@
                     line-height: 115%;
                     letter-spacing: 0.06em;
                     color: $color-dark-l;
+
+                    span {
+                        line-height: 115%;
+                    }
                 }
             }
 

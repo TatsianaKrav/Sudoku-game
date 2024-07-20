@@ -27,6 +27,7 @@ html {
 body {
   font-size: 15px;
   font-family: Arial-Regular, sans-serif;
+  min-height: 100vh;
 }
 
 .container {
@@ -509,7 +510,7 @@ body {
 .donation {
   background-color: #f6f6f6;
   padding-top: 80px;
-  padding-bottom: 100px;
+  padding-bottom: 99px;
 }
 .donation .container {
   display: flex;
@@ -524,11 +525,6 @@ body {
   justify-content: space-between;
   gap: 20px;
 }
-.donation .container .donation-info span {
-  font-family: Georgia-Regular, sans-serif;
-  line-height: normal;
-  letter-spacing: 1px;
-}
 .donation .container .donation-info .donation-title {
   font-family: Georgia-Regular, sans-serif;
   font-size: 35px;
@@ -537,6 +533,12 @@ body {
   color: #545454;
   font-weight: normal;
   max-width: 300px;
+}
+.donation .container .donation-info span {
+  font-family: Georgia-Regular, sans-serif;
+  line-height: normal;
+  letter-spacing: 1px;
+  line-height: 110%;
 }
 .donation .container .donation-info .credit-card {
   display: flex;
@@ -559,6 +561,9 @@ body {
   line-height: 115%;
   letter-spacing: 0.06em;
   color: #545454;
+}
+.donation .container .donation-info .credit-card .credit-card-number span {
+  line-height: 115%;
 }
 .donation .container .donation-info .donation-text {
   font-family: Arial-Italic, sans-serif;
