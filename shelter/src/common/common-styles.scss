@@ -69,7 +69,7 @@
 @mixin title {
     font-family: Georgia-Regular, sans-serif;
     font-size: 35px;
-    line-height: 130%;
+    line-height: 129%;
     letter-spacing: 0.06em;
     color: $color-dark-l;
     font-weight: normal;
@@ -106,7 +106,7 @@
     background-color: $color-light-s;
     @include flex-column();
     align-items: center;
-    gap: 30px;
+    /*  gap: 30px; */
     border-radius: 9px;
     padding-bottom: 30px;
     cursor: pointer;
@@ -117,6 +117,7 @@
     .pet-image {
         max-height: 270px;
         border-radius: 9px 9px 0 0;
+        margin-bottom: 30px;
 
         img {
             height: 100%;
@@ -129,15 +130,17 @@
         letter-spacing: 0.06em;
         text-align: center;
         color: $color-dark-l;
+        margin-bottom: 30px;
     }
 
     .pet-btn {
         @include btn();
+        display: inline-block;
         width: 187px;
         background-color: transparent;
         border: 2px solid $primary-color;
         letter-spacing: 0.5px;
-        padding: 12px 45px;
+        padding: 13px 45px;
         line-height: 130%;
         transition: 0.5s;
     }

@@ -36,7 +36,6 @@ body {
 }
 
 .header {
-  /*     max-height: 90px; */
   position: relative;
   z-index: 1;
   box-sizing: border-box;
@@ -78,7 +77,6 @@ body {
   list-style: none;
   display: flex;
   gap: 35px;
-  /*     padding-bottom: 5px; */
 }
 .header .container .menu-list .menu-item {
   transition: 0.5s;
@@ -103,8 +101,6 @@ body {
   color: #FAFAFA;
   border-bottom: 3px solid #F1CDB3;
   padding-bottom: 2px;
-  /* letter-spacing: 0.2px; */
-  /* line-height: 115%; */
   box-sizing: border-box;
 }
 .header .container .menu-list .menu-item:hover:not(.active) a {
@@ -135,7 +131,7 @@ body {
 .footer .container .footer-contacts .contacts-title {
   font-family: Georgia-Regular, sans-serif;
   font-size: 35px;
-  line-height: 130%;
+  line-height: 129%;
   letter-spacing: 0.06em;
   color: #545454;
   font-weight: normal;
@@ -182,7 +178,7 @@ body {
 .footer .container .footer-address .address-title {
   font-family: Georgia-Regular, sans-serif;
   font-size: 35px;
-  line-height: 130%;
+  line-height: 129%;
   letter-spacing: 0.06em;
   color: #545454;
   font-weight: normal;
@@ -266,7 +262,7 @@ body {
 .main .container .main-title {
   font-family: Georgia-Regular, sans-serif;
   font-size: 35px;
-  line-height: 130%;
+  line-height: 129%;
   letter-spacing: 0.06em;
   color: #545454;
   font-weight: normal;
@@ -290,7 +286,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  gap: 30px;
+  /*  gap: 30px; */
   border-radius: 9px;
   padding-bottom: 30px;
   cursor: pointer;
@@ -301,6 +297,7 @@ body {
 .main .container .friends .card .pet-image {
   max-height: 270px;
   border-radius: 9px 9px 0 0;
+  margin-bottom: 30px;
 }
 .main .container .friends .card .pet-image img {
   height: 100%;
@@ -311,6 +308,7 @@ body {
   letter-spacing: 0.06em;
   text-align: center;
   color: #545454;
+  margin-bottom: 30px;
 }
 .main .container .friends .card .pet-btn {
   display: inline-block;
@@ -325,11 +323,12 @@ body {
   font-size: 17px;
   line-height: 130%;
   color: #292929;
+  display: inline-block;
   width: 187px;
   background-color: transparent;
   border: 2px solid #F1CDB3;
   letter-spacing: 0.5px;
-  padding: 12px 45px;
+  padding: 13px 45px;
   line-height: 130%;
   transition: 0.5s;
 }
