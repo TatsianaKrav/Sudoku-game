@@ -180,7 +180,9 @@ body {
 }
 
 .header {
-    max-height: 90px;
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
 
     .container {
         @include flex();
@@ -199,7 +201,7 @@ body {
             }
 
             h1 {
-                margin-top: 12px;
+                margin-top: 10px;
                 color: $color-light-xl;
                 letter-spacing: 1.4px;
                 font-size: 13px;
@@ -223,7 +225,6 @@ body {
         .menu-list {
             @include list();
             gap: 35px;
-            padding-bottom: 5px;
 
             .menu-item {
                 transition: 0.5s;
@@ -231,19 +232,23 @@ body {
                 a {
                     text-decoration: none;
                     color: $color-dark-s;
-                    line-height: 160%;
+                    line-height: 115%;
                     border-bottom: 3px solid transparent;
-                    padding-bottom: 3px;
+                    padding-bottom: 2px;
+                    letter-spacing: 0.1px;
                     transition: 0.3s;
+                    box-sizing: border-box;
                 }
 
-                &.active a {
-                    cursor: default;
-                    pointer-events: none;
-                    color: $color-light-s;
-                    border-bottom: 3px solid $primary-color;
-                    padding-bottom: 3px;
-                    letter-spacing: 0.2px;
+                &.active {
+                    a {
+                        cursor: default;
+                        pointer-events: none;
+                        color: $color-light-s;
+                        border-bottom: 3px solid $primary-color;
+                        padding-bottom: 2px;
+                        box-sizing: border-box;
+                    }
                 }
 
                 &:hover:not(.active) a {
@@ -251,7 +256,7 @@ body {
 
                 }
 
-     /*            &:active a {
+                /*            &:active a {
                     color: $color-light-s;
                     border-bottom: 3px solid $primary-color;
                 } */
@@ -269,7 +274,7 @@ body {
     .container {
         @include flex();
         align-items: stretch;
-/*         padding-top: 40px; */
+        /*         padding-top: 40px; */
 
         .footer-contacts {
             max-width: 279px;
