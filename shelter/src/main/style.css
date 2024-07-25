@@ -36,7 +36,6 @@ body {
 }
 
 .header {
-  /*     max-height: 90px; */
   position: relative;
   z-index: 1;
   box-sizing: border-box;
@@ -78,7 +77,6 @@ body {
   list-style: none;
   display: flex;
   gap: 35px;
-  /*     padding-bottom: 5px; */
 }
 .header .container .menu-list .menu-item {
   transition: 0.5s;
@@ -103,8 +101,6 @@ body {
   color: #FAFAFA;
   border-bottom: 3px solid #F1CDB3;
   padding-bottom: 2px;
-  /* letter-spacing: 0.2px; */
-  /* line-height: 115%; */
   box-sizing: border-box;
 }
 .header .container .menu-list .menu-item:hover:not(.active) a {
@@ -305,6 +301,9 @@ body {
   justify-content: center;
   gap: 120px;
 }
+.about .container .about-image {
+  max-height: 408px;
+}
 .about .container .about-info {
   display: flex;
   flex-direction: column;
@@ -321,6 +320,7 @@ body {
   font-weight: normal;
   max-width: 363px;
   font-family: Georgia-Regular, sans-serif;
+  line-height: 129%;
 }
 .about .container .about-info .about-text {
   line-height: 160%;
