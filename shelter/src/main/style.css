@@ -532,6 +532,11 @@ body {
   justify-content: center;
   gap: 30px;
 }
+.donation .container .donation-image {
+  padding-top: 11px;
+  padding-bottom: 10px;
+  max-height: 261px;
+}
 .donation .container .donation-info {
   display: flex;
   flex-direction: column;

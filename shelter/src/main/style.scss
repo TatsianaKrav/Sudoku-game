@@ -201,6 +201,12 @@
         justify-content: center;
         gap: 30px;
 
+        .donation-image {
+            padding-top: 11px;
+            padding-bottom: 10px;
+            max-height: 261px;
+        }
+
         .donation-info {
             @include flex-column();
             gap: 20px;
