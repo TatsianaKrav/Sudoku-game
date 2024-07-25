@@ -251,10 +251,10 @@ body {
 
                 }
 
-                &:active a {
+     /*            &:active a {
                     color: $color-light-s;
                     border-bottom: 3px solid $primary-color;
-                }
+                } */
             }
         }
     }
@@ -264,11 +264,12 @@ body {
 .footer {
     background: url(../../assets/images/noise.png), radial-gradient(circle at top left, #5B483A, #262425 85%);
     background-repeat: repeat;
+    padding-top: 40px;
 
     .container {
         @include flex();
         align-items: stretch;
-        padding-top: 40px;
+/*         padding-top: 40px; */
 
         .footer-contacts {
             max-width: 279px;

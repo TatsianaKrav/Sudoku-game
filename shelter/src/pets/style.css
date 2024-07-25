@@ -27,7 +27,6 @@ html {
 body {
   font-size: 15px;
   font-family: Arial-Regular, sans-serif;
-  min-height: 100vh;
 }
 
 .container {
@@ -80,6 +79,10 @@ body {
 }
 .header .container .menu-list .menu-item {
   transition: 0.5s;
+  /*            &:active a {
+                 color: $color-light-s;
+                 border-bottom: 3px solid $primary-color;
+             } */
 }
 .header .container .menu-list .menu-item a {
   text-decoration: none;
@@ -100,21 +103,18 @@ body {
 .header .container .menu-list .menu-item:hover:not(.active) a {
   color: #FAFAFA;
 }
-.header .container .menu-list .menu-item:active a {
-  color: #FAFAFA;
-  border-bottom: 3px solid #F1CDB3;
-}
 
 .footer {
   background: url(../../assets/images/noise.png), radial-gradient(circle at top left, #5B483A, #262425 85%);
   background-repeat: repeat;
+  padding-top: 40px;
 }
 .footer .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   align-items: stretch;
-  padding-top: 40px;
+  /*         padding-top: 40px; */
 }
 .footer .container .footer-contacts {
   max-width: 279px;
@@ -237,7 +237,7 @@ body {
   color: #545454;
 }
 .header .container .menu-list .menu-item.active a {
-  color: #292929;
+  color: #545454;
 }
 .header .container .menu-list .menu-item:hover:not(.active) a {
   color: #292929;
@@ -376,4 +376,5 @@ body {
 }
 .main .container .pagination .page:hover {
   background: #fddcc4;
+  color: #292929;
 }/*# sourceMappingURL=style.css.map */

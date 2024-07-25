@@ -34,7 +34,7 @@
 
                 &.active {
                     a {
-                        color: $color-dark-3xl;
+                        color: $color-dark-l;
                     }
                 }
 
@@ -121,6 +121,7 @@
 
                 &:hover {
                     background: $color-primary-light;
+                    color: $color-dark-3xl;
                 }
             }
         }
