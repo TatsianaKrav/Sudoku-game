@@ -69,7 +69,7 @@
 @mixin title {
     font-family: Georgia-Regular, sans-serif;
     font-size: 35px;
-    line-height: 130%;
+    line-height: 129%;
     letter-spacing: 0.06em;
     color: $color-dark-l;
     font-weight: normal;
@@ -106,7 +106,7 @@
     background-color: $color-light-s;
     @include flex-column();
     align-items: center;
-    gap: 30px;
+    /*  gap: 30px; */
     border-radius: 9px;
     padding-bottom: 30px;
     cursor: pointer;
@@ -117,6 +117,7 @@
     .pet-image {
         max-height: 270px;
         border-radius: 9px 9px 0 0;
+        margin-bottom: 30px;
 
         img {
             height: 100%;
@@ -129,15 +130,17 @@
         letter-spacing: 0.06em;
         text-align: center;
         color: $color-dark-l;
+        margin-bottom: 30px;
     }
 
     .pet-btn {
         @include btn();
+        display: inline-block;
         width: 187px;
         background-color: transparent;
         border: 2px solid $primary-color;
         letter-spacing: 0.5px;
-        padding: 12px 45px;
+        padding: 13px 45px;
         line-height: 130%;
         transition: 0.5s;
     }
@@ -180,7 +183,9 @@ body {
 }
 
 .header {
-    max-height: 90px;
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
 
     .container {
         @include flex();
@@ -199,7 +204,7 @@ body {
             }
 
             h1 {
-                margin-top: 12px;
+                margin-top: 10px;
                 color: $color-light-xl;
                 letter-spacing: 1.4px;
                 font-size: 13px;
@@ -223,7 +228,7 @@ body {
         .menu-list {
             @include list();
             gap: 35px;
-            padding-bottom: 5px;
+            padding-bottom: 3px;
 
             .menu-item {
                 transition: 0.5s;
@@ -231,19 +236,23 @@ body {
                 a {
                     text-decoration: none;
                     color: $color-dark-s;
-                    line-height: 160%;
+                    line-height: 115%;
                     border-bottom: 3px solid transparent;
                     padding-bottom: 3px;
+                    letter-spacing: 0.1px;
                     transition: 0.3s;
+                    box-sizing: border-box;
                 }
 
-                &.active a {
-                    cursor: default;
-                    pointer-events: none;
-                    color: $color-light-s;
-                    border-bottom: 3px solid $primary-color;
-                    padding-bottom: 3px;
-                    letter-spacing: 0.2px;
+                &.active {
+                    a {
+                        cursor: default;
+                        pointer-events: none;
+                        color: $color-light-s;
+                        border-bottom: 3px solid $primary-color;
+                        padding-bottom: 3px;
+                        box-sizing: border-box;
+                    }
                 }
 
                 &:hover:not(.active) a {
@@ -251,10 +260,10 @@ body {
 
                 }
 
-                &:active a {
+                /*            &:active a {
                     color: $color-light-s;
                     border-bottom: 3px solid $primary-color;
-                }
+                } */
             }
         }
     }
@@ -264,11 +273,11 @@ body {
 .footer {
     background: url(../../assets/images/noise.png), radial-gradient(circle at top left, #5B483A, #262425 85%);
     background-repeat: repeat;
+    padding-top: 40px;
 
     .container {
         @include flex();
         align-items: stretch;
-        padding-top: 40px;
 
         .footer-contacts {
             max-width: 279px;

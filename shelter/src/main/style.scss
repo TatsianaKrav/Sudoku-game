@@ -20,6 +20,7 @@
             gap: 42px;
             padding-bottom: 78px;
 
+
             .main-title {
                 font-size: 44px;
                 color: $color-light-xl;
@@ -57,13 +58,18 @@
 
 .about {
     background-color: $color-light-xl;
-    padding-top: 79px;
+    /* padding-top: 79px; */
+    padding-top: 80px;
     padding-bottom: 100px;
 
     .container {
         @include flex();
         justify-content: center;
         gap: 120px;
+
+        .about-image {
+            max-height: 408px;
+        }
 
         .about-info {
             @include flex-column();
@@ -74,6 +80,7 @@
                 @include title();
                 max-width: 363px;
                 font-family: Georgia-Regular, sans-serif;
+                line-height: 129%;
             }
 
             .about-text {
@@ -86,7 +93,8 @@
 
 .pets {
     background-color: $color-light-l;
-    padding-top: 78px;
+    /*    padding-top: 78px; */
+    padding-top: 80px;
     padding-bottom: 100px;
 
     .container {
@@ -185,6 +193,7 @@
 .donation {
     background-color: $color-light-l;
     padding-top: 80px;
+    /*     padding-bottom: 99px; */
     padding-bottom: 100px;
 
     .container {
@@ -192,19 +201,26 @@
         justify-content: center;
         gap: 30px;
 
+        .donation-image {
+            padding-top: 11px;
+            padding-bottom: 10px;
+            max-height: 261px;
+        }
+
         .donation-info {
             @include flex-column();
             gap: 20px;
+
+            .donation-title {
+                @include title();
+                max-width: 300px;
+            }
 
             span {
                 font-family: Georgia-Regular, sans-serif;
                 line-height: normal;
                 letter-spacing: 1px;
-            }
-
-            .donation-title {
-                @include title();
-                max-width: 300px;
+                line-height: 110%;
             }
 
             .credit-card {
@@ -227,6 +243,10 @@
                     line-height: 115%;
                     letter-spacing: 0.06em;
                     color: $color-dark-l;
+
+                    span {
+                        line-height: 115%;
+                    }
                 }
             }
 

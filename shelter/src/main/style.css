@@ -36,7 +36,9 @@ body {
 }
 
 .header {
-  max-height: 90px;
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
 }
 .header .container {
   display: flex;
@@ -56,7 +58,7 @@ body {
   transition: 0.5s;
 }
 .header .container .logo h1 {
-  margin-top: 12px;
+  margin-top: 10px;
   color: #FFFFFF;
   letter-spacing: 1.4px;
   font-size: 13px;
@@ -75,18 +77,24 @@ body {
   list-style: none;
   display: flex;
   gap: 35px;
-  padding-bottom: 5px;
+  padding-bottom: 3px;
 }
 .header .container .menu-list .menu-item {
   transition: 0.5s;
+  /*            &:active a {
+      color: $color-light-s;
+      border-bottom: 3px solid $primary-color;
+  } */
 }
 .header .container .menu-list .menu-item a {
   text-decoration: none;
   color: #CDCDCD;
-  line-height: 160%;
+  line-height: 115%;
   border-bottom: 3px solid transparent;
   padding-bottom: 3px;
+  letter-spacing: 0.1px;
   transition: 0.3s;
+  box-sizing: border-box;
 }
 .header .container .menu-list .menu-item.active a {
   cursor: default;
@@ -94,26 +102,22 @@ body {
   color: #FAFAFA;
   border-bottom: 3px solid #F1CDB3;
   padding-bottom: 3px;
-  letter-spacing: 0.2px;
+  box-sizing: border-box;
 }
 .header .container .menu-list .menu-item:hover:not(.active) a {
   color: #FAFAFA;
-}
-.header .container .menu-list .menu-item:active a {
-  color: #FAFAFA;
-  border-bottom: 3px solid #F1CDB3;
 }
 
 .footer {
   background: url(../../assets/images/noise.png), radial-gradient(circle at top left, #5B483A, #262425 85%);
   background-repeat: repeat;
+  padding-top: 40px;
 }
 .footer .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   align-items: stretch;
-  padding-top: 40px;
 }
 .footer .container .footer-contacts {
   max-width: 279px;
@@ -127,7 +131,7 @@ body {
 .footer .container .footer-contacts .contacts-title {
   font-family: Georgia-Regular, sans-serif;
   font-size: 35px;
-  line-height: 130%;
+  line-height: 129%;
   letter-spacing: 0.06em;
   color: #545454;
   font-weight: normal;
@@ -174,7 +178,7 @@ body {
 .footer .container .footer-address .address-title {
   font-family: Georgia-Regular, sans-serif;
   font-size: 35px;
-  line-height: 130%;
+  line-height: 129%;
   letter-spacing: 0.06em;
   color: #545454;
   font-weight: normal;
@@ -286,7 +290,8 @@ body {
 
 .about {
   background-color: #FFFFFF;
-  padding-top: 79px;
+  /* padding-top: 79px; */
+  padding-top: 80px;
   padding-bottom: 100px;
 }
 .about .container {
@@ -295,6 +300,9 @@ body {
   justify-content: space-between;
   justify-content: center;
   gap: 120px;
+}
+.about .container .about-image {
+  max-height: 408px;
 }
 .about .container .about-info {
   display: flex;
@@ -306,12 +314,13 @@ body {
 .about .container .about-info .about-title {
   font-family: Georgia-Regular, sans-serif;
   font-size: 35px;
-  line-height: 130%;
+  line-height: 129%;
   letter-spacing: 0.06em;
   color: #545454;
   font-weight: normal;
   max-width: 363px;
   font-family: Georgia-Regular, sans-serif;
+  line-height: 129%;
 }
 .about .container .about-info .about-text {
   line-height: 160%;
@@ -320,7 +329,8 @@ body {
 
 .pets {
   background-color: #f6f6f6;
-  padding-top: 78px;
+  /*    padding-top: 78px; */
+  padding-top: 80px;
   padding-bottom: 100px;
 }
 .pets .container {
@@ -333,7 +343,7 @@ body {
 .pets .container .pets-title {
   font-family: Georgia-Regular, sans-serif;
   font-size: 35px;
-  line-height: 130%;
+  line-height: 129%;
   letter-spacing: 0.06em;
   color: #545454;
   font-weight: normal;
@@ -376,7 +386,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  gap: 30px;
+  /*  gap: 30px; */
   border-radius: 9px;
   padding-bottom: 30px;
   cursor: pointer;
@@ -387,6 +397,7 @@ body {
 .pets .container .pets-cards-wrapper .pets-cards .card .pet-image {
   max-height: 270px;
   border-radius: 9px 9px 0 0;
+  margin-bottom: 30px;
 }
 .pets .container .pets-cards-wrapper .pets-cards .card .pet-image img {
   height: 100%;
@@ -397,6 +408,7 @@ body {
   letter-spacing: 0.06em;
   text-align: center;
   color: #545454;
+  margin-bottom: 30px;
 }
 .pets .container .pets-cards-wrapper .pets-cards .card .pet-btn {
   display: inline-block;
@@ -411,11 +423,12 @@ body {
   font-size: 17px;
   line-height: 130%;
   color: #292929;
+  display: inline-block;
   width: 187px;
   background-color: transparent;
   border: 2px solid #F1CDB3;
   letter-spacing: 0.5px;
-  padding: 12px 45px;
+  padding: 13px 45px;
   line-height: 130%;
   transition: 0.5s;
 }
@@ -472,7 +485,7 @@ body {
 .help .container .help-title {
   font-family: Georgia-Regular, sans-serif;
   font-size: 35px;
-  line-height: 130%;
+  line-height: 129%;
   letter-spacing: 0.06em;
   color: #545454;
   font-weight: normal;
@@ -509,6 +522,7 @@ body {
 .donation {
   background-color: #f6f6f6;
   padding-top: 80px;
+  /*     padding-bottom: 99px; */
   padding-bottom: 100px;
 }
 .donation .container {
@@ -518,25 +532,31 @@ body {
   justify-content: center;
   gap: 30px;
 }
+.donation .container .donation-image {
+  padding-top: 11px;
+  padding-bottom: 10px;
+  max-height: 261px;
+}
 .donation .container .donation-info {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 20px;
 }
-.donation .container .donation-info span {
-  font-family: Georgia-Regular, sans-serif;
-  line-height: normal;
-  letter-spacing: 1px;
-}
 .donation .container .donation-info .donation-title {
   font-family: Georgia-Regular, sans-serif;
   font-size: 35px;
-  line-height: 130%;
+  line-height: 129%;
   letter-spacing: 0.06em;
   color: #545454;
   font-weight: normal;
   max-width: 300px;
+}
+.donation .container .donation-info span {
+  font-family: Georgia-Regular, sans-serif;
+  line-height: normal;
+  letter-spacing: 1px;
+  line-height: 110%;
 }
 .donation .container .donation-info .credit-card {
   display: flex;
@@ -559,6 +579,9 @@ body {
   line-height: 115%;
   letter-spacing: 0.06em;
   color: #545454;
+}
+.donation .container .donation-info .credit-card .credit-card-number span {
+  line-height: 115%;
 }
 .donation .container .donation-info .donation-text {
   font-family: Arial-Italic, sans-serif;
