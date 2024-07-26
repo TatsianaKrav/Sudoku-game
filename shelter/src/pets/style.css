@@ -286,9 +286,9 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  /*  gap: 30px; */
-  border-radius: 9px;
   padding-bottom: 30px;
+  gap: 30px;
+  border-radius: 9px;
   cursor: pointer;
   max-height: 435px;
   box-sizing: border-box;
@@ -297,7 +297,6 @@ body {
 .main .container .friends .card .pet-image {
   max-height: 270px;
   border-radius: 9px 9px 0 0;
-  margin-bottom: 30px;
 }
 .main .container .friends .card .pet-image img {
   height: 100%;
@@ -308,7 +307,6 @@ body {
   letter-spacing: 0.06em;
   text-align: center;
   color: #545454;
-  margin-bottom: 30px;
 }
 .main .container .friends .card .pet-btn {
   display: inline-block;

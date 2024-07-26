@@ -384,6 +384,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  padding-bottom: 30px;
   gap: 30px;
   border-radius: 9px;
   cursor: pointer;
@@ -394,7 +395,6 @@ body {
 .pets .container .pets-cards-wrapper .pets-cards .card .pet-image {
   max-height: 270px;
   border-radius: 9px 9px 0 0;
-  margin-bottom: 30px;
 }
 .pets .container .pets-cards-wrapper .pets-cards .card .pet-image img {
   height: 100%;
@@ -405,7 +405,6 @@ body {
   letter-spacing: 0.06em;
   text-align: center;
   color: #545454;
-  margin-bottom: 30px;
 }
 .pets .container .pets-cards-wrapper .pets-cards .card .pet-btn {
   display: inline-block;
