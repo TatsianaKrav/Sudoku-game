@@ -75,8 +75,7 @@
     font-weight: normal;
 }
 
-@mixin narrow {
-    top: calc(50% - 5px);
+@mixin roud-btn {
     border-radius: 100px;
     border: 2px solid $primary-color;
     width: 52px;
@@ -90,6 +89,7 @@
 
     &:hover {
         background-color: $color-primary-light;
+        border: 2px solid $color-primary-light;
     }
 }
 
@@ -106,9 +106,8 @@
     background-color: $color-light-s;
     @include flex-column();
     align-items: center;
-    /*  gap: 30px; */
+    gap: 30px;
     border-radius: 9px;
-    padding-bottom: 30px;
     cursor: pointer;
     max-height: 435px;
     box-sizing: border-box;
@@ -151,6 +150,7 @@
 
         .pet-btn {
             background-color: $color-primary-light;
+            border: 2px solid $color-primary-light;
         }
 
     }

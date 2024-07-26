@@ -290,7 +290,6 @@ body {
 
 .about {
   background-color: #FFFFFF;
-  /* padding-top: 79px; */
   padding-top: 80px;
   padding-bottom: 100px;
 }
@@ -329,7 +328,6 @@ body {
 
 .pets {
   background-color: #f6f6f6;
-  /*    padding-top: 78px; */
   padding-top: 80px;
   padding-bottom: 100px;
 }
@@ -359,7 +357,6 @@ body {
   gap: 53px;
 }
 .pets .container .pets-cards-wrapper .narrow {
-  top: calc(50% - 5px);
   border-radius: 100px;
   border: 2px solid #F1CDB3;
   width: 52px;
@@ -373,6 +370,7 @@ body {
 }
 .pets .container .pets-cards-wrapper .narrow:hover {
   background-color: #fddcc4;
+  border: 2px solid #fddcc4;
 }
 .pets .container .pets-cards-wrapper .pets-cards {
   display: flex;
@@ -386,9 +384,8 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  /*  gap: 30px; */
+  gap: 30px;
   border-radius: 9px;
-  padding-bottom: 30px;
   cursor: pointer;
   max-height: 435px;
   box-sizing: border-box;
@@ -438,6 +435,7 @@ body {
 }
 .pets .container .pets-cards-wrapper .pets-cards .card:hover .pet-btn {
   background-color: #fddcc4;
+  border: 2px solid #fddcc4;
 }
 .pets .container .pets-btn {
   width: 261px;
@@ -522,7 +520,6 @@ body {
 .donation {
   background-color: #f6f6f6;
   padding-top: 80px;
-  /*     padding-bottom: 99px; */
   padding-bottom: 100px;
 }
 .donation .container {

@@ -88,15 +88,7 @@
             max-width: 340px;
 
             .page {
-                border-radius: 100px;
-                width: 52px;
-                height: 52px;
-                @include flex();
-                justify-content: center;
-                box-sizing: border-box;
-                cursor: pointer;
-                color: $color-dark-3xl;
-                transition: 0.5s;
+                @include roud-btn();
 
                 &.current-page {
                     font-family: Georgia-Regular, sans-serif;
@@ -106,6 +98,8 @@
                     text-align: center;
                     color: $color-dark-3xl;
                     background-color: $primary-color;
+                    cursor: default;
+                    pointer-events: none;
                 }
 
                 &.active {
@@ -122,6 +116,10 @@
                 &:hover {
                     background: $color-primary-light;
                     color: $color-dark-3xl;
+
+                    &.active {
+                        border: 2px solid $color-primary-light;
+                    }
                 }
             }
         }
