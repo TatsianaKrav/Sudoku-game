@@ -373,6 +373,7 @@ body {
 }
 .pets .container .pets-cards-wrapper .narrow:hover {
   background-color: #fddcc4;
+  border: 2px solid #fddcc4;
 }
 .pets .container .pets-cards-wrapper .pets-cards {
   display: flex;
@@ -438,6 +439,7 @@ body {
 }
 .pets .container .pets-cards-wrapper .pets-cards .card:hover .pet-btn {
   background-color: #fddcc4;
+  border: 2px solid #fddcc4;
 }
 .pets .container .pets-btn {
   width: 261px;

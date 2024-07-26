@@ -338,6 +338,7 @@ body {
 }
 .main .container .friends .card:hover .pet-btn {
   background-color: #fddcc4;
+  border: 2px solid #fddcc4;
 }
 .main .container .friends .card .pet-btn {
   line-height: 138%;
@@ -370,6 +371,8 @@ body {
   text-align: center;
   color: #292929;
   background-color: #F1CDB3;
+  cursor: default;
+  pointer-events: none;
 }
 .main .container .pagination .page.active {
   border: 2px solid #F1CDB3;
@@ -383,4 +386,7 @@ body {
 .main .container .pagination .page:hover {
   background: #fddcc4;
   color: #292929;
+}
+.main .container .pagination .page:hover.active {
+  border: 2px solid #fddcc4;
 }/*# sourceMappingURL=style.css.map */

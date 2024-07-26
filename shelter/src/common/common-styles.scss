@@ -90,6 +90,7 @@
 
     &:hover {
         background-color: $color-primary-light;
+        border: 2px solid $color-primary-light;
     }
 }
 
@@ -151,6 +152,7 @@
 
         .pet-btn {
             background-color: $color-primary-light;
+            border: 2px solid $color-primary-light;
         }
 
     }

@@ -106,6 +106,8 @@
                     text-align: center;
                     color: $color-dark-3xl;
                     background-color: $primary-color;
+                    cursor: default;
+                    pointer-events: none;
                 }
 
                 &.active {
@@ -122,6 +124,10 @@
                 &:hover {
                     background: $color-primary-light;
                     color: $color-dark-3xl;
+
+                    &.active {
+                        border: 2px solid $color-primary-light;
+                    }
                 }
             }
         }
