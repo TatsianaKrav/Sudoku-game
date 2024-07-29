@@ -240,7 +240,7 @@ body {
   color: #545454;
 }
 .header .container .menu-list .menu-item.active a {
-  color: #545454;
+  color: #292929;
 }
 .header .container .menu-list .menu-item:hover:not(.active) a {
   color: #292929;
