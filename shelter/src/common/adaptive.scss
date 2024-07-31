@@ -1,0 +1,32 @@
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 0 30px;
+    }
+
+    .main {
+        padding-top: 150px;
+
+        .container {
+            flex-direction: column;
+            gap: 22px;
+
+            .main-description {
+                align-items: center;
+
+                .main-title {
+                    align-self: flex-start;
+                }
+            }
+
+            .main-image {
+                max-height: 593px;
+                max-width: 569px;
+                align-self: flex-end;
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

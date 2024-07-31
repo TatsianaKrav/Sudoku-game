@@ -1,0 +1,26 @@
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0 30px;
+  }
+  .main {
+    padding-top: 150px;
+  }
+  .main .container {
+    flex-direction: column;
+    gap: 22px;
+  }
+  .main .container .main-description {
+    align-items: center;
+  }
+  .main .container .main-description .main-title {
+    align-self: flex-start;
+  }
+  .main .container .main-image {
+    max-height: 593px;
+    max-width: 569px;
+    align-self: flex-end;
+  }
+  .main .container .main-image img {
+    width: 100%;
+  }
+}/*# sourceMappingURL=adaptive.css.map */
