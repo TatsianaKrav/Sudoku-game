@@ -23,4 +23,8 @@
   .main .container .main-image img {
     width: 100%;
   }
+  .about .container {
+    flex-direction: column-reverse;
+    gap: 80px;
+  }
 }/*# sourceMappingURL=adaptive.css.map */

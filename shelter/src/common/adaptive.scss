@@ -29,4 +29,11 @@
             }
         }
     }
+
+    .about {
+        .container {
+            flex-direction: column-reverse;
+            gap: 80px;
+        }
+    }
 }
