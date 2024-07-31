@@ -27,4 +27,14 @@
     flex-direction: column-reverse;
     gap: 80px;
   }
+  .pets .container .pets-cards-wrapper {
+    gap: 12px;
+  }
+  .pets .container .pets-cards-wrapper .pets-cards {
+    gap: 40px;
+    justify-content: center;
+  }
+  .pets .container .pets-cards-wrapper .pets-cards .card:nth-child(3) {
+    display: none;
+  }
 }/*# sourceMappingURL=adaptive.css.map */

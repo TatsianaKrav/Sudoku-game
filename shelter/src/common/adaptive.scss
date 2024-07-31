@@ -36,4 +36,22 @@
             gap: 80px;
         }
     }
+
+    .pets {
+        .container {
+            .pets-cards-wrapper {
+                gap: 12px;
+
+                .pets-cards {
+                    gap: 40px;
+                    justify-content: center;
+
+                    .card:nth-child(3) {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+    }
 }
