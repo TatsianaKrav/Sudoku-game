@@ -1,7 +1,12 @@
-@media screen and (max-width: 768px) {
-  .container {
-    padding: 0 30px;
+@media screen and (max-width: 1279px) {
+  .main .container .main-image {
+    width: 50%;
   }
+  .main .container .main-image img {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1083px) {
   .main {
     padding-top: 150px;
   }
@@ -12,16 +17,27 @@
   .main .container .main-description {
     align-items: center;
   }
+  .main .container .main-image {
+    max-height: 593px;
+    max-width: 569px;
+    width: 100%;
+  }
+  .main .container .main-image img {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0 30px;
+  }
+  .main .container .main-description {
+    align-items: center;
+  }
   .main .container .main-description .main-title {
     align-self: flex-start;
   }
   .main .container .main-image {
-    max-height: 593px;
-    max-width: 569px;
     align-self: flex-end;
-  }
-  .main .container .main-image img {
-    width: 100%;
   }
   .about .container {
     flex-direction: column-reverse;
