@@ -145,4 +145,35 @@
   .about .container .about-image img {
     width: 100%;
   }
+  .pets {
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+  .pets .container {
+    padding-left: 10px;
+    padding-right: 10px;
+    gap: 114px;
+  }
+  .pets .container .pets-title {
+    font-size: 25px;
+    text-align: center;
+    max-width: 233px;
+    max-width: 286px;
+  }
+  .pets .container .pets-cards-wrapper {
+    position: relative;
+  }
+  .pets .container .pets-cards-wrapper .pets-cards .card:not(:first-child) {
+    display: none;
+  }
+  .pets .container .pets-cards-wrapper .narrow {
+    position: absolute;
+    bottom: -71px;
+  }
+  .pets .container .pets-cards-wrapper .narrow.narrow-back {
+    left: 44px;
+  }
+  .pets .container .pets-cards-wrapper .narrow.narrow-next {
+    right: 44px;
+  }
 }/*# sourceMappingURL=adaptive.css.map */
