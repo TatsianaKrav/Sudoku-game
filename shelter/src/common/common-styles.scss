@@ -266,6 +266,19 @@ body {
                 } */
             }
         }
+
+        .burger {
+            width: 30px;
+            height: 22px;
+            @include flex-column();
+            display: none;
+
+            .burger-line {
+                width: 30px;
+                height: 2px;
+                background-color: $primary-color;
+            }
+        }
     }
 }
 

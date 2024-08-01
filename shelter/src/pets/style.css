@@ -108,6 +108,19 @@ body {
 .header .container .menu-list .menu-item:hover:not(.active) a {
   color: #FAFAFA;
 }
+.header .container .burger {
+  width: 30px;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  display: none;
+}
+.header .container .burger .burger-line {
+  width: 30px;
+  height: 2px;
+  background-color: #F1CDB3;
+}
 
 .footer {
   background: url(../../assets/images/noise.png), radial-gradient(circle at top left, #5B483A, #262425 85%);

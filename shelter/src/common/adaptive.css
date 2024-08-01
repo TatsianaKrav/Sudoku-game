@@ -95,4 +95,12 @@
   .help .container .help-items .help-item {
     width: 170px;
   }
+}
+@media screen and (max-width: 767px) {
+  .header .container .menu {
+    display: none;
+  }
+  .header .container .burger {
+    display: flex;
+  }
 }/*# sourceMappingURL=adaptive.css.map */

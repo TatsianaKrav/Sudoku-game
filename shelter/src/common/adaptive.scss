@@ -101,7 +101,6 @@
     }
 }
 
-
 @media screen and (max-width: 768px) {
 
     .container {
@@ -152,3 +151,19 @@
         }
     }
 }
+
+@media screen and (max-width: 767px) {
+    .header {
+        .container {
+            .menu {
+                display: none;
+            }
+
+            .burger {
+                display: flex;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 320px) {}
