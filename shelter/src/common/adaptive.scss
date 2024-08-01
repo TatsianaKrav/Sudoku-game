@@ -57,8 +57,6 @@
 
     .help {
         .container {
-            /*     padding: 0 69px; */
-
             .help-items {
                 max-width: 630px;
                 gap: 55px 60px;
@@ -66,6 +64,17 @@
                 .help-item {
                     width: 170px;
                 }
+            }
+        }
+    }
+
+    .donation {
+        .container {
+            flex-direction: column-reverse;
+            gap: 60px;
+
+            .donation-image {
+                padding: 0;
             }
         }
     }
