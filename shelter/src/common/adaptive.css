@@ -5,6 +5,21 @@
   .main .container .main-image img {
     width: 100%;
   }
+  .pets .container .pets-cards-wrapper {
+    gap: 3px;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .pets .container .pets-cards-wrapper {
+    gap: 20px;
+  }
+  .pets .container .pets-cards-wrapper .pets-cards {
+    gap: 40px;
+    justify-content: center;
+  }
+  .pets .container .pets-cards-wrapper .pets-cards .card:nth-child(3) {
+    display: none;
+  }
 }
 @media screen and (max-width: 1083px) {
   .main {
@@ -45,13 +60,6 @@
   }
   .pets .container .pets-cards-wrapper {
     gap: 12px;
-  }
-  .pets .container .pets-cards-wrapper .pets-cards {
-    gap: 40px;
-    justify-content: center;
-  }
-  .pets .container .pets-cards-wrapper .pets-cards .card:nth-child(3) {
-    display: none;
   }
   .help .container .help-items {
     max-width: 630px;

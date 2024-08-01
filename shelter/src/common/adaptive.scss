@@ -10,6 +10,34 @@
             }
         }
     }
+
+    .pets {
+        .container {
+            .pets-cards-wrapper {
+                gap: 3px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .pets {
+        .container {
+            .pets-cards-wrapper {
+                gap: 20px;
+
+                .pets-cards {
+                    gap: 40px;
+                    justify-content: center;
+
+                    .card:nth-child(3) {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
 }
 
 @media screen and (max-width: 1083px) {
@@ -39,7 +67,6 @@
 
 
 @media screen and (max-width: 768px) {
-
 
     .container {
         padding: 0 30px;
@@ -72,18 +99,8 @@
         .container {
             .pets-cards-wrapper {
                 gap: 12px;
-
-                .pets-cards {
-                    gap: 40px;
-                    justify-content: center;
-
-                    .card:nth-child(3) {
-                        display: none;
-                    }
-                }
             }
         }
-
     }
 
     .help {
