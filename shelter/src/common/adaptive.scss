@@ -63,6 +63,29 @@
             }
         }
     }
+
+    .footer {
+        padding: 30px 30px 0 30px;
+
+        .container {
+            flex-wrap: wrap;
+            padding: 0 34px;
+            justify-content: center;
+
+            .footer-contacts {
+                padding-top: 0;
+                margin-right: 59px;
+            }
+
+            .footer-address {
+                padding-top: 0;
+            }
+
+            .footer-image {
+                margin-top: 65px;
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 946px) {
@@ -125,29 +148,6 @@
                 .help-item {
                     width: 170px;
                 }
-            }
-        }
-    }
-
-    .footer {
-        padding: 30px 30px 0 30px;
-
-        .container {
-            flex-wrap: wrap;
-            padding: 0 34px;
-            justify-content: center;
-
-            .footer-contacts {
-                padding-top: 0;
-                margin-right: 59px;
-            }
-
-            .footer-address {
-                padding-top: 0;
-            }
-
-            .footer-image {
-                margin-top: 65px;
             }
         }
     }
