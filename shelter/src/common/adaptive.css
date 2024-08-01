@@ -41,6 +41,15 @@
     width: 100%;
   }
 }
+@media screen and (max-width: 946px) {
+  .donation .container {
+    flex-direction: column-reverse;
+    gap: 60px;
+  }
+  .donation .container .donation-image {
+    padding: 0;
+  }
+}
 @media screen and (max-width: 768px) {
   .container {
     padding: 0 30px;
@@ -67,13 +76,6 @@
   }
   .help .container .help-items .help-item {
     width: 170px;
-  }
-  .donation .container {
-    flex-direction: column-reverse;
-    gap: 60px;
-  }
-  .donation .container .donation-image {
-    padding: 0;
   }
   .footer {
     padding: 30px 30px 0 30px;

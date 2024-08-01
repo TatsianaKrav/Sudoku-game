@@ -65,6 +65,19 @@
     }
 }
 
+@media screen and (max-width: 946px) {
+    .donation {
+        .container {
+            flex-direction: column-reverse;
+            gap: 60px;
+
+            .donation-image {
+                padding: 0;
+            }
+        }
+    }
+}
+
 
 @media screen and (max-width: 768px) {
 
@@ -112,17 +125,6 @@
                 .help-item {
                     width: 170px;
                 }
-            }
-        }
-    }
-
-    .donation {
-        .container {
-            flex-direction: column-reverse;
-            gap: 60px;
-
-            .donation-image {
-                padding: 0;
             }
         }
     }
