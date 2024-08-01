@@ -37,4 +37,14 @@
   .pets .container .pets-cards-wrapper .pets-cards .card:nth-child(3) {
     display: none;
   }
+  .help .container {
+    /*     padding: 0 69px; */
+  }
+  .help .container .help-items {
+    max-width: 630px;
+    gap: 55px 60px;
+  }
+  .help .container .help-items .help-item {
+    width: 170px;
+  }
 }/*# sourceMappingURL=adaptive.css.map */

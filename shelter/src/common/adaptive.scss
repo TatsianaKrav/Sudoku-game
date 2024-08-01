@@ -54,4 +54,19 @@
         }
 
     }
+
+    .help {
+        .container {
+            /*     padding: 0 69px; */
+
+            .help-items {
+                max-width: 630px;
+                gap: 55px 60px;
+
+                .help-item {
+                    width: 170px;
+                }
+            }
+        }
+    }
 }
