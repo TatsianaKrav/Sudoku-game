@@ -103,4 +103,46 @@
   .header .container .burger {
     display: flex;
   }
+}
+@media screen and (max-width: 320px) {
+  .header .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .main .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .main .container .main-description {
+    justify-content: center;
+  }
+  .main .container .main-description .main-title {
+    font-size: 25px;
+    text-align: center;
+    max-width: 233px;
+  }
+  .main .container .main-image {
+    max-width: 260px;
+  }
+  .about {
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+  .about .container {
+    padding-left: 10px;
+    padding-right: 10px;
+    align-items: center;
+    justify-content: center;
+  }
+  .about .container .about-info .about-title {
+    font-size: 25px;
+    text-align: center;
+    max-width: 233px;
+  }
+  .about .container .about-image {
+    max-width: 260px;
+  }
+  .about .container .about-image img {
+    width: 100%;
+  }
 }/*# sourceMappingURL=adaptive.css.map */

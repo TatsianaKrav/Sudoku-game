@@ -1,3 +1,7 @@
+@mixin title-adaptive {
+    font-size: 25px;
+}
+
 @media screen and (max-width: 1279px) {
     .main {
         .container {
@@ -166,4 +170,63 @@
     }
 }
 
-@media screen and (max-width: 320px) {}
+@media screen and (max-width: 320px) {
+
+    .header {
+        .container {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+
+
+    .main {
+        .container {
+            padding-left: 10px;
+            padding-right: 10px;
+
+            .main-description {
+                justify-content: center;
+
+                .main-title {
+                    @include title-adaptive();
+                    text-align: center;
+                    max-width: 233px;
+                }
+            }
+
+            .main-image {
+                max-width: 260px;
+            }
+
+        }
+    }
+
+    .about {
+        padding-top: 42px;
+        padding-bottom: 42px;
+
+        .container {
+            padding-left: 10px;
+            padding-right: 10px;
+            align-items: center;
+            justify-content: center;
+
+            .about-info {
+                .about-title {
+                    @include title-adaptive();
+                    text-align: center;
+                    max-width: 233px;
+                }
+            }
+
+            .about-image {
+                max-width: 260px;
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
