@@ -171,7 +171,7 @@
   .pets .container {
     padding-left: 10px;
     padding-right: 10px;
-    gap: 114px;
+    gap: 42px;
   }
   .pets .container .pets-title {
     font-size: 25px;
@@ -184,12 +184,15 @@
   .pets .container .pets-cards-wrapper {
     position: relative;
   }
+  .pets .container .pets-cards-wrapper .pets-cards .card {
+    margin-bottom: 72px;
+  }
   .pets .container .pets-cards-wrapper .pets-cards .card:not(:first-child) {
     display: none;
   }
   .pets .container .pets-cards-wrapper .narrow {
     position: absolute;
-    bottom: -71px;
+    bottom: 0;
   }
   .pets .container .pets-cards-wrapper .narrow.narrow-back {
     left: 44px;

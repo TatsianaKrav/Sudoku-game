@@ -252,7 +252,7 @@
         .container {
             padding-left: 10px;
             padding-right: 10px;
-            gap: 114px;
+            gap: 42px;
 
             .pets-title {
                 @include title-adaptive();
@@ -263,6 +263,11 @@
                 position: relative;
 
                 .pets-cards {
+
+                    .card {
+                        margin-bottom: 72px;
+                    }
+
                     .card:not(:first-child) {
                         display: none;
                     }
@@ -270,7 +275,7 @@
 
                 .narrow {
                     position: absolute;
-                    bottom: -71px;
+                    bottom: 0;
 
                     &.narrow-back {
                         left: 44px;
