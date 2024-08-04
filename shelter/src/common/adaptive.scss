@@ -1,7 +1,11 @@
-@import url("common-styles.scss");
+@import url('../common/common-styles.scss');
 
-@mixin offset {
-    padding: 42px 15px;
+@mixin title-adaptive {
+    font-family: Georgia-Regular, sans-serif;
+    font-size: 25px;
+    text-align: center;
+    letter-spacing: 0.06em;
+    line-height: 128%;
 }
 
 @media screen and (max-width: 1279px) {
@@ -183,8 +187,6 @@
     .donation {
         .container {
             .donation-image {
-                width: 75%;
-
                 img {
                     width: 100%;
                 }
@@ -195,14 +197,14 @@
 
 @media screen and (max-width: 459px) {
     .help {
-        @include offset();
+        padding: 42px 10px;
 
         .container {
-            padding: 0;
+            padding: 0 5px;
             gap: 42px;
 
             .help-title {
-                /*   @include title-adaptive(); */
+                @include title-adaptive();
                 max-width: 233px;
             }
 
@@ -263,24 +265,32 @@
 @media screen and (max-width: 320px) {
 
     .header {
+        padding: 30px 10px 0 10px;
+
         .container {
-            padding-left: 20px;
-            padding-right: 20px;
+            padding: 0 10px;
         }
     }
 
     .main {
+        padding-left: 10px;
+        padding-right: 10px;
+
         .container {
-            padding-left: 10px;
-            padding-right: 10px;
+            padding: 0;
 
             .main-description {
                 justify-content: center;
+                padding-bottom: 78px;
 
                 .main-title {
-                    /*  @include title-adaptive(); */
+                    @include title-adaptive();
                     align-self: center;
                     max-width: 233px;
+                }
+
+                .main-text {
+                    text-align: center;
                 }
             }
 
@@ -292,8 +302,7 @@
     }
 
     .about {
-        padding-top: 42px;
-        padding-bottom: 42px;
+        padding: 42px 10px;
 
         .container {
             padding-left: 15px;
@@ -303,12 +312,10 @@
             gap: 42px;
 
             .about-info {
-                padding-left: 10px;
-                padding-right: 10px;
                 gap: 22px;
 
                 .about-title {
-                    /*  @include title-adaptive(); */
+                    @include title-adaptive();
                     margin-bottom: 3px;
                 }
 
@@ -330,16 +337,14 @@
     }
 
     .pets {
-        padding-top: 42px;
-        padding-bottom: 42px;
+        padding: 42px 10px;
 
         .container {
-            padding-left: 10px;
-            padding-right: 10px;
+            padding: 0;
             gap: 42px;
 
             .pets-title {
-                /* @include title-adaptive(); */
+                @include title-adaptive();
                 max-width: 286px;
             }
 
@@ -401,7 +406,7 @@
                 }
 
                 .donation-title {
-                    /* @include title-adaptive(); */
+                    @include title-adaptive();
                     max-width: 229px;
                 }
 
@@ -437,7 +442,7 @@
                 justify-content: center;
 
                 .contacts-title {
-                    /* @include title-adaptive(); */
+                    @include title-adaptive();
                 }
 
                 .contact {
@@ -457,7 +462,7 @@
                 gap: 40px;
 
                 .address-title {
-                    /* @include title-adaptive(); */
+                    @include title-adaptive();
                     max-width: 233px;
                     align-self: center;
                 }

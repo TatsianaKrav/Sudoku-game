@@ -1,4 +1,4 @@
-@import url("common-styles.scss");
+@import url("../common/common-styles.scss");
 @media screen and (max-width: 1279px) {
   .main .container .main-image {
     width: 50%;
@@ -112,23 +112,24 @@
   }
 }
 @media screen and (max-width: 564px) {
-  .donation .container .donation-image {
-    width: 75%;
-  }
   .donation .container .donation-image img {
     width: 100%;
   }
 }
 @media screen and (max-width: 459px) {
   .help {
-    padding: 42px 15px;
+    padding: 42px 10px;
   }
   .help .container {
-    padding: 0;
+    padding: 0 5px;
     gap: 42px;
   }
   .help .container .help-title {
-    /*   @include title-adaptive(); */
+    font-family: Georgia-Regular, sans-serif;
+    font-size: 25px;
+    text-align: center;
+    letter-spacing: 0.06em;
+    line-height: 128%;
     max-width: 233px;
   }
   .help .container .help-items {
@@ -167,28 +168,40 @@
   }
 }
 @media screen and (max-width: 320px) {
-  .header .container {
-    padding-left: 20px;
-    padding-right: 20px;
+  .header {
+    padding: 30px 10px 0 10px;
   }
-  .main .container {
+  .header .container {
+    padding: 0 10px;
+  }
+  .main {
     padding-left: 10px;
     padding-right: 10px;
   }
+  .main .container {
+    padding: 0;
+  }
   .main .container .main-description {
     justify-content: center;
+    padding-bottom: 78px;
   }
   .main .container .main-description .main-title {
-    /*  @include title-adaptive(); */
+    font-family: Georgia-Regular, sans-serif;
+    font-size: 25px;
+    text-align: center;
+    letter-spacing: 0.06em;
+    line-height: 128%;
     align-self: center;
     max-width: 233px;
+  }
+  .main .container .main-description .main-text {
+    text-align: center;
   }
   .main .container .main-image {
     max-width: 260px;
   }
   .about {
-    padding-top: 42px;
-    padding-bottom: 42px;
+    padding: 42px 10px;
   }
   .about .container {
     padding-left: 15px;
@@ -198,12 +211,14 @@
     gap: 42px;
   }
   .about .container .about-info {
-    padding-left: 10px;
-    padding-right: 10px;
     gap: 22px;
   }
   .about .container .about-info .about-title {
-    /*  @include title-adaptive(); */
+    font-family: Georgia-Regular, sans-serif;
+    font-size: 25px;
+    text-align: center;
+    letter-spacing: 0.06em;
+    line-height: 128%;
     margin-bottom: 3px;
   }
   .about .container .about-info .about-text {
@@ -218,16 +233,18 @@
     width: 100%;
   }
   .pets {
-    padding-top: 42px;
-    padding-bottom: 42px;
+    padding: 42px 10px;
   }
   .pets .container {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 0;
     gap: 42px;
   }
   .pets .container .pets-title {
-    /* @include title-adaptive(); */
+    font-family: Georgia-Regular, sans-serif;
+    font-size: 25px;
+    text-align: center;
+    letter-spacing: 0.06em;
+    line-height: 128%;
     max-width: 286px;
   }
   .pets .container .pets-cards-wrapper {
@@ -274,7 +291,11 @@
     line-height: 160%;
   }
   .donation .container .donation-info .donation-title {
-    /* @include title-adaptive(); */
+    font-family: Georgia-Regular, sans-serif;
+    font-size: 25px;
+    text-align: center;
+    letter-spacing: 0.06em;
+    line-height: 128%;
     max-width: 229px;
   }
   .donation .container .donation-info .credit-card .credit-card-number span {
@@ -298,7 +319,11 @@
     justify-content: center;
   }
   .footer .container .footer-contacts .contacts-title {
-    /* @include title-adaptive(); */
+    font-family: Georgia-Regular, sans-serif;
+    font-size: 25px;
+    text-align: center;
+    letter-spacing: 0.06em;
+    line-height: 128%;
   }
   .footer .container .footer-contacts .contact {
     align-items: center;
@@ -314,7 +339,11 @@
     gap: 40px;
   }
   .footer .container .footer-address .address-title {
-    /* @include title-adaptive(); */
+    font-family: Georgia-Regular, sans-serif;
+    font-size: 25px;
+    text-align: center;
+    letter-spacing: 0.06em;
+    line-height: 128%;
     max-width: 233px;
     align-self: center;
   }

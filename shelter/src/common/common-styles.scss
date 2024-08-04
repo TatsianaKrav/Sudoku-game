@@ -75,13 +75,7 @@
     font-weight: normal;
 }
 
-@mixin title-adaptive {
-    font-family: Georgia-Regular, sans-serif;
-    font-size: 25px;
-    text-align: center;
-    letter-spacing: 0.06em;
-    line-height: 128%;
-}
+
 
 @mixin roud-btn {
     border-radius: 100px;
