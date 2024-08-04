@@ -1,11 +1,4 @@
-@import url("common-styles.scss");
-
-@mixin title-adaptive {
-    font-size: 25px;
-    text-align: center;
-    letter-spacing: 0.06em;
-    line-height: 128%;
-}
+@import url("../common/common-styles.scss");
 
 @mixin offset {
     padding: 42px 15px;
