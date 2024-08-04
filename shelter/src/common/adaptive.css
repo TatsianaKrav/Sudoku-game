@@ -76,9 +76,14 @@
   }
   .main .container .main-description {
     align-items: center;
+    padding-bottom: 73px;
   }
   .main .container .main-description .main-title {
     align-self: flex-start;
+    text-align: left;
+  }
+  .main .container .main-text {
+    text-align: left;
   }
   .main .container .main-image {
     align-self: flex-end;
