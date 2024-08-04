@@ -1,3 +1,4 @@
+@import url("common-styles.scss");
 @media screen and (max-width: 1279px) {
   .main .container .main-image {
     width: 50%;
@@ -120,7 +121,6 @@
   .main .container .main-description .main-title {
     font-size: 25px;
     text-align: center;
-    /*     max-width: 233px; */
     letter-spacing: 0.06em;
     line-height: 128%;
     align-self: center;
@@ -148,7 +148,6 @@
   .about .container .about-info .about-title {
     font-size: 25px;
     text-align: center;
-    /*     max-width: 233px; */
     letter-spacing: 0.06em;
     line-height: 128%;
     margin-bottom: 3px;
@@ -176,7 +175,6 @@
   .pets .container .pets-title {
     font-size: 25px;
     text-align: center;
-    /*     max-width: 233px; */
     letter-spacing: 0.06em;
     line-height: 128%;
     max-width: 286px;
@@ -210,7 +208,6 @@
   .help .container .help-title {
     font-size: 25px;
     text-align: center;
-    /*     max-width: 233px; */
     letter-spacing: 0.06em;
     line-height: 128%;
     max-width: 233px;
@@ -257,7 +254,6 @@
   .donation .container .donation-info .donation-title {
     font-size: 25px;
     text-align: center;
-    /*     max-width: 233px; */
     letter-spacing: 0.06em;
     line-height: 128%;
     max-width: 229px;
@@ -275,5 +271,57 @@
   }
   .donation .container .donation-info .donation-text {
     text-align: justify;
+  }
+  .footer {
+    padding: 30px 10px 0 10px;
+  }
+  .footer .container {
+    padding: 0;
+    justify-content: center;
+    text-align: center;
+    gap: 40px;
+  }
+  .footer .container .footer-contacts {
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+  }
+  .footer .container .footer-contacts .contacts-title {
+    font-size: 25px;
+    text-align: center;
+    letter-spacing: 0.06em;
+    line-height: 128%;
+  }
+  .footer .container .footer-contacts .contact {
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .footer .container .footer-contacts .contact span {
+    text-align: center;
+  }
+  .footer .container .footer-address {
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+  }
+  .footer .container .footer-address .address-title {
+    font-size: 25px;
+    text-align: center;
+    letter-spacing: 0.06em;
+    line-height: 128%;
+    max-width: 233px;
+    align-self: center;
+  }
+  .footer .container .footer-address .contact {
+    text-align: left;
+  }
+  .footer .container .footer-image {
+    margin: 0;
+    max-width: 260px;
+  }
+  .footer .container .footer-image img {
+    width: 100%;
+    max-height: 269px;
   }
 }/*# sourceMappingURL=adaptive.css.map */
