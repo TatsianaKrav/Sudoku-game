@@ -195,10 +195,10 @@
     }
 
     .pets {
-        padding: 42px 10px;
+        /*  padding: 42px 10px; */
 
         .container {
-            padding: 0;
+            /*   padding: 0; */
             gap: 42px;
 
             .pets-title {
@@ -284,10 +284,11 @@
             .footer-image {
                 margin: 0;
                 max-width: 260px;
+                max-height: 269px;
 
                 img {
                     width: 100%;
-                    max-height: 269px;
+                    height: 100%;
                 }
             }
 
@@ -305,9 +306,31 @@
             }
         }
     }
+
 }
 
 @media screen and (max-width: 459px) {
+    .header {
+        padding: 30px 10px 0 10px;
+
+        .container {
+            padding: 0 10px;
+        }
+    }
+
+    .main {
+        padding-left: 10px;
+        padding-right: 10px;
+
+        .container {
+            padding: 0;
+        }
+    }
+
+    .about {
+        padding: 42px 10px;
+    }
+
     .help {
         padding: 42px 10px;
 
@@ -338,6 +361,14 @@
                     }
                 }
             }
+        }
+    }
+
+    .pets {
+        padding: 42px 10px;
+
+        .container {
+            padding: 0;
         }
     }
 
@@ -375,22 +406,8 @@
 }
 
 @media screen and (max-width: 320px) {
-
-    .header {
-        padding: 30px 10px 0 10px;
-
-        .container {
-            padding: 0 10px;
-        }
-    }
-
     .main {
-        padding-left: 10px;
-        padding-right: 10px;
-
         .container {
-            padding: 0;
-
             .main-description {
                 justify-content: center;
                 padding-bottom: 78px;
@@ -409,12 +426,10 @@
             .main-image {
                 max-width: 260px;
             }
-
         }
     }
 
     .about {
-        padding: 42px 10px;
 
         .container {
             padding-left: 15px;

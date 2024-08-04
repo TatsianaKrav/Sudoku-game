@@ -116,10 +116,10 @@
     display: flex;
   }
   .pets {
-    padding: 42px 10px;
+    /*  padding: 42px 10px; */
   }
   .pets .container {
-    padding: 0;
+    /*   padding: 0; */
     gap: 42px;
   }
   .pets .container .pets-title {
@@ -198,10 +198,11 @@
   .footer .container .footer-image {
     margin: 0;
     max-width: 260px;
+    max-height: 269px;
   }
   .footer .container .footer-image img {
     width: 100%;
-    max-height: 269px;
+    height: 100%;
   }
 }
 @media screen and (max-width: 564px) {
@@ -210,6 +211,22 @@
   }
 }
 @media screen and (max-width: 459px) {
+  .header {
+    padding: 30px 10px 0 10px;
+  }
+  .header .container {
+    padding: 0 10px;
+  }
+  .main {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .main .container {
+    padding: 0;
+  }
+  .about {
+    padding: 42px 10px;
+  }
   .help {
     padding: 42px 10px;
   }
@@ -240,6 +257,12 @@
   .help .container .help-items .help-item .help-item-title {
     font-size: 15px;
   }
+  .pets {
+    padding: 42px 10px;
+  }
+  .pets .container {
+    padding: 0;
+  }
   .donation {
     padding: 42px 10px;
   }
@@ -261,19 +284,6 @@
   }
 }
 @media screen and (max-width: 320px) {
-  .header {
-    padding: 30px 10px 0 10px;
-  }
-  .header .container {
-    padding: 0 10px;
-  }
-  .main {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-  .main .container {
-    padding: 0;
-  }
   .main .container .main-description {
     justify-content: center;
     padding-bottom: 78px;
@@ -292,9 +302,6 @@
   }
   .main .container .main-image {
     max-width: 260px;
-  }
-  .about {
-    padding: 42px 10px;
   }
   .about .container {
     padding-left: 15px;
