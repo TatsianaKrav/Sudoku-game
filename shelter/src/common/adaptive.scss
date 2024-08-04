@@ -112,6 +112,18 @@
     }
 }
 
+
+@media screen and (max-width: 804px) {
+    .pets {
+        .container {
+            .pets-cards-wrapper {
+                gap: 12px;
+            }
+        }
+    }
+
+}
+
 @media screen and (max-width: 768px) {
 
     .container {
@@ -182,6 +194,48 @@
         }
     }
 
+    .pets {
+        padding: 42px 10px;
+
+        .container {
+            padding: 0;
+            gap: 42px;
+
+            .pets-title {
+                @include title-adaptive();
+                max-width: 286px;
+            }
+
+            .pets-cards-wrapper {
+                position: relative;
+
+                .pets-cards {
+
+                    .card {
+                        margin-bottom: 72px;
+                    }
+
+                    .card:not(:first-child) {
+                        display: none;
+                    }
+                }
+
+                .narrow {
+                    position: absolute;
+                    bottom: 0;
+
+                    &.narrow-back {
+                        left: 44px;
+                    }
+
+                    &.narrow-next {
+                        right: 44px;
+                    }
+                }
+            }
+        }
+    }
+
     .footer {
         padding: 30px 10px 0 10px;
 
@@ -239,20 +293,6 @@
 
         }
     }
-
-    /*   .footer {
-        .container {
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 40px;
-            text-align: center;
-
-            .footer-image {
-                margin: 0;
-            }
-        }
-    } */
 }
 
 @media screen and (max-width: 564px) {
@@ -408,48 +448,6 @@
         }
     }
 
-    .pets {
-        padding: 42px 10px;
-
-        .container {
-            padding: 0;
-            gap: 42px;
-
-            .pets-title {
-                @include title-adaptive();
-                max-width: 286px;
-            }
-
-            .pets-cards-wrapper {
-                position: relative;
-
-                .pets-cards {
-
-                    .card {
-                        margin-bottom: 72px;
-                    }
-
-                    .card:not(:first-child) {
-                        display: none;
-                    }
-                }
-
-                .narrow {
-                    position: absolute;
-                    bottom: 0;
-
-                    &.narrow-back {
-                        left: 44px;
-                    }
-
-                    &.narrow-next {
-                        right: 44px;
-                    }
-                }
-            }
-        }
-    }
-
     .donation {
         /*   padding: 42px 10px; */
 
@@ -498,6 +496,4 @@
             }
         }
     }
-
-
 }
