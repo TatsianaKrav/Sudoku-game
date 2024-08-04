@@ -115,6 +115,22 @@
   .header .container .burger {
     display: flex;
   }
+  .main .container .main-description .main-title {
+    font-family: Georgia-Regular, sans-serif;
+    font-size: 25px;
+    text-align: center;
+    letter-spacing: 0.06em;
+    line-height: 128%;
+    align-self: center;
+  }
+  .about .container .about-info .about-title {
+    font-family: Georgia-Regular, sans-serif;
+    font-size: 25px;
+    text-align: center;
+    letter-spacing: 0.06em;
+    line-height: 128%;
+    margin-bottom: 3px;
+  }
   .pets {
     /*  padding: 42px 10px; */
   }
@@ -148,6 +164,20 @@
   }
   .pets .container .pets-cards-wrapper .narrow.narrow-next {
     right: 44px;
+  }
+  .help .container .help-title {
+    font-family: Georgia-Regular, sans-serif;
+    font-size: 25px;
+    text-align: center;
+    letter-spacing: 0.06em;
+    line-height: 128%;
+  }
+  .donation .container .donation-info .donation-title {
+    font-family: Georgia-Regular, sans-serif;
+    font-size: 25px;
+    text-align: center;
+    letter-spacing: 0.06em;
+    line-height: 128%;
   }
   .footer {
     padding: 30px 10px 0 10px;
@@ -235,16 +265,11 @@
     gap: 42px;
   }
   .help .container .help-title {
-    font-family: Georgia-Regular, sans-serif;
-    font-size: 25px;
-    text-align: center;
-    letter-spacing: 0.06em;
-    line-height: 128%;
     max-width: 233px;
   }
   .help .container .help-items {
     gap: 30px;
-    justify-content: flex-start;
+    justify-content: center;
   }
   .help .container .help-items .help-item {
     max-width: 130px;
@@ -289,12 +314,6 @@
     padding-bottom: 78px;
   }
   .main .container .main-description .main-title {
-    font-family: Georgia-Regular, sans-serif;
-    font-size: 25px;
-    text-align: center;
-    letter-spacing: 0.06em;
-    line-height: 128%;
-    align-self: center;
     max-width: 233px;
   }
   .main .container .main-description .main-text {
@@ -312,14 +331,10 @@
   }
   .about .container .about-info {
     gap: 22px;
-  }
-  .about .container .about-info .about-title {
-    font-family: Georgia-Regular, sans-serif;
-    font-size: 25px;
-    text-align: center;
-    letter-spacing: 0.06em;
-    line-height: 128%;
-    margin-bottom: 3px;
+    /* 
+    .about-title {
+
+    } */
   }
   .about .container .about-info .about-text {
     text-align: justify;
@@ -331,6 +346,9 @@
   }
   .about .container .about-image img {
     width: 100%;
+  }
+  .help .container .help-items {
+    justify-content: flex-start;
   }
   .donation {
     /*   padding: 42px 10px; */
@@ -357,11 +375,6 @@
     line-height: 160%;
   }
   .donation .container .donation-info .donation-title {
-    font-family: Georgia-Regular, sans-serif;
-    font-size: 25px;
-    text-align: center;
-    letter-spacing: 0.06em;
-    line-height: 128%;
     max-width: 229px;
   }
   .donation .container .donation-info .credit-card .credit-card-number span {
