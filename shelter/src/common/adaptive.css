@@ -70,6 +70,15 @@
     padding: 0;
   }
 }
+@media screen and (max-width: 886px) {
+  .help .container .help-items {
+    max-width: 630px;
+    gap: 55px 60px;
+  }
+  .help .container .help-items .help-item {
+    width: 170px;
+  }
+}
 @media screen and (max-width: 804px) {
   .pets .container .pets-cards-wrapper {
     gap: 12px;
@@ -100,13 +109,6 @@
   .pets .container .pets-cards-wrapper {
     gap: 12px;
   }
-  .help .container .help-items {
-    max-width: 630px;
-    gap: 55px 60px;
-  }
-  .help .container .help-items .help-item {
-    width: 170px;
-  }
 }
 @media screen and (max-width: 767px) {
   .header .container .menu {
@@ -131,11 +133,7 @@
     line-height: 128%;
     margin-bottom: 3px;
   }
-  .pets {
-    /*  padding: 42px 10px; */
-  }
   .pets .container {
-    /*   padding: 0; */
     gap: 42px;
   }
   .pets .container .pets-title {
@@ -269,7 +267,7 @@
   }
   .help .container .help-items {
     gap: 30px;
-    justify-content: center;
+    justify-content: flex-start;
   }
   .help .container .help-items .help-item {
     max-width: 130px;
@@ -331,10 +329,6 @@
   }
   .about .container .about-info {
     gap: 22px;
-    /* 
-    .about-title {
-
-    } */
   }
   .about .container .about-info .about-text {
     text-align: justify;
@@ -347,14 +341,7 @@
   .about .container .about-image img {
     width: 100%;
   }
-  .help .container .help-items {
-    justify-content: flex-start;
-  }
-  .donation {
-    /*   padding: 42px 10px; */
-  }
   .donation .container {
-    /*   padding: 0 10px; */
     gap: 42px;
     box-sizing: border-box;
   }
