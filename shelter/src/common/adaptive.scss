@@ -371,15 +371,27 @@
 
 @media screen and (max-width: 639px) {
     .main {
-        .container {
-            .friends {
-                .card {
-                    &:nth-child(n+4) {
-                        display: none;
+        &.pets-main {
+            padding-top: 72px; //42 + header padding-bottom 30px
+            padding-bottom: 42px;
+
+            .container {
+                gap: 42px;
+
+                .friends {
+                    .card {
+                        &:nth-child(n+4) {
+                            display: none;
+                        }
                     }
+                }
+
+                .pagination {
+                    margin: 0;
                 }
             }
         }
+
     }
 }
 

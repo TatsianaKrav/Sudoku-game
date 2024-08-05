@@ -262,8 +262,18 @@
   }
 }
 @media screen and (max-width: 639px) {
-  .main .container .friends .card:nth-child(n+4) {
+  .main.pets-main {
+    padding-top: 72px;
+    padding-bottom: 42px;
+  }
+  .main.pets-main .container {
+    gap: 42px;
+  }
+  .main.pets-main .container .friends .card:nth-child(n+4) {
     display: none;
+  }
+  .main.pets-main .container .pagination {
+    margin: 0;
   }
 }
 @media screen and (max-width: 564px) {
