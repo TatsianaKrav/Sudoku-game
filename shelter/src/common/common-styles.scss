@@ -75,6 +75,8 @@
     font-weight: normal;
 }
 
+
+
 @mixin roud-btn {
     border-radius: 100px;
     border: 2px solid $primary-color;
@@ -186,6 +188,7 @@ body {
     position: relative;
     z-index: 1;
     box-sizing: border-box;
+    padding-bottom: 30px;
 
     .container {
         @include flex();
@@ -259,11 +262,19 @@ body {
                     color: $color-light-s;
 
                 }
+            }
+        }
 
-                /*            &:active a {
-                    color: $color-light-s;
-                    border-bottom: 3px solid $primary-color;
-                } */
+        .burger {
+            width: 30px;
+            height: 22px;
+            @include flex-column();
+            display: none;
+
+            .burger-line {
+                width: 30px;
+                height: 2px;
+                background-color: $primary-color;
             }
         }
     }
