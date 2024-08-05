@@ -188,6 +188,7 @@ body {
     position: relative;
     z-index: 1;
     box-sizing: border-box;
+    padding-bottom: 30px;
 
     .container {
         @include flex();
@@ -261,11 +262,6 @@ body {
                     color: $color-light-s;
 
                 }
-
-                /*            &:active a {
-                    color: $color-light-s;
-                    border-bottom: 3px solid $primary-color;
-                } */
             }
         }
 

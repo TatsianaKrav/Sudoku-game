@@ -263,8 +263,7 @@
 }
 @media screen and (max-width: 639px) {
   .main.pets-main {
-    padding-top: 72px;
-    padding-bottom: 42px;
+    padding: 42px 0;
   }
   .main.pets-main .container {
     gap: 42px;
@@ -283,7 +282,7 @@
 }
 @media screen and (max-width: 459px) {
   .header {
-    padding: 30px 10px 0 10px;
+    padding: 30px 10px 30px 10px;
   }
   .header .container {
     padding: 0 10px;
