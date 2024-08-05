@@ -40,6 +40,7 @@ body {
   position: relative;
   z-index: 1;
   box-sizing: border-box;
+  padding-bottom: 30px;
 }
 .header .container {
   display: flex;
@@ -82,10 +83,6 @@ body {
 }
 .header .container .menu-list .menu-item {
   transition: 0.5s;
-  /*            &:active a {
-      color: $color-light-s;
-      border-bottom: 3px solid $primary-color;
-  } */
 }
 .header .container .menu-list .menu-item a {
   text-decoration: none;
@@ -107,6 +104,19 @@ body {
 }
 .header .container .menu-list .menu-item:hover:not(.active) a {
   color: #FAFAFA;
+}
+.header .container .burger {
+  width: 30px;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  display: none;
+}
+.header .container .burger .burger-line {
+  width: 30px;
+  height: 2px;
+  background-color: #F1CDB3;
 }
 
 .footer {
