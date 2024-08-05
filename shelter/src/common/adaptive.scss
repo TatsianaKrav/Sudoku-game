@@ -145,6 +145,32 @@
     }
 
     .main {
+
+        &.pets-main {
+            padding-top: 80px;
+            padding-bottom: 76px;
+
+            .container {
+                gap: 30px;
+
+                .friends {
+                    padding: 0;
+                    gap: 30px 40px;
+                    justify-content: center;
+
+                    .card {
+                        &:nth-child(n+7) {
+                            display: none;
+                        }
+                    }
+                }
+
+                .pagination {
+                    margin-top: 10px;
+                }
+            }
+        }
+
         .container {
             .main-description {
                 align-items: center;

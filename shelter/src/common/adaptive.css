@@ -88,6 +88,24 @@
   .container {
     padding: 0 30px;
   }
+  .main.pets-main {
+    padding-top: 80px;
+    padding-bottom: 76px;
+  }
+  .main.pets-main .container {
+    gap: 30px;
+  }
+  .main.pets-main .container .friends {
+    padding: 0;
+    gap: 30px 40px;
+    justify-content: center;
+  }
+  .main.pets-main .container .friends .card:nth-child(n+7) {
+    display: none;
+  }
+  .main.pets-main .container .pagination {
+    margin-top: 10px;
+  }
   .main .container .main-description {
     align-items: center;
     padding-bottom: 73px;
