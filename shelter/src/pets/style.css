@@ -83,10 +83,6 @@ body {
 }
 .header .container .menu-list .menu-item {
   transition: 0.5s;
-  /*            &:active a {
-      color: $color-light-s;
-      border-bottom: 3px solid $primary-color;
-  } */
 }
 .header .container .menu-list .menu-item a {
   text-decoration: none;
