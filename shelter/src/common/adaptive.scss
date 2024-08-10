@@ -10,13 +10,19 @@
 
 @media screen and (max-width: 1279px) {
     .main {
-        .container {
-            .main-image {
-                width: 50%;
 
-                img {
-                    width: 100%;
+        &.pets-main{
+            .container {
+                .friends {
+                    justify-content: center;
                 }
+            }
+        }
+        .container {
+
+            .main-description {
+                width: 460px;
+                max-width: 100%;
             }
         }
     }
@@ -51,33 +57,7 @@
 }
 
 @media screen and (max-width: 1083px) {
-    .main {
-        padding-top: 150px;
 
-        .container {
-            flex-direction: column;
-            gap: 27px;
-
-            .main-description {
-                align-items: center;
-                text-align: center;
-            }
-
-            .main-image {
-                max-height: 593px;
-                max-width: 569px;
-                width: 100%;
-
-                img {
-                    width: 100%;
-                }
-            }
-
-            .friends {
-                justify-content: center;
-            }
-        }
-    }
 
     .footer {
         padding: 30px 30px 0 30px;
@@ -118,6 +98,36 @@
 
 
 @media screen and (max-width: 886px) {
+
+    .main {
+        padding-top: 150px;
+
+        .container {
+            flex-direction: column;
+            gap: 27px;
+
+            .main-description {
+                align-items: center;
+                text-align: center;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .main-image {
+                max-height: 593px;
+                max-width: 569px;
+                width: 100%;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .friends {
+                justify-content: center;
+            }
+        }
+    }
     .help {
         .container {
             .help-items {
@@ -177,6 +187,7 @@
 
         .container {
             .main-description {
+                max-width: 460px;
                 align-items: center;
                 padding-bottom: 73px;
 
@@ -443,8 +454,8 @@
 
             .help-items {
                 gap: 30px;
-                justify-content: flex-start;
-
+               /*  justify-content: flex-start;
+ */
                 .help-item {
                     max-width: 130px;
                     gap: 20px;
@@ -471,7 +482,7 @@
     }
 
     .donation {
-        padding: 42px 10px;
+        padding: 41px 10px;
 
         .container {
             padding: 0 10px;
@@ -557,6 +568,14 @@
                 img {
                     width: 100%;
                 }
+            }
+        }
+    }
+
+    .help {
+        .container {
+            .help-items {
+                justify-content: flex-start;
             }
         }
     }
