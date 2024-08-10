@@ -83,10 +83,6 @@ body {
 }
 .header .container .menu-list .menu-item {
   transition: 0.5s;
-  /*            &:active a {
-      color: $color-light-s;
-      border-bottom: 3px solid $primary-color;
-  } */
 }
 .header .container .menu-list .menu-item a {
   text-decoration: none;
@@ -248,7 +244,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
   gap: 42px;
 }
 .main .container .main-description {
@@ -270,6 +265,7 @@ body {
 .main .container .main-description .main-text {
   color: #CDCDCD;
   line-height: 160%;
+  width: 100%;
 }
 .main .container .main-description .main-btn {
   width: 207px;
@@ -301,6 +297,9 @@ body {
 }
 .main .container .main-image {
   display: flex;
+}
+.main .container .main-image img {
+  width: 100%;
 }
 
 .about {
