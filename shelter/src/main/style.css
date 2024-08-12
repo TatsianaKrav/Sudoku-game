@@ -118,6 +118,9 @@ body {
   height: 2px;
   background-color: #F1CDB3;
 }
+.header .container .burger.pets .burger-line {
+  background-color: #000;
+}
 
 .footer {
   background: url(../../assets/images/noise.png), radial-gradient(circle at top left, #5B483A, #262425 85%);

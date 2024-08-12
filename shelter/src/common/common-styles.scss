@@ -274,7 +274,13 @@ body {
             .burger-line {
                 width: 30px;
                 height: 2px;
-                background-color: $primary-color;
+                background-color: $primary-color
+            }
+
+            &.pets {
+                .burger-line {
+                    background-color: #000;   
+                }
             }
         }
     }
