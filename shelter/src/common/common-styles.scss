@@ -274,12 +274,16 @@ body {
             .burger-line {
                 width: 30px;
                 height: 2px;
-                background-color: $primary-color
+                background-color: $primary-color;
             }
+        }
+    }
 
-            &.pets {
+    &.pets-header {
+        .container {
+            .burger {
                 .burger-line {
-                    background-color: #000;   
+                    background-color: #000;
                 }
             }
         }
