@@ -118,7 +118,7 @@ body {
   height: 2px;
   background-color: #F1CDB3;
 }
-.header .container .burger.pets .burger-line {
+.header.pets-header .container .burger .burger-line {
   background-color: #000;
 }
 
