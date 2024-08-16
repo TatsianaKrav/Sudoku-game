@@ -13,13 +13,17 @@ function handleBurger() {
         }
 
         document.querySelectorAll("#menu-list *").forEach((item) => {
-            item.onclick = () => {
-                menu.classList.remove("active");
-                burger.classList.remove("active");
-                document.getElementsByTagName("body")[0].style.overflowY = "auto";
-            };
+            item.addEventListener('click', () => hideMenu(menu, burger));
         });
     }
+
+    menu.addEventListener('click', () => hideMenu(menu, burger));
+}
+
+function hideMenu(elem1, elem2) {
+    elem1.classList.remove("active");
+    elem2.classList.remove("active");
+    document.getElementsByTagName("body")[0].style.overflowY = "auto";
 }
 
 handleBurger();
