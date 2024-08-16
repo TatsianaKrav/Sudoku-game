@@ -75,16 +75,16 @@ body {
 .header .container .logo:hover h1 {
   color: #fddcc4;
 }
-.header .container .menu-list {
+.header .container .menu .menu-list {
   list-style: none;
   display: flex;
   gap: 35px;
   padding-bottom: 3px;
 }
-.header .container .menu-list .menu-item {
+.header .container .menu .menu-list .menu-item {
   transition: 0.5s;
 }
-.header .container .menu-list .menu-item a {
+.header .container .menu .menu-list .menu-item a {
   text-decoration: none;
   color: #CDCDCD;
   line-height: 115%;
@@ -94,7 +94,7 @@ body {
   transition: 0.3s;
   box-sizing: border-box;
 }
-.header .container .menu-list .menu-item.active a {
+.header .container .menu .menu-list .menu-item.active a {
   cursor: default;
   pointer-events: none;
   color: #FAFAFA;
@@ -102,7 +102,7 @@ body {
   padding-bottom: 3px;
   box-sizing: border-box;
 }
-.header .container .menu-list .menu-item:hover:not(.active) a {
+.header .container .menu .menu-list .menu-item:hover:not(.active) a {
   color: #FAFAFA;
 }
 .header .container .burger {
@@ -112,11 +112,15 @@ body {
   flex-direction: column;
   justify-content: space-between;
   display: none;
+  transition: all 0.7s ease;
 }
 .header .container .burger .burger-line {
   width: 30px;
   height: 2px;
   background-color: #F1CDB3;
+}
+.header .container .burger.active {
+  transform: rotate(90deg);
 }
 .header.pets-header .container .burger .burger-line {
   background-color: #000;

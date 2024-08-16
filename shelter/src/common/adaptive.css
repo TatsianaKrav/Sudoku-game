@@ -1,4 +1,4 @@
-@import url("../common/common-styles.scss");
+@import url("./common-styles.scss");
 @media screen and (max-width: 1279px) {
   .main.pets-main .container .friends {
     justify-content: center;
@@ -136,11 +136,42 @@
   }
 }
 @media screen and (max-width: 767px) {
+  .header .container {
+    position: relative;
+  }
   .header .container .menu {
-    display: none;
+    opacity: 0;
+    top: 0;
+    right: -320px;
+    z-index: 5;
+    transition: all 0.5s ease;
+    position: fixed;
+    width: 320px;
+    height: 100dvh;
+    /*    background-color: $color-dark-3xl; */
+    background-color: #292929;
+    padding: 252px 38px 0 38px;
+    box-sizing: border-box;
+    transition: all 0.5s ease;
+  }
+  .header .container .menu .menu-list .menu-item {
+    font-size: 32px;
+    line-height: 160%;
+    letter-spacing: 0;
+  }
+  .header .container .menu.active {
+    opacity: 1;
+    transform: translateX(-320px);
+  }
+  .header .container .menu.active .menu-list {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
   }
   .header .container .burger {
     display: flex;
+    z-index: 100;
   }
   .main .container .main-description .main-title {
     font-family: Georgia-Regular, sans-serif;
