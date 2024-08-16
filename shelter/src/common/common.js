@@ -11,6 +11,14 @@ function handleBurger() {
         } else {
             document.getElementsByTagName("body")[0].style.overflowY = "auto";
         }
+
+        document.querySelectorAll("#menu-list *").forEach((item) => {
+            item.onclick = () => {
+                menu.classList.remove("active");
+                burger.classList.remove("active");
+                document.getElementsByTagName("body")[0].style.overflowY = "auto";
+            };
+        });
     }
 }
 
