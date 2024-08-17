@@ -419,10 +419,12 @@ body {
   background-color: rgba(0, 0, 0, 0.8);
   top: 0;
   left: 0;
-  z-index: 2;
+  /*   z-index: 2; */
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 0;
+  visibility: hidden;
 }
 .main .container .modal-wrapper .modal-window {
   padding-right: 20px;
