@@ -257,13 +257,13 @@ body {
 .header .container .logo:hover h1 {
   color: #545454;
 }
-.header .container .menu-list .menu-item a {
+.header .container .menu .menu-list .menu-item a {
   color: #545454;
 }
-.header .container .menu-list .menu-item.active a {
+.header .container .menu .menu-list .menu-item.active a {
   color: #292929;
 }
-.header .container .menu-list .menu-item:hover:not(.active) a {
+.header .container .menu .menu-list .menu-item:hover:not(.active) a {
   color: #292929;
 }
 
@@ -419,7 +419,7 @@ body {
   background-color: rgba(0, 0, 0, 0.8);
   top: 0;
   left: 0;
-  /*   z-index: 2; */
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
