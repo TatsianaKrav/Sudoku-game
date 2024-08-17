@@ -1,7 +1,9 @@
-function handleBurger() {
+const body = document.getElementsByTagName("body")[0];
+
+function handleBurger(body) {
     const burger = document.getElementsByClassName('burger')[0];
     const menu = document.getElementsByClassName('menu')[0];
-    const body = document.getElementsByTagName("body")[0];
+
 
     burger.onclick = () => {
         burger.classList.toggle('active');
@@ -27,4 +29,20 @@ function hideMenu(elem1, elem2, elem3) {
     elem3.style.overflowY = "auto";
 }
 
-handleBurger();
+function openPopup() {
+    const cards = document.querySelectorAll('.card');
+
+
+    cards.forEach(item => {
+        item.onclick = () => {
+            const modal = document.querySelector('.modal-wrapper');
+            modal.style.opacity = '1';
+            modal.style.visibility = 'visible';
+
+            body.style.overflowY = "hidden";
+        }
+    })
+}
+
+handleBurger(body);
+openPopup();
