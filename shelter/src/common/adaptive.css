@@ -144,12 +144,12 @@
     opacity: 0;
     top: 0;
     height: 100dvh;
-    z-index: 5;
     position: fixed;
     transition: all 0.5s ease;
     width: 100dvw;
     background-color: rgba(0, 0, 0, 0.8);
     left: 0;
+    z-index: -1;
   }
   .header .container .menu .menu-list {
     position: fixed;
@@ -168,7 +168,7 @@
   }
   .header .container .menu.active {
     opacity: 1;
-    /*  transform: translateX(-320px); */
+    z-index: 5;
   }
   .header .container .menu.active .menu-list {
     flex-direction: column;
