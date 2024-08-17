@@ -24,6 +24,11 @@
     src: url(../../assets/fonts/georgia-italic.ttf);
 }
 
+@font-face {
+    font-family: Georgia-Bold;
+    src: url(../../assets/fonts/georgia-bold.ttf);
+}
+
 @mixin flex {
     display: flex;
     align-items: center;
