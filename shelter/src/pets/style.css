@@ -416,7 +416,7 @@ body {
   position: fixed;
   width: 100dvw;
   height: 100dvh;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(41, 41, 41, 0.6);
   top: 0;
   left: 0;
   z-index: 2;

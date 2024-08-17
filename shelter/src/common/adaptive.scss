@@ -184,6 +184,38 @@
                 .pagination {
                     margin-top: 10px;
                 }
+
+                .modal-wrapper {
+                    .modal-window {
+                        max-width: 630px;
+                        padding: 0;
+
+                        .modal-image {
+                            margin-bottom: -40px;
+                            padding-left: 16px;
+
+                            img {
+                                width: 95%;
+                            }
+                        }
+
+                        .modal-info {
+                            padding: 10px 9px 38px 0;
+                            max-width: 261px;
+
+                            .pet-description {
+                                margin: 20px 0;
+                                font-size: 13px;
+                            }
+
+                            .pet-info {
+                                ul {
+                                    gap: 6px;
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
 
@@ -221,6 +253,12 @@
             .pets-cards-wrapper {
                 gap: 12px;
             }
+
+            .modal-wrapper {
+                .modal-window {
+                    max-width: 630px;
+                }
+            }
         }
     }
 }
@@ -240,7 +278,7 @@
                 position: fixed;
                 transition: all 0.5s ease;
                 width: 100dvw;
-                background-color: rgba(0, 0, 0, 0.8);
+                background-color: rgba(41, 41, 41, 0.6);
                 left: 0;
                 z-index: -1;
 

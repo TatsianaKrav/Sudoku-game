@@ -112,6 +112,28 @@
   .main.pets-main .container .pagination {
     margin-top: 10px;
   }
+  .main.pets-main .container .modal-wrapper .modal-window {
+    max-width: 630px;
+    padding: 0;
+  }
+  .main.pets-main .container .modal-wrapper .modal-window .modal-image {
+    margin-bottom: -40px;
+    padding-left: 16px;
+  }
+  .main.pets-main .container .modal-wrapper .modal-window .modal-image img {
+    width: 95%;
+  }
+  .main.pets-main .container .modal-wrapper .modal-window .modal-info {
+    padding: 10px 9px 38px 0;
+    max-width: 261px;
+  }
+  .main.pets-main .container .modal-wrapper .modal-window .modal-info .pet-description {
+    margin: 20px 0;
+    font-size: 13px;
+  }
+  .main.pets-main .container .modal-wrapper .modal-window .modal-info .pet-info ul {
+    gap: 6px;
+  }
   .main .container .main-description {
     max-width: 460px;
     align-items: center;
@@ -134,6 +156,9 @@
   .pets .container .pets-cards-wrapper {
     gap: 12px;
   }
+  .pets .container .modal-wrapper .modal-window {
+    max-width: 630px;
+  }
 }
 @media screen and (max-width: 767px) {
   .header .container {
@@ -147,7 +172,7 @@
     position: fixed;
     transition: all 0.5s ease;
     width: 100dvw;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(41, 41, 41, 0.6);
     left: 0;
     z-index: -1;
   }
