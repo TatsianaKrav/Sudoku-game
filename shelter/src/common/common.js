@@ -55,6 +55,7 @@ function closePopup(modal) {
 }
 
 function openPopup(modal) {
+    console.log(modal);
     modal.style.opacity = '1';
     modal.style.visibility = 'visible';
     body.style.overflowY = "hidden";

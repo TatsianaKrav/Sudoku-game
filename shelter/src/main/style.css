@@ -20,6 +20,10 @@
   font-family: Georgia-Italic;
   src: url(../../assets/fonts/georgia-italic.ttf);
 }
+@font-face {
+  font-family: Georgia-Bold;
+  src: url(../../assets/fonts/georgia-bold.ttf);
+}
 html {
   scroll-behavior: smooth;
 }
@@ -486,6 +490,120 @@ body {
 }
 .pets .container .pets-btn:hover {
   background-color: #fddcc4;
+}
+.pets .container .modal-wrapper {
+  position: fixed;
+  width: 100dvw;
+  height: 100dvh;
+  background-color: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.7s ease;
+}
+.pets .container .modal-wrapper .modal-window {
+  padding-right: 20px;
+  padding-bottom: 2px;
+  max-width: 900px;
+  max-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background-color: #FAFAFA;
+  position: fixed;
+  z-index: 10;
+  border-radius: 9px;
+  box-sizing: border-box;
+  /* &:hover {
+      box-shadow: 0 2px 35px 14px rgba(13, 13, 13, 0.04);
+  } */
+}
+.pets .container .modal-wrapper .modal-window .modal-image {
+  padding-left: 17px;
+  margin-bottom: -60px;
+}
+.pets .container .modal-wrapper .modal-window .modal-image img {
+  width: 92%;
+}
+.pets .container .modal-wrapper .modal-window .modal-info {
+  padding-top: 50px;
+  padding-bottom: 88px;
+  color: #000000;
+  max-width: 351px;
+  font-family: Georgia-Regular, sans-serif;
+}
+.pets .container .modal-wrapper .modal-window .modal-info .pet-name {
+  font-family: Georgia-Regular, sans-serif;
+  font-size: 35px;
+  line-height: 129%;
+  letter-spacing: 0.06em;
+  color: #545454;
+  font-weight: normal;
+  color: #000000;
+  margin-bottom: 10px;
+}
+.pets .container .modal-wrapper .modal-window .modal-info span {
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+}
+.pets .container .modal-wrapper .modal-window .modal-info .pet-description {
+  margin: 40px 0;
+  font-size: 15px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+}
+.pets .container .modal-wrapper .modal-window .modal-info .pet-info ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.pets .container .modal-wrapper .modal-window .modal-info .pet-info ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+}
+.pets .container .modal-wrapper .modal-window .modal-info .pet-info ul li img {
+  padding-right: 10px;
+}
+.pets .container .modal-wrapper .modal-window .modal-info .pet-info ul li span {
+  font-family: Georgia-Bold, sans-serif;
+  font-size: 15px;
+  line-height: 110%;
+  letter-spacing: 0.05em;
+  position: relative;
+}
+.pets .container .modal-wrapper .modal-window .modal-info .pet-info ul li p {
+  line-height: 110%;
+  letter-spacing: 0.05em;
+  font-size: 15px;
+}
+.pets .container .modal-wrapper .modal-window .close-btn {
+  border-radius: 100px;
+  border: 2px solid #F1CDB3;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: 0.5s;
+  position: absolute;
+  top: -51px;
+  right: -43px;
+}
+.pets .container .modal-wrapper .modal-window .close-btn:hover {
+  background-color: #fddcc4;
+  border: 2px solid #fddcc4;
 }
 
 .help {
