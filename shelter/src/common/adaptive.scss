@@ -59,6 +59,79 @@
 
 @media screen and (max-width: 1083px) {
 
+    .main {
+        &.pets-main {
+            .container {
+                .modal-wrapper {
+                    .modal-window {
+                        max-width: 630px;
+                        padding: 0;
+
+                        .modal-image {
+                            margin-bottom: -40px;
+                            padding-left: 16px;
+
+                            img {
+                                width: 95%;
+                            }
+                        }
+
+                        .modal-info {
+                            padding: 10px 9px 38px 0;
+                            max-width: 261px;
+
+                            .pet-description {
+                                margin: 20px 0;
+                                font-size: 13px;
+                            }
+
+                            .pet-info {
+                                ul {
+                                    gap: 6px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .pets {
+        .container {
+            .modal-wrapper {
+                .modal-window {
+                    max-width: 630px;
+                    padding: 0;
+
+                    .modal-image {
+                        margin-bottom: -40px;
+                        padding-left: 16px;
+
+                        img {
+                            width: 95%;
+                        }
+                    }
+
+                    .modal-info {
+                        padding: 10px 9px 38px 0;
+                        max-width: 261px;
+
+                        .pet-description {
+                            margin: 20px 0;
+                            font-size: 13px;
+                        }
+
+                        .pet-info {
+                            ul {
+                                gap: 6px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 
     .footer {
         padding: 30px 30px 0 30px;
@@ -184,38 +257,6 @@
                 .pagination {
                     margin-top: 10px;
                 }
-
-                .modal-wrapper {
-                    .modal-window {
-                        max-width: 630px;
-                        padding: 0;
-
-                        .modal-image {
-                            margin-bottom: -40px;
-                            padding-left: 16px;
-
-                            img {
-                                width: 95%;
-                            }
-                        }
-
-                        .modal-info {
-                            padding: 10px 9px 38px 0;
-                            max-width: 261px;
-
-                            .pet-description {
-                                margin: 20px 0;
-                                font-size: 13px;
-                            }
-
-                            .pet-info {
-                                ul {
-                                    gap: 6px;
-                                }
-                            }
-                        }
-                    }
-                }
             }
         }
 
@@ -281,6 +322,7 @@
                 background-color: rgba(41, 41, 41, 0.6);
                 left: 0;
                 z-index: -1;
+                visibility: hidden;
 
                 .menu-list {
                     position: fixed;
@@ -291,6 +333,7 @@
                     box-sizing: border-box;
                     z-index: 4;
                     transition: all 0.5s ease;
+
 
                     .menu-item {
                         font-size: 32px;
@@ -462,6 +505,84 @@
                 img {
                     width: 100%;
                     height: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 727px) {
+    .main {
+        &.pets-main {
+            .container {
+                .modal-wrapper {
+                    .modal-window {
+                        max-width: 240px;
+                        padding: 10px;
+
+                        .modal-image {
+                            display: none;
+                        }
+
+                        .modal-info {
+                            padding: 0;
+                            align-self: center;
+                            text-align: center;
+
+                            .pet-description {
+                                text-align: justify;
+                                margin-bottom: 24px;
+                            }
+
+                            .pet-info {
+                                ul {
+                                    gap: 6px;
+                                }
+                            }
+                        }
+
+                        .close-btn {
+                            top: -53px;
+                            right: -30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .pets {
+        .container {
+            .modal-wrapper {
+                .modal-window {
+                    max-width: 240px;
+                    padding: 10px;
+
+                    .modal-image {
+                        display: none;
+                    }
+
+                    .modal-info {
+                        padding: 0;
+                        align-self: center;
+                        text-align: center;
+
+                        .pet-description {
+                            text-align: justify;
+                            margin-bottom: 24px;
+                        }
+
+                        .pet-info {
+                            ul {
+                                gap: 6px;
+                            }
+                        }
+                    }
+
+                    .close-btn {
+                        top: -53px;
+                        right: -30px;
+                    }
                 }
             }
         }

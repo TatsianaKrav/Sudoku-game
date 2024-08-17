@@ -24,6 +24,50 @@
   }
 }
 @media screen and (max-width: 1083px) {
+  .main.pets-main .container .modal-wrapper .modal-window {
+    max-width: 630px;
+    padding: 0;
+  }
+  .main.pets-main .container .modal-wrapper .modal-window .modal-image {
+    margin-bottom: -40px;
+    padding-left: 16px;
+  }
+  .main.pets-main .container .modal-wrapper .modal-window .modal-image img {
+    width: 95%;
+  }
+  .main.pets-main .container .modal-wrapper .modal-window .modal-info {
+    padding: 10px 9px 38px 0;
+    max-width: 261px;
+  }
+  .main.pets-main .container .modal-wrapper .modal-window .modal-info .pet-description {
+    margin: 20px 0;
+    font-size: 13px;
+  }
+  .main.pets-main .container .modal-wrapper .modal-window .modal-info .pet-info ul {
+    gap: 6px;
+  }
+  .pets .container .modal-wrapper .modal-window {
+    max-width: 630px;
+    padding: 0;
+  }
+  .pets .container .modal-wrapper .modal-window .modal-image {
+    margin-bottom: -40px;
+    padding-left: 16px;
+  }
+  .pets .container .modal-wrapper .modal-window .modal-image img {
+    width: 95%;
+  }
+  .pets .container .modal-wrapper .modal-window .modal-info {
+    padding: 10px 9px 38px 0;
+    max-width: 261px;
+  }
+  .pets .container .modal-wrapper .modal-window .modal-info .pet-description {
+    margin: 20px 0;
+    font-size: 13px;
+  }
+  .pets .container .modal-wrapper .modal-window .modal-info .pet-info ul {
+    gap: 6px;
+  }
   .footer {
     padding: 30px 30px 0 30px;
   }
@@ -112,28 +156,6 @@
   .main.pets-main .container .pagination {
     margin-top: 10px;
   }
-  .main.pets-main .container .modal-wrapper .modal-window {
-    max-width: 630px;
-    padding: 0;
-  }
-  .main.pets-main .container .modal-wrapper .modal-window .modal-image {
-    margin-bottom: -40px;
-    padding-left: 16px;
-  }
-  .main.pets-main .container .modal-wrapper .modal-window .modal-image img {
-    width: 95%;
-  }
-  .main.pets-main .container .modal-wrapper .modal-window .modal-info {
-    padding: 10px 9px 38px 0;
-    max-width: 261px;
-  }
-  .main.pets-main .container .modal-wrapper .modal-window .modal-info .pet-description {
-    margin: 20px 0;
-    font-size: 13px;
-  }
-  .main.pets-main .container .modal-wrapper .modal-window .modal-info .pet-info ul {
-    gap: 6px;
-  }
   .main .container .main-description {
     max-width: 460px;
     align-items: center;
@@ -175,6 +197,7 @@
     background-color: rgba(41, 41, 41, 0.6);
     left: 0;
     z-index: -1;
+    visibility: hidden;
   }
   .header .container .menu .menu-list {
     position: fixed;
@@ -329,6 +352,54 @@
   .footer .container .footer-image img {
     width: 100%;
     height: 100%;
+  }
+}
+@media screen and (max-width: 727px) {
+  .main.pets-main .container .modal-wrapper .modal-window {
+    max-width: 240px;
+    padding: 10px;
+  }
+  .main.pets-main .container .modal-wrapper .modal-window .modal-image {
+    display: none;
+  }
+  .main.pets-main .container .modal-wrapper .modal-window .modal-info {
+    padding: 0;
+    align-self: center;
+    text-align: center;
+  }
+  .main.pets-main .container .modal-wrapper .modal-window .modal-info .pet-description {
+    text-align: justify;
+    margin-bottom: 24px;
+  }
+  .main.pets-main .container .modal-wrapper .modal-window .modal-info .pet-info ul {
+    gap: 6px;
+  }
+  .main.pets-main .container .modal-wrapper .modal-window .close-btn {
+    top: -53px;
+    right: -30px;
+  }
+  .pets .container .modal-wrapper .modal-window {
+    max-width: 240px;
+    padding: 10px;
+  }
+  .pets .container .modal-wrapper .modal-window .modal-image {
+    display: none;
+  }
+  .pets .container .modal-wrapper .modal-window .modal-info {
+    padding: 0;
+    align-self: center;
+    text-align: center;
+  }
+  .pets .container .modal-wrapper .modal-window .modal-info .pet-description {
+    text-align: justify;
+    margin-bottom: 24px;
+  }
+  .pets .container .modal-wrapper .modal-window .modal-info .pet-info ul {
+    gap: 6px;
+  }
+  .pets .container .modal-wrapper .modal-window .close-btn {
+    top: -53px;
+    right: -30px;
   }
 }
 @media screen and (max-width: 639px) {

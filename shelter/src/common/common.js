@@ -11,8 +11,10 @@ function handleBurger(body) {
 
         if (burger.classList.contains("active")) {
             body.style.overflowY = "hidden";
+            menu.style.visibility = 'visible';
         } else {
             body.style.overflowY = "auto";
+            menu.style.visibility = 'hidden';
         }
 
         document.querySelectorAll("#menu-list *").forEach((item) => {
