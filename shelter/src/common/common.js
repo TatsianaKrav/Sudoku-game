@@ -64,7 +64,6 @@ function closePopup(modal) {
 }
 
 function openPopup(modal) {
-    console.log(modal);
     modal.style.opacity = '1';
     modal.style.visibility = 'visible';
     body.style.overflowY = "hidden";
@@ -75,6 +74,44 @@ function hidePopup(modal) {
     modal.style.visibility = 'hidden';
     body.style.overflowY = "auto";
 }
+
+
+function showCard() {
+    const fiendsCards = document.querySelector('.friends');
+    const petsCards = document.querySelector('.pets-cards');
+
+    createCard(fiendsCards);
+    createCard(petsCards);
+}
+
+function createCard(parent) {
+    if (!parent) return false;
+
+    pets.forEach(pet => {
+
+        let pathToImg = `../../assets/images/pets/pets-${pet.name.toLowerCase()}.png`;
+        console.log(pathToImg);
+
+        const card = createElement('div', 'card', '');
+        card.setAttribute('data-name', pet.name);
+
+        const image = createElement('div', 'pet-image', '');
+        const img = createElement('img', '', '');
+        img.setAttribute('src', pathToImg);
+        img.setAttribute('alt', pet.name);
+        image.append(img);
+
+        const petName = createElement('div', 'pet-name', pet.name);
+        const button = createElement('button', 'pet-btn btn', 'Learn more');
+
+        card.append(image, petName, button);
+
+        parent.append(card);
+    })
+
+
+}
+
 
 function createElement(tagName, className, text) {
     const element = document.createElement(tagName);
@@ -89,22 +126,22 @@ function capitalize(str) {
 }
 
 function createPopup(element, pet, petImgPath) {
-    const modalWindow = createElement('div', 'modal-window');
+    const modalWindow = createElement('div', 'modal-window', '');
     element.appendChild(modalWindow);
 
-    const modalImage = createElement('div', 'modal-image');
-    const modalInfo = createElement('div', 'modal-info');
-    const closeBtn = createElement('div', 'close-btn');
+    const modalImage = createElement('div', 'modal-image', '');
+    const modalInfo = createElement('div', 'modal-info', '');
+    const closeBtn = createElement('div', 'close-btn', '');
     modalWindow.append(modalImage, modalInfo, closeBtn);
 
     const image = createElement('img');
-    image.setAttribute = ('src', petImgPath);
-    image.setAttribute = ('alt', `${pet.name}`);
+    image.setAttribute = ('src', petImgPath, '');
+    image.setAttribute = ('alt', `${pet.name}`, '');
     modalImage.appendChild(image);
 
-    const petName = createElement('p', "pet-name", `${pet.name}`);
-    const petSpan = createElement('span', '', `${pet.type} - ${pet.breed}`);
-    const petDescription = createElement('p', "pet-description", `${pet.description}`);
+    const petName = createElement('p', "pet-name", `${pet.name}`, '');
+    const petSpan = createElement('span', '', `${pet.type} - ${pet.breed}`, '');
+    const petDescription = createElement('p', "pet-description", `${pet.description}`, '');
     const petInfo = createElement('div', "pet-info");
     const ulList = createElement('ul');
 
@@ -113,9 +150,9 @@ function createPopup(element, pet, petImgPath) {
         const info = ['age', 'inoculations', 'diseases', 'parasites'];
         let petField = info[i];
 
-        const liElem = createElement('li');
+        const liElem = createElement('li', '', '');
 
-        const image = createElement('img');
+        const image = createElement('img', '', '');
         image.setAttribute('src', "../../assets/images/dot.png");
         image.setAttribute('alt', 'dot');
 
@@ -138,5 +175,9 @@ function createPopup(element, pet, petImgPath) {
     return element;
 }
 
+
+showCard();
 handleBurger(body);
-handlePopup(); 
+handlePopup();
+
+
