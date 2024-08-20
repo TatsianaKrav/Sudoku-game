@@ -1,4 +1,5 @@
 import pets from "../../data/pets.json" with {type: 'json'}
+import { capitalize, createElement } from '../utilities/utilities.js'
 
 
 const body = document.getElementsByTagName("body")[0];
@@ -105,24 +106,8 @@ function createCard(parent) {
         const button = createElement('button', 'pet-btn btn', 'Learn more');
 
         card.append(image, petName, button);
-
         parent.append(card);
     })
-
-
-}
-
-
-function createElement(tagName, className, text) {
-    const element = document.createElement(tagName);
-    element.className = className;
-    element.innerText = text;
-
-    return element;
-}
-
-function capitalize(str) {
-    return str[0].toUpperCase() + str.slice(1);
 }
 
 function createPopup(element, pet, petImgPath) {
