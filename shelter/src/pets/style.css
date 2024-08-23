@@ -488,7 +488,7 @@ body {
 }
 .main .container .modal-wrapper .modal-window .modal-info .pet-info ul li {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: center;
   align-self: flex-start;
 }

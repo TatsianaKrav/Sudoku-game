@@ -35,17 +35,13 @@ function hideMenu(elem1, elem2) {
     body.style.overflowY = "auto";
 }
 
-function handlePopup(elem) {
+function handlePopup() {
     const cards = document.querySelectorAll('.card');
     const modal = document.querySelector('.modal-wrapper');
-    const pet = pets.find(pet => pet.name === elem.dataset.name); // !!! set
-    const petImgPath = `../../assets/images/pets-modal${pet.name}`;
-
-    createPopup(modal, pet, petImgPath);
-
 
     cards.forEach(item => {
-        item.onclick = () => {
+        item.onclick = (e) => {
+            createPopup(modal, e.currentTarget);
             openPopup(modal);
         }
     })
@@ -91,7 +87,6 @@ function createCard(parent) {
     pets.forEach(pet => {
 
         let pathToImg = `../../assets/images/pets/pets-${pet.name.toLowerCase()}.png`;
-        console.log(pathToImg);
 
         const card = createElement('div', 'card', '');
         card.setAttribute('data-name', pet.name);
@@ -110,7 +105,10 @@ function createCard(parent) {
     })
 }
 
-function createPopup(element, pet, petImgPath) {
+function createPopup(element, elementTarget) {
+    const pet = pets.find(pet => pet.name === elementTarget.dataset.name);
+    const petImgPath = `../../assets/images/pets-modal/${pet.name.toLowerCase()}.png`;
+
     const modalWindow = createElement('div', 'modal-window', '');
     element.appendChild(modalWindow);
 
@@ -119,16 +117,16 @@ function createPopup(element, pet, petImgPath) {
     const closeBtn = createElement('div', 'close-btn', '');
     modalWindow.append(modalImage, modalInfo, closeBtn);
 
-    const image = createElement('img');
-    image.setAttribute = ('src', petImgPath, '');
-    image.setAttribute = ('alt', `${pet.name}`, '');
+    const image = createElement('img', '', '');
+    image.setAttribute("src", petImgPath);
+    image.setAttribute("alt", `${pet.name}`);
     modalImage.appendChild(image);
 
     const petName = createElement('p', "pet-name", `${pet.name}`, '');
     const petSpan = createElement('span', '', `${pet.type} - ${pet.breed}`, '');
     const petDescription = createElement('p', "pet-description", `${pet.description}`, '');
-    const petInfo = createElement('div', "pet-info");
-    const ulList = createElement('ul');
+    const petInfo = createElement('div', "pet-info", '');
+    const ulList = createElement('ul', '', '');
 
 
     for (let i = 0; i < 4; i++) {
@@ -141,8 +139,8 @@ function createPopup(element, pet, petImgPath) {
         image.setAttribute('src', "../../assets/images/dot.png");
         image.setAttribute('alt', 'dot');
 
-        const spanElem = createElement('span', '', capitalize(petField) + ": ");
-        const pInfo = createElement('p', '', pet[petField]);
+        const spanElem = createElement('span', '', capitalize(petField) + `: ${'\u00A0'}`);
+        const pInfo = createElement('p', '', `  ${pet[petField]}`);
         liElem.append(image, spanElem, pInfo);
         ulList.appendChild(liElem);
     }
