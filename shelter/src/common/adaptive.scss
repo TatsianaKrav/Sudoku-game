@@ -311,7 +311,6 @@
             position: relative;
 
             .menu {
-                /*    background-color: $color-dark-3xl; */
 
                 opacity: 0;
                 top: 0;
@@ -329,7 +328,6 @@
                     right: -320px;
                     width: 320px;
                     background-color: #292929;
-                    padding: 252px 38px 0 38px;
                     box-sizing: border-box;
                     z-index: 4;
                     transition: all 0.5s ease;
@@ -339,6 +337,12 @@
                         font-size: 32px;
                         line-height: 160%;
                         letter-spacing: 0;
+
+                        &.active {
+                            a {
+                                color: #FAFAFA;//color-ligth-s
+                            }
+                        }
                     }
                 }
 
@@ -357,6 +361,8 @@
                         opacity: 1;
                         height: 100dvh;
                         transform: translateX(-320px);
+
+
                     }
                 }
             }

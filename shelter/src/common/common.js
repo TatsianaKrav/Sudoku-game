@@ -32,6 +32,7 @@ function handleBurger(body) {
 function hideMenu(elem1, elem2) {
     elem1.classList.remove("active");
     elem2.classList.remove("active");
+    elem1.style.visibility = 'hidden';
     body.style.overflowY = "auto";
 }
 
@@ -136,7 +137,7 @@ function createPopup(element, elementTarget) {
         image.setAttribute('alt', 'dot');
 
         const spanElem = createElement('span', '', capitalize(petField) + `: ${'\u00A0'}`);
-        const pInfo = createElement('p', '', `  ${pet[petField]}`);
+        const pInfo = createElement('p', '', `  ${pet[petField]}`); // Добавить пробелы
         liElem.append(image, spanElem, pInfo);
         ulList.appendChild(liElem);
     }
