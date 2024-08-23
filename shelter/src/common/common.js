@@ -46,18 +46,12 @@ function handlePopup() {
         }
     })
 
-    closePopup(modal);
-}
-
-function closePopup(modal) {
-    const closeBtn = document.querySelector('.close-btn');
-    closeBtn.addEventListener('click', () => hidePopup(modal));
-
     modal.onclick = (e) => {
         if (e.target === modal) {
             hidePopup(modal);
         }
     }
+
 }
 
 function openPopup(modal) {
@@ -116,6 +110,8 @@ function createPopup(element, elementTarget) {
     const modalInfo = createElement('div', 'modal-info', '');
     const closeBtn = createElement('div', 'close-btn', '');
     modalWindow.append(modalImage, modalInfo, closeBtn);
+
+    closeBtn.addEventListener('click', () => hidePopup(element));
 
     const image = createElement('img', '', '');
     image.setAttribute("src", petImgPath);
