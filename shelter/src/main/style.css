@@ -380,6 +380,7 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 53px;
+  overflow-x: hidden;
 }
 .pets .container .pets-cards-wrapper .narrow {
   border-radius: 100px;
@@ -460,6 +461,9 @@ body {
 .pets .container .pets-cards-wrapper .pets-cards .card:hover .pet-btn {
   background-color: #fddcc4;
   border: 2px solid #fddcc4;
+}
+.pets .container .pets-cards-wrapper .pets-cards .card:nth-child(n+4) {
+  display: none;
 }
 .pets .container .pets-btn {
   width: 261px;

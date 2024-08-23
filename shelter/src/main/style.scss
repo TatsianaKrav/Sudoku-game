@@ -116,6 +116,7 @@
         .pets-cards-wrapper {
             @include flex();
             gap: 53px;
+            overflow-x: hidden;
 
             .narrow {
                 @include roud-btn();
@@ -125,8 +126,13 @@
                 @include flex();
                 gap: 90px;
 
+
                 .card {
                     @include card();
+
+                    &:nth-child(n+4) {
+                        display: none;
+                    }
                 }
             }
         }
