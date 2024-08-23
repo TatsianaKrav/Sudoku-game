@@ -1,8 +1,29 @@
 import pets from "../../data/pets.json" with {type: 'json'}
 import { capitalize, createElement } from '../utilities/utilities.js'
 
+window.onload = () => {
+    showCard();
+    handleBurger(body);
+    handlePopup();
+    
+        let links = document.querySelectorAll('.menu-item a');
+        links.forEach(link => {
+            link.addEventListener('click', (e) => goTo(e, link));
+        })
+}
+
 
 const body = document.getElementsByTagName("body")[0];
+
+function goTo(e, link) {
+    e.preventDefault();
+    setTimeout(onAnimationComplete, 1000, link);
+}
+
+function onAnimationComplete(link) {
+    window.location = link.href;
+    console.log(link.href);
+}
 
 function handleBurger(body) {
     const burger = document.getElementsByClassName('burger')[0];
@@ -29,7 +50,15 @@ function handleBurger(body) {
     menu.addEventListener('click', () => hideMenu(menu, burger));
 }
 
+
+
 function hideMenu(elem1, elem2) {
+  /*   setTimeout(removeActive, 1000);
+
+    function removeActive(elem1) {
+        elem1.classList.remove("active");
+    } */
+
     elem1.classList.remove("active");
     elem2.classList.remove("active");
     elem1.style.visibility = 'hidden';
@@ -156,8 +185,8 @@ function createPopup(element, elementTarget) {
 }
 
 
-showCard();
-handleBurger(body);
-handlePopup();
+
+
+
 
 

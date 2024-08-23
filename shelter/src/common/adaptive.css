@@ -191,7 +191,7 @@
     top: 0;
     height: 100dvh;
     position: fixed;
-    transition: all 0.5s ease;
+    transition: all 0.7s ease;
     width: 100dvw;
     background-color: rgba(41, 41, 41, 0.6);
     left: 0;
@@ -205,7 +205,14 @@
     background-color: #292929;
     box-sizing: border-box;
     z-index: 4;
-    transition: all 0.5s ease;
+    transition: all 0.7s ease;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    opacity: 1;
+    height: 100dvh;
+    transform: translateX(-320px);
   }
   .header .container .menu .menu-list .menu-item {
     font-size: 32px;
@@ -218,15 +225,6 @@
   .header .container .menu.active {
     opacity: 1;
     z-index: 5;
-  }
-  .header .container .menu.active .menu-list {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    opacity: 1;
-    height: 100dvh;
-    transform: translateX(-320px);
   }
   .header .container .burger {
     display: flex;
