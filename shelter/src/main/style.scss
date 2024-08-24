@@ -115,7 +115,8 @@
 
         .pets-cards-wrapper {
             @include flex();
-            gap: 53px;
+            width: 100%;
+            /*  gap: 53px; */
             overflow-x: hidden;
 
             .narrow {
@@ -123,17 +124,36 @@
             }
 
             .pets-cards {
-                @include flex();
-                gap: 90px;
+                width: 990px;
+                overflow-x: hidden;
 
+                .pets-sliders {
+                    @include flex();
+                    gap: 90px;
+                    position: relative;
+                    width: 300%;
+                    left: -100%;
 
-                .card {
-                    @include card();
+                    .slider-left,
+                    .slider-active,
+                    .slider-right {
+                        @include flex();
+                    /*     gap: 90px; */
 
-                    &:nth-child(n+4) {
-                        display: none;
+                        .card {
+                            @include card();
+
+                            /*  &:nth-child(n+4) {
+                                display: none;
+                            } */
+                        }
                     }
+
+
                 }
+
+
+
             }
         }
 
@@ -384,3 +404,21 @@
         }
     }
 }
+/* 
+@keyframes slide-right {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: -200%;
+    }
+  }
+
+  @keyframes slide-left {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 0;
+    }
+  } */

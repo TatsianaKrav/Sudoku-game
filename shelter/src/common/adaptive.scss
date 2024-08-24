@@ -37,19 +37,24 @@
     }
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1180px) {
     .pets {
         .container {
             .pets-cards-wrapper {
                 gap: 20px;
 
                 .pets-cards {
-                    gap: 40px;
-                    justify-content: center;
+                    width: 580px;
 
-                    .card:nth-child(3) {
-                        display: none;
+                    .pets-sliders {
+                        gap: 40px;
+                        /*   justify-content: center; */
+
+                        .card:nth-child(3) {
+                            display: none;
+                        }
                     }
+
                 }
             }
         }
@@ -348,7 +353,7 @@
 
                         &.active {
                             a {
-                                color: #FAFAFA;//color-ligth-s
+                                color: #FAFAFA; //color-ligth-s
                             }
                         }
                     }
@@ -407,16 +412,24 @@
 
             .pets-cards-wrapper {
                 position: relative;
+                justify-content: center;
 
                 .pets-cards {
+                    width: 320px;
 
-                    .card {
-                        margin-bottom: 72px;
+                    .pets-sliders {
+                        justify-content: center;
+
+                        .card {
+                            margin-bottom: 72px;
+                        }
+
+                        .card:not(:first-child) {
+                            display: none;
+                        }
                     }
 
-                    .card:not(:first-child) {
-                        display: none;
-                    }
+
                 }
 
                 .narrow {

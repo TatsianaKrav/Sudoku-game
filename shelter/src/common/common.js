@@ -5,13 +5,33 @@ window.onload = () => {
     showCard();
     handleBurger(body);
     handlePopup();
-    
-        let links = document.querySelectorAll('.menu-item a');
-        links.forEach(link => {
-            link.addEventListener('click', (e) => goTo(e, link));
-        })
+
+    let links = document.querySelectorAll('.menu-item a');
+    links.forEach(link => {
+        link.addEventListener('click', (e) => goTo(e, link));
+    })
+
+    handleSlider();
 }
 
+
+function handleSlider() {
+    const nextBtn = document.querySelector('.narrow-next');
+    const backBtn = document.querySelector('.narrow-back');
+    const sliders = document.querySelector('.pets-sliders');
+
+    nextBtn.onclick = () => {
+        sliders.style.animation = 'slide-right 0.7s linear';
+    }
+
+    backBtn.onclick = () => {
+        sliders.style.animation = 'slide-left 0.7s linear';
+    }
+
+    sliders.addEventListener('animationend', () => {
+        sliders.style.animation = 'none';
+    })
+}
 
 const body = document.getElementsByTagName("body")[0];
 
@@ -53,11 +73,11 @@ function handleBurger(body) {
 
 
 function hideMenu(elem1, elem2) {
-  /*   setTimeout(removeActive, 1000);
-
-    function removeActive(elem1) {
-        elem1.classList.remove("active");
-    } */
+    /*   setTimeout(removeActive, 1000);
+  
+      function removeActive(elem1) {
+          elem1.classList.remove("active");
+      } */
 
     elem1.classList.remove("active");
     elem2.classList.remove("active");
@@ -99,16 +119,21 @@ function hidePopup(modal) {
 
 function showCard() {
     const fiendsCards = document.querySelector('.friends');
-    const petsCards = document.querySelector('.pets-cards');
+    const petsCards = document.querySelector('.pets-sliders');
+    const sliderLeft = document.querySelector('.slider-left');
+    const sliderActive = document.querySelector('.slider-active');
+    const sliderRight = document.querySelector('.slider-right');
 
     createCard(fiendsCards);
-    createCard(petsCards);
+    createCard(sliderLeft);
+    createCard(sliderActive);
+    createCard(sliderRight);
 }
 
 function createCard(parent) {
     if (!parent) return false;
 
-    pets.forEach(pet => {
+    pets.slice(0, 3).forEach(pet => {
 
         let pathToImg = `../../assets/images/pets/pets-${pet.name.toLowerCase()}.png`;
 
