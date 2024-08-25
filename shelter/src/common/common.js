@@ -10,87 +10,10 @@ window.onload = () => {
     links.forEach(link => {
         link.addEventListener('click', (e) => goTo(e, link));
     })
-
-    handleSlider();
 }
 
 const arrOfIndex = pets.map((item, index) => index);
 const body = document.getElementsByTagName("body")[0];
-
-function handleSlider() {
-    const nextBtn = document.querySelector('.narrow-next');
-    const backBtn = document.querySelector('.narrow-back');
-    const sliders = document.querySelector('.pets-sliders');
-
-    nextBtn.addEventListener('click', nextSlide);
-    backBtn.addEventListener('click', prevSlider);
-}
-
-let countSlider = 1;
-let slidersList = document.querySelectorAll('.slider');
-
-function nextSlide() {
-
-    slidersList[countSlider].style.animation = "next1 0.5s linear forwards";
-    if (countSlider >= slidersList.length - 1) {
-        countSlider = 0;
-    } else {
-        countSlider++;
-    }
-
-    slidersList[countSlider].style.animation = "next2 0.5s linear forwards";
-
-    // recreate cards
-    let count = countSlider;
-    if (count++ >= slidersList.length - 1) {
-        rewriteCards(slidersList[0], slidersList[countSlider]);
-    } else {
-        rewriteCards(slidersList[count++], slidersList[countSlider]);
-    }
-
-    count = 0;
-}
-
-
-
-function prevSlider() {
-    slidersList[countSlider].style.animation = "prev1 0.5s linear forwards";
-    if (countSlider === 0) {
-        countSlider = slidersList.length - 1;
-    } else {
-        countSlider--;
-    }
-    slidersList[countSlider].style.animation = "prev2 0.5s linear forwards";
-
-    // recreate cards
-    let count = countSlider;
-    if (count-- <= 0) {
-        rewriteCards(slidersList[slidersList.length - 1], slidersList[countSlider]);
-    } else {
-        rewriteCards(slidersList[count--], slidersList[countSlider]);
-    }
-
-    count = 0;
-}
-
-function rewriteCards(sliderToShow, currentSlider) {
-    console.log(currentSlider);
-    console.log(sliderToShow);
-    const cards = [...currentSlider.children];
-    const arrOfPetNames = cards.map(card => card.dataset.name);
-    const arrOfIndex = [];
-
-    pets.forEach((pet, index) => {
-        if (!arrOfPetNames.includes(pet.name)) {
-            arrOfIndex.push(index);
-        }
-    })
-
-    sliderToShow.innerHTML = '';
-    createCard(sliderToShow, shuffle(arrOfIndex).slice(0, 3));
-}
-
-
 
 function goTo(e, link) {
     e.preventDefault();
@@ -179,10 +102,12 @@ function showCard() {
     let listOfPetsRight = getUnrepeatArr(arrOfIndex, listOfPets).slice(0, 3);
 
 
-    /*   if (fiendsCards) fiendsCards.append(createCard(pets)); */
-    createCard(sliderActive, listOfPets.slice(0, 3));
-    createCard(sliderLeft, listOfPetsLeft);
-    createCard(sliderRight, listOfPetsRight);
+    if (fiendsCards) fiendsCards.append(createCard(fiendsCards, randomArr));
+    if (petsCards) {
+        createCard(sliderActive, listOfPets.slice(0, 3));
+        createCard(sliderLeft, listOfPetsLeft);
+        createCard(sliderRight, listOfPetsRight);
+    }
 }
 
 
@@ -203,7 +128,7 @@ function showCard() {
     return newArr.slice(0, 3);
 } */
 
-function createCard(parent, arr) {
+export function createCard(parent, arr) {
 
     arr.forEach((index) => {
         const card = createElement('div', 'card', '');
