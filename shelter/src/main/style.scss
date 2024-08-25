@@ -139,8 +139,8 @@
 
                     .slider {
                         @include flex();
-                        gap: 90px;
                         transition: all 0.5s linear;
+                        width: 100%;
 
                         .card {
                             @include card();

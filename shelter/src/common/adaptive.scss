@@ -47,7 +47,7 @@
                     width: 580px;
 
                     .pets-sliders {
-                        gap: 40px;
+                     /*    gap: 40px; */
                         /*   justify-content: center; */
 
                         .card:nth-child(3) {
@@ -57,6 +57,46 @@
 
                 }
             }
+        }
+    }
+
+    @keyframes next1 {
+        0% {
+            left: calc(50% - 290px);
+        }
+
+        to {
+            left: -100%;
+        }
+    }
+
+    @keyframes next2 {
+        0% {
+            left: 100%;
+        }
+
+        100% {
+            left: calc(50% - 290px);
+        }
+    }
+
+    @keyframes prev1 {
+        from {
+            left: calc(50% - 290px);
+        }
+
+        to {
+            left: 100%;
+        }
+    }
+
+    @keyframes prev2 {
+        from {
+            left: -100%;
+        }
+
+        to {
+            left: calc(50% - 290px);
         }
     }
 
@@ -418,17 +458,59 @@
                     width: 320px;
 
                     .pets-sliders {
-                        justify-content: center;
 
-                        .card {
-                            margin-bottom: 72px;
+
+                        .slider {
+                            justify-content: center;
+
+                            .card {
+                                margin-bottom: 72px;
+                            }
+
+                            .card:not(:first-child) {
+                                display: none;
+                            }
                         }
 
-                        .card:not(:first-child) {
-                            display: none;
+
+                    }
+                    @keyframes next1 {
+                        0% {
+                            left: calc(50% - 160px);
+                        }
+                    
+                        to {
+                            left: -100%;
                         }
                     }
-
+                    
+                    @keyframes next2 {
+                        0% {
+                            left: 100%;
+                        }
+                    
+                        100% {
+                            left: calc(50% - 160px);
+                        }
+                    }
+                    
+                    @keyframes prev1 {
+                        from {
+                          left: calc(50% - 160px);
+                        }
+                        to {
+                          left: 100%;
+                        }
+                      }
+                    
+                      @keyframes prev2 {
+                        from {
+                          left: -100%;
+                        }
+                        to {
+                          left: calc(50% - 160px);
+                        }
+                      }
 
                 }
 

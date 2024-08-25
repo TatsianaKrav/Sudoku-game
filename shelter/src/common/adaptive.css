@@ -19,11 +19,43 @@
     width: 580px;
   }
   .pets .container .pets-cards-wrapper .pets-cards .pets-sliders {
-    gap: 40px;
+    /*    gap: 40px; */
     /*   justify-content: center; */
   }
   .pets .container .pets-cards-wrapper .pets-cards .pets-sliders .card:nth-child(3) {
     display: none;
+  }
+  @keyframes next1 {
+    0% {
+      left: calc(50% - 290px);
+    }
+    to {
+      left: -100%;
+    }
+  }
+  @keyframes next2 {
+    0% {
+      left: 100%;
+    }
+    100% {
+      left: calc(50% - 290px);
+    }
+  }
+  @keyframes prev1 {
+    from {
+      left: calc(50% - 290px);
+    }
+    to {
+      left: 100%;
+    }
+  }
+  @keyframes prev2 {
+    from {
+      left: -100%;
+    }
+    to {
+      left: calc(50% - 290px);
+    }
   }
 }
 @media screen and (max-width: 1083px) {
@@ -274,14 +306,46 @@
   .pets .container .pets-cards-wrapper .pets-cards {
     width: 320px;
   }
-  .pets .container .pets-cards-wrapper .pets-cards .pets-sliders {
+  .pets .container .pets-cards-wrapper .pets-cards .pets-sliders .slider {
     justify-content: center;
   }
-  .pets .container .pets-cards-wrapper .pets-cards .pets-sliders .card {
+  .pets .container .pets-cards-wrapper .pets-cards .pets-sliders .slider .card {
     margin-bottom: 72px;
   }
-  .pets .container .pets-cards-wrapper .pets-cards .pets-sliders .card:not(:first-child) {
+  .pets .container .pets-cards-wrapper .pets-cards .pets-sliders .slider .card:not(:first-child) {
     display: none;
+  }
+  @keyframes next1 {
+    0% {
+      left: calc(50% - 160px);
+    }
+    to {
+      left: -100%;
+    }
+  }
+  @keyframes next2 {
+    0% {
+      left: 100%;
+    }
+    100% {
+      left: calc(50% - 160px);
+    }
+  }
+  @keyframes prev1 {
+    from {
+      left: calc(50% - 160px);
+    }
+    to {
+      left: 100%;
+    }
+  }
+  @keyframes prev2 {
+    from {
+      left: -100%;
+    }
+    to {
+      left: calc(50% - 160px);
+    }
   }
   .pets .container .pets-cards-wrapper .narrow {
     position: absolute;

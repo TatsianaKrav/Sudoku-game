@@ -416,8 +416,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 90px;
   transition: all 0.5s linear;
+  width: 100%;
 }
 .pets .container .pets-cards-wrapper .pets-cards .pets-sliders .slider .card {
   background-color: #FAFAFA;
