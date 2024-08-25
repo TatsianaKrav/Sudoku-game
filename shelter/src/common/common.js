@@ -1,5 +1,5 @@
 import pets from "../../data/pets.json" with {type: 'json'}
-import { capitalize, createElement } from '../utilities/utilities.js'
+import { capitalize, createElement, shuffle, getUnrepeatArr } from '../utilities/utilities.js'
 
 window.onload = () => {
     showCard();
@@ -14,6 +14,7 @@ window.onload = () => {
     handleSlider();
 }
 
+const arrOfIndex = pets.map((item, index) => index);
 
 function handleSlider() {
     const nextBtn = document.querySelector('.narrow-next');
@@ -42,7 +43,6 @@ function goTo(e, link) {
 
 function onAnimationComplete(link) {
     window.location = link.href;
-    console.log(link.href);
 }
 
 function handleBurger(body) {
@@ -70,14 +70,7 @@ function handleBurger(body) {
     menu.addEventListener('click', () => hideMenu(menu, burger));
 }
 
-
-
 function hideMenu(elem1, elem2) {
-    /*   setTimeout(removeActive, 1000);
-  
-      function removeActive(elem1) {
-          elem1.classList.remove("active");
-      } */
 
     elem1.classList.remove("active");
     elem2.classList.remove("active");
@@ -124,29 +117,51 @@ function showCard() {
     const sliderActive = document.querySelector('.slider-active');
     const sliderRight = document.querySelector('.slider-right');
 
-    createCard(fiendsCards);
-    createCard(sliderLeft);
-    createCard(sliderActive);
-    createCard(sliderRight);
+    let randomArr = shuffle(arrOfIndex).slice(0, 3);
+    const listOfPets = getUnrepeatArr(arrOfIndex, randomArr);
+    let listOfPetsLeft = getUnrepeatArr(arrOfIndex, listOfPets);
+    let listOfPetsRight = getUnrepeatArr(arrOfIndex, listOfPets);
+
+    /*   if (fiendsCards) fiendsCards.append(createCard(pets)); */
+    createCard(sliderActive, listOfPets);
+    createCard(sliderLeft, listOfPetsLeft);
+    createCard(sliderRight, listOfPetsRight);
 }
 
-function createCard(parent) {
-    if (!parent) return false;
 
-    pets.slice(0, 3).forEach(pet => {
+/* function getNonRepeatArr(arr) {
+    const newArr = [];
 
-        let pathToImg = `../../assets/images/pets/pets-${pet.name.toLowerCase()}.png`;
+    while (newArr.length < arr.length) {
+        let rand = Math.floor(Math.random() * 8);
 
+
+        if (newArr.includes(arr[rand])) {
+            continue;
+        } else {
+            newArr.push(arr[rand]);
+        }
+    }
+
+    return newArr.slice(0, 3);
+} */
+
+function createCard(parent, arr) {
+
+    arr.slice(0, 3).forEach((index) => {
         const card = createElement('div', 'card', '');
-        card.setAttribute('data-name', pet.name);
+        let pathToImg = `../../assets/images/pets/pets-${pets[index].name.toLowerCase()}.png`;
+
+
+        card.setAttribute('data-name', pets[index].name);
 
         const image = createElement('div', 'pet-image', '');
         const img = createElement('img', '', '');
         img.setAttribute('src', pathToImg);
-        img.setAttribute('alt', pet.name);
+        img.setAttribute('alt', pets[index].name);
         image.append(img);
 
-        const petName = createElement('div', 'pet-name', pet.name);
+        const petName = createElement('div', 'pet-name', pets[index].name);
         const button = createElement('button', 'pet-btn btn', 'Learn more');
 
         card.append(image, petName, button);
