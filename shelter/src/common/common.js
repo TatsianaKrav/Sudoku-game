@@ -122,12 +122,9 @@ function showCard() {
     let listOfPetsLeft = getUnrepeatArr(arrOfIndex, listOfPets).slice(0, 3);
     let listOfPetsRight = getUnrepeatArr(arrOfIndex, listOfPets).slice(0, 3);
 
-    console.log(listOfPets);
-    console.log(listOfPetsLeft);
-    console.log(listOfPetsRight);
 
     /*   if (fiendsCards) fiendsCards.append(createCard(pets)); */
-    createCard(sliderActive, listOfPets);
+    createCard(sliderActive, listOfPets.slice(0, 3));
     createCard(sliderLeft, listOfPetsLeft);
     createCard(sliderRight, listOfPetsRight);
 }
