@@ -117,10 +117,14 @@ function showCard() {
     const sliderActive = document.querySelector('.slider-active');
     const sliderRight = document.querySelector('.slider-right');
 
-    let randomArr = shuffle(arrOfIndex).slice(0, 3);
+    let randomArr = shuffle(arrOfIndex).slice(0, 4);
     const listOfPets = getUnrepeatArr(arrOfIndex, randomArr);
-    let listOfPetsLeft = getUnrepeatArr(arrOfIndex, listOfPets);
-    let listOfPetsRight = getUnrepeatArr(arrOfIndex, listOfPets);
+    let listOfPetsLeft = getUnrepeatArr(arrOfIndex, listOfPets).slice(0, 3);
+    let listOfPetsRight = getUnrepeatArr(arrOfIndex, listOfPets).slice(0, 3);
+
+    console.log(listOfPets);
+    console.log(listOfPetsLeft);
+    console.log(listOfPetsRight);
 
     /*   if (fiendsCards) fiendsCards.append(createCard(pets)); */
     createCard(sliderActive, listOfPets);
@@ -148,7 +152,7 @@ function showCard() {
 
 function createCard(parent, arr) {
 
-    arr.slice(0, 3).forEach((index) => {
+    arr.forEach((index) => {
         const card = createElement('div', 'card', '');
         let pathToImg = `../../assets/images/pets/pets-${pets[index].name.toLowerCase()}.png`;
 
