@@ -128,32 +128,36 @@
                 overflow-x: hidden;
 
                 .pets-sliders {
-                    @include flex();
+                    /*     @include flex();
                     gap: 90px;
                     position: relative;
                     width: 300%;
-                    left: -100%;
+                    left: -100%; */
 
-                    .slider-left,
-                    .slider-active,
-                    .slider-right {
+                    position: relative;
+                    overflow: hidden;
+
+                    .slider {
                         @include flex();
-                    /*     gap: 90px; */
+                        gap: 90px;
+                        transition: all 0.5s linear;
 
                         .card {
                             @include card();
-
-                            /*  &:nth-child(n+4) {
-                                display: none;
-                            } */
                         }
                     }
 
+                    .slider-active {
+                        position: relative;
+                    }
 
+                    .slider-left,
+                    .slider-right {
+                        position: absolute;
+                        top: 0;
+                        left: -100%;
+                    }
                 }
-
-
-
             }
         }
 
@@ -404,6 +408,7 @@
         }
     }
 }
+
 /* 
 @keyframes slide-right {
     0% {
@@ -422,3 +427,42 @@
       left: 0;
     }
   } */
+
+
+@keyframes next1 {
+    0% {
+        left: calc(50% - 495px);
+    }
+
+    to {
+        left: -100%;
+    }
+}
+
+@keyframes next2 {
+    0% {
+        left: 100%;
+    }
+
+    100% {
+        left: calc(50% - 495px);
+    }
+}
+
+@keyframes prev1 {
+    from {
+      left: calc(50% - 495px);
+    }
+    to {
+      left: 100%;
+    }
+  }
+
+  @keyframes prev2 {
+    from {
+      left: -100%;
+    }
+    to {
+      left: calc(50% - 495px);
+    }
+  }

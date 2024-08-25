@@ -414,20 +414,3 @@ body {
     }
 }
 
-@keyframes slide-right {
-    0% {
-      left: -100%;
-    }
-    100% {
-      left: -200%;
-    }
-  }
-
-  @keyframes slide-left {
-    0% {
-      left: -100%;
-    }
-    100% {
-      left: 0;
-    }
-  }
