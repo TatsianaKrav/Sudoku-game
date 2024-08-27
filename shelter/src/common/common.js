@@ -1,19 +1,24 @@
 import pets from "../../data/pets.json" with {type: 'json'}
 import { capitalize, createElement, shuffle, getUnrepeatArr } from '../utilities/utilities.js'
 
-window.onload = () => {
+
+const arrOfIndex = pets.map((item, index) => index);
+const body = document.getElementsByTagName("body")[0];
+
+
+/* window.onload = () => { */
     showCard();
     handleBurger(body);
     handlePopup();
 
+    //screen width < 768!!
     let links = document.querySelectorAll('.menu-item a');
     links.forEach(link => {
         link.addEventListener('click', (e) => goTo(e, link));
     })
-}
+/* } */
 
-const arrOfIndex = pets.map((item, index) => index);
-const body = document.getElementsByTagName("body")[0];
+
 
 function goTo(e, link) {
     e.preventDefault();
@@ -23,6 +28,8 @@ function goTo(e, link) {
 function onAnimationComplete(link) {
     window.location = link.href;
 }
+
+
 
 function handleBurger(body) {
     const burger = document.getElementsByClassName('burger')[0];
@@ -41,7 +48,7 @@ function handleBurger(body) {
             menu.style.visibility = 'hidden';
         }
 
-        document.querySelectorAll("#menu-list *").forEach((item) => {
+        document.querySelectorAll("#menu-list *").forEach((item) => { //убарть клик по меню
             item.addEventListener('click', () => hideMenu(menu, burger));
         });
     }
@@ -55,100 +62,6 @@ function hideMenu(elem1, elem2) {
     elem2.classList.remove("active");
     elem1.style.visibility = 'hidden';
     body.style.overflowY = "auto";
-}
-
-function handlePopup() {
-    const cards = document.querySelectorAll('.card');
-    const modal = document.querySelector('.modal-wrapper');
-
-    cards.forEach(item => {
-        item.onclick = (e) => {
-            createPopup(modal, e.currentTarget);
-            openPopup(modal);
-        }
-    })
-
-    modal.onclick = (e) => {
-        if (e.target === modal) {
-            hidePopup(modal);
-        }
-    }
-
-}
-
-function openPopup(modal) {
-    modal.style.opacity = '1';
-    modal.style.visibility = 'visible';
-    body.style.overflowY = "hidden";
-}
-
-function hidePopup(modal) {
-    modal.style.opacity = '0';
-    modal.style.visibility = 'hidden';
-    body.style.overflowY = "auto";
-}
-
-
-function showCard() {
-    const fiendsCards = document.querySelector('.friends');
-    const petsCards = document.querySelector('.pets-sliders');
-    const sliderLeft = document.querySelector('.slider-left');
-    const sliderActive = document.querySelector('.slider-active');
-    const sliderRight = document.querySelector('.slider-right');
-
-    let randomArr = shuffle(arrOfIndex).slice(0, 4);
-    const listOfPets = getUnrepeatArr(arrOfIndex, randomArr);
-    let listOfPetsLeft = getUnrepeatArr(arrOfIndex, listOfPets).slice(0, 3);
-    let listOfPetsRight = getUnrepeatArr(arrOfIndex, listOfPets).slice(0, 3);
-
-
-    if (fiendsCards) fiendsCards.append(createCard(fiendsCards, randomArr));
-    if (petsCards) {
-        createCard(sliderActive, listOfPets.slice(0, 3));
-        createCard(sliderLeft, listOfPetsLeft);
-        createCard(sliderRight, listOfPetsRight);
-    }
-}
-
-
-/* function getNonRepeatArr(arr) {
-    const newArr = [];
-
-    while (newArr.length < arr.length) {
-        let rand = Math.floor(Math.random() * 8);
-
-
-        if (newArr.includes(arr[rand])) {
-            continue;
-        } else {
-            newArr.push(arr[rand]);
-        }
-    }
-
-    return newArr.slice(0, 3);
-} */
-
-export function createCard(parent, arr) {
-
-    arr.forEach((index) => {
-        const card = createElement('div', 'card', '');
-        let pathToImg = `../../assets/images/pets/pets-${pets[index].name.toLowerCase()}.png`;
-
-
-        card.setAttribute('data-name', pets[index].name);
-
-        const image = createElement('div', 'pet-image', '');
-        const img = createElement('img', '', '');
-        img.setAttribute('src', pathToImg);
-        img.setAttribute('alt', pets[index].name);
-        image.append(img);
-
-        const petName = createElement('div', 'pet-name', pets[index].name);
-        const button = createElement('button', 'pet-btn btn', 'Learn more');
-
-        card.append(image, petName, button);
-        parent.append(card);
-    })
 }
 
 function createPopup(element, elementTarget) {
@@ -206,8 +119,103 @@ function createPopup(element, elementTarget) {
     return element;
 }
 
+export function handlePopup() {
+    const cards = document.querySelectorAll('.card');
+    const modal = document.querySelector('.modal-wrapper');
+
+    cards.forEach(item => {
+        item.onclick = (e) => {
+            createPopup(modal, e.currentTarget);
+            openPopup(modal);
+        }
+    })
+
+    modal.onclick = (e) => {
+        if (e.target === modal) {
+            hidePopup(modal);
+        }
+    }
+
+}
+
+function openPopup(modal) {
+    modal.style.opacity = '1';
+    modal.style.visibility = 'visible';
+    body.style.overflowY = "hidden";
+}
+
+function hidePopup(modal) {
+    modal.style.opacity = '0';
+    modal.style.visibility = 'hidden';
+    body.style.overflowY = "auto";
+}
 
 
+function showCard() {
+    const fiendsCards = document.querySelector('.friends');
+    const petsCards = document.querySelector('.pets-sliders');
+    const sliderLeft = document.querySelector('.slider-left');
+    const sliderActive = document.querySelector('.slider-active');
+    const sliderRight = document.querySelector('.slider-right');
+
+    let randomArr = shuffle(arrOfIndex);
+    const listOfPets = getUnrepeatArr(arrOfIndex, randomArr.slice(0, 4));
+
+
+
+  /*   if (fiendsCards) createCard(fiendsCards, randomArr); */
+    if (petsCards) {
+        let listOfPetsLeft = getUnrepeatArr(arrOfIndex, listOfPets).slice(0, 3);
+        let listOfPetsRight = getUnrepeatArr(arrOfIndex, listOfPets).slice(0, 3);
+
+        createCard(sliderActive, listOfPets.slice(0, 3));
+        createCard(sliderLeft, listOfPetsLeft);
+        createCard(sliderRight, listOfPetsRight);
+    }
+}
+
+export function createCard(parent, arr) {
+
+    arr.forEach((index) => {
+        const card = createElement('div', 'card', '');
+        let pathToImg = `../../assets/images/pets/pets-${pets[index].name.toLowerCase()}.png`;
+
+
+        card.setAttribute('data-name', pets[index].name);
+
+        const image = createElement('div', 'pet-image', '');
+        const img = createElement('img', '', '');
+        img.setAttribute('src', pathToImg);
+        img.setAttribute('alt', pets[index].name);
+        image.append(img);
+
+        const petName = createElement('div', 'pet-name', pets[index].name);
+        const button = createElement('button', 'pet-btn btn', 'Learn more');
+
+        card.append(image, petName, button);
+        parent.append(card);
+    })
+}
+
+
+
+
+/* function getNonRepeatArr(arr) {
+    const newArr = [];
+
+    while (newArr.length < arr.length) {
+        let rand = Math.floor(Math.random() * 8);
+
+
+        if (newArr.includes(arr[rand])) {
+            continue;
+        } else {
+            newArr.push(arr[rand]);
+        }
+    }
+
+    return newArr.slice(0, 3);
+} */
 
 
 

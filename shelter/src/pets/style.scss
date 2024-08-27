@@ -114,9 +114,10 @@
                     cursor: default;
                     pointer-events: none;
                     color: $color-dark-s;
+                    background-color: transparent;
                 }
 
-                &:hover {
+                &:hover:not(.disabled) {
                     background: $color-primary-light;
                     color: $color-dark-3xl;
 

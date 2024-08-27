@@ -22,9 +22,9 @@ function shuffle(arr) {
     return arr;
 }
 
-function getUnrepeatArr(arr1, arr2) { 
+function getUnrepeatArr(arr1, arr2) {
     shuffle(arr1);
-    return arr1.filter(index => arr2.every(num => index !==num));
+    return arr1.filter(index => arr2.every(num => index !== num));
 }
 
 export { capitalize, createElement, shuffle, getUnrepeatArr }
