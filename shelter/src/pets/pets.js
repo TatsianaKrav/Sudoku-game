@@ -36,39 +36,8 @@ function createPetsArr(width) {
     if (width >= 1280) {
         createCard(fiendsCards, arrOfAllPets.slice(0, cardsPerPage));
 
-        nextPageBtn.addEventListener('click', () => {
-            if (currentPageNum++ < pagesAmount) {
-                currentPage.innerText = currentPageNum;
-
-                let start = (currentPageNum - 1) * cardsPerPage;
-                let end = start + cardsPerPage;
-
-                fiendsCards.innerHTML = '';
-                createCard(fiendsCards, arrOfAllPets.slice(start, end));
-
-            }
-
-            checkPagePosition(currentPage);
-        })
-
-        backPageBtn.addEventListener('click', () => {
-            /*  const fiendsCards = document.querySelector('.friends');
-             let prevContent = fiendsCards.innerHTML;
-             console.log(fiendsCards); */
-
-            if (currentPageNum-- > 1) {
-                currentPage.innerText = currentPageNum;
-
-                let start = (currentPageNum - 1) * cardsPerPage;
-                let end = start + cardsPerPage;
-
-                fiendsCards.innerHTML = '';
-                createCard(fiendsCards, arrOfAllPets.slice(start, end));
-
-            }
-            checkPagePosition(currentPage);
-        })
-
+        openNextPage(arrOfAllPets);
+        openPrevPage(arrOfAllPets);
         openFirstPage(arrOfAllPets);
         openLastPage(arrOfAllPets);
     }
@@ -85,10 +54,14 @@ function checkPagePosition(page) {
     } else if (+page.innerText === 1) {
         backPageBtn.classList.add('disabled');
         startPage.classList.add('disabled');
+        nextPageBtn.classList.remove('disabled');
+        endPage.classList.remove('disabled');
 
     } else if (+page.innerText === pagesAmount) {
         nextPageBtn.classList.add('disabled');
         endPage.classList.add('disabled');
+        backPageBtn.classList.remove('disabled');
+        startPage.classList.remove('disabled');
     }
 
 
@@ -113,6 +86,7 @@ function getAllPets() {
 function openFirstPage(arr) {
     startPage.onclick = () => {
         currentPage.innerText = 1;
+        currentPageNum = 1;
         fiendsCards.innerHTML = '';
         createCard(fiendsCards, arr.slice(0, cardsPerPage));
         checkPagePosition(currentPage);
@@ -130,6 +104,40 @@ function openLastPage(arr) {
         createCard(fiendsCards, arr.slice(start, end));
         checkPagePosition(currentPage);
     }
+}
+
+function openNextPage(arr) {
+    nextPageBtn.addEventListener('click', () => {
+        if (currentPageNum++ < pagesAmount) {
+            currentPage.innerText = currentPageNum;
+
+            let start = (currentPageNum - 1) * cardsPerPage;
+            let end = start + cardsPerPage;
+
+            fiendsCards.innerHTML = '';
+            createCard(fiendsCards, arr.slice(start, end));
+
+        }
+
+        checkPagePosition(currentPage);
+    })
+}
+
+function openPrevPage(arr) {
+    backPageBtn.addEventListener('click', () => {
+
+        if (currentPageNum-- > 1) {
+            currentPage.innerText = currentPageNum;
+
+            let start = (currentPageNum - 1) * cardsPerPage;
+            let end = start + cardsPerPage;
+
+            fiendsCards.innerHTML = '';
+            createCard(fiendsCards, arr.slice(start, end));
+
+        }
+        checkPagePosition(currentPage);
+    })
 }
 
 
