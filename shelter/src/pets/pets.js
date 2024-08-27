@@ -68,6 +68,9 @@ function createPetsArr(width) {
             }
             checkPagePosition(currentPage);
         })
+
+        openFirstPage(arrOfAllPets);
+        openLastPage(arrOfAllPets);
     }
 }
 
@@ -105,6 +108,28 @@ function getAllPets() {
     }
 
     return arr;
+}
+
+function openFirstPage(arr) {
+    startPage.onclick = () => {
+        currentPage.innerText = 1;
+        fiendsCards.innerHTML = '';
+        createCard(fiendsCards, arr.slice(0, cardsPerPage));
+        checkPagePosition(currentPage);
+    }
+}
+
+function openLastPage(arr) {
+    endPage.onclick = () => {
+        currentPage.innerText = pagesAmount;
+        currentPageNum = pagesAmount;
+        let start = (currentPageNum - 1) * cardsPerPage;
+        let end = start + cardsPerPage;
+
+        fiendsCards.innerHTML = '';
+        createCard(fiendsCards, arr.slice(start, end));
+        checkPagePosition(currentPage);
+    }
 }
 
 
