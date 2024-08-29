@@ -37,6 +37,7 @@ openNextPage(arrOfAllPets);
 openPrevPage(arrOfAllPets);
 openFirstPage(arrOfAllPets);
 openLastPage(arrOfAllPets);
+handlePopup();
 
 
 function getAllPets() {

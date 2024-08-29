@@ -7,15 +7,15 @@ const body = document.getElementsByTagName("body")[0];
 
 
 /* window.onload = () => { */
-    showCard();
-    handleBurger(body);
-    handlePopup();
+showCard();
+handleBurger(body);
+handlePopup();
 
-    //screen width < 768!!
-    let links = document.querySelectorAll('.menu-item a');
-    links.forEach(link => {
-        link.addEventListener('click', (e) => goTo(e, link));
-    })
+//screen width < 768!!
+let links = document.querySelectorAll('.menu-item a');
+links.forEach(link => {
+    link.addEventListener('click', (e) => goTo(e, link));
+})
 /* } */
 
 
@@ -48,15 +48,18 @@ function handleBurger(body) {
             menu.style.visibility = 'hidden';
         }
 
-        document.querySelectorAll("#menu-list *").forEach((item) => { //убарть клик по меню
-            item.addEventListener('click', () => hideMenu(menu, burger));
+        document.querySelectorAll(".menu-item").forEach((item) => { //убарть клик по меню
+            item.addEventListener('click', (event) => hideMenu(menu, burger, event));
         });
     }
 
-    menu.addEventListener('click', () => hideMenu(menu, burger));
+    menu.addEventListener('click', (event) => hideMenu(menu, burger, event));
 }
 
-function hideMenu(elem1, elem2) {
+function hideMenu(elem1, elem2, e) {
+    if (e.target.id === 'menu-list') {
+        return;
+    }
 
     elem1.classList.remove("active");
     elem2.classList.remove("active");
@@ -163,7 +166,7 @@ function showCard() {
 
 
 
-  /*   if (fiendsCards) createCard(fiendsCards, randomArr); */
+    /*   if (fiendsCards) createCard(fiendsCards, randomArr); */
     if (petsCards) {
         let listOfPetsLeft = getUnrepeatArr(arrOfIndex, listOfPets).slice(0, 3);
         let listOfPetsRight = getUnrepeatArr(arrOfIndex, listOfPets).slice(0, 3);
