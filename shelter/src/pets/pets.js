@@ -5,69 +5,76 @@ import { handlePopup } from '../common/common.js'
 
 
 
-let cardsPerPage = 8;
+let cardsPerPage = 0;
 let pagesAmount = 6;
 let currentPageNum = 1;
-let screenWidth = 0;
-const arrOfIndex = pets.map((item, index) => index);
-let arrOfAllPets = shuffle(arrOfIndex);
-let firstWidth = parseInt(window.innerWidth);
-const fiendsCards = document.querySelector('.friends');
+let currentWidth = parseInt(window.innerWidth);
+const friendsCards = document.querySelector('.friends');
 const nextPageBtn = document.querySelector('.page-next');
 const backPageBtn = document.querySelector('.page-back');
 const currentPage = document.querySelector('.current-page');
 const startPage = document.querySelector('.start-page');
 const endPage = document.querySelector('.end-page');
-let allPets = [];
+let arrOfAllPets = [];
+arrOfAllPets = getAllPets();
 
 window.onload = () => {
-    createPetsArr(firstWidth);
+    showCards(currentWidth);
     handlePopup();
 }
 
-/* window.addEventListener('resize', () => {
-    screenWidth = parseInt(window.innerWidth);
-    createPetsArr(screenWidth);
+window.addEventListener('resize', () => {
+    let screenWidth = parseInt(window.innerWidth);
+    let amount = getPagesAmount(screenWidth);
+    currentWidth = screenWidth;
+
+    if (amount === pagesAmount) return;
+
+    showCards();
 })
- */
+
+openNextPage(arrOfAllPets);
+openPrevPage(arrOfAllPets);
+openFirstPage(arrOfAllPets);
+openLastPage(arrOfAllPets);
+
 
 function getAllPets() {
+    arrOfAllPets.length = 0;
+
     for (let i = 0; i < 6; i++) {
 
         let arr = new Array(8).fill(0).map((item, index) => index);
         let random = shuffle(arr);
+        /*   random = shuffle(random); */
 
 
         while (random.length) {
-            let last6 = getLastElems(allPets, 6);
-            let last3 = getLastElems(allPets, 3);
+            let last6 = getLastElems(arrOfAllPets, 6);
+            let last3 = getLastElems(arrOfAllPets, 3);
             let last = random.pop();
 
             if (last6.includes(last) || last3.includes(last)) {
                 random.unshift(last);
             } else {
-                allPets.push(last);
+                arrOfAllPets.push(last);
             }
         }
     }
-
-    console.log(getSubArr(allPets, 8));
-    console.log(getSubArr(allPets, 6));
-    console.log(getSubArr(allPets, 3));
-
-    return allPets;
+    return arrOfAllPets;
 }
 
-function getSubArr(arr, size) {
-    let newArr = [];
-
-    for (let i = 0; i < arr.length; i += size) {
-        let sub = arr.slice(i, i + size);
-        newArr.push(sub);
+function getPagesAmount(width) {
+    if (width >= 970) {
+        return 6;
+    } else if (width < 970 && width >= 640) {
+        return 8;
+    } else {
+        return 16;
     }
-
-    return newArr;
 }
+
+
 
 function getLastElems(arr, amount) {
     if (arr.length < amount || arr.length % amount === 0) return [];
@@ -77,14 +84,16 @@ function getLastElems(arr, amount) {
 }
 
 
-function createPetsArr(width) {
-    let arrOfAllPets = getAllPets();
-    createCard(fiendsCards, arrOfAllPets.slice(0, cardsPerPage));
+function showCards() {
 
-    openNextPage(arrOfAllPets);
-    openPrevPage(arrOfAllPets);
-    openFirstPage(arrOfAllPets);
-    openLastPage(arrOfAllPets);
+    pagesAmount = getPagesAmount(currentWidth);
+    cardsPerPage = arrOfAllPets.length / pagesAmount;
+    friendsCards.innerHTML = '';
+    let start = (currentPageNum - 1) * cardsPerPage;
+    let end = start + cardsPerPage;
+    createCard(friendsCards, arrOfAllPets.slice(start, end));
+
+
 }
 
 function checkPagePosition(page) {
@@ -115,8 +124,8 @@ function openFirstPage(arr) {
     startPage.onclick = () => {
         currentPage.innerText = 1;
         currentPageNum = 1;
-        fiendsCards.innerHTML = '';
-        createCard(fiendsCards, arr.slice(0, cardsPerPage));
+        friendsCards.innerHTML = '';
+        createCard(friendsCards, arr.slice(0, cardsPerPage));
         checkPagePosition(currentPage);
     }
 }
@@ -128,13 +137,14 @@ function openLastPage(arr) {
         let start = (currentPageNum - 1) * cardsPerPage;
         let end = start + cardsPerPage;
 
-        fiendsCards.innerHTML = '';
-        createCard(fiendsCards, arr.slice(start, end));
+        friendsCards.innerHTML = '';
+        createCard(friendsCards, arr.slice(start, end));
         checkPagePosition(currentPage);
     }
 }
 
 function openNextPage(arr) {
+    console.log(arrOfAllPets);
     nextPageBtn.addEventListener('click', () => {
         if (currentPageNum++ < pagesAmount) {
             currentPage.innerText = currentPageNum;
@@ -142,13 +152,16 @@ function openNextPage(arr) {
             let start = (currentPageNum - 1) * cardsPerPage;
             let end = start + cardsPerPage;
 
-            fiendsCards.innerHTML = '';
-            createCard(fiendsCards, arr.slice(start, end));
+            friendsCards.innerHTML = '';
+            createCard(friendsCards, arr.slice(start, end));
 
         }
 
         checkPagePosition(currentPage);
+        console.log(arrOfAllPets);
     })
+
+
 }
 
 function openPrevPage(arr) {
@@ -160,8 +173,8 @@ function openPrevPage(arr) {
             let start = (currentPageNum - 1) * cardsPerPage;
             let end = start + cardsPerPage;
 
-            fiendsCards.innerHTML = '';
-            createCard(fiendsCards, arr.slice(start, end));
+            friendsCards.innerHTML = '';
+            createCard(friendsCards, arr.slice(start, end));
 
         }
         checkPagePosition(currentPage);
@@ -169,3 +182,15 @@ function openPrevPage(arr) {
 }
 
 
+
+
+function getSubArr(arr, size) {
+    let newArr = [];
+
+    for (let i = 0; i < arr.length; i += size) {
+        let sub = arr.slice(i, i + size);
+        newArr.push(sub);
+    }
+
+    return newArr;
+}
