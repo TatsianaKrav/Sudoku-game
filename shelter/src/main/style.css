@@ -545,9 +545,6 @@ body {
   z-index: 10;
   border-radius: 9px;
   box-sizing: border-box;
-  /* &:hover {
-      box-shadow: 0 2px 35px 14px rgba(13, 13, 13, 0.04);
-  } */
 }
 .pets .container .modal-wrapper .modal-window .modal-image {
   padding-left: 17px;
@@ -590,27 +587,43 @@ body {
   flex-direction: column;
   gap: 12px;
 }
-.pets .container .modal-wrapper .modal-window .modal-info .pet-info ul li {
+.pets .container .modal-wrapper .modal-window .modal-info .pet-info ul .modal-li {
   display: flex;
   align-items: center;
   justify-content: center;
   align-self: flex-start;
+  position: relative;
+  padding-left: 15px;
 }
-.pets .container .modal-wrapper .modal-window .modal-info .pet-info ul li img {
-  padding-right: 10px;
-}
-.pets .container .modal-wrapper .modal-window .modal-info .pet-info ul li span {
+.pets .container .modal-wrapper .modal-window .modal-info .pet-info ul .modal-li span {
   font-family: Georgia-Bold, sans-serif;
   font-size: 15px;
   line-height: 110%;
   letter-spacing: 0.05em;
   position: relative;
 }
-.pets .container .modal-wrapper .modal-window .modal-info .pet-info ul li p {
+.pets .container .modal-wrapper .modal-window .modal-info .pet-info ul .modal-li p {
   line-height: 110%;
   letter-spacing: 0.05em;
   font-size: 15px;
-  word-break: break-all;
+}
+.pets .container .modal-wrapper .modal-window .modal-info .pet-info ul .modal-li::before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  margin-right: 15px;
+  background-color: #F1CDB3;
+}
+.pets .container .modal-wrapper .modal-window .modal-info .pet-info ul li::before {
+  content: url("../../assets/images/dot.png");
+  color: #F1CDB3;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .pets .container .modal-wrapper .modal-window .close-btn {
   border-radius: 100px;
@@ -628,6 +641,10 @@ body {
   right: -43px;
 }
 .pets .container .modal-wrapper .modal-window .close-btn:hover {
+  background-color: #fddcc4;
+  border: 2px solid #fddcc4;
+}
+.pets .container .modal-wrapper .modal-window:hover .close-btn {
   background-color: #fddcc4;
   border: 2px solid #fddcc4;
 }

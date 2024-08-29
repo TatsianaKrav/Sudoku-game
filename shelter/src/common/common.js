@@ -48,7 +48,7 @@ function handleBurger(body) {
             menu.style.visibility = 'hidden';
         }
 
-        document.querySelectorAll(".menu-item").forEach((item) => { //убарть клик по меню
+        document.querySelectorAll(".menu-item").forEach((item) => {
             item.addEventListener('click', (event) => hideMenu(menu, burger, event));
         });
     }
@@ -97,15 +97,10 @@ function createPopup(element, elementTarget) {
         const info = ['age', 'inoculations', 'diseases', 'parasites'];
         let petField = info[i];
 
-        const liElem = createElement('li', '', '');
-
-        const image = createElement('img', '', '');
-        image.setAttribute('src', "../../assets/images/dot.png");
-        image.setAttribute('alt', 'dot');
-
+        const liElem = createElement('li', 'modal-li', '');
         const spanElem = createElement('span', '', capitalize(petField) + `: ${'\u00A0'}`);
-        const pInfo = createElement('p', '', `  ${pet[petField]}`); // Добавить пробелы
-        liElem.append(image, spanElem, pInfo);
+        const pInfo = createElement('p', '', `  ${pet[petField]}`);
+        liElem.append(spanElem, pInfo);
         ulList.appendChild(liElem);
     }
 
@@ -165,8 +160,6 @@ function showCard() {
     const listOfPets = getUnrepeatArr(arrOfIndex, randomArr.slice(0, 4));
 
 
-
-    /*   if (fiendsCards) createCard(fiendsCards, randomArr); */
     if (petsCards) {
         let listOfPetsLeft = getUnrepeatArr(arrOfIndex, listOfPets).slice(0, 3);
         let listOfPetsRight = getUnrepeatArr(arrOfIndex, listOfPets).slice(0, 3);
@@ -199,27 +192,3 @@ export function createCard(parent, arr) {
         parent.append(card);
     })
 }
-
-
-
-
-/* function getNonRepeatArr(arr) {
-    const newArr = [];
-
-    while (newArr.length < arr.length) {
-        let rand = Math.floor(Math.random() * 8);
-
-
-        if (newArr.includes(arr[rand])) {
-            continue;
-        } else {
-            newArr.push(arr[rand]);
-        }
-    }
-
-    return newArr.slice(0, 3);
-} */
-
-
-
-

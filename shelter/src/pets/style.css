@@ -404,12 +404,13 @@ body {
   cursor: default;
   pointer-events: none;
   color: #CDCDCD;
+  background-color: transparent;
 }
-.main .container .pagination .page:hover {
+.main .container .pagination .page:hover:not(.disabled) {
   background: #fddcc4;
   color: #292929;
 }
-.main .container .pagination .page:hover.active {
+.main .container .pagination .page:hover:not(.disabled).active {
   border: 2px solid #fddcc4;
 }
 .main .container .modal-wrapper {
@@ -441,9 +442,6 @@ body {
   z-index: 10;
   border-radius: 9px;
   box-sizing: border-box;
-  /* &:hover {
-      box-shadow: 0 2px 35px 14px rgba(13, 13, 13, 0.04);
-  } */
 }
 .main .container .modal-wrapper .modal-window .modal-image {
   padding-left: 17px;
@@ -486,27 +484,43 @@ body {
   flex-direction: column;
   gap: 12px;
 }
-.main .container .modal-wrapper .modal-window .modal-info .pet-info ul li {
+.main .container .modal-wrapper .modal-window .modal-info .pet-info ul .modal-li {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: center;
   align-self: flex-start;
+  position: relative;
+  padding-left: 15px;
 }
-.main .container .modal-wrapper .modal-window .modal-info .pet-info ul li img {
-  padding-right: 10px;
-}
-.main .container .modal-wrapper .modal-window .modal-info .pet-info ul li span {
+.main .container .modal-wrapper .modal-window .modal-info .pet-info ul .modal-li span {
   font-family: Georgia-Bold, sans-serif;
   font-size: 15px;
   line-height: 110%;
   letter-spacing: 0.05em;
   position: relative;
 }
-.main .container .modal-wrapper .modal-window .modal-info .pet-info ul li p {
+.main .container .modal-wrapper .modal-window .modal-info .pet-info ul .modal-li p {
   line-height: 110%;
   letter-spacing: 0.05em;
   font-size: 15px;
-  word-break: break-all;
+}
+.main .container .modal-wrapper .modal-window .modal-info .pet-info ul .modal-li::before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  margin-right: 15px;
+  background-color: #F1CDB3;
+}
+.main .container .modal-wrapper .modal-window .modal-info .pet-info ul li::before {
+  content: url("../../assets/images/dot.png");
+  color: #F1CDB3;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .main .container .modal-wrapper .modal-window .close-btn {
   border-radius: 100px;
@@ -524,6 +538,10 @@ body {
   right: -43px;
 }
 .main .container .modal-wrapper .modal-window .close-btn:hover {
+  background-color: #fddcc4;
+  border: 2px solid #fddcc4;
+}
+.main .container .modal-wrapper .modal-window:hover .close-btn {
   background-color: #fddcc4;
   border: 2px solid #fddcc4;
 }/*# sourceMappingURL=style.css.map */
