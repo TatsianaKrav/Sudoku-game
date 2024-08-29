@@ -5,18 +5,16 @@ import { capitalize, createElement, shuffle, getUnrepeatArr } from '../utilities
 const arrOfIndex = pets.map((item, index) => index);
 const body = document.getElementsByTagName("body")[0];
 
-
-/* window.onload = () => { */
 showCard();
 handleBurger(body);
-handlePopup();
+
 
 //screen width < 768!!
 let links = document.querySelectorAll('.menu-item a');
 links.forEach(link => {
     link.addEventListener('click', (e) => goTo(e, link));
 })
-/* } */
+
 
 
 
@@ -68,7 +66,7 @@ function hideMenu(elem1, elem2, e) {
 }
 
 function createPopup(element, elementTarget) {
-    const pet = pets.find(pet => pet.name === elementTarget.dataset.name);
+    const pet = pets.find(pet => pet.name === elementTarget.currentTarget.dataset.name);
     const petImgPath = `../../assets/images/pets-modal/${pet.name.toLowerCase()}.png`;
 
     const modalWindow = createElement('div', 'modal-window', '');
@@ -117,23 +115,19 @@ function createPopup(element, elementTarget) {
     return element;
 }
 
-export function handlePopup() {
-    const cards = document.querySelectorAll('.card');
+export function handlePopup(event) {
     const modal = document.querySelector('.modal-wrapper');
+    if (event) {
+        createPopup(modal, event);
+        openPopup(modal);
+    }
 
-    cards.forEach(item => {
-        item.onclick = (e) => {
-            createPopup(modal, e.currentTarget);
-            openPopup(modal);
-        }
-    })
 
-    modal.onclick = (e) => {
-        if (e.target === modal) {
+    modal.onclick = (event) => {
+        if (event.target === modal) {
             hidePopup(modal);
         }
     }
-
 }
 
 function openPopup(modal) {
@@ -187,6 +181,8 @@ export function createCard(parent, arr) {
 
         const petName = createElement('div', 'pet-name', pets[index].name);
         const button = createElement('button', 'pet-btn btn', 'Learn more');
+
+        card.addEventListener('click', (event) => handlePopup(event));
 
         card.append(image, petName, button);
         parent.append(card);
