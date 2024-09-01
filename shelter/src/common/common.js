@@ -17,7 +17,7 @@ if (currentWidth < 768) {
 };
 
 window.addEventListener('resize', () => {
-    let width = parseInt(window.innerWidth); 
+    let width = parseInt(window.innerWidth);
 
     if (width < 768) {
         menu.style.visibility = 'hidden';
@@ -37,9 +37,6 @@ function navigate() {
 }
 
 function handleBurger(body) {
-    /*  const burger = document.getElementsByClassName('burger')[0];
-     const menu = document.getElementsByClassName('menu')[0]; */
-
 
     burger.onclick = () => {
         burger.classList.toggle('active');
@@ -145,6 +142,7 @@ function hidePopup(modal) {
     modal.style.opacity = '0';
     modal.style.visibility = 'hidden';
     body.style.overflowY = "auto";
+    modal.innerHTML = '';
 }
 
 
@@ -187,9 +185,8 @@ export function createCard(parent, arr) {
         const petName = createElement('div', 'pet-name', pets[index].name);
         const button = createElement('button', 'pet-btn btn', 'Learn more');
 
-        card.addEventListener('click', (event) => handlePopup(event));
-
         card.append(image, petName, button);
         parent.append(card);
+        card.addEventListener('click', (event) => handlePopup(event));
     })
 }

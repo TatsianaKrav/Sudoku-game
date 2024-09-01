@@ -19,7 +19,6 @@
             gap: 42px;
             padding-bottom: 78px;
 
-
             .main-title {
                 font-size: 44px;
                 color: $color-light-xl;
@@ -116,7 +115,6 @@
         .pets-cards-wrapper {
             @include flex();
             width: 100%;
-            /*  gap: 53px; */
             overflow-x: hidden;
 
             .narrow {
@@ -128,12 +126,6 @@
                 overflow-x: hidden;
 
                 .pets-sliders {
-                    /*     @include flex();
-                    gap: 90px;
-                    position: relative;
-                    width: 300%;
-                    left: -100%; */
-
                     position: relative;
                     overflow: hidden;
 
@@ -295,7 +287,6 @@
                             }
                         }
                     }
-
                 }
 
                 .close-btn {
@@ -426,26 +417,6 @@
         }
     }
 }
-
-/* 
-@keyframes slide-right {
-    0% {
-      left: -100%;
-    }
-    100% {
-      left: -200%;
-    }
-  }
-
-  @keyframes slide-left {
-    0% {
-      left: -100%;
-    }
-    100% {
-      left: 0;
-    }
-  } */
-
 
 @keyframes next1 {
     0% {

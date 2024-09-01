@@ -18,10 +18,6 @@
   .pets .container .pets-cards-wrapper .pets-cards {
     width: 580px;
   }
-  .pets .container .pets-cards-wrapper .pets-cards .pets-sliders {
-    /*    gap: 40px; */
-    /*   justify-content: center; */
-  }
   .pets .container .pets-cards-wrapper .pets-cards .pets-sliders .card:nth-child(3) {
     display: none;
   }
@@ -523,8 +519,6 @@
   }
   .help .container .help-items {
     gap: 30px;
-    /*  justify-content: flex-start;
-    */
   }
   .help .container .help-items .help-item {
     max-width: 130px;

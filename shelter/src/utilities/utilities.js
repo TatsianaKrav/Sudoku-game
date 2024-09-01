@@ -37,4 +37,32 @@ function onAnimationComplete(link) {
     window.location = link.href;
 }
 
-export { capitalize, createElement, shuffle, getUnrepeatArr, goTo }
+function getPagesAmount(width) {
+    if (width >= 970) {
+        return 6;
+    } else if (width < 970 && width >= 640) {
+        return 8;
+    } else {
+        return 16;
+    }
+}
+
+function getLastElems(arr, amount) {
+    if (arr.length < amount || arr.length % amount === 0) return [];
+
+    let lastElems = arr.slice(arr.length - amount);
+    return lastElems;
+}
+
+function getSubArr(arr, size) {
+    let newArr = [];
+
+    for (let i = 0; i < arr.length; i += size) {
+        let sub = arr.slice(i, i + size);
+        newArr.push(sub);
+    }
+
+    return newArr;
+}
+
+export { capitalize, createElement, shuffle, getUnrepeatArr, goTo, getPagesAmount, getLastElems }

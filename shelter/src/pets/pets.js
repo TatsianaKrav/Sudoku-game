@@ -1,9 +1,5 @@
-import pets from '../../data/pets.json' with {type: 'json'}
-import { shuffle } from '../utilities/utilities.js';
+import { shuffle, getPagesAmount, getLastElems } from '../utilities/utilities.js';
 import { createCard } from '../common/common.js';
-import { handlePopup } from '../common/common.js'
-
-
 
 let cardsPerPage = 0;
 let pagesAmount = 6;
@@ -20,7 +16,6 @@ arrOfAllPets = getAllPets();
 
 window.onload = () => {
     showCards(currentWidth);
-    handlePopup();
 }
 
 window.addEventListener('resize', () => {
@@ -33,12 +28,7 @@ window.addEventListener('resize', () => {
     showCards();
 })
 
-openNextPage(arrOfAllPets);
-openPrevPage(arrOfAllPets);
-openFirstPage(arrOfAllPets);
-openLastPage(arrOfAllPets);
-handlePopup();
-
+pagination(arrOfAllPets);
 
 function getAllPets() {
     arrOfAllPets.length = 0;
@@ -48,7 +38,6 @@ function getAllPets() {
         let arr = new Array(8).fill(0).map((item, index) => index);
         let random = shuffle(arr);
         /*   random = shuffle(random); */
-
 
         while (random.length) {
             let last6 = getLastElems(arrOfAllPets, 6);
@@ -65,26 +54,6 @@ function getAllPets() {
     return arrOfAllPets;
 }
 
-function getPagesAmount(width) {
-    if (width >= 970) {
-        return 6;
-    } else if (width < 970 && width >= 640) {
-        return 8;
-    } else {
-        return 16;
-    }
-}
-
-
-
-function getLastElems(arr, amount) {
-    if (arr.length < amount || arr.length % amount === 0) return [];
-
-    let lastElems = arr.slice(arr.length - amount);
-    return lastElems;
-}
-
-
 function showCards() {
 
     pagesAmount = getPagesAmount(currentWidth);
@@ -93,8 +62,6 @@ function showCards() {
     let start = (currentPageNum - 1) * cardsPerPage;
     let end = start + cardsPerPage;
     createCard(friendsCards, arrOfAllPets.slice(start, end));
-
-
 }
 
 function checkPagePosition(page) {
@@ -117,9 +84,15 @@ function checkPagePosition(page) {
         backPageBtn.classList.remove('disabled');
         startPage.classList.remove('disabled');
     }
-
-
 }
+
+function pagination(arr) {
+    openFirstPage(arr);
+    openLastPage(arr);
+    openPrevPage(arr);
+    openNextPage(arr);
+}
+
 
 function openFirstPage(arr) {
     startPage.onclick = () => {
@@ -145,7 +118,6 @@ function openLastPage(arr) {
 }
 
 function openNextPage(arr) {
-    console.log(arrOfAllPets);
     nextPageBtn.addEventListener('click', () => {
         if (currentPageNum++ < pagesAmount) {
             currentPage.innerText = currentPageNum;
@@ -159,10 +131,7 @@ function openNextPage(arr) {
         }
 
         checkPagePosition(currentPage);
-        console.log(arrOfAllPets);
     })
-
-
 }
 
 function openPrevPage(arr) {
@@ -180,18 +149,4 @@ function openPrevPage(arr) {
         }
         checkPagePosition(currentPage);
     })
-}
-
-
-
-
-function getSubArr(arr, size) {
-    let newArr = [];
-
-    for (let i = 0; i < arr.length; i += size) {
-        let sub = arr.slice(i, i + size);
-        newArr.push(sub);
-    }
-
-    return newArr;
 }

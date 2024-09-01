@@ -10,7 +10,6 @@
 
 @media screen and (max-width: 1279px) {
     .main {
-
         &.pets-main {
             .container {
                 .friends {
@@ -20,7 +19,6 @@
         }
 
         .container {
-
             .main-description {
                 width: 460px;
                 max-width: 100%;
@@ -47,14 +45,10 @@
                     width: 580px;
 
                     .pets-sliders {
-                     /*    gap: 40px; */
-                        /*   justify-content: center; */
-
                         .card:nth-child(3) {
                             display: none;
                         }
                     }
-
                 }
             }
         }
@@ -99,7 +93,6 @@
             left: calc(50% - 290px);
         }
     }
-
 }
 
 @media screen and (max-width: 1083px) {
@@ -393,7 +386,7 @@
 
                         &.active {
                             a {
-                                color: #FAFAFA; //color-ligth-s
+                                color: $color-ligth-s;
                             }
                         }
                     }
@@ -436,7 +429,6 @@
                     @include title-adaptive();
                     margin-bottom: 3px;
                 }
-
             }
         }
     }
@@ -471,47 +463,47 @@
                                 display: none;
                             }
                         }
-
-
                     }
+
                     @keyframes next1 {
                         0% {
                             left: calc(50% - 160px);
                         }
-                    
+
                         to {
                             left: -100%;
                         }
                     }
-                    
+
                     @keyframes next2 {
                         0% {
                             left: 100%;
                         }
-                    
+
                         100% {
                             left: calc(50% - 160px);
                         }
                     }
-                    
+
                     @keyframes prev1 {
                         from {
-                          left: calc(50% - 160px);
+                            left: calc(50% - 160px);
                         }
-                        to {
-                          left: 100%;
-                        }
-                      }
-                    
-                      @keyframes prev2 {
-                        from {
-                          left: -100%;
-                        }
-                        to {
-                          left: calc(50% - 160px);
-                        }
-                      }
 
+                        to {
+                            left: 100%;
+                        }
+                    }
+
+                    @keyframes prev2 {
+                        from {
+                            left: -100%;
+                        }
+
+                        to {
+                            left: calc(50% - 160px);
+                        }
+                    }
                 }
 
                 .narrow {
@@ -613,7 +605,6 @@
             .container {
                 .modal-wrapper {
                     .modal-window {
-                        max-width: 240px;
                         padding: 10px;
 
                         .modal-image {
@@ -707,7 +698,6 @@
                 }
             }
         }
-
     }
 }
 
@@ -721,7 +711,6 @@
             }
         }
     }
-
 }
 
 @media screen and (max-width: 459px) {
@@ -760,8 +749,6 @@
             .help-items {
                 gap: 30px;
 
-                /*  justify-content: flex-start;
- */
                 .help-item {
                     max-width: 130px;
                     gap: 20px;

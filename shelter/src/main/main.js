@@ -29,7 +29,6 @@ function nextSlide() {
 
     slidersList[countSlider].style.animation = "next2 0.5s linear forwards";
 
-    // recreate cards
     let count = countSlider;
     if (count++ >= slidersList.length - 1) {
         rewriteCards(slidersList[0], slidersList[countSlider]);
@@ -49,7 +48,6 @@ function prevSlider() {
     }
     slidersList[countSlider].style.animation = "prev2 0.5s linear forwards";
 
-    // recreate cards
     let count = countSlider;
     if (count-- <= 0) {
         rewriteCards(slidersList[slidersList.length - 1], slidersList[countSlider]);
