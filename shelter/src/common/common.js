@@ -1,37 +1,42 @@
 import pets from "../../data/pets.json" with {type: 'json'}
-import { capitalize, createElement, shuffle, getUnrepeatArr } from '../utilities/utilities.js'
+import { capitalize, createElement, shuffle, getUnrepeatArr, goTo } from '../utilities/utilities.js'
 
 
 const arrOfIndex = pets.map((item, index) => index);
 const body = document.getElementsByTagName("body")[0];
+const links = document.querySelectorAll('.menu-item a');
+let currentWidth = parseInt(window.innerWidth);
+const menu = document.getElementsByClassName('menu')[0];
+const burger = document.getElementsByClassName('burger')[0];
 
 showCard();
 handleBurger(body);
 
+if (currentWidth < 768) {
+    navigate();
+};
 
-//screen width < 768!!
-let links = document.querySelectorAll('.menu-item a');
-links.forEach(link => {
-    link.addEventListener('click', (e) => goTo(e, link));
+window.addEventListener('resize', () => {
+    let width = parseInt(window.innerWidth); 
+
+    if (width < 768) {
+        menu.style.visibility = 'visible';
+        navigate();
+    }
 })
 
 
+function navigate() {
+    links.forEach(link => {
+        link.addEventListener('click', (e) => goTo(e, link));
+    })
 
-
-function goTo(e, link) {
-    e.preventDefault();
-    setTimeout(onAnimationComplete, 1000, link);
+    menu.addEventListener('click', (event) => hideMenu(menu, burger, event));
 }
-
-function onAnimationComplete(link) {
-    window.location = link.href;
-}
-
-
 
 function handleBurger(body) {
-    const burger = document.getElementsByClassName('burger')[0];
-    const menu = document.getElementsByClassName('menu')[0];
+    /*  const burger = document.getElementsByClassName('burger')[0];
+     const menu = document.getElementsByClassName('menu')[0]; */
 
 
     burger.onclick = () => {
@@ -50,8 +55,6 @@ function handleBurger(body) {
             item.addEventListener('click', (event) => hideMenu(menu, burger, event));
         });
     }
-
-    menu.addEventListener('click', (event) => hideMenu(menu, burger, event));
 }
 
 function hideMenu(elem1, elem2, e) {

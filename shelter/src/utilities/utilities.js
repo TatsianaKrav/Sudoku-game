@@ -27,4 +27,14 @@ function getUnrepeatArr(arr1, arr2) {
     return arr1.filter(index => arr2.every(num => index !== num));
 }
 
-export { capitalize, createElement, shuffle, getUnrepeatArr }
+
+function goTo(e, link) {
+    e.preventDefault();
+    setTimeout(onAnimationComplete, 1000, link);
+}
+
+function onAnimationComplete(link) {
+    window.location = link.href;
+}
+
+export { capitalize, createElement, shuffle, getUnrepeatArr, goTo }
