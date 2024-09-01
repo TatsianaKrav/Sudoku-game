@@ -20,8 +20,10 @@ window.addEventListener('resize', () => {
     let width = parseInt(window.innerWidth); 
 
     if (width < 768) {
-        menu.style.visibility = 'visible';
+        menu.style.visibility = 'hidden';
         navigate();
+    } else {
+        menu.style.visibility = 'visible';
     }
 })
 
