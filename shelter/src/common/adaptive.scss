@@ -106,21 +106,22 @@
                         padding: 0;
 
                         .modal-image {
-                            margin-bottom: -40px;
-                            padding-left: 16px;
+                            width: 350px;
+                            height: 350px;
 
                             img {
-                                width: 95%;
+                                width: 100%;
                             }
                         }
 
                         .modal-info {
-                            padding: 10px 9px 38px 0;
+                            padding: 10px 9px 0 0;
                             max-width: 261px;
 
                             .pet-description {
                                 margin: 20px 0;
                                 font-size: 13px;
+                                margin-bottom: 10px;
                             }
 
                             .pet-info {
@@ -143,11 +144,11 @@
                     padding: 0;
 
                     .modal-image {
-                        margin-bottom: -40px;
-                        padding-left: 16px;
+                        width: 350px;
+                        height: 350px;
 
                         img {
-                            width: 95%;
+                            width: 100%;
                         }
                     }
 
@@ -386,7 +387,8 @@
 
                         &.active {
                             a {
-                                color: $color-ligth-s;
+                                /*   color: $color-ligth-s; */
+                                color: #FAFAFA;
                             }
                         }
                     }

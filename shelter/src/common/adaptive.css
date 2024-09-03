@@ -60,19 +60,20 @@
     padding: 0;
   }
   .main.pets-main .container .modal-wrapper .modal-window .modal-image {
-    margin-bottom: -40px;
-    padding-left: 16px;
+    width: 350px;
+    height: 350px;
   }
   .main.pets-main .container .modal-wrapper .modal-window .modal-image img {
-    width: 95%;
+    width: 100%;
   }
   .main.pets-main .container .modal-wrapper .modal-window .modal-info {
-    padding: 10px 9px 38px 0;
+    padding: 10px 9px 0 0;
     max-width: 261px;
   }
   .main.pets-main .container .modal-wrapper .modal-window .modal-info .pet-description {
     margin: 20px 0;
     font-size: 13px;
+    margin-bottom: 10px;
   }
   .main.pets-main .container .modal-wrapper .modal-window .modal-info .pet-info ul {
     gap: 6px;
@@ -82,11 +83,11 @@
     padding: 0;
   }
   .pets .container .modal-wrapper .modal-window .modal-image {
-    margin-bottom: -40px;
-    padding-left: 16px;
+    width: 350px;
+    height: 350px;
   }
   .pets .container .modal-wrapper .modal-window .modal-image img {
-    width: 95%;
+    width: 100%;
   }
   .pets .container .modal-wrapper .modal-window .modal-info {
     padding: 10px 9px 38px 0;
@@ -251,6 +252,7 @@
     letter-spacing: 0;
   }
   .header .container .menu .menu-list .menu-item.active a {
+    /*   color: $color-ligth-s; */
     color: #FAFAFA;
   }
   .header .container .menu.active {
@@ -425,7 +427,6 @@
 }
 @media screen and (max-width: 727px) {
   .main.pets-main .container .modal-wrapper .modal-window {
-    max-width: 240px;
     padding: 10px;
   }
   .main.pets-main .container .modal-wrapper .modal-window .modal-image {
