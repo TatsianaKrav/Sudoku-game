@@ -25,6 +25,14 @@ window.addEventListener('resize', () => {
 
     if (amount === pagesAmount) return;
 
+    if (amount === 6 && +currentPage.innerText > 6 ||
+        amount === 8 && +currentPage.innerText > 8
+    ) {
+        currentPageNum = 1;
+        currentPage.innerText = '1';
+        checkPagePosition(currentPage);
+    }
+
     showCards();
 })
 
@@ -37,7 +45,6 @@ function getAllPets() {
 
         let arr = new Array(8).fill(0).map((item, index) => index);
         let random = shuffle(arr);
-        /*   random = shuffle(random); */
 
         while (random.length) {
             let last6 = getLastElems(arrOfAllPets, 6);
