@@ -428,6 +428,7 @@
 @media screen and (max-width: 727px) {
   .main.pets-main .container .modal-wrapper .modal-window {
     padding: 10px;
+    max-width: 240px;
   }
   .main.pets-main .container .modal-wrapper .modal-window .modal-image {
     display: none;
@@ -440,6 +441,9 @@
   .main.pets-main .container .modal-wrapper .modal-window .modal-info .pet-description {
     text-align: justify;
     margin-bottom: 24px;
+  }
+  .main.pets-main .container .modal-wrapper .modal-window .modal-info .pet-info {
+    text-align: left;
   }
   .main.pets-main .container .modal-wrapper .modal-window .modal-info .pet-info ul {
     gap: 6px;

@@ -608,6 +608,7 @@
                 .modal-wrapper {
                     .modal-window {
                         padding: 10px;
+                        max-width: 240px;
 
                         .modal-image {
                             display: none;
@@ -624,6 +625,8 @@
                             }
 
                             .pet-info {
+                                text-align: left;
+
                                 ul {
                                     gap: 6px;
                                 }
