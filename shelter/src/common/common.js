@@ -99,7 +99,7 @@ function createPopup(element, elementTarget) {
 
         const liElem = createElement('li', 'modal-li', '');
         const spanElem = createElement('span', '', capitalize(petField) + `: ${'\u00A0'}`);
-        const pInfo = createElement('p', '', `  ${pet[petField]}`);
+        const pInfo = createElement('span', '', `  ${pet[petField]}`);
         liElem.append(spanElem, pInfo);
         ulList.appendChild(liElem);
     }

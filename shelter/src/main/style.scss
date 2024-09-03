@@ -244,10 +244,6 @@
                             gap: 12px;
 
                             .modal-li {
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
-                                align-self: flex-start;
                                 position: relative;
                                 padding-left: 15px;
 
@@ -257,13 +253,19 @@
                                     line-height: 110%;
                                     letter-spacing: 0.05em;
                                     position: relative;
+
+                                    &:nth-child(2) {
+                                        line-height: 110%;
+                                        letter-spacing: 0.05em;
+                                        font-size: 15px;
+                                    }
                                 }
 
-                                p {
+                              /*   p {
                                     line-height: 110%;
                                     letter-spacing: 0.05em;
                                     font-size: 15px;
-                                }
+                                } */
 
                                 &::before {
                                     content: "";

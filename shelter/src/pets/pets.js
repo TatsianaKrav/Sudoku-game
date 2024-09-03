@@ -34,6 +34,7 @@ window.addEventListener('resize', () => {
     }
 
     showCards();
+    checkPagePosition(currentPage);
 })
 
 pagination(arrOfAllPets);
