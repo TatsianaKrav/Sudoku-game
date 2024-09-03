@@ -1,8 +1,6 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
+@import url("./fonts.scss");
+@import url("./mixins.scss");
+@import url("./colors.scss");
 @font-face {
   font-family: Arial-Italic;
   src: url(../../assets/fonts/arial-italic.ttf);
@@ -24,6 +22,11 @@
   font-family: Georgia-Bold;
   src: url(../../assets/fonts/georgia-bold.ttf);
 }
+* {
+  margin: 0;
+  padding: 0;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -380,7 +383,6 @@ body {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  /*  gap: 53px; */
   overflow-x: hidden;
 }
 .pets .container .pets-cards-wrapper .narrow {
@@ -404,11 +406,6 @@ body {
   overflow-x: hidden;
 }
 .pets .container .pets-cards-wrapper .pets-cards .pets-sliders {
-  /*     @include flex();
-  gap: 90px;
-  position: relative;
-  width: 300%;
-  left: -100%; */
   position: relative;
   overflow: hidden;
 }
@@ -588,12 +585,13 @@ body {
   gap: 12px;
 }
 .pets .container .modal-wrapper .modal-window .modal-info .pet-info ul .modal-li {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-self: flex-start;
   position: relative;
   padding-left: 15px;
+  /*   p {
+        line-height: 110%;
+        letter-spacing: 0.05em;
+        font-size: 15px;
+    } */
 }
 .pets .container .modal-wrapper .modal-window .modal-info .pet-info ul .modal-li span {
   font-family: Georgia-Bold, sans-serif;
@@ -602,7 +600,7 @@ body {
   letter-spacing: 0.05em;
   position: relative;
 }
-.pets .container .modal-wrapper .modal-window .modal-info .pet-info ul .modal-li p {
+.pets .container .modal-wrapper .modal-window .modal-info .pet-info ul .modal-li span:nth-child(2) {
   line-height: 110%;
   letter-spacing: 0.05em;
   font-size: 15px;
@@ -769,24 +767,6 @@ body {
   max-width: 380px;
 }
 
-/* 
-@keyframes slide-right {
-    0% {
-      left: -100%;
-    }
-    100% {
-      left: -200%;
-    }
-  }
-
-  @keyframes slide-left {
-    0% {
-      left: -100%;
-    }
-    100% {
-      left: 0;
-    }
-  } */
 @keyframes next1 {
   0% {
     left: calc(50% - 495px);

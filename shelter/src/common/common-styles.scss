@@ -2,6 +2,176 @@
 @import url('./mixins.scss');
 @import url('./colors.scss');
 
+@font-face {
+    font-family: Arial-Italic;
+    src: url(../../assets/fonts/arial-italic.ttf);
+}
+
+@font-face {
+    font-family: Arial-Regular;
+    src: url(../../assets/fonts/arial-regular.ttf);
+}
+
+@font-face {
+    font-family: Georgia-Regular;
+    src: url(../../assets/fonts/georgia-regular.ttf);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Georgia-Italic;
+    src: url(../../assets/fonts/georgia-italic.ttf);
+}
+
+@font-face {
+    font-family: Georgia-Bold;
+    src: url(../../assets/fonts/georgia-bold.ttf);
+}
+
+$color-dark-s: #CDCDCD;
+$color-light-s: #FAFAFA;
+$primary-color: #F1CDB3;
+$color-primary-light: #fddcc4;
+$color-light-xl: #FFFFFF;
+$color-light-l: #f6f6f6;
+$color-dark-3xl: #292929;
+$color-dark-l: #545454;
+$color-dark-xl: #4c4c4c;
+$color-dark-m: #b2b2b2;
+
+@mixin flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@mixin list {
+    list-style: none;
+    display: flex;
+}
+
+@mixin btn {
+    display: inline-block;
+    border-radius: 100px;
+    padding: 15px 45px;
+    background-color: $primary-color;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    font-family: Georgia-Regular, sans-serif;
+    font-size: 17px;
+    line-height: 130%;
+    color: $color-dark-3xl;
+}
+
+@mixin btn-link {
+    display: inline-block;
+    font-family: Georgia-Regular, sans-serif;
+    font-size: 17px;
+    line-height: 130%;
+    color: $color-dark-3xl;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+@mixin title {
+    font-family: Georgia-Regular, sans-serif;
+    font-size: 35px;
+    line-height: 129%;
+    letter-spacing: 0.06em;
+    color: $color-dark-l;
+    font-weight: normal;
+}
+
+
+
+@mixin roud-btn {
+    border-radius: 100px;
+    border: 2px solid $primary-color;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: 0.5s;
+
+    &:hover {
+        background-color: $color-primary-light;
+        border: 2px solid $color-primary-light;
+    }
+}
+
+@mixin contact {
+    font-family: Georgia-Regular, sans-serif;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: $primary-color;
+    transition: 0.5s;
+}
+
+@mixin card {
+    background-color: $color-light-s;
+    @include flex-column();
+    align-items: center;
+    padding-bottom: 30px;
+    gap: 30px;
+    border-radius: 9px;
+    cursor: pointer;
+    max-height: 435px;
+    box-sizing: border-box;
+    transition: 0.5s;
+
+    .pet-image {
+        max-height: 270px;
+        border-radius: 9px 9px 0 0;
+
+        img {
+            height: 100%;
+        }
+    }
+
+    .pet-name {
+        font-family: Georgia-Regular, sans-serif;
+        font-size: 20px;
+        letter-spacing: 0.06em;
+        text-align: center;
+        color: $color-dark-l;
+    }
+
+    .pet-btn {
+        @include btn();
+        display: inline-block;
+        width: 187px;
+        background-color: transparent;
+        border: 2px solid $primary-color;
+        letter-spacing: 0.5px;
+        padding: 13px 45px;
+        line-height: 130%;
+        transition: 0.5s;
+    }
+
+    &:hover {
+        background-color: $color-light-xl;
+        box-shadow: 0 2px 35px 14px rgba(13, 13, 13, 0.04);
+
+        .pet-btn {
+            background-color: $color-primary-light;
+            border: 2px solid $color-primary-light;
+        }
+
+    }
+}
+
 * {
     margin: 0;
     padding: 0;

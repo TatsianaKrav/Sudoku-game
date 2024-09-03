@@ -1,4 +1,27 @@
-@import url("../common/fonts.scss");
+@import url("./fonts.scss");
+@import url("./mixins.scss");
+@import url("./colors.scss");
+@font-face {
+  font-family: Arial-Italic;
+  src: url(../../assets/fonts/arial-italic.ttf);
+}
+@font-face {
+  font-family: Arial-Regular;
+  src: url(../../assets/fonts/arial-regular.ttf);
+}
+@font-face {
+  font-family: Georgia-Regular;
+  src: url(../../assets/fonts/georgia-regular.ttf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: Georgia-Italic;
+  src: url(../../assets/fonts/georgia-italic.ttf);
+}
+@font-face {
+  font-family: Georgia-Bold;
+  src: url(../../assets/fonts/georgia-bold.ttf);
+}
 * {
   margin: 0;
   padding: 0;

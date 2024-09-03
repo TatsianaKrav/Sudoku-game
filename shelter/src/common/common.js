@@ -69,7 +69,7 @@ function hideMenu(elem1, elem2, e) {
 
 function createPopup(element, elementTarget) {
     const pet = pets.find(pet => pet.name === elementTarget.currentTarget.dataset.name);
-    const petImgPath = `../../assets/images/pets-modal/${pet.name.toLowerCase()}.png`;
+    const petImgPath = `../../assets/images/pets/pets-${pet.name.toLowerCase()}.png`;
 
     const modalWindow = createElement('div', 'modal-window', '');
     element.appendChild(modalWindow);
