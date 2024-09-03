@@ -49,8 +49,8 @@ function getPagesAmount(width) {
 
 function getLastElems(arr, amount) {
     if (arr.length < amount || arr.length % amount === 0) return [];
-
-    let lastElems = arr.slice(arr.length - amount);
+    let rest = arr.length % amount;
+    let lastElems = arr.slice(arr.length - rest);
     return lastElems;
 }
 
