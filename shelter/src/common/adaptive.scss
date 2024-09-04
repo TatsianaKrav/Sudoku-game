@@ -117,14 +117,16 @@
                         .modal-info {
                             padding: 10px 9px 0 0;
                             max-width: 261px;
+                            align-self: flex-start;
 
                             .pet-description {
                                 margin: 20px 0;
                                 font-size: 13px;
-                                margin-bottom: 10px;
                             }
 
                             .pet-info {
+                                margin-bottom: 10px;
+
                                 ul {
                                     gap: 6px;
                                 }
@@ -153,8 +155,9 @@
                     }
 
                     .modal-info {
-                        padding: 10px 9px 38px 0;
+                        padding: 10px 9px 0 0;
                         max-width: 261px;
+                        align-self: flex-start;
 
                         .pet-description {
                             margin: 20px 0;
@@ -162,6 +165,8 @@
                         }
 
                         .pet-info {
+                            margin-bottom: 10px;
+
                             ul {
                                 gap: 6px;
                             }
@@ -296,6 +301,12 @@
                 .pagination {
                     margin-top: 10px;
                 }
+
+                /*      .modal-wrapper {
+                    .modal-window {
+                        max-width: 630px;
+                    }
+                } */
             }
         }
 
@@ -334,11 +345,11 @@
                 gap: 12px;
             }
 
-            .modal-wrapper {
+            /*   .modal-wrapper {
                 .modal-window {
                     max-width: 630px;
                 }
-            }
+            } */
         }
     }
 }
@@ -511,6 +522,7 @@
                 .narrow {
                     position: absolute;
                     bottom: 0;
+                    z-index: 1;
 
                     &.narrow-back {
                         left: 44px;
@@ -626,6 +638,7 @@
 
                             .pet-info {
                                 text-align: left;
+                                margin-bottom: 0;
 
                                 ul {
                                     gap: 6px;
@@ -647,8 +660,8 @@
         .container {
             .modal-wrapper {
                 .modal-window {
-                    max-width: 240px;
                     padding: 10px;
+                    max-width: 240px;
 
                     .modal-image {
                         display: none;
@@ -665,6 +678,9 @@
                         }
 
                         .pet-info {
+                            text-align: left;
+                            margin-bottom: 0;
+
                             ul {
                                 gap: 6px;
                             }

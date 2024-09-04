@@ -69,10 +69,13 @@
   .main.pets-main .container .modal-wrapper .modal-window .modal-info {
     padding: 10px 9px 0 0;
     max-width: 261px;
+    align-self: flex-start;
   }
   .main.pets-main .container .modal-wrapper .modal-window .modal-info .pet-description {
     margin: 20px 0;
     font-size: 13px;
+  }
+  .main.pets-main .container .modal-wrapper .modal-window .modal-info .pet-info {
     margin-bottom: 10px;
   }
   .main.pets-main .container .modal-wrapper .modal-window .modal-info .pet-info ul {
@@ -90,12 +93,16 @@
     width: 100%;
   }
   .pets .container .modal-wrapper .modal-window .modal-info {
-    padding: 10px 9px 38px 0;
+    padding: 10px 9px 0 0;
     max-width: 261px;
+    align-self: flex-start;
   }
   .pets .container .modal-wrapper .modal-window .modal-info .pet-description {
     margin: 20px 0;
     font-size: 13px;
+  }
+  .pets .container .modal-wrapper .modal-window .modal-info .pet-info {
+    margin-bottom: 10px;
   }
   .pets .container .modal-wrapper .modal-window .modal-info .pet-info ul {
     gap: 6px;
@@ -176,6 +183,11 @@
   }
   .main.pets-main .container {
     gap: 30px;
+    /*      .modal-wrapper {
+        .modal-window {
+            max-width: 630px;
+        }
+    } */
   }
   .main.pets-main .container .friends {
     padding: 0;
@@ -207,11 +219,15 @@
     flex-direction: column-reverse;
     gap: 80px;
   }
+  .pets .container {
+    /*   .modal-wrapper {
+        .modal-window {
+            max-width: 630px;
+        }
+    } */
+  }
   .pets .container .pets-cards-wrapper {
     gap: 12px;
-  }
-  .pets .container .modal-wrapper .modal-window {
-    max-width: 630px;
   }
 }
 @media screen and (max-width: 767px) {
@@ -348,6 +364,7 @@
   .pets .container .pets-cards-wrapper .narrow {
     position: absolute;
     bottom: 0;
+    z-index: 1;
   }
   .pets .container .pets-cards-wrapper .narrow.narrow-back {
     left: 44px;
@@ -444,6 +461,7 @@
   }
   .main.pets-main .container .modal-wrapper .modal-window .modal-info .pet-info {
     text-align: left;
+    margin-bottom: 0;
   }
   .main.pets-main .container .modal-wrapper .modal-window .modal-info .pet-info ul {
     gap: 6px;
@@ -453,8 +471,8 @@
     right: -30px;
   }
   .pets .container .modal-wrapper .modal-window {
-    max-width: 240px;
     padding: 10px;
+    max-width: 240px;
   }
   .pets .container .modal-wrapper .modal-window .modal-image {
     display: none;
@@ -467,6 +485,10 @@
   .pets .container .modal-wrapper .modal-window .modal-info .pet-description {
     text-align: justify;
     margin-bottom: 24px;
+  }
+  .pets .container .modal-wrapper .modal-window .modal-info .pet-info {
+    text-align: left;
+    margin-bottom: 0;
   }
   .pets .container .modal-wrapper .modal-window .modal-info .pet-info ul {
     gap: 6px;

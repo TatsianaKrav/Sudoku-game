@@ -186,27 +186,28 @@
 
 
             .modal-window {
+                box-sizing: border-box;
                 padding-right: 20px;
-                padding-bottom: 2px;
                 max-width: 900px;
                 max-height: 500px;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                gap: 10px;
+                gap: 29px;
                 background-color: $color-light-s;
                 position: fixed;
                 z-index: 10;
                 border-radius: 9px;
-                box-sizing: border-box;
+                box-shadow: 0 2px 35px 14px rgba(13, 13, 13, 0.04);
 
 
                 .modal-image {
-                    padding-left: 17px;
-                    margin-bottom: -44px;
+                    max-height: 500px;
 
                     img {
-                        width: 92%;
+                        width: 500px;
+                        height: 100%;
+                        border-radius: 9px 0 0 9px;
                     }
                 }
 
@@ -251,17 +252,15 @@
                                     font-family: Georgia-Bold, sans-serif;
                                     font-size: 15px;
                                     line-height: 110%;
-                                    letter-spacing: 0.05em;
+                                    letter-spacing: normal;
                                     position: relative;
 
                                     &:nth-child(2) {
-                                        line-height: 110%;
-                                        letter-spacing: 0.05em;
-                                        font-size: 15px;
+                                        font-family: Georgia-Regular, sans-serif;
                                     }
                                 }
 
-                              /*   p {
+                                /*   p {
                                     line-height: 110%;
                                     letter-spacing: 0.05em;
                                     font-size: 15px;
@@ -289,13 +288,14 @@
                             }
                         }
                     }
+
                 }
 
                 .close-btn {
                     @include roud-btn();
                     position: absolute;
-                    top: -51px;
-                    right: -43px;
+                    top: -53px;
+                    right: -40px;
                 }
 
                 &:hover .close-btn {
