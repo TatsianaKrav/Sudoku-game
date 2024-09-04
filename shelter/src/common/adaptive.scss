@@ -788,10 +788,10 @@
     }
 
     .pets {
-        padding: 42px 10px;
+        padding: 42px 0;
 
         .container {
-            padding: 0;
+            padding: 0 10px;
         }
     }
 
@@ -882,6 +882,14 @@
                 img {
                     width: 100%;
                 }
+            }
+        }
+    }
+
+    .pets {
+        .container {
+            .pets-cards-wrapper {
+                width: 320px;
             }
         }
     }
