@@ -183,11 +183,6 @@
   }
   .main.pets-main .container {
     gap: 30px;
-    /*      .modal-wrapper {
-        .modal-window {
-            max-width: 630px;
-        }
-    } */
   }
   .main.pets-main .container .friends {
     padding: 0;
@@ -218,13 +213,6 @@
   .about .container {
     flex-direction: column-reverse;
     gap: 80px;
-  }
-  .pets .container {
-    /*   .modal-wrapper {
-        .modal-window {
-            max-width: 630px;
-        }
-    } */
   }
   .pets .container .pets-cards-wrapper {
     gap: 12px;
