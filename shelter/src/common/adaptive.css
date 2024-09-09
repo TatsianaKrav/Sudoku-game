@@ -241,14 +241,13 @@
     background-color: #292929;
     box-sizing: border-box;
     z-index: 4;
-    transition: all 0.7s ease;
+    transition: all 1s ease;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 40px;
-    opacity: 1;
+    opacity: 0;
     height: 100dvh;
-    transform: translateX(-320px);
   }
   .header .container .menu .menu-list .menu-item {
     font-size: 32px;
@@ -262,6 +261,10 @@
   .header .container .menu.active {
     opacity: 1;
     z-index: 5;
+  }
+  .header .container .menu.active .menu-list {
+    transform: translateX(-100%);
+    opacity: 1;
   }
   .header .container .burger {
     display: flex;

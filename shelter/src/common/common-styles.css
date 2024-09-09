@@ -1,6 +1,3 @@
-@import url("./fonts.scss");
-@import url("./mixins.scss");
-@import url("./colors.scss");
 @font-face {
   font-family: Arial-Italic;
   src: url(../../assets/fonts/arial-italic.ttf);
