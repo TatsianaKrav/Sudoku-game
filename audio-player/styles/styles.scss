@@ -23,14 +23,16 @@ body {
         max-width: 70%;
         width: 300px;
         border: 2px solid red;
-        border-radius: 10%;
+        border-radius: 5%;
+        box-sizing: border-box;
         margin: 0 auto;
         font-family: Ubuntu, sans-serif;
 
         .player-image {
             width: 100%;
             height: 250px;
-            background-position: center;
+            border-radius: 5%;
+            background-position: top;
             background-size: cover;
             background-repeat: no-repeat;
         }
@@ -61,6 +63,7 @@ body {
                 height: 4px;
                 background-color: gray;
                 position: relative;
+                margin-top: 10px;
 
                 .time {
                     position: absolute;
@@ -99,13 +102,14 @@ body {
                 .active-btn {
                     width: 30px;
                     height: 30px;
-                    background-image: url('../assets/svg/play.png');
+                    background-image: url('../assets/svg/pause.png');
                     background-position: center;
                     background-size: contain;
                     cursor: pointer;
+                    transition: all 0.2s linear;
 
                     &.pause {
-                        background-image: url('../assets/svg/pause.png');
+                        background-image: url('../assets/svg/play.png');
                     }
                 }
             }
