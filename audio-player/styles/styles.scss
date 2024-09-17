@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: Ubuntu;
+    src: url(../assets/fonts/Ubuntu-R.ttf);
+}
+
+@font-face {
+    font-family: Ubuntu-bold;
+    src: url(../assets/fonts/Ubuntu-B.ttf);
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100dvh;
+
+    .container {
+        max-width: 70%;
+        width: 300px;
+        border: 2px solid red;
+        border-radius: 10%;
+        margin: 0 auto;
+        font-family: Ubuntu, sans-serif;
+
+        .player-image {
+            width: 100%;
+            height: 250px;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .player-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            padding: 15px 20px;
+            box-sizing: border-box;
+
+            .author-name {
+                text-align: center;
+                font-family: Ubuntu-Bold, sans-serif;
+                font-size: 18px;
+            }
+
+            .song-name {
+                text-align: center;
+                font-family: Ubuntu, sans-serif;
+                font-size: 16px;
+            }
+
+            .progress {
+                width: 80%;
+                height: 4px;
+                background-color: gray;
+                position: relative;
+
+                .time {
+                    position: absolute;
+                    font-size: 12px;
+
+                    &.total-time {
+                        top: -17px;
+                        right: 0;
+                        color: rgb(226, 16, 121)
+                    }
+
+                    &.current-time {
+                        top: 10px;
+                        right: left;
+                        color: rgb(113, 12, 245)
+                    }
+                }
+            }
+
+            .player-controls {
+                display: flex;
+                gap: 20px;
+                align-items: center;
+                justify-content: space-between;
+
+                .btn {
+                    width: 30px;
+                    height: 30px;
+                    cursor: pointer;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                .active-btn {
+                    width: 30px;
+                    height: 30px;
+                    background-image: url('../assets/svg/play.png');
+                    background-position: center;
+                    background-size: contain;
+                    cursor: pointer;
+
+                    &.pause {
+                        background-image: url('../assets/svg/pause.png');
+                    }
+                }
+            }
+        }
+    }
+}
