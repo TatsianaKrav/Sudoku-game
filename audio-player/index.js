@@ -6,6 +6,8 @@ const song = document.querySelector('.song-name');
 const duration = document.querySelector('.total-time');
 const image = document.querySelector('.player-image');
 const activeBtn = document.querySelector('.active-btn');
+const nextBtn = document.querySelector('.next-btn');
+const prevBtn = document.querySelector('.prev-btn');
 
 /* let random = getRandom();
 let currentSong = data[random]; */
@@ -14,24 +16,36 @@ const songsList = shuffle(data);
 let currentSong = songsList[0];
 let songCount = 0;
 
+createAudio(currentSong);
 
-const audio = new Audio(currentSong.src);
-audio.addEventListener("loadeddata", () => {
-    author.innerText = currentSong.author;
-    song.innerText = currentSong.song;
-    duration.innerText = getTime(audio.duration);
-    image.style.backgroundImage = `url(${currentSong.image})`;
+function createAudio(el) {
+    const audio = new Audio(el.src);
+    audio.addEventListener("loadeddata", () => {
+        author.innerText = el.author;
+        song.innerText = el.song;
+        duration.innerText = getTime(audio.duration);
+        image.style.backgroundImage = `url(${el.image})`;
+    })
+
+    activeBtn.addEventListener('click', () => {
+        activeBtn.classList.toggle('pause');
+        if (activeBtn.classList.contains('pause')) {
+            audio.pause();
+        } else if (!activeBtn.classList.contains('pause')) {
+            audio.play();
+        }
+    });
+}
+
+nextBtn.addEventListener('click', () => {
+    songCount = ++songCount >= songsList.length ? 0 : songCount;
+    createAudio(songsList[songCount]);
 })
-audio.play();
 
-activeBtn.addEventListener('click', () => {
-    activeBtn.classList.toggle('pause');
-    if (activeBtn.classList.contains('pause')) {
-        audio.pause();
-    } else if (!activeBtn.classList.contains('pause')) {
-        audio.play();
-    }
-});
+prevBtn.addEventListener('click', () => {
+    songCount = --songCount < 0 ? songsList.length - 1 : songCount;
+    createAudio(songsList[songCount]);
+})
 
 
 
