@@ -74,6 +74,16 @@ body .container .player-info .progress .time.current-time {
   right: left;
   color: rgb(113, 12, 245);
 }
+body .container .player-info .progress.active {
+  background-color: orange;
+  animation: moveBar 5000ms linear 1;
+}
+body .container .player-info .progress .bar {
+  background-color: orange;
+  width: 0%;
+  height: 100%;
+  transition: 0.25s;
+}
 body .container .player-info .player-controls {
   display: flex;
   gap: 20px;
@@ -99,4 +109,13 @@ body .container .player-info .player-controls .active-btn {
 }
 body .container .player-info .player-controls .active-btn.pause {
   background-image: url("../assets/svg/play.png");
+}
+
+@keyframes moveBar {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }/*# sourceMappingURL=styles.css.map */

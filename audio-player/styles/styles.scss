@@ -81,6 +81,18 @@ body {
                         color: rgb(113, 12, 245)
                     }
                 }
+
+                &.active {
+                    background-color: orange;
+                    animation: moveBar 5000ms linear 1;
+                }
+
+                .bar {
+                    background-color: orange;
+                    width: 0%;
+                    height: 100%;
+                    transition: 0.25s;
+                }
             }
 
             .player-controls {
@@ -114,5 +126,15 @@ body {
                 }
             }
         }
+    }
+}
+
+@keyframes moveBar {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
     }
 }
