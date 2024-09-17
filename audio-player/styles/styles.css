@@ -59,6 +59,7 @@ body .container .player-info .progress {
   background-color: gray;
   position: relative;
   margin-top: 10px;
+  cursor: pointer;
 }
 body .container .player-info .progress .time {
   position: absolute;

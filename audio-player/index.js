@@ -1,6 +1,5 @@
 import data from "./data/data.js"
 
-const player = document.querySelector('.container');
 const author = document.querySelector('.author-name');
 const song = document.querySelector('.song-name');
 const duration = document.querySelector('.total-time');
@@ -10,10 +9,12 @@ const nextBtn = document.querySelector('.next-btn');
 const prevBtn = document.querySelector('.prev-btn');
 const currentTime = document.querySelector('.current-time');
 const progressBar = document.querySelector('.progress');
+const bar = document.querySelector(".bar");
 
 const songsList = shuffle(data);
 let currentSong = songsList[0];
 let songCount = 0;
+let interval = 0;
 
 createAudio(currentSong);
 
@@ -24,8 +25,15 @@ function createAudio(el) {
         song.innerText = el.song;
         duration.innerText = getTime(audio.duration);
         image.style.backgroundImage = `url(${el.image})`;
+        clearInterval(interval);
+        currentTime.innerText = "00:00";
+        bar.style.width = 0;
+        audio.currentTime = 0;
+    })
 
-        moveBar(audio);
+    audio.addEventListener('ended', () => {
+        activeBtn.classList.toggle('pause');
+        currentTime.innerText = "00:00";
     })
 
     activeBtn.addEventListener('click', () => {
@@ -34,80 +42,42 @@ function createAudio(el) {
             audio.pause();
         } else if (!activeBtn.classList.contains('pause')) {
             audio.play();
+            moveBar(audio);
+            handleProgressBar(audio);
         }
     });
-
-    /*     test(audio); */
-
-    /*  function testBar(audioEl) {
-         progressBar.classList.add('active');
-         progressBar.style.transitionDuration = `${audioEl.duration}`;
-     } */
-
-
-    const bar = document.querySelector(".bar");
-    function moveBar(audioEl) {
-        setInterval(() => {
-            bar.style.width = audio.currentTime / audio.duration * 100 + "%";
-            currentTime.innerText = getTime(audioEl.currentTime);
-        }, 1000)
-
-
-        /*   progressBar.classList.add('active'); */
-        /*  progressBar.style.animation = `moveBar ${audioEl.duration} linear`; */
-        /* progressBar.classList.add('active');
-        progressBar.animate([
-            { from: 'width: 0%' },
-            { to: 'width: 100%' }
-        ], {
-            duration: audioEl.duration,
-            iterations: 1
-        }) */
-    }
-
-    /*  setInterval(() => {
-         currentTime.innerText = getTime(audio.currentTime);
-     }, 1000); */
-
-    /* if (audio.ended) {
-        console.log(1);
-        activeBtn.classList.add('pause');
-        currentTime.innerText = "00:00";
-        audio.load();
-    } */
 }
 
+function moveBar(audioEl) {
+    interval = setInterval(() => {
+        bar.style.width = audioEl.currentTime / audioEl.duration * 100 + "%";
+        currentTime.innerText = getTime(audioEl.currentTime);
 
-/* async function test(audioItem) {
-    let interval = null;
-    await new Promise(resolve => {
-        interval = setInterval(() => {
-            currentTime.innerText = getTime(audioItem.currentTime);
-        }, 1000);
-        resolve();
-        activeBtn.classList.add('pause');
-        currentTime.innerText = "00:00";
-    });
-} */
+        if (currentTime.innerText === duration.innerText) {
+            clearInterval(interval);
+        }
+    }, 1000)
+}
+
+function handleProgressBar(audioEl) {
+    progressBar.addEventListener("click", e => {
+        const prBarWidth = window.getComputedStyle(progressBar).width;
+        const timeToPlay = e.offsetX / parseInt(prBarWidth) * audioEl.duration;
+        audioEl.currentTime = timeToPlay;
+    }, false);
+}
 
 nextBtn.addEventListener('click', () => {
     songCount = ++songCount >= songsList.length ? 0 : songCount;
     createAudio(songsList[songCount]);
+    currentSong = songsList[songCount];
 })
 
 prevBtn.addEventListener('click', () => {
     songCount = --songCount < 0 ? songsList.length - 1 : songCount;
     createAudio(songsList[songCount]);
+    currentSong = songsList[songCount];
 })
-
-
-
-
-
-
-function getRandom() {
-    return Math.floor(Math.random() * data.length);
-}
 
 function getTime(num) {
     let sec = parseInt(num);
