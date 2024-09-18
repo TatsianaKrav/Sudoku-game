@@ -3,6 +3,9 @@
     padding: 0;
 }
 
+$first-color: rgb(95 7 151);
+$second-color: rgb(239 14 185);
+
 @font-face {
     font-family: Ubuntu;
     src: url(../assets/fonts/Ubuntu-R.ttf);
@@ -17,20 +20,25 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     height: 100dvh;
+    position: relative;
+    background: url("../assets/noise_transparent.png"), linear-gradient(90deg, rgba(22, 0, 36, 0.4962359943977591) 0%, rgba(245, 218, 242, 0.40940126050420167) 52%, rgba(252, 54, 231, 0.3085609243697479) 100%, rgba(0, 212, 255, 1) 100%);
+    background-repeat: repeat;
 
     .container {
         max-width: 70%;
         width: 300px;
-        border: 2px solid red;
         border-radius: 5%;
         box-sizing: border-box;
         margin: 0 auto;
+        box-shadow: 0px 5px 20px 5px #414040;
         font-family: Ubuntu, sans-serif;
+        margin-bottom: 50px;
 
         .player-image {
             width: 100%;
-            height: 250px;
+            height: 270px;
             border-radius: 5%;
             background-position: top;
             background-size: cover;
@@ -42,54 +50,51 @@ body {
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 15px;
             padding: 15px 20px;
             box-sizing: border-box;
+            height: 200px;
 
             .author-name {
                 text-align: center;
                 font-family: Ubuntu-Bold, sans-serif;
-                font-size: 18px;
+                font-size: 17px;
+                margin-bottom: 10px;
+                color: $first-color;
             }
 
             .song-name {
                 text-align: center;
                 font-family: Ubuntu, sans-serif;
-                font-size: 16px;
+                font-size: 15px;
+                color: $second-color;
             }
 
             .progress {
                 width: 80%;
                 height: 4px;
-                background-color: gray;
+                background-color: rgb(172, 166, 166);
                 position: relative;
-                margin-top: 10px;
+                margin: 25px 0;
                 cursor: pointer;
 
                 .time {
                     position: absolute;
                     font-size: 12px;
+                    color: black;
 
                     &.total-time {
                         top: -17px;
                         right: 0;
-                        color: rgb(226, 16, 121)
                     }
 
                     &.current-time {
                         top: 10px;
                         right: left;
-                        color: rgb(113, 12, 245)
                     }
                 }
 
-                &.active {
-                    background-color: orange;
-                    animation: moveBar 5000ms linear 1;
-                }
-
                 .bar {
-                    background-color: orange;
+                    background-color: $second-color;
                     width: 0%;
                     height: 100%;
                     transition: 0.25s;
@@ -98,9 +103,9 @@ body {
 
             .player-controls {
                 display: flex;
-                gap: 20px;
                 align-items: center;
                 justify-content: space-between;
+                gap: 25px;
 
                 .btn {
                     width: 30px;
@@ -130,16 +135,16 @@ body {
     }
 
     .footer {
-        position: fixed;
-        bottom: 0;
         width: 100dvw;
         background-color: rgb(243, 197, 232);
+        position: absolute;
+        bottom: 0;
 
 
         .footer-wrapper {
             margin: 0 auto;
             width: 60%;
-            padding: 20px 30px;
+            padding: 10px 30px;
             display: flex;
             align-items: center;
             justify-content: space-between;

@@ -15,20 +15,25 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   height: 100dvh;
+  position: relative;
+  background: url("../assets/noise_transparent.png"), linear-gradient(90deg, rgba(22, 0, 36, 0.4962359944) 0%, rgba(245, 218, 242, 0.4094012605) 52%, rgba(252, 54, 231, 0.3085609244) 100%, rgb(0, 212, 255) 100%);
+  background-repeat: repeat;
 }
 body .container {
   max-width: 70%;
   width: 300px;
-  border: 2px solid red;
   border-radius: 5%;
   box-sizing: border-box;
   margin: 0 auto;
+  box-shadow: 0px 5px 20px 5px #414040;
   font-family: Ubuntu, sans-serif;
+  margin-bottom: 50px;
 }
 body .container .player-image {
   width: 100%;
-  height: 250px;
+  height: 270px;
   border-radius: 5%;
   background-position: top;
   background-size: cover;
@@ -39,57 +44,55 @@ body .container .player-info {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 15px;
   padding: 15px 20px;
   box-sizing: border-box;
+  height: 200px;
 }
 body .container .player-info .author-name {
   text-align: center;
   font-family: Ubuntu-Bold, sans-serif;
-  font-size: 18px;
+  font-size: 17px;
+  margin-bottom: 10px;
+  color: rgb(95, 7, 151);
 }
 body .container .player-info .song-name {
   text-align: center;
   font-family: Ubuntu, sans-serif;
-  font-size: 16px;
+  font-size: 15px;
+  color: rgb(239, 14, 185);
 }
 body .container .player-info .progress {
   width: 80%;
   height: 4px;
-  background-color: gray;
+  background-color: rgb(172, 166, 166);
   position: relative;
-  margin-top: 10px;
+  margin: 25px 0;
   cursor: pointer;
 }
 body .container .player-info .progress .time {
   position: absolute;
   font-size: 12px;
+  color: black;
 }
 body .container .player-info .progress .time.total-time {
   top: -17px;
   right: 0;
-  color: rgb(226, 16, 121);
 }
 body .container .player-info .progress .time.current-time {
   top: 10px;
   right: left;
-  color: rgb(113, 12, 245);
-}
-body .container .player-info .progress.active {
-  background-color: orange;
-  animation: moveBar 5000ms linear 1;
 }
 body .container .player-info .progress .bar {
-  background-color: orange;
+  background-color: rgb(239, 14, 185);
   width: 0%;
   height: 100%;
   transition: 0.25s;
 }
 body .container .player-info .player-controls {
   display: flex;
-  gap: 20px;
   align-items: center;
   justify-content: space-between;
+  gap: 25px;
 }
 body .container .player-info .player-controls .btn {
   width: 30px;
@@ -112,15 +115,15 @@ body .container .player-info .player-controls .active-btn.pause {
   background-image: url("../assets/svg/play.png");
 }
 body .footer {
-  position: fixed;
-  bottom: 0;
   width: 100dvw;
   background-color: rgb(243, 197, 232);
+  position: absolute;
+  bottom: 0;
 }
 body .footer .footer-wrapper {
   margin: 0 auto;
   width: 60%;
-  padding: 20px 30px;
+  padding: 10px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
