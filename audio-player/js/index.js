@@ -33,6 +33,10 @@ function renderPlayer(song) {
         bar.style.width = audio.currentTime / audio.duration * 100 + "%";
         currentTimeSong.innerText = getTime(audio.currentTime);
     })
+
+    audio.addEventListener('ended', () => {
+        playNextSong();
+    })
 }
 
 activeBtn.addEventListener('click', () => {
@@ -40,22 +44,19 @@ activeBtn.addEventListener('click', () => {
     checkState();
 })
 
-nextBtn.addEventListener('click', () => {
-    songCount = ++songCount >= songsList.length ? 0 : songCount;
-    renderPlayer(songsList[songCount]);
-    bar.style.width = 0;
-    if (!isPaused) {
-        audio.play();
-    }
-})
+nextBtn.addEventListener('click', playNextSong);
 
 prevBtn.addEventListener('click', () => {
     songCount = --songCount < 0 ? songsList.length - 1 : songCount;
-    renderPlayer(songsList[songCount]);
     bar.style.width = 0;
-    if (!isPaused) {
-        audio.play();
-    }
+
+    setTimeout(() => {
+        renderPlayer(songsList[songCount]);
+        if (!isPaused) {
+            audio.play();
+        }
+    }, 500)
+
 })
 
 progressBar.addEventListener('click', (e) => {
@@ -64,6 +65,18 @@ progressBar.addEventListener('click', (e) => {
     const time = audio.duration * pourc / 100;
     audio.currentTime = time;
 })
+
+function playNextSong() {
+    songCount = ++songCount >= songsList.length ? 0 : songCount;
+    bar.style.width = 0;
+
+    setTimeout(() => {
+        renderPlayer(songsList[songCount]);
+        if (!isPaused) {
+            audio.play();
+        }
+    }, 500)
+}
 
 
 function checkState() {
