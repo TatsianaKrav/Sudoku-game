@@ -139,7 +139,7 @@ body {
                     transition: all 0.2s linear;
                     border: 2px solid $second-color;
                     border-radius: 50%;
-                    transition: all 1s linear;
+                    transition: all .3s linear;
 
                     &.pause {
                         background-image: url('../assets/svg/play-btn.svg');
