@@ -163,6 +163,23 @@ body {
                         }
                     }
                 }
+
+                .volume-btn {
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    background-color: $second-color;
+                    cursor: pointer;
+                    background-image: url('../assets/svg/volume-mute.svg');
+                    background-position: center;
+                    background-size: 80%;
+                    background-repeat: no-repeat;
+                    transition: all .3s linear;
+
+                    &.active {
+                        background-image: url('../assets/svg//volume-active.svg');
+                    }
+                }
             }
         }
     }

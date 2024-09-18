@@ -143,6 +143,21 @@ body .container .player-info .player-controls .active-btn.pause {
 body .container .player-info .player-controls .active-btn.pause:hover {
   animation: rotateBtn 1.2s linear forwards infinite;
 }
+body .container .player-info .player-controls .volume-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #ef0eb9;
+  cursor: pointer;
+  background-image: url("../assets/svg/volume-mute.svg");
+  background-position: center;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  transition: all 0.3s linear;
+}
+body .container .player-info .player-controls .volume-btn.active {
+  background-image: url("../assets/svg//volume-active.svg");
+}
 body .footer {
   width: 100dvw;
   background-color: rgb(243, 197, 232);

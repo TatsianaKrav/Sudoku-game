@@ -10,6 +10,7 @@ const activeBtn = document.querySelector('.active-btn');
 const nextBtn = document.querySelector('.next-btn');
 const prevBtn = document.querySelector('.prev-btn');
 const shuffleBtn = document.querySelector('.shuffle');
+const volumeBtn = document.querySelector('.volume-btn');
 const currentTimeSong = document.querySelector('.current-time');
 const progressBar = document.querySelector('.progress');
 const bar = document.querySelector(".bar");
@@ -68,6 +69,17 @@ progressBar.addEventListener('click', (e) => {
 shuffleBtn.addEventListener('click', () => {
     songsList = shuffle(data);
     renderPlayer(songsList[0]);
+})
+
+volumeBtn.addEventListener('click', () => {
+    volumeBtn.classList.toggle('active');
+
+    if (!volumeBtn.classList.contains('active')) {
+        audio.volume = 0;
+    } else {
+        //prev value of volume
+        audio.volume = .7;
+    }
 })
 
 function playNextSong(bool) {
