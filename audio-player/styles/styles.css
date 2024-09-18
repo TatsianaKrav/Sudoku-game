@@ -59,7 +59,8 @@ body .container .player-info .song-name {
   text-align: center;
   font-family: Ubuntu, sans-serif;
   font-size: 15px;
-  color: rgb(239, 14, 185);
+  color: black;
+  /*    color: $second-color; */
 }
 body .container .player-info .progress {
   width: 80%;
@@ -97,22 +98,32 @@ body .container .player-info .player-controls {
 body .container .player-info .player-controls .btn {
   width: 30px;
   height: 30px;
+  border-radius: 50%;
+  background-color: rgb(239, 14, 185);
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 body .container .player-info .player-controls .btn img {
-  width: 100%;
+  width: 70%;
 }
 body .container .player-info .player-controls .active-btn {
-  width: 30px;
-  height: 30px;
-  background-image: url("../assets/svg/pause.png");
+  width: 40px;
+  height: 40px;
+  background-image: url("../assets/svg/pause.svg");
   background-position: center;
   background-size: contain;
+  background-repeat: no-repeat;
   cursor: pointer;
   transition: all 0.2s linear;
+  border: 2px solid rgb(239, 14, 185);
+  border-radius: 50%;
 }
 body .container .player-info .player-controls .active-btn.pause {
-  background-image: url("../assets/svg/play.png");
+  background-image: url("../assets/svg/play-btn.svg");
+  background-size: 80%;
+  background-position-x: 75%;
 }
 body .footer {
   width: 100dvw;
