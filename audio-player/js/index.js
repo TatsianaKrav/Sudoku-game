@@ -16,6 +16,7 @@ const bar = document.querySelector(".bar");
 
 const songsList = shuffle(data);
 let songCount = 0;
+let isPaused = false;
 
 renderPlayer(songsList[songCount]);
 
@@ -28,4 +29,36 @@ function renderPlayer(song) {
     audio.addEventListener('loadeddata', () => {
         songDuration.innerText = getTime(audio.duration);
     })
+}
+
+activeBtn.addEventListener('click', () => {
+    activeBtn.classList.toggle('pause');
+    checkState();
+})
+
+nextBtn.addEventListener('click', () => {
+    songCount = ++songCount >= songsList.length ? 0 : songCount;
+    renderPlayer(songsList[songCount]);
+    if (!isPaused) {
+        audio.play();
+    }
+})
+
+prevBtn.addEventListener('click', () => {
+    songCount = --songCount < 0 ? songsList.length - 1 : songCount;
+    renderPlayer(songsList[songCount]);
+    if (!isPaused) {
+        audio.play();
+    }
+})
+
+
+function checkState() {
+    if (activeBtn.classList.contains('pause')) {
+        isPaused = true;
+        audio.pause();
+    } else {
+        isPaused = false;
+        audio.play();
+    }
 }
