@@ -9,7 +9,7 @@ const data = [
         author: 'Natasha St-Pier & Merwam Rim',
         song: "Contre ceux d'en haut",
         src: './assets/audio/Contre ceux den haut.mp3',
-        image: './assets/images/2.jpg'
+        image: './assets/images/2.png'
 
     },
     {
