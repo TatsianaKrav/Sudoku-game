@@ -1,7 +1,6 @@
 import data from "../data/data.js"
 import { shuffle, getTime } from "./utils.js";
 
-const player = document.querySelector('.player');
 const audio = document.querySelector('.audio');
 const author = document.querySelector('.author-name');
 const title = document.querySelector('.song-name');
@@ -44,6 +43,7 @@ activeBtn.addEventListener('click', () => {
 nextBtn.addEventListener('click', () => {
     songCount = ++songCount >= songsList.length ? 0 : songCount;
     renderPlayer(songsList[songCount]);
+    bar.style.width = 0;
     if (!isPaused) {
         audio.play();
     }
@@ -52,6 +52,7 @@ nextBtn.addEventListener('click', () => {
 prevBtn.addEventListener('click', () => {
     songCount = --songCount < 0 ? songsList.length - 1 : songCount;
     renderPlayer(songsList[songCount]);
+    bar.style.width = 0;
     if (!isPaused) {
         audio.play();
     }
