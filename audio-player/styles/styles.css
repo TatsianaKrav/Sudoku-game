@@ -104,9 +104,13 @@ body .container .player-info .player-controls .btn {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.5s linear;
 }
 body .container .player-info .player-controls .btn img {
   width: 70%;
+}
+body .container .player-info .player-controls .btn:hover {
+  transform: scale(1.1);
 }
 body .container .player-info .player-controls .active-btn {
   width: 40px;
@@ -119,11 +123,15 @@ body .container .player-info .player-controls .active-btn {
   transition: all 0.2s linear;
   border: 2px solid rgb(239, 14, 185);
   border-radius: 50%;
+  transition: all 1s linear;
 }
 body .container .player-info .player-controls .active-btn.pause {
   background-image: url("../assets/svg/play-btn.svg");
   background-size: 80%;
   background-position-x: 75%;
+}
+body .container .player-info .player-controls .active-btn.pause:hover {
+  animation: rotateBtn 1.2s linear forwards infinite;
 }
 body .footer {
   width: 100dvw;
@@ -156,5 +164,16 @@ body .footer .footer-wrapper .school {
   }
   to {
     width: 100%;
+  }
+}
+@keyframes rotateBtn {
+  0% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
   }
 }/*# sourceMappingURL=styles.css.map */
