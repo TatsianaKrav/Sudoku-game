@@ -4,7 +4,7 @@
 }
 
 $first-color: rgb(95 7 151);
-$second-color: rgb(239, 14, 185);
+$second-color: #ef0eb9;
 
 @font-face {
     font-family: Ubuntu;
@@ -106,7 +106,19 @@ body {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                gap: 25px;
+                gap: 15px;
+
+                .shuffle {
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    background-color: black;
+                    cursor: pointer;
+
+                    img {
+                        width: 100%;
+                    }
+                }
 
                 .btn {
                     width: 30px;

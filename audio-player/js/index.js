@@ -9,11 +9,12 @@ const image = document.querySelector('.player-image');
 const activeBtn = document.querySelector('.active-btn');
 const nextBtn = document.querySelector('.next-btn');
 const prevBtn = document.querySelector('.prev-btn');
+const shuffleBtn = document.querySelector('.shuffle');
 const currentTimeSong = document.querySelector('.current-time');
 const progressBar = document.querySelector('.progress');
 const bar = document.querySelector(".bar");
 
-const songsList = shuffle(data);
+let songsList = shuffle(data);
 let songCount = 0;
 let isPaused = false;
 
@@ -62,6 +63,11 @@ progressBar.addEventListener('click', (e) => {
     const pourc = e.offsetX * 100 / prBarWidth;
     const time = audio.duration * pourc / 100;
     audio.currentTime = time;
+})
+
+shuffleBtn.addEventListener('click', () => {
+    songsList = shuffle(data);
+    renderPlayer(songsList[0]);
 })
 
 function playNextSong(bool) {

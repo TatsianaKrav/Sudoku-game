@@ -84,7 +84,7 @@ body .container .player-info .progress .time.current-time {
   right: left;
 }
 body .container .player-info .progress .bar {
-  background-color: rgb(239, 14, 185);
+  background-color: #ef0eb9;
   width: 0%;
   height: 100%;
   transition: 0.25s;
@@ -93,13 +93,23 @@ body .container .player-info .player-controls {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 25px;
+  gap: 15px;
+}
+body .container .player-info .player-controls .shuffle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: black;
+  cursor: pointer;
+}
+body .container .player-info .player-controls .shuffle img {
+  width: 100%;
 }
 body .container .player-info .player-controls .btn {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color: rgb(239, 14, 185);
+  background-color: #ef0eb9;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -121,7 +131,7 @@ body .container .player-info .player-controls .active-btn {
   background-repeat: no-repeat;
   cursor: pointer;
   transition: all 0.2s linear;
-  border: 2px solid rgb(239, 14, 185);
+  border: 2px solid #ef0eb9;
   border-radius: 50%;
   transition: all 0.3s linear;
 }
