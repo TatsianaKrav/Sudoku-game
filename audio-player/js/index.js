@@ -1,5 +1,5 @@
 import data from "../data/data.js"
-import { shuffle } from "./utils.js";
+import { shuffle, getTime } from "./utils.js";
 
 const player = document.querySelector('.player');
 const audio = document.querySelector('.audio');
@@ -17,4 +17,15 @@ const bar = document.querySelector(".bar");
 const songsList = shuffle(data);
 let songCount = 0;
 
-console.log(songsList);
+renderPlayer(songsList[songCount]);
+
+function renderPlayer(song) {
+    audio.src = song.src;
+    author.innerText = song.author;
+    title.innerText = song.song;
+    image.style.backgroundImage = `url(${song.image})`;
+
+    audio.addEventListener('loadeddata', () => {
+        songDuration.innerText = getTime(audio.duration);
+    })
+}

@@ -6,4 +6,15 @@ function shuffle(array) {
     return array;
 }
 
-export { shuffle };
+function getTime(num) {
+    let sec = parseInt(num);
+    let min = parseInt(sec / 60);
+    sec = sec % 60;
+
+    sec = sec < 10 ? `0${sec}` : `${sec}`;
+    min = min < 10 ? `0${min}` : `${min}`;
+
+    return `${min}:${sec}`;
+}
+
+export { shuffle, getTime };
