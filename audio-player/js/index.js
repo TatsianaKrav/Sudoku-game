@@ -29,6 +29,11 @@ function renderPlayer(song) {
     audio.addEventListener('loadeddata', () => {
         songDuration.innerText = getTime(audio.duration);
     })
+
+    audio.addEventListener('timeupdate', () => {
+        bar.style.width = audio.currentTime / audio.duration * 100 + "%";
+        currentTimeSong.innerText = getTime(audio.currentTime);
+    })
 }
 
 activeBtn.addEventListener('click', () => {
@@ -50,6 +55,13 @@ prevBtn.addEventListener('click', () => {
     if (!isPaused) {
         audio.play();
     }
+})
+
+progressBar.addEventListener('click', (e) => {
+    const prBarWidth = parseInt(window.getComputedStyle(progressBar).width);
+    const pourc = e.offsetX * 100 / prBarWidth;
+    const time = audio.duration * pourc / 100;
+    audio.currentTime = time;
 })
 
 
