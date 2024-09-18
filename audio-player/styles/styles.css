@@ -111,6 +111,30 @@ body .container .player-info .player-controls .active-btn {
 body .container .player-info .player-controls .active-btn.pause {
   background-image: url("../assets/svg/play.png");
 }
+body .footer {
+  position: fixed;
+  bottom: 0;
+  width: 100dvw;
+  background-color: rgb(243, 197, 232);
+}
+body .footer .footer-wrapper {
+  margin: 0 auto;
+  width: 60%;
+  padding: 20px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: Ubuntu, sans-serif;
+  font-size: 12px;
+}
+body .footer .footer-wrapper a {
+  text-decoration: none;
+  color: black;
+}
+body .footer .footer-wrapper .school {
+  display: block;
+  width: 70px;
+}
 
 @keyframes moveBar {
   from {
