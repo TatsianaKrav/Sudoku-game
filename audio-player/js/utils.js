@@ -17,4 +17,10 @@ function getTime(num) {
     return `${min}:${sec}`;
 }
 
-export { shuffle, getTime };
+function createElement(tagName, className) {
+    const elem = document.createElement(tagName);
+    elem.classList.add(className);
+    return elem;
+}
+
+export { shuffle, getTime, createElement };

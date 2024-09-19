@@ -1,5 +1,5 @@
 import data from "../data/data.js"
-import { shuffle, getTime } from "./utils.js";
+import { shuffle, getTime, createElement } from "./utils.js";
 
 const audio = document.querySelector('.audio');
 const author = document.querySelector('.author-name');
@@ -16,6 +16,8 @@ const volumeProgressBtn = document.querySelector('.volume-progress');
 const currentTimeSong = document.querySelector('.current-time');
 const progressBar = document.querySelector('.progress');
 const bar = document.querySelector(".bar");
+const playlist = document.querySelector(".playlist");
+const playlistInfo = document.querySelector(".playlist-info");
 
 let songsList = shuffle(data);
 let songCount = 0;
@@ -71,6 +73,48 @@ progressBar.addEventListener('click', (e) => {
 })
 
 shuffleBtn.addEventListener('click', shuffleList);
+
+playlist.addEventListener('click', handlePlaylist);
+
+function handlePlaylist() {
+    playlistInfo.classList.toggle('open');
+
+    if (playlistInfo.classList.contains('open')) {
+        createPlaylist()
+    } else {
+        playlistInfo.innerHTML = '';
+    }
+}
+
+function createPlaylist() {
+    songsList.forEach(item => {
+        renderPlaylist(item);
+    })
+}
+
+function renderPlaylist(el) {
+    const itemWrapper = createElement('div', 'song-wrapper');
+    itemWrapper.setAttribute('data-id', el.id);
+    const song = createElement('span', 'track');
+    song.innerHTML = `<span>${el.author}</span> - ${el.song}`;
+
+    itemWrapper.addEventListener('click', (e) => {
+        const id = e.currentTarget.dataset.id;
+        const chosenTrack = songsList.find(item => item.id === +id);
+        renderPlayer(chosenTrack);
+        playlistInfo.classList.remove('open');
+        playlistInfo.innerHTML = '';
+        
+        if(!isPaused) {
+            audio.play();
+        } else {
+            bar.style.width = 0;
+        }
+    })
+
+    itemWrapper.append(song);
+    playlistInfo.append(itemWrapper);
+}
 
 function shuffleList() {
     const prevList = [...songsList];
