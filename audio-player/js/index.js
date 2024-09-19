@@ -11,6 +11,8 @@ const nextBtn = document.querySelector('.next-btn');
 const prevBtn = document.querySelector('.prev-btn');
 const shuffleBtn = document.querySelector('.shuffle');
 const volumeBtn = document.querySelector('.volume-btn');
+const volumeBarBtn = document.querySelector('.volume-bar');
+const volumeProgressBtn = document.querySelector('.volume-progress');
 const currentTimeSong = document.querySelector('.current-time');
 const progressBar = document.querySelector('.progress');
 const bar = document.querySelector(".bar");
@@ -26,6 +28,8 @@ function renderPlayer(song) {
     author.innerText = song.author;
     title.innerText = song.song;
     image.style.backgroundImage = `url(${song.image})`;
+    audio.volume = 0.50;
+    volumeProgressBtn.style.height = audio.volume * 100 + '%';
 
     audio.addEventListener('loadeddata', () => {
         songDuration.innerText = getTime(audio.duration);
@@ -71,15 +75,28 @@ shuffleBtn.addEventListener('click', () => {
     renderPlayer(songsList[0]);
 })
 
-volumeBtn.addEventListener('click', () => {
+volumeBtn.addEventListener('click', (e) => {
+    if (!e.target.classList.contains('volume-btn')) return;
+
     volumeBtn.classList.toggle('active');
 
     if (!volumeBtn.classList.contains('active')) {
+        localStorage.setItem('volume', audio.volume);
         audio.volume = 0;
+        volumeProgressBtn.style.height = 0;
     } else {
-        //prev value of volume
-        audio.volume = .7;
+        audio.volume = localStorage.getItem('volume');
+        volumeProgressBtn.style.height = audio.volume * 100 + '%';
     }
+})
+
+volumeBarBtn.addEventListener('click', (e) => {
+    if (e.target.classList.contains('volume-btn')) return;
+    
+    const height = parseInt(window.getComputedStyle(volumeBarBtn).height);
+    const newVolume = e.offsetY * 100 / height;
+    audio.volume = newVolume / 100;
+    volumeProgressBtn.style.height = newVolume + '%';
 })
 
 function playNextSong(bool) {

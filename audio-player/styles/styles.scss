@@ -175,9 +175,40 @@ body {
                     background-size: 80%;
                     background-repeat: no-repeat;
                     transition: all .3s linear;
+                    position: relative;
 
                     &.active {
                         background-image: url('../assets/svg//volume-active.svg');
+                    }
+
+                    .volume-bar-wrapper {
+                        position: absolute;
+                        top: -80px;
+                        left: 2px;
+                        padding: 5px 10px;
+                        background-color: #414040;
+                        transition: all .3s linear;
+                        opacity: 0;
+                        z-index: 2;
+
+                        .volume-bar {
+                            width: 4px;
+                            height: 60px;
+                            border-radius: 10px;
+                            background-color: rgb(172, 166, 166);
+                            transform: rotate(180deg);
+
+                            .volume-progress {
+                                background-color: $second-color;
+                                height: 0%;
+                                width: 100%;
+                                transition: 0.25s;
+                            }
+                        }
+                    }
+
+                    &:hover .volume-bar-wrapper {
+                        opacity: 1;
                     }
                 }
             }
@@ -189,6 +220,7 @@ body {
         background-color: rgb(243, 197, 232);
         position: absolute;
         bottom: 0;
+        display: none;
 
 
         .footer-wrapper {
