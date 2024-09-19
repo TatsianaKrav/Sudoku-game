@@ -70,10 +70,22 @@ progressBar.addEventListener('click', (e) => {
     audio.currentTime = time;
 })
 
-shuffleBtn.addEventListener('click', () => {
+shuffleBtn.addEventListener('click', shuffleList);
+
+function shuffleList() {
+    const prevList = [...songsList];
     songsList = shuffle(data);
+
+    if (prevList[0] === songsList[0]) {
+        shuffleList();
+    }
     renderPlayer(songsList[0]);
-})
+    if (!isPaused) {
+        audio.play()
+    } else {
+        bar.style.width = 0;
+    };
+}
 
 volumeBtn.addEventListener('click', (e) => {
     if (!e.target.classList.contains('volume-btn')) return;

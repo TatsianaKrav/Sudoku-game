@@ -217,16 +217,14 @@ body {
 
     .footer {
         width: 100dvw;
-        background-color: rgb(243, 197, 232);
         position: absolute;
         bottom: 0;
-        display: none;
 
 
         .footer-wrapper {
             margin: 0 auto;
             width: 60%;
-            padding: 10px 30px;
+            padding: 5px 30px;
             display: flex;
             align-items: center;
             justify-content: space-between;
