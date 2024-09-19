@@ -80,7 +80,7 @@ function handlePlaylist() {
     playlistInfo.classList.toggle('open');
 
     if (playlistInfo.classList.contains('open')) {
-        createPlaylist()
+        createPlaylist();
     } else {
         playlistInfo.innerHTML = '';
     }
@@ -104,8 +104,9 @@ function renderPlaylist(el) {
         renderPlayer(chosenTrack);
         playlistInfo.classList.remove('open');
         playlistInfo.innerHTML = '';
-        
-        if(!isPaused) {
+        songCount = chosenTrack.id;
+
+        if (!isPaused) {
             audio.play();
         } else {
             bar.style.width = 0;
