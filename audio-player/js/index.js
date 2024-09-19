@@ -104,7 +104,7 @@ function renderPlaylist(el) {
         renderPlayer(chosenTrack);
         playlistInfo.classList.remove('open');
         playlistInfo.innerHTML = '';
-        songCount = chosenTrack.id;
+        songCount = songsList.indexOf(chosenTrack);
 
         if (!isPaused) {
             audio.play();
