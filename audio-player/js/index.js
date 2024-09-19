@@ -30,8 +30,9 @@ function renderPlayer(song) {
     author.innerText = song.author;
     title.innerText = song.song;
     image.style.backgroundImage = `url(${song.image})`;
-    audio.volume = 0.50;
-    volumeProgressBtn.style.height = audio.volume * 100 + '%';
+    /*  volumeProgressBtn.style.height = audio.volume * 100 + '%'; */
+
+    checkVolume();
 
     audio.addEventListener('loadeddata', () => {
         songDuration.innerText = getTime(audio.duration);
@@ -60,6 +61,7 @@ prevBtn.addEventListener('click', () => {
     songCount = --songCount < 0 ? songsList.length - 1 : songCount;
     bar.style.width = 0;
     renderPlayer(songsList[songCount]);
+
     if (!isPaused) {
         audio.play();
     }
@@ -154,6 +156,7 @@ volumeBarBtn.addEventListener('click', (e) => {
     const newVolume = e.offsetY * 100 / height;
     audio.volume = newVolume / 100;
     volumeProgressBtn.style.height = newVolume + '%';
+    localStorage.setItem('volume', audio.volume);
 })
 
 function playNextSong(bool) {
@@ -163,6 +166,18 @@ function playNextSong(bool) {
     if (!bool) audio.play();
 }
 
+function checkVolume() {
+    const prevVolume = localStorage.getItem('volume');
+
+    if (prevVolume) {
+        audio.volume = prevVolume;
+        volumeProgressBtn.style.height = audio.volume * 100 + '%';
+    } else {
+        audio.volume = 0.70;
+        volumeProgressBtn.style.height = audio.volume * 100 + '%';
+        localStorage.setItem('volume', audio.volume);
+    }
+}
 
 function checkState() {
     if (activeBtn.classList.contains('pause')) {
