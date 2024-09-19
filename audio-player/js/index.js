@@ -160,10 +160,15 @@ volumeBarBtn.addEventListener('click', (e) => {
 })
 
 function playNextSong(bool) {
-    songCount = ++songCount >= songsList.length ? 0 : songCount;
+    let count = songCount;
+    songCount = ++count === songsList.length ? 0 : songCount++;
     bar.style.width = 0;
+
     renderPlayer(songsList[songCount]);
-    if (!bool) audio.play();
+    setTimeout(() => {
+        if (!bool) audio.play();
+    }, 500)
+
 }
 
 function checkVolume() {
