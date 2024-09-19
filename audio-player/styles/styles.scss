@@ -183,8 +183,8 @@ body {
 
                     .volume-bar-wrapper {
                         position: absolute;
-                        top: -80px;
-                        left: 2px;
+                        top: -70px;
+                        right: -23px;
                         padding: 5px 10px;
                         background-color: #414040;
                         transition: all .3s linear;
@@ -192,7 +192,7 @@ body {
                         z-index: 2;
 
                         .volume-bar {
-                            width: 4px;
+                            width: 5px;
                             height: 60px;
                             border-radius: 10px;
                             background-color: rgb(172, 166, 166);

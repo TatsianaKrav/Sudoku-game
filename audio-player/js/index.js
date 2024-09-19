@@ -19,7 +19,7 @@ const bar = document.querySelector(".bar");
 
 let songsList = shuffle(data);
 let songCount = 0;
-let isPaused = false;
+let isPaused = true;
 
 renderPlayer(songsList[songCount]);
 
@@ -92,7 +92,7 @@ volumeBtn.addEventListener('click', (e) => {
 
 volumeBarBtn.addEventListener('click', (e) => {
     if (e.target.classList.contains('volume-btn')) return;
-    
+
     const height = parseInt(window.getComputedStyle(volumeBarBtn).height);
     const newVolume = e.offsetY * 100 / height;
     audio.volume = newVolume / 100;
