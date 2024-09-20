@@ -30,7 +30,6 @@ function renderPlayer(song) {
     author.innerText = song.author;
     title.innerText = song.song;
     image.style.backgroundImage = `url(${song.image})`;
-    /*  volumeProgressBtn.style.height = audio.volume * 100 + '%'; */
 
     checkVolume();
 
@@ -42,11 +41,11 @@ function renderPlayer(song) {
         bar.style.width = audio.currentTime / audio.duration * 100 + "%";
         currentTimeSong.innerText = getTime(audio.currentTime);
     })
-
-    audio.addEventListener('ended', () => {
-        playNextSong(false);
-    })
 }
+
+audio.addEventListener('ended', () => {
+    playNextSong(false);
+})
 
 activeBtn.addEventListener('click', () => {
     activeBtn.classList.toggle('pause');
@@ -162,13 +161,17 @@ volumeBarBtn.addEventListener('click', (e) => {
 
 function playNextSong(bool) {
     let count = songCount;
-    songCount = ++count === songsList.length ? 0 : ++songCount;
+    console.log(count);
+    songCount = count === songsList.length - 1 ? 0 : ++songCount;
     bar.style.width = 0;
+    console.log(songCount);
 
     renderPlayer(songsList[songCount]);
+    audio.currentTime = 0;
+
     setTimeout(() => {
         if (!bool) audio.play();
-    }, 500)
+    }, 100)
 
 }
 
