@@ -161,10 +161,8 @@ volumeBarBtn.addEventListener('click', (e) => {
 
 function playNextSong(bool) {
     let count = songCount;
-    console.log(count);
     songCount = count === songsList.length - 1 ? 0 : ++songCount;
     bar.style.width = 0;
-    console.log(songCount);
 
     renderPlayer(songsList[songCount]);
     audio.currentTime = 0;
