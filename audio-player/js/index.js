@@ -161,7 +161,7 @@ volumeBarBtn.addEventListener('click', (e) => {
 
 function playNextSong(bool) {
     let count = songCount;
-    songCount = ++count === songsList.length ? 0 : songCount++;
+    songCount = ++count === songsList.length ? 0 : ++songCount;
     bar.style.width = 0;
 
     renderPlayer(songsList[songCount]);
