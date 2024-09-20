@@ -140,11 +140,12 @@ volumeBtn.addEventListener('click', (e) => {
     volumeBtn.classList.toggle('active');
 
     if (!volumeBtn.classList.contains('active')) {
-        localStorage.setItem('volume', audio.volume);
+        localStorage.setItem('prevVolume', audio.volume);
         audio.volume = 0;
         volumeProgressBtn.style.height = 0;
+        localStorage.setItem('volume', audio.volume);
     } else {
-        audio.volume = localStorage.getItem('volume');
+        audio.volume = localStorage.getItem('prevVolume');
         volumeProgressBtn.style.height = audio.volume * 100 + '%';
     }
 })
