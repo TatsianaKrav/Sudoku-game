@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+$first-color: #00ffff;
+
+html {
+    height: 100%;
+}
+
+body {
+    background-color: black;
+    min-height: 100%;
+    position: relative;
+
+    .container {
+        max-width: 1280px;
+        margin: 0 auto;
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            border-bottom: 3px solid $first-color;
+            box-sizing: border-box;
+
+            .logo {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+
+                img {
+                    width: 50px;
+                    max-height: 50px;
+                }
+
+                p {
+                    color: $first-color;
+                    font-size: 24px;
+                }
+            }
+
+            .search {
+                position: relative;
+
+                input {
+                    box-sizing: border-box;
+                    border-radius: 25px;
+                    padding: 10px 25px;
+                    width: 270px;
+                    color: #000;
+                    outline: 0;
+                    background-color: white;
+                    font-size: 15px;
+                    box-sizing: border-box;
+                }
+
+                .magnifier {
+                    position: absolute;
+                    top: 5px;
+                    right: 15px;
+                    width: 30px;
+                }
+            }
+        }
+    }
+
+    .footer {
+        position: absolute;
+        bottom: 0;
+        background-color: $first-color;
+        width: 100%;
+
+        .footer-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 5px 25px;
+            box-sizing: border-box;
+
+            a {
+                text-decoration: none;
+                display: inline-block;
+                width: 50px;
+
+                img {
+                    width: 100%;
+                }
+
+                &.school {
+                    width: 70px;
+                }
+            }
+
+            span {
+                font-size: 12px;
+            }
+        }
+    }
+}

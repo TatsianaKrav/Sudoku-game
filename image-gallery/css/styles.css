@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: black;
+  min-height: 100%;
+  position: relative;
+}
+body .container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+body .container .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 3px solid #00ffff;
+  box-sizing: border-box;
+}
+body .container .header .logo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+body .container .header .logo img {
+  width: 50px;
+  max-height: 50px;
+}
+body .container .header .logo p {
+  color: #00ffff;
+  font-size: 24px;
+}
+body .container .header .search {
+  position: relative;
+}
+body .container .header .search input {
+  box-sizing: border-box;
+  border-radius: 25px;
+  padding: 10px 25px;
+  width: 270px;
+  color: #000;
+  outline: 0;
+  background-color: white;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+body .container .header .search .magnifier {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  width: 30px;
+}
+body .footer {
+  position: absolute;
+  bottom: 0;
+  background-color: #00ffff;
+  width: 100%;
+}
+body .footer .footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 5px 25px;
+  box-sizing: border-box;
+}
+body .footer .footer-wrapper a {
+  text-decoration: none;
+  display: inline-block;
+  width: 50px;
+}
+body .footer .footer-wrapper a img {
+  width: 100%;
+}
+body .footer .footer-wrapper a.school {
+  width: 70px;
+}
+body .footer .footer-wrapper span {
+  font-size: 12px;
+}/*# sourceMappingURL=styles.css.map */
