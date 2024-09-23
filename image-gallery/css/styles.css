@@ -57,8 +57,26 @@ body .container .header .search .magnifier {
   right: 15px;
   width: 30px;
 }
+body .container .main {
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+body .container .main .image-wrapper {
+  width: 31%;
+  height: 200px;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body .container .main .image-wrapper:hover {
+  animation: move 1.3s linear forwards;
+}
 body .footer {
-  position: absolute;
+  position: sticky;
   bottom: 0;
   background-color: #00ffff;
   width: 100%;
@@ -85,4 +103,26 @@ body .footer .footer-wrapper a.school {
 }
 body .footer .footer-wrapper span {
   font-size: 12px;
+}
+
+@media screen and (max-width: 1024px) {
+  body .container .main .image-wrapper {
+    height: 150px;
+  }
+}
+@media screen and (max-width: 890px) {
+  body .container .main .image-wrapper {
+    height: 130px;
+  }
+}
+@keyframes move {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }/*# sourceMappingURL=styles.css.map */

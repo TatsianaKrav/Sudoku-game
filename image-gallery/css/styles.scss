@@ -65,10 +65,31 @@ body {
                 }
             }
         }
+
+        .main {
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+
+            .image-wrapper {
+                width: 31%;
+                height: 200px;
+                background-position: top;
+                background-repeat: no-repeat;
+                background-size: cover;
+
+                &:hover {
+                    animation: move 1.3s linear forwards;
+                }
+            }
+        }
     }
 
     .footer {
-        position: absolute;
+        position: sticky;
         bottom: 0;
         background-color: $first-color;
         width: 100%;
@@ -100,5 +121,44 @@ body {
                 font-size: 12px;
             }
         }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    body {
+        .container {
+            .main {
+                .image-wrapper {
+                    height: 150px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 890px) {
+    body {
+        .container {
+            .main {
+                .image-wrapper {
+                    height: 130px;
+                }
+            }
+        }
+    }
+}
+
+
+@keyframes move {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
     }
 }
