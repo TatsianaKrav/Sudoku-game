@@ -34,22 +34,14 @@ async function getData(link) {
             }
 
         } else if (data.length === 0 || data.total === 0) {
-            gallery.innerHTML = '';
-            const textWrapper = document.createElement('div');
-            textWrapper.classList.add('text-wrapper');
-            textWrapper.innerText = 'Images are not found';
-            gallery.appendChild(textWrapper);
-            gallery.style.height = 'calc(100vh - 64px)';
-            /* gallery.innerText = 'Images are not found';  */
+            showErrorMessage('Images are not found');
         } else {
-            gallery.innerText = 'Something went wrong...';
-            gallery.style.height = 'calc(100vh - 64px)';
+            showErrorMessage('Something went wrong...');
         }
     } catch (error) {
         console.log(error);
-        gallery.innerText = 'Something went wrong...';
+        showErrorMessage('Something went wrong...');
     }
-
 }
 
 form.addEventListener('keyup', (e) => {
@@ -92,6 +84,15 @@ function sendSearchRequest() {
     const query = input.value;
     const searchURL = `https://api.unsplash.com/search/photos?query=${query}&client_id=${KEY}&count=15&orientation=landscape`;
     getData(searchURL);
+}
+
+function showErrorMessage(message) {
+    gallery.innerHTML = '';
+    const textWrapper = document.createElement('div');
+    textWrapper.classList.add('text-wrapper');
+    textWrapper.innerText = message;
+    gallery.appendChild(textWrapper);
+    gallery.style.height = 'calc(100vh - 64px)';
 }
 
 function findKey(object, keyWord) {
