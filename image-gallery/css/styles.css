@@ -51,31 +51,27 @@ body .container .header .search input {
   font-size: 15px;
   box-sizing: border-box;
 }
-body .container .header .search .magnifier {
+body .container .header .search .icons {
   position: absolute;
   top: 5px;
-  right: 15px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+body .container .header .search .icons .magnifier {
   width: 30px;
   cursor: pointer;
-  opacity: 0;
-  visibility: hidden;
   transition: all 0.5s linear;
 }
-body .container .header .search .magnifier.active {
-  opacity: 1;
-  visibility: visible;
-}
-body .container .header .search .cross {
-  position: absolute;
-  top: 5px;
-  right: 15px;
+body .container .header .search .icons .cross {
   width: 30px;
   cursor: pointer;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s linear;
 }
-body .container .header .search .cross.active {
+body .container .header .search .icons .cross.active {
   opacity: 1;
   visibility: visible;
 }

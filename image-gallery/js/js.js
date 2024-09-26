@@ -11,16 +11,9 @@ window.onload = () => {
     input.focus();
     input.addEventListener('input', () => {
         if (input.value) {
-            setTimeout(() => {
-                magnifier.classList.remove('active');
-                cross.classList.add('active');
-            }, 1000)
-
+            cross.classList.add('active');
         } else {
-            setTimeout(() => {
-                magnifier.classList.add('active');
-                cross.classList.remove('active');
-            }, 1000)
+            cross.classList.remove('active');
         }
     })
 
@@ -76,10 +69,13 @@ form.addEventListener('keyup', async (e) => {
     }
 })
 
+/* magnifier.addEventListener('click', () => {
+    if(!input.value) => 
+}) */
+
 
 cross.addEventListener('click', () => {
     cross.classList.remove('active');
-    magnifier.classList.add('active');
     input.value = '';
     input.focus();
 })
