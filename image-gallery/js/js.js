@@ -25,7 +25,6 @@ async function getData(link) {
     try {
         const response = await fetch(link);
         const data = await response.json();
-        console.log(data);
 
         if (response.ok && (data.length || data.total > 0)) {
             if (data.hasOwnProperty('results')) {
@@ -43,6 +42,27 @@ async function getData(link) {
     }
 
 }
+
+form.addEventListener('keyup', async (e) => {
+    if (e.keyCode === 13) {
+        const query = input.value;
+        const searchURL = `https://api.unsplash.com/search/photos?query=${query}&client_id=${KEY}&count=15&orientation=landscape`;
+        getData(searchURL);
+    }
+})
+
+magnifier.addEventListener('click', (event) => {
+    if (!input.value) return;
+    sendSearchRequest();
+})
+
+
+cross.addEventListener('click', () => {
+    cross.classList.remove('active');
+    input.value = '';
+    input.focus();
+    getData(url);
+})
 
 function renderImages(items) {
     gallery.innerHTML = '';
@@ -66,26 +86,6 @@ function sendSearchRequest() {
     const searchURL = `https://api.unsplash.com/search/photos?query=${query}&client_id=${KEY}&count=15&orientation=landscape`;
     getData(searchURL);
 }
-
-form.addEventListener('keyup', async (e) => {
-    if (e.keyCode === 13) {
-        const query = input.value;
-        const searchURL = `https://api.unsplash.com/search/photos?query=${query}&client_id=${KEY}&count=15&orientation=landscape`;
-        getData(searchURL);
-    }
-})
-
-magnifier.addEventListener('click', (event) => {
-    if (!input.value) return;
-    sendSearchRequest();
-})
-
-
-cross.addEventListener('click', () => {
-    cross.classList.remove('active');
-    input.value = '';
-    input.focus();
-})
 
 function findKey(object, keyWord) {
     const arr = Object.keys(object);
