@@ -43,11 +43,9 @@ async function getData(link) {
 
 }
 
-form.addEventListener('keyup', async (e) => {
+form.addEventListener('keyup', (e) => {
     if (e.keyCode === 13) {
-        const query = input.value;
-        const searchURL = `https://api.unsplash.com/search/photos?query=${query}&client_id=${KEY}&count=15&orientation=landscape`;
-        getData(searchURL);
+        sendSearchRequest();
     }
 })
 
