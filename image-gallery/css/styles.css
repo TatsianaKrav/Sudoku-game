@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+@font-face {
+  font-family: Garamond;
+  src: url("../assets/fonts/garamond.ttf");
+}
 html {
   height: 100%;
 }
@@ -12,6 +16,7 @@ body {
   min-height: 100%;
   position: relative;
   overflow-y: hidden;
+  font-family: Garamond, sans-serif;
 }
 body .container {
   max-width: 1280px;
@@ -51,6 +56,13 @@ body .container .header .search input {
   background-color: white;
   font-size: 15px;
   box-sizing: border-box;
+  font-family: Garamond, sans-serif;
+}
+body .container .header .search input::-moz-placeholder {
+  font-family: Garamond, sans-serif;
+}
+body .container .header .search input::placeholder {
+  font-family: Garamond, sans-serif;
 }
 body .container .header .search .icons {
   position: absolute;
