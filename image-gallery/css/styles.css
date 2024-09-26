@@ -7,13 +7,9 @@
   font-family: Garamond;
   src: url("../assets/fonts/garamond.ttf");
 }
-html {
-  height: 100%;
-}
-
 body {
   background-color: black;
-  min-height: 100%;
+  min-height: 100dvh;
   position: relative;
   font-family: Garamond, sans-serif;
 }
@@ -114,23 +110,26 @@ body .container .header .search .icons .cross.active {
 }
 body .container .main {
   padding: 25px;
+  color: #00ffff;
+  font-size: 20px;
+  min-height: calc(100dvh - 64px);
+}
+body .container .main .images-wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto 200px;
   gap: 15px;
-  color: #00ffff;
-  font-size: 20px;
 }
-body .container .main .text-wrapper {
+body .container .main .images-wrapper .text-wrapper {
   align-self: flex-start;
 }
-body .container .main .image-wrapper {
+body .container .main .images-wrapper .image-wrapper {
   height: 200px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
-body .container .main .image-wrapper:hover {
+body .container .main .images-wrapper .image-wrapper:hover {
   animation: move 1.3s linear forwards;
 }
 body .footer {
@@ -164,18 +163,18 @@ body .footer .footer-wrapper span {
 }
 
 @media screen and (max-width: 1024px) {
-  body .container .main {
+  body .container .main .images-wrapper {
     grid-template-rows: auto 150px;
   }
-  body .container .main .image-wrapper {
+  body .container .main .images-wrapper .image-wrapper {
     height: 150px;
   }
 }
 @media screen and (max-width: 890px) {
-  body .container .main {
+  body .container .main .images-wrapper {
     grid-template-rows: auto 130px;
   }
-  body .container .main .image-wrapper {
+  body .container .main .images-wrapper .image-wrapper {
     height: 130px;
   }
 }

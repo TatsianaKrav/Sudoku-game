@@ -2,6 +2,7 @@ const KEY = 'Z7YhGgww0fM50XllRlscVwIAhaLF97wpYJj6uiPn3us';
 const url = `https://api.unsplash.com/photos/random?client_id=${KEY}&count=5&orientation=landscape`;
 
 const gallery = document.querySelector('.main');
+const galleryWrap = document.querySelector('.images-wrapper');
 const form = document.querySelector('.search');
 const input = document.querySelector('.search-field');
 const magnifier = document.querySelector('.magnifier');
@@ -31,6 +32,8 @@ async function getData(link) {
         if (response.ok && (data.length || data.total > 0)) {
             loader.classList.remove('active');
             document.body.style.overflowY = 'auto';
+
+
             if (data.hasOwnProperty('results')) {
                 renderImages(data.results);
             } else {
@@ -71,13 +74,15 @@ cross.addEventListener('click', () => {
 })
 
 function renderImages(items) {
-    gallery.innerHTML = '';
+    galleryWrap.innerHTML = '';
+    const textWrapper = document.querySelector('.text-wrapper');
+    if (textWrapper) textWrapper.remove();
 
     items.forEach(el => {
         const url = el.urls.regular;
         const wrapper = createImageWrapper();
         wrapper.style.backgroundImage = `url(${url})`;
-        gallery.append(wrapper);
+        galleryWrap.append(wrapper);
     })
 }
 
@@ -94,12 +99,12 @@ function sendSearchRequest() {
 }
 
 function showErrorMessage(message) {
-    gallery.innerHTML = '';
     const textWrapper = document.createElement('div');
     textWrapper.classList.add('text-wrapper');
     textWrapper.innerText = message;
-    gallery.appendChild(textWrapper);
-    gallery.style.height = 'calc(100vh - 64px)';
+    galleryWrap.innerHTML = '';
+    gallery.prepend(textWrapper);
+    /*   gallery.style.height = 'calc(100vh - 64px)'; */
     document.body.style.overflowY = 'hidden';
 }
 

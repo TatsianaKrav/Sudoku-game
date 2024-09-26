@@ -10,13 +10,10 @@ $first-color: #00ffff;
     src: url('../assets/fonts/garamond.ttf');
 }
 
-html {
-    height: 100%;
-}
 
 body {
     background-color: black;
-    min-height: 100%;
+    min-height: 100dvh;
     position: relative;
     font-family: Garamond, sans-serif;
 
@@ -39,7 +36,6 @@ body {
             opacity: 1;
             visibility: visible;
         }
-
     }
 
     .container {
@@ -126,31 +122,34 @@ body {
                         }
                     }
                 }
-
             }
         }
 
         .main {
             padding: 25px;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: auto 200px;
-            gap: 15px;
             color: $first-color;
             font-size: 20px;
+            min-height: calc(100dvh - 64px);
 
-            .text-wrapper {
-                align-self: flex-start;
-            }
+            .images-wrapper {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: auto 200px;
+                gap: 15px;
 
-            .image-wrapper {
-                height: 200px;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
+                .text-wrapper {
+                    align-self: flex-start;
+                }
 
-                &:hover {
-                    animation: move 1.3s linear forwards;
+                .image-wrapper {
+                    height: 200px;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+
+                    &:hover {
+                        animation: move 1.3s linear forwards;
+                    }
                 }
             }
         }
@@ -196,10 +195,12 @@ body {
     body {
         .container {
             .main {
-                grid-template-rows: auto 150px;
+                .images-wrapper {
+                    grid-template-rows: auto 150px;
 
-                .image-wrapper {
-                    height: 150px;
+                    .image-wrapper {
+                        height: 150px;
+                    }
                 }
             }
         }
@@ -210,10 +211,12 @@ body {
     body {
         .container {
             .main {
-                grid-template-rows: auto 130px;
+                .images-wrapper {
+                    grid-template-rows: auto 130px;
 
-                .image-wrapper {
-                    height: 130px;
+                    .image-wrapper {
+                        height: 130px;
+                    }
                 }
             }
         }
