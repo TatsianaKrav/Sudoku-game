@@ -1,4 +1,5 @@
 const KEY = 'Z7YhGgww0fM50XllRlscVwIAhaLF97wpYJj6uiPn3us';
+const url = `https://api.unsplash.com/photos/random?client_id=${KEY}&count=5&orientation=landscape`;
 
 const gallery = document.querySelector('.main');
 const form = document.querySelector('.search');
@@ -22,19 +23,24 @@ window.onload = () => {
             }, 1000)
         }
     })
+
+    getData(url);
 }
 
-async function getData() {
+async function getData(link) {
 
     try {
-        const url = `https://api.unsplash.com/photos/random?client_id=${KEY}&count=15&orientation=landscape`;
-
-        const response = await fetch(url);
+        const response = await fetch(link);
         const data = await response.json();
+        console.log(data);
 
-        if (response.ok) {
-            console.log(data);
-            renderImages(data);
+        if (response.ok && (data.length || data.total > 0)) {
+            if (data.hasOwnProperty('results')) {
+                renderImages(data.results);
+            } else {
+                renderImages(data);
+            }
+
         } else {
             gallery.innerText = 'Something went wrong...';
         }
@@ -45,9 +51,9 @@ async function getData() {
 
 }
 
-getData();
-
 function renderImages(items) {
+    gallery.innerHTML = '';
+
     items.forEach(el => {
         const url = el.urls.regular;
         const wrapper = createImageWrapper();
@@ -62,7 +68,13 @@ function createImageWrapper() {
     return el;
 }
 
-
+form.addEventListener('keyup', async (e) => {
+    if (e.keyCode === 13) {
+        const query = input.value;
+        const searchURL = `https://api.unsplash.com/search/photos?query=${query}&client_id=${KEY}&count=15&orientation=landscape`;
+        getData(searchURL);
+    }
+})
 
 
 cross.addEventListener('click', () => {
@@ -71,3 +83,22 @@ cross.addEventListener('click', () => {
     input.value = '';
     input.focus();
 })
+
+function findKey(object, keyWord) {
+    const arr = Object.keys(object);
+    let result;
+
+    if (object.hasOwnProperty(keyWord)) return object[keyWord];
+
+    for (let i = 0; i < arr.length; i++) {
+        const key = arr[i];
+
+        if (typeof object[key] === 'object') {
+            result = findKey(object[key], keyWord);
+            if (result) return result;
+        }
+    }
+
+    return {};
+}
+
