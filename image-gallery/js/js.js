@@ -61,6 +61,12 @@ function createImageWrapper() {
     return el;
 }
 
+function sendSearchRequest() {
+    const query = input.value;
+    const searchURL = `https://api.unsplash.com/search/photos?query=${query}&client_id=${KEY}&count=15&orientation=landscape`;
+    getData(searchURL);
+}
+
 form.addEventListener('keyup', async (e) => {
     if (e.keyCode === 13) {
         const query = input.value;
@@ -69,9 +75,10 @@ form.addEventListener('keyup', async (e) => {
     }
 })
 
-/* magnifier.addEventListener('click', () => {
-    if(!input.value) => 
-}) */
+magnifier.addEventListener('click', (event) => {
+    if (!input.value) return;
+    sendSearchRequest();
+})
 
 
 cross.addEventListener('click', () => {
