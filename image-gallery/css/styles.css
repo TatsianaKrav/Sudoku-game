@@ -64,6 +64,9 @@ body .container .header .search input::-moz-placeholder {
 body .container .header .search input::placeholder {
   font-family: Garamond, sans-serif;
 }
+body .container .header .search input:focus {
+  box-shadow: 0 0 15px #00ffff;
+}
 body .container .header .search .icons {
   position: absolute;
   top: 5px;
@@ -75,7 +78,10 @@ body .container .header .search .icons {
 body .container .header .search .icons .magnifier {
   width: 30px;
   cursor: pointer;
-  transition: all 0.5s linear;
+  transition: all 0.3s linear;
+}
+body .container .header .search .icons .magnifier:hover {
+  fill: rgba(0, 255, 255, 0.5);
 }
 body .container .header .search .icons .cross {
   width: 30px;
