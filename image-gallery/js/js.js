@@ -1,5 +1,5 @@
 const KEY = 'Z7YhGgww0fM50XllRlscVwIAhaLF97wpYJj6uiPn3us';
-const url = `https://api.unsplash.com/photos/random?client_id=${KEY}&count=5&orientation=landscape`;
+const url = `https://api.unsplash.com/photos/random?client_id=${KEY}&count=15&orientation=landscape`;
 
 const gallery = document.querySelector('.main');
 const galleryWrap = document.querySelector('.images-wrapper');
@@ -104,25 +104,5 @@ function showErrorMessage(message) {
     textWrapper.innerText = message;
     galleryWrap.innerHTML = '';
     gallery.prepend(textWrapper);
-    /*   gallery.style.height = 'calc(100vh - 64px)'; */
     document.body.style.overflowY = 'hidden';
 }
-
-function findKey(object, keyWord) {
-    const arr = Object.keys(object);
-    let result;
-
-    if (object.hasOwnProperty(keyWord)) return object[keyWord];
-
-    for (let i = 0; i < arr.length; i++) {
-        const key = arr[i];
-
-        if (typeof object[key] === 'object') {
-            result = findKey(object[key], keyWord);
-            if (result) return result;
-        }
-    }
-
-    return {};
-}
-
