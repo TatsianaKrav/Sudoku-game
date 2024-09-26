@@ -33,8 +33,17 @@ async function getData(link) {
                 renderImages(data);
             }
 
+        } else if (data.length === 0 || data.total === 0) {
+            gallery.innerHTML = '';
+            const textWrapper = document.createElement('div');
+            textWrapper.classList.add('text-wrapper');
+            textWrapper.innerText = 'Images are not found';
+            gallery.appendChild(textWrapper);
+            gallery.style.height = 'calc(100vh - 64px)';
+            /* gallery.innerText = 'Images are not found';  */
         } else {
             gallery.innerText = 'Something went wrong...';
+            gallery.style.height = 'calc(100vh - 64px)';
         }
     } catch (error) {
         console.log(error);
