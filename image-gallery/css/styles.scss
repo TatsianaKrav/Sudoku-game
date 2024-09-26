@@ -21,6 +21,28 @@ body {
     overflow-y: hidden;
     font-family: Garamond, sans-serif;
 
+    .loader {
+        position: fixed;
+        top: calc((100% - 102px)/2);
+        left: calc((100% - 38px)/2);
+        width: 75px;
+        height: 75px;
+        border: 10px solid rgba(0, 255, 255, 0.5);
+        border-radius: 50%;
+        border-left-color: $first-color;
+        animation: loader 1.5s linear infinite;
+        z-index: 5;
+        transition: all 0.5s linear;
+        opacity: 0;
+        visibility: hidden;
+
+        &.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+    }
+
     .container {
         max-width: 1280px;
         margin: 0 auto;
@@ -69,7 +91,8 @@ body {
                     }
 
                     &:focus {
-                        box-shadow:  0 0 15px $first-color;;
+                        box-shadow: 0 0 15px $first-color;
+                        ;
                     }
                 }
 
@@ -124,6 +147,7 @@ body {
 
             .image-wrapper {
                 width: 31%;
+                /*  width: calc(100%/3); */
                 height: 200px;
                 background-position: top;
                 background-repeat: no-repeat;
@@ -208,5 +232,11 @@ body {
 
     100% {
         transform: scale(1);
+    }
+}
+
+@keyframes loader {
+    100% {
+        transform: rotate(360deg);
     }
 }

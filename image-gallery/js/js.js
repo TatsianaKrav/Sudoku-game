@@ -6,6 +6,7 @@ const form = document.querySelector('.search');
 const input = document.querySelector('.search-field');
 const magnifier = document.querySelector('.magnifier');
 const cross = document.querySelector('.cross');
+const loader = document.querySelector('.loader');
 
 window.onload = () => {
     input.focus();
@@ -23,10 +24,12 @@ window.onload = () => {
 async function getData(link) {
 
     try {
+        loader.classList.add('active');
         const response = await fetch(link);
         const data = await response.json();
 
         if (response.ok && (data.length || data.total > 0)) {
+            loader.classList.remove('active');
             if (data.hasOwnProperty('results')) {
                 renderImages(data.results);
             } else {
@@ -34,11 +37,14 @@ async function getData(link) {
             }
 
         } else if (data.length === 0 || data.total === 0) {
+            loader.classList.remove('active');
             showErrorMessage('Images are not found');
         } else {
+            loader.classList.remove('active');
             showErrorMessage('Something went wrong...');
         }
     } catch (error) {
+        loader.classList.remove('active');
         console.log(error);
         showErrorMessage('Something went wrong...');
     }
@@ -50,7 +56,7 @@ form.addEventListener('keyup', (e) => {
     }
 })
 
-magnifier.addEventListener('click', (event) => {
+magnifier.addEventListener('click', () => {
     if (!input.value) return;
     sendSearchRequest();
 })

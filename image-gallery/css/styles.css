@@ -18,6 +18,25 @@ body {
   overflow-y: hidden;
   font-family: Garamond, sans-serif;
 }
+body .loader {
+  position: fixed;
+  top: calc((100% - 102px) / 2);
+  left: calc((100% - 38px) / 2);
+  width: 75px;
+  height: 75px;
+  border: 10px solid rgba(0, 255, 255, 0.5);
+  border-radius: 50%;
+  border-left-color: #00ffff;
+  animation: loader 1.5s linear infinite;
+  z-index: 5;
+  transition: all 0.5s linear;
+  opacity: 0;
+  visibility: hidden;
+}
+body .loader.active {
+  opacity: 1;
+  visibility: visible;
+}
 body .container {
   max-width: 1280px;
   margin: 0 auto;
@@ -109,6 +128,7 @@ body .container .main .text-wrapper {
 }
 body .container .main .image-wrapper {
   width: 31%;
+  /*  width: calc(100%/3); */
   height: 200px;
   background-position: top;
   background-repeat: no-repeat;
@@ -166,5 +186,10 @@ body .footer .footer-wrapper span {
   }
   100% {
     transform: scale(1);
+  }
+}
+@keyframes loader {
+  100% {
+    transform: rotate(360deg);
   }
 }/*# sourceMappingURL=styles.css.map */
