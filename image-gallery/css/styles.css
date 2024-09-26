@@ -15,7 +15,6 @@ body {
   background-color: black;
   min-height: 100%;
   position: relative;
-  overflow-y: hidden;
   font-family: Garamond, sans-serif;
 }
 body .loader {
@@ -115,10 +114,9 @@ body .container .header .search .icons .cross.active {
 }
 body .container .main {
   padding: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto 200px;
   gap: 15px;
   color: #00ffff;
   font-size: 20px;
@@ -127,10 +125,8 @@ body .container .main .text-wrapper {
   align-self: flex-start;
 }
 body .container .main .image-wrapper {
-  width: 31%;
-  /*  width: calc(100%/3); */
   height: 200px;
-  background-position: top;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -168,11 +164,17 @@ body .footer .footer-wrapper span {
 }
 
 @media screen and (max-width: 1024px) {
+  body .container .main {
+    grid-template-rows: auto 150px;
+  }
   body .container .main .image-wrapper {
     height: 150px;
   }
 }
 @media screen and (max-width: 890px) {
+  body .container .main {
+    grid-template-rows: auto 130px;
+  }
   body .container .main .image-wrapper {
     height: 130px;
   }

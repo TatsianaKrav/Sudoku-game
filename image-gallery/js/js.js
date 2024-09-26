@@ -30,6 +30,7 @@ async function getData(link) {
 
         if (response.ok && (data.length || data.total > 0)) {
             loader.classList.remove('active');
+            document.body.style.overflowY = 'auto';
             if (data.hasOwnProperty('results')) {
                 renderImages(data.results);
             } else {
@@ -99,6 +100,7 @@ function showErrorMessage(message) {
     textWrapper.innerText = message;
     gallery.appendChild(textWrapper);
     gallery.style.height = 'calc(100vh - 64px)';
+    document.body.style.overflowY = 'hidden';
 }
 
 function findKey(object, keyWord) {
