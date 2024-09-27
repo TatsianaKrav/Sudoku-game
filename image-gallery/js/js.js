@@ -1,5 +1,5 @@
 const KEY = 'Z7YhGgww0fM50XllRlscVwIAhaLF97wpYJj6uiPn3us';
-const url = `https://api.unsplash.com/photos/random?client_id=${KEY}&count=15&orientation=landscape`;
+const url = `https://api.unsplash.com/photos/random?client_id=${KEY}&count=12&orientation=landscape`;
 
 const gallery = document.querySelector('.main');
 const galleryWrap = document.querySelector('.images-wrapper');
@@ -94,7 +94,7 @@ function createImageWrapper() {
 
 function sendSearchRequest() {
     const query = input.value;
-    const searchURL = `https://api.unsplash.com/search/photos?query=${query}&client_id=${KEY}&count=15&orientation=landscape`;
+    const searchURL = `https://api.unsplash.com/search/photos?query=${query}&client_id=${KEY}&per_page=9&orientation=landscape`;
     getData(searchURL);
 }
 
