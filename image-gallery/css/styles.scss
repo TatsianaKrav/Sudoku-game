@@ -224,6 +224,25 @@ body {
     }
 }
 
+@media screen and (max-width: 767px) {
+    body {
+        .container {
+
+            .header {
+                flex-direction: column;
+                justify-content: center;
+                gap: 20px;
+            }
+
+            .main {
+                .images-wrapper {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+        }
+    }
+}
+
 
 @keyframes move {
     0% {

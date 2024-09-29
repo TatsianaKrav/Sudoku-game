@@ -179,6 +179,16 @@ body .footer .footer-wrapper span {
     height: 130px;
   }
 }
+@media screen and (max-width: 767px) {
+  body .container .header {
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
+  body .container .main .images-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 @keyframes move {
   0% {
     transform: scale(1);
