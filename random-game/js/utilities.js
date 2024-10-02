@@ -10,3 +10,16 @@ export function shuffle(array) {
     }
     return array;
 }
+
+export function createElement(tagName, className) {
+    const el = document.createElement(tagName);
+    el.classList.add(className);
+    return el;
+}
+
+export function getRowAndColumnIndex(index) {
+    const rowIndex = Math.trunc(index / GRID_SIZE);
+    const columnIndex = index % GRID_SIZE;
+
+    return { rowIndex: rowIndex, columnIndex: columnIndex };
+}

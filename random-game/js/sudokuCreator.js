@@ -2,16 +2,14 @@ import { GRID_SIZE, BOX_SIZE, shuffle } from "./utilities.js";
 
 export function createSudoku() {
     const sudoku = createGrid();
-    console.log(sudoku);
+    fillGrid(sudoku);
+    return clearCells(sudoku);
 }
 
 
 //create empty grid 9x9
 function createGrid() {
-    const matrix = new Array(GRID_SIZE).fill(0).map(() => new Array(GRID_SIZE).fill(null));
-    fillGrid(matrix);
-    clearCells(matrix);
-    return matrix;
+    return new Array(GRID_SIZE).fill(0).map(() => new Array(GRID_SIZE).fill(null));
 }
 
 
@@ -75,7 +73,7 @@ function checkBox(row, column, grid, value) {
 }
 
 function clearCells(grid) {
-    const clearedGrid = [...grid];
+    const clearedGrid = [...grid].map(row => [...row]); // copy to have 2 grid: filled and cleared
     let amountToClear = 27;
 
     while (amountToClear > 0) {
@@ -88,6 +86,5 @@ function clearCells(grid) {
         }
     }
 
-
-    return clearedGrid;
+    return { filledGrid: grid, clearedGrid: clearedGrid };
 }
