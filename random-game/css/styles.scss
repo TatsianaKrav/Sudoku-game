@@ -3,6 +3,17 @@
     padding: 0;
 }
 
+@mixin cell {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5%;
+    background-color: white;
+
+}
+
 
 .container {
     max-width: 1200px;
@@ -13,6 +24,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 15px;
 
 
     .grid {
@@ -24,14 +36,9 @@
         padding: 15px;
 
         .cell {
-            width: 35px;
-            height: 35px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 5%;
+            @include cell();
             background-color: white;
-            cursor: pointer;
+
 
             &:nth-child(3),
             &:nth-child(6) {
@@ -42,6 +49,30 @@
             &:nth-child(54) {
                 margin-bottom: 5px;
             }
+        }
+    }
+
+    .numbers {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 5px;
+
+        .number {
+            @include cell();
+            background-color: gray;
+        }
+    }
+    
+    .buttons {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 10px;
         }
     }
 }

@@ -19,8 +19,6 @@ function renderCells() {
         const row = getRowAndColumnIndex(i).rowIndex;
         const column = getRowAndColumnIndex(i).columnIndex;
 
-        console.log(sudoku.grid.clearedGrid[row][column]);
-
         if (sudoku.grid.clearedGrid[row][column] !== null) {
             cell.innerText = sudoku.grid.clearedGrid[row][column];
             cell.classList.add('numbered');
