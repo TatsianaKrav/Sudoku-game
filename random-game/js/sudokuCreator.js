@@ -10,6 +10,7 @@ export function createSudoku() {
 function createGrid() {
     const matrix = new Array(GRID_SIZE).fill(0).map(() => new Array(GRID_SIZE).fill(null));
     fillGrid(matrix);
+    clearCells(matrix);
     return matrix;
 }
 
@@ -73,3 +74,20 @@ function checkBox(row, column, grid, value) {
     return true;
 }
 
+function clearCells(grid) {
+    const clearedGrid = [...grid];
+    let amountToClear = 27;
+
+    while (amountToClear > 0) {
+        const rowRandom = Math.floor(Math.random() * 8);
+        const columnRandom = Math.floor(Math.random() * 8);
+
+        if (clearedGrid[rowRandom][columnRandom] !== null) {
+            clearedGrid[rowRandom][columnRandom] = null;
+            amountToClear--;
+        }
+    }
+
+
+    return clearedGrid;
+}
