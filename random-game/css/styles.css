@@ -41,6 +41,9 @@
 .container .grid .cell.numbered {
   background-color: rgb(209, 209, 209);
 }
+.container .grid .cell.default {
+  background-color: rgb(177, 173, 173);
+}
 .container .grid .cell.focused {
   background-color: rgb(240, 213, 163);
 }
@@ -51,6 +54,16 @@
   gap: 5px;
 }
 .container .numbers .number {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5%;
+  background-color: white;
+  background-color: gray;
+}
+.container .numbers .remove {
   width: 35px;
   height: 35px;
   display: flex;

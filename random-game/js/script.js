@@ -9,6 +9,7 @@ let focusedCell = null;
 init();
 numbersHandler();
 cellsHandler();
+removeCell();
 
 function init() {
     renderCells();
@@ -27,17 +28,8 @@ function renderCells() {
         if (sudoku.grid.clearedGrid[row][column] !== null) {
             cell.innerText = sudoku.grid.clearedGrid[row][column];
             cell.classList.add('numbered');
+            cell.classList.add('default');
         } else continue;
-
-        /*  cell.onclick = (e) => {
-             if (e.target.classList.contains('numbered')) {
-                 focusedCell = null;
-             } else {
-                 focusedCell = e.target;
-             }
- 
-             console.log(focusedCell);
-         } */
     }
 }
 
@@ -46,8 +38,9 @@ function numbersHandler() {
     const numbers = document.querySelectorAll('.number');
     numbers.forEach(number => {
         number.onclick = (e) => {
-            if (focusedCell) {
+            if (focusedCell && !focusedCell.classList.contains('numbered')) {
                 focusedCell.innerText = e.target.innerText;
+                focusedCell.classList.add('numbered');
             }
         }
     })
@@ -60,13 +53,20 @@ function cellsHandler() {
 
         cell.onclick = (e) => {
             cells.forEach(cell => cell.classList.remove('focused'));
+            focusedCell = e.target;
+            e.target.classList.add('focused');
 
-            if (e.target.classList.contains('numbered')) {
-                focusedCell = null;
-            } else {
-                focusedCell = e.target;
-                e.target.classList.add('focused');
-            }
         }
     })
+}
+
+function removeCell() {
+    const removeBtn = document.querySelector('.remove');
+    removeBtn.onclick = () => {
+        if (focusedCell && focusedCell.classList.contains('numbered') && !focusedCell.classList.contains('default')) {
+            focusedCell.classList.remove('numbered');
+            focusedCell.innerText = '';
+            focusedCell = null;
+        }
+    }
 }

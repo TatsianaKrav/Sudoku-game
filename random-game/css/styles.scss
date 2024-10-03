@@ -54,8 +54,12 @@
                 background-color: rgb(209, 209, 209);
             }
 
+            &.default {
+                background-color: rgb(177, 173, 173);
+            }
+
             &.focused {
-                background-color: rgb(240, 213, 163) ;
+                background-color: rgb(240, 213, 163);
             }
         }
     }
@@ -70,8 +74,13 @@
             @include cell();
             background-color: gray;
         }
+
+        .remove {
+            @include cell();
+            background-color: gray;
+        }
     }
-    
+
     .buttons {
         display: flex;
         align-items: center;
