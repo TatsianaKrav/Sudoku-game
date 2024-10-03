@@ -89,12 +89,19 @@
 }
 .container .popup {
   position: fixed;
-  top: 50%;
-  left: 50%;
+  top: calc(50% - 125px);
+  left: calc(50% - 150px);
+  width: 300px;
+  height: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  gap: 20px;
   padding: 20px;
+  box-sizing: border-box;
+  border-radius: 15px;
+  background-color: rebeccapurple;
   opacity: 0;
   visibility: hidden;
   z-index: 5;
@@ -103,4 +110,13 @@
 .container .popup.active {
   opacity: 1;
   visibility: visible;
+}
+.container .popup .popup-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.container .popup .popup-buttons .popup-btn {
+  padding: 10px 20px;
 }/*# sourceMappingURL=styles.css.map */
