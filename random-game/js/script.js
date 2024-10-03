@@ -3,7 +3,11 @@ import { GRID_SIZE, createElement, getRowAndColumnIndex } from "./utilities.js";
 
 
 const sudoku = new Sudoku();
+let focusedCell = null;
+
+
 init();
+numbersHandler();
 
 function init() {
     renderCells();
@@ -24,4 +28,14 @@ function renderCells() {
             cell.classList.add('numbered');
         } else continue;
     }
+}
+
+
+function numbersHandler() {
+    const numbers = document.querySelectorAll('.number');
+    numbers.forEach(number => {
+        number.onclick = (e) => {
+            console.log(e.target.innerText);
+        }
+    })
 }
