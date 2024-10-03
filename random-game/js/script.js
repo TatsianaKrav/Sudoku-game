@@ -8,6 +8,7 @@ let focusedCell = null;
 
 init();
 numbersHandler();
+cellsHandler();
 
 function init() {
     renderCells();
@@ -27,6 +28,16 @@ function renderCells() {
             cell.innerText = sudoku.grid.clearedGrid[row][column];
             cell.classList.add('numbered');
         } else continue;
+
+        /*  cell.onclick = (e) => {
+             if (e.target.classList.contains('numbered')) {
+                 focusedCell = null;
+             } else {
+                 focusedCell = e.target;
+             }
+ 
+             console.log(focusedCell);
+         } */
     }
 }
 
@@ -35,7 +46,27 @@ function numbersHandler() {
     const numbers = document.querySelectorAll('.number');
     numbers.forEach(number => {
         number.onclick = (e) => {
-            console.log(e.target.innerText);
+            if (focusedCell) {
+                focusedCell.innerText = e.target.innerText;
+            }
+        }
+    })
+}
+
+function cellsHandler() {
+    const cells = document.querySelectorAll('.cell');
+
+    cells.forEach(cell => {
+
+        cell.onclick = (e) => {
+            cells.forEach(cell => cell.classList.remove('focused'));
+
+            if (e.target.classList.contains('numbered')) {
+                focusedCell = null;
+            } else {
+                focusedCell = e.target;
+                e.target.classList.add('focused');
+            }
         }
     })
 }

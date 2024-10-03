@@ -38,6 +38,12 @@
 .container .grid .cell:nth-child(27), .container .grid .cell:nth-child(54) {
   margin-bottom: 5px;
 }
+.container .grid .cell.numbered {
+  background-color: rgb(209, 209, 209);
+}
+.container .grid .cell.focused {
+  background-color: rgb(240, 213, 163);
+}
 .container .numbers {
   display: flex;
   align-items: center;

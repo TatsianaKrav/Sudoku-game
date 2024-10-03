@@ -49,6 +49,14 @@
             &:nth-child(54) {
                 margin-bottom: 5px;
             }
+
+            &.numbered {
+                background-color: rgb(209, 209, 209);
+            }
+
+            &.focused {
+                background-color: rgb(240, 213, 163) ;
+            }
         }
     }
 
