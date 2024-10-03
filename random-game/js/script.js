@@ -33,7 +33,7 @@ function renderCells() {
     }
 }
 
-
+//add with keyboard
 function numbersHandler() {
     const numbers = document.querySelectorAll('.number');
     numbers.forEach(number => {
@@ -41,6 +41,10 @@ function numbersHandler() {
             if (focusedCell && !focusedCell.classList.contains('numbered')) {
                 focusedCell.innerText = e.target.innerText;
                 focusedCell.classList.add('numbered');
+
+                if (!sudoku.grid.clearedGrid.hasEmptyCell) {
+                    finishGame();
+                }
             }
         }
     })
@@ -60,6 +64,7 @@ function cellsHandler() {
     })
 }
 
+//add remove with backspace
 function removeCell() {
     const removeBtn = document.querySelector('.remove');
     removeBtn.onclick = () => {
@@ -69,4 +74,22 @@ function removeCell() {
             focusedCell = null;
         }
     }
+}
+
+function finishGame() {
+    let isCorrect = checkResult();
+
+    const popup = document.querySelector('.popup');
+    const popupMessage = document.querySelector('.popup-message');
+    popup.classList.toggle('active');
+
+    popupMessage.innerText = isCorrect ? 'Congraliations!' : "You lost";
+}
+
+function checkResult() {
+    const initialGrid = sudoku.grid.filledGrid.flat();
+    const cells = document.querySelectorAll('.cell');
+    let filledGrid = Array.from(cells).map(cell => +cell.innerText);
+
+    return JSON.stringify(initialGrid) === JSON.stringify(filledGrid);
 }

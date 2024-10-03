@@ -33,7 +33,7 @@ function fillGrid(grid) {
     }
 }
 
-function findEmptyCell(grid) {
+export function findEmptyCell(grid) {
     for (let row = 0; row < GRID_SIZE; row++) {
         for (let column = 0; column < GRID_SIZE; column++) {
             if (grid[row][column] === null) return { row, column };
@@ -74,7 +74,7 @@ function checkBox(row, column, grid, value) {
 
 function clearCells(grid) {
     const clearedGrid = [...grid].map(row => [...row]); // copy to have 2 grid: filled and cleared
-    let amountToClear = 27;
+    let amountToClear = 1;
 
     while (amountToClear > 0) {
         const rowRandom = Math.floor(Math.random() * 8);

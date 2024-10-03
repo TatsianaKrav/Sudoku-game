@@ -25,6 +25,11 @@
     align-items: center;
     justify-content: center;
     gap: 15px;
+    position: relative;
+
+    .results {
+        position: absolute;
+    }
 
 
     .grid {
@@ -90,6 +95,25 @@
         .btn {
             padding: 10px 20px;
             border-radius: 10px;
+        }
+    }
+
+    .popup {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 5;
+        transition: all 0.5s linear;
+
+        &.active {
+            opacity: 1;
+            visibility: visible;
         }
     }
 }
