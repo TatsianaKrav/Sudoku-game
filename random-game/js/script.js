@@ -77,10 +77,15 @@ function clearCell() {
         focusedCell.classList.remove('numbered');
         focusedCell.innerText = '';
         focusedCell = null;
+
+        const row = getRowAndColumnIndex(focusedCellIndex).rowIndex;
+        const column = getRowAndColumnIndex(focusedCellIndex).columnIndex;
+        sudoku.grid.clearedGrid[row][column] = null;
+
+        focusedCellIndex = null;
     }
 }
 
-//delete from grid
 function removeCell() {
     const removeBtn = document.querySelector('.remove');
 
@@ -106,5 +111,6 @@ function finishGame() {
 function checkResult() {
     const initialGrid = sudoku.grid.filledGrid.flat();
     const filledGrid = sudoku.grid.clearedGrid.flat();
+
     return JSON.stringify(initialGrid) === JSON.stringify(filledGrid);
 }
