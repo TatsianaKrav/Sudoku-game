@@ -23,3 +23,13 @@ export function getRowAndColumnIndex(index) {
 
     return { rowIndex: rowIndex, columnIndex: columnIndex };
 }
+
+export function createSound(path) {
+    const container = document.querySelector('.container');
+
+    const sound = document.createElement('audio');
+    sound.setAttribute('src', path);
+    container.appendChild(sound);
+
+    return sound;
+}

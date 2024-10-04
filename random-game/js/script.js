@@ -1,5 +1,5 @@
 import { Sudoku } from "./sudoku.js";
-import { GRID_SIZE, createElement, getRowAndColumnIndex } from "./utilities.js";
+import { GRID_SIZE, createElement, createSound, getRowAndColumnIndex } from "./utilities.js";
 
 startGame(false);
 
@@ -55,6 +55,12 @@ function startGame(val) {
 
                 if (focusedCell && !focusedCell.classList.contains('numbered')) {
                     setCellValue(value);
+                    const container = document.querySelector('.container');
+
+                    const fillSound = document.createElement('audio');
+                    fillSound.setAttribute('src', '../assets/sounds/fill.mp3');
+                    container.appendChild(fillSound);
+                    fillSound.play();
                 }
             })
         })
@@ -76,6 +82,11 @@ function startGame(val) {
         const column = getRowAndColumnIndex(focusedCellIndex).columnIndex;
         sudoku.grid.clearedGrid[row][column] = +val;
 
+
+
+
+        const fillSound = createSound('assets/sounds/fill.mp3');
+        fillSound.play();
 
         if (!sudoku.hasEmptyCell()) {
             finishGame();
@@ -107,6 +118,9 @@ function startGame(val) {
             const row = getRowAndColumnIndex(focusedCellIndex).rowIndex;
             const column = getRowAndColumnIndex(focusedCellIndex).columnIndex;
             sudoku.grid.clearedGrid[row][column] = null;
+
+            const removeSound = createSound('assets/sounds/remove.mp3');
+            removeSound.play();
         }
     }
 
@@ -129,7 +143,11 @@ function startGame(val) {
         const popupMessage = document.querySelector('.popup-message');
         popup.classList.toggle('active');
 
+        const winSound = createSound('assets/sounds/win2.mp3')
+        const lostSound = createSound('assets/sounds/lost.mp3')
+
         popupMessage.innerText = isCorrect ? 'Congratilations!' : "You lost";
+        isCorrect ? winSound.play() : lostSound.play();
     }
 
     function checkResult() {
