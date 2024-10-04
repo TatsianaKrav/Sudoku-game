@@ -143,7 +143,7 @@ function startGame() {
 
     function restartGame() {
         const popup = document.querySelector('.popup');
-        popup.classList.toggle('active');
+        popup.classList.remove('active'); //!
 
         const grid = document.querySelector('.grid');
         grid.innerHTML = '';
