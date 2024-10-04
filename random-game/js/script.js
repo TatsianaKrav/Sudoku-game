@@ -17,6 +17,7 @@ function startGame() {
         cellsValueHandler();
         nextGame();
         showErrors();
+        showSolution();
     }
 
     function renderCells() {
@@ -162,5 +163,21 @@ function startGame() {
                 }
             }
         }
+    }
+
+    function showSolution() {
+        const solutionBtn = document.querySelector('.solution');
+        const cells = document.querySelectorAll('.cell');
+        const initialGrid = sudoku.grid.filledGrid.flat();
+
+        solutionBtn.onclick = () => {
+            for (let i = 0; i < initialGrid.length; i++) {
+                if (initialGrid[i] !== +cells[i].innerText) {
+                    cells[i].innerText = initialGrid[i];
+                    cells[i].classList.add('numbered');
+                }
+            }
+        }
+
     }
 };
