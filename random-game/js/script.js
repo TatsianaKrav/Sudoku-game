@@ -4,15 +4,17 @@ import { GRID_SIZE, createElement, getRowAndColumnIndex } from "./utilities.js";
 
 const sudoku = new Sudoku();
 let focusedCell = null;
+let focusedCellIndex;
 
 
 init();
-numbersHandler();
-cellsHandler();
-removeCell();
+
 
 function init() {
     renderCells();
+    numbersHandler();
+    cellsHandler();
+    removeCell();
 }
 
 function renderCells() {
@@ -42,11 +44,14 @@ function numbersHandler() {
                 focusedCell.innerText = e.target.innerText;
                 focusedCell.classList.add('numbered');
 
-               /*  console.log(sudoku.hasEmptyCell()); */
+                const row = getRowAndColumnIndex(focusedCellIndex).rowIndex;
+                const column = getRowAndColumnIndex(focusedCellIndex).columnIndex;
+                sudoku.grid.clearedGrid[row][column] = +e.target.innerText;
 
-               /*  if (!sudoku.grid.hasEmptyCell) {
+
+                if (!sudoku.hasEmptyCell()) {
                     finishGame();
-                } */
+                }
             }
         }
     })
@@ -55,11 +60,12 @@ function numbersHandler() {
 function cellsHandler() {
     const cells = document.querySelectorAll('.cell');
 
-    cells.forEach(cell => {
+    cells.forEach((cell, index) => {
 
         cell.onclick = (e) => {
             cells.forEach(cell => cell.classList.remove('focused'));
             focusedCell = e.target;
+            focusedCellIndex = index;
             e.target.classList.add('focused');
 
         }
@@ -85,13 +91,11 @@ function finishGame() {
     const popupMessage = document.querySelector('.popup-message');
     popup.classList.toggle('active');
 
-    popupMessage.innerText = isCorrect ? 'Congraliations!' : "You lost";
+    popupMessage.innerText = isCorrect ? 'Congratilations!' : "You lost";
 }
 
 function checkResult() {
     const initialGrid = sudoku.grid.filledGrid.flat();
-    const cells = document.querySelectorAll('.cell');
-    let filledGrid = Array.from(cells).map(cell => +cell.innerText);
-
+    const filledGrid = sudoku.grid.clearedGrid.flat();
     return JSON.stringify(initialGrid) === JSON.stringify(filledGrid);
 }
