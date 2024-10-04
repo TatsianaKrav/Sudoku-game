@@ -100,6 +100,7 @@ body {
 
             &.numbered.error {
                 background-color: #db3610;
+                animation: errorMove 1s linear infinite forwards;
             }
         }
     }
@@ -172,5 +173,19 @@ body {
                 border: 2px solid white;
             }
         }
+    }
+}
+
+@keyframes errorMove {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.2);
+    }
+
+    0% {
+        transform: scale(1);
     }
 }

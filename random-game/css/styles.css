@@ -68,6 +68,7 @@ body {
 }
 .container .grid .cell.numbered.error {
   background-color: #db3610;
+  animation: errorMove 1s linear infinite forwards;
 }
 .container .numbers {
   display: flex;
@@ -159,4 +160,16 @@ body {
   font-size: 12px;
   letter-spacing: 1px;
   border: 2px solid white;
+}
+
+@keyframes errorMove {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+  0% {
+    transform: scale(1);
+  }
 }/*# sourceMappingURL=styles.css.map */
