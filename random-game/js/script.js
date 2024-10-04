@@ -1,12 +1,20 @@
 import { Sudoku } from "./sudoku.js";
 import { GRID_SIZE, createElement, getRowAndColumnIndex } from "./utilities.js";
 
-startGame();
+startGame(false);
 
-function startGame() {
-    const sudoku = new Sudoku();
+function startGame(val) {
+    let sudoku = null;
+
+    if (val) {
+        sudoku = JSON.parse(localStorage.getItem('prevGrid'));
+    } else {
+        sudoku = new Sudoku();
+    }
+
     let focusedCell = null;
     let focusedCellIndex;
+    let isPrevGame = false;
 
     init();
 
@@ -18,6 +26,7 @@ function startGame() {
         nextGame();
         showErrors();
         showSolution();
+        restart();
     }
 
     function renderCells() {
@@ -94,13 +103,10 @@ function startGame() {
         if (focusedCell && focusedCell.classList.contains('numbered') && !focusedCell.classList.contains('default')) {
             focusedCell.classList.remove('numbered');
             focusedCell.innerText = '';
-            /*   focusedCell = null; */
 
             const row = getRowAndColumnIndex(focusedCellIndex).rowIndex;
             const column = getRowAndColumnIndex(focusedCellIndex).columnIndex;
             sudoku.grid.clearedGrid[row][column] = null;
-
-            /*  focusedCellIndex = null; */
         }
     }
 
@@ -137,13 +143,13 @@ function startGame() {
         const popupNextBtn = document.querySelector('.popup-next');
         const nextBtn = document.querySelector('.next');
 
-        popupNextBtn.addEventListener('click', restartGame);
-        nextBtn.addEventListener('click', restartGame);
+        popupNextBtn.addEventListener('click', startNextGame);
+        nextBtn.addEventListener('click', startNextGame);
     }
 
-    function restartGame() {
+    function startNextGame() {
         const popup = document.querySelector('.popup');
-        popup.classList.remove('active'); //!
+        popup.classList.remove('active');
 
         const grid = document.querySelector('.grid');
         grid.innerHTML = '';
@@ -178,6 +184,29 @@ function startGame() {
                 }
             }
         }
+
+    }
+
+    function restart() {
+        const restartBtns = document.querySelectorAll('.restart');
+        localStorage.setItem('prevGrid', JSON.stringify(sudoku));
+        isPrevGame = true;
+
+
+
+        restartBtns.forEach(btn => {
+            btn.onclick = () => {
+                const popup = document.querySelector('.popup');
+                if (popup.classList.contains('active')) {
+                    popup.classList.remove('active');
+                }
+
+                const grid = document.querySelector('.grid');
+                grid.innerHTML = '';
+
+                startGame(isPrevGame);
+            }
+        })
 
     }
 };
