@@ -66,6 +66,9 @@ body {
 .container .grid .cell.focused:not(.default) {
   background-color: #e7aca0;
 }
+.container .grid .cell.numbered.error {
+  background-color: #db3610;
+}
 .container .numbers {
   display: flex;
   align-items: center;

@@ -97,6 +97,10 @@ body {
             &.focused:not(.default) {
                 background-color: #e7aca0;
             }
+
+            &.numbered.error {
+                background-color: #db3610;
+            }
         }
     }
 

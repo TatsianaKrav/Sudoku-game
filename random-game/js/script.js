@@ -8,9 +8,7 @@ function startGame() {
     let focusedCell = null;
     let focusedCellIndex;
 
-
     init();
-
 
     function init() {
         renderCells();
@@ -18,6 +16,7 @@ function startGame() {
         removeCell();
         cellsValueHandler();
         nextGame();
+        showErrors();
     }
 
     function renderCells() {
@@ -78,7 +77,11 @@ function startGame() {
 
         cells.forEach((cell, index) => {
             cell.onclick = (e) => {
-                cells.forEach(cell => cell.classList.remove('focused'));
+                cells.forEach(cell => {
+                    cell.classList.remove('focused');
+                    cell.classList.remove('error');
+                });
+
                 focusedCell = e.target;
                 focusedCellIndex = index;
                 e.target.classList.add('focused');
@@ -145,5 +148,19 @@ function startGame() {
         grid.innerHTML = '';
 
         startGame();
+    }
+
+    function showErrors() {
+        const errorsBtn = document.querySelector('.errors');
+        const cells = document.querySelectorAll('.cell');
+        const initialGrid = sudoku.grid.filledGrid.flat();
+
+        errorsBtn.onclick = () => {
+            for (let i = 0; i < initialGrid.length; i++) {
+                if ((initialGrid[i] !== +cells[i].innerText) && cells[i].innerText !== '') {
+                    cells[i].classList.add('error');
+                }
+            }
+        }
     }
 };
