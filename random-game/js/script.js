@@ -72,16 +72,25 @@ function cellsHandler() {
     })
 }
 
-//add remove with backspace
+function clearCell() {
+    if (focusedCell && focusedCell.classList.contains('numbered') && !focusedCell.classList.contains('default')) {
+        focusedCell.classList.remove('numbered');
+        focusedCell.innerText = '';
+        focusedCell = null;
+    }
+}
+
+//delete from grid
 function removeCell() {
     const removeBtn = document.querySelector('.remove');
-    removeBtn.onclick = () => {
-        if (focusedCell && focusedCell.classList.contains('numbered') && !focusedCell.classList.contains('default')) {
-            focusedCell.classList.remove('numbered');
-            focusedCell.innerText = '';
-            focusedCell = null;
+
+    window.addEventListener('keydown', (e) => {
+        if (e.key === "Backspace") {
+            clearCell();
         }
-    }
+    })
+
+    removeBtn.addEventListener('click', clearCell);
 }
 
 function finishGame() {
