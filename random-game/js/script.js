@@ -12,9 +12,9 @@ init();
 
 function init() {
     renderCells();
-    numbersHandler();
-    cellsHandler();
+    setCellFocused();
     removeCell();
+    cellsValueHandler();
 }
 
 function renderCells() {
@@ -35,39 +35,50 @@ function renderCells() {
     }
 }
 
-//add with keyboard
-function numbersHandler() {
+function cellsValueHandler() {
     const numbers = document.querySelectorAll('.number');
     numbers.forEach(number => {
-        number.onclick = (e) => {
+        number.addEventListener('click', (e) => {
+            const value = e.target.innerText;
+
             if (focusedCell && !focusedCell.classList.contains('numbered')) {
-                focusedCell.innerText = e.target.innerText;
-                focusedCell.classList.add('numbered');
-
-                const row = getRowAndColumnIndex(focusedCellIndex).rowIndex;
-                const column = getRowAndColumnIndex(focusedCellIndex).columnIndex;
-                sudoku.grid.clearedGrid[row][column] = +e.target.innerText;
-
-
-                if (!sudoku.hasEmptyCell()) {
-                    finishGame();
-                }
+                setCellValue(value);
             }
+        })
+    })
+
+    window.addEventListener('keydown', (e) => {
+        const value = e.key;
+
+        if (focusedCell && !focusedCell.classList.contains('numbered') && Number.isInteger(+value)) {
+            setCellValue(value);
         }
     })
 }
 
-function cellsHandler() {
+function setCellValue(val) {
+    focusedCell.innerText = val;
+    focusedCell.classList.add('numbered');
+
+    const row = getRowAndColumnIndex(focusedCellIndex).rowIndex;
+    const column = getRowAndColumnIndex(focusedCellIndex).columnIndex;
+    sudoku.grid.clearedGrid[row][column] = +val;
+
+
+    if (!sudoku.hasEmptyCell()) {
+        finishGame();
+    }
+}
+
+function setCellFocused() {
     const cells = document.querySelectorAll('.cell');
 
     cells.forEach((cell, index) => {
-
         cell.onclick = (e) => {
             cells.forEach(cell => cell.classList.remove('focused'));
             focusedCell = e.target;
             focusedCellIndex = index;
             e.target.classList.add('focused');
-
         }
     })
 }
@@ -76,13 +87,13 @@ function clearCell() {
     if (focusedCell && focusedCell.classList.contains('numbered') && !focusedCell.classList.contains('default')) {
         focusedCell.classList.remove('numbered');
         focusedCell.innerText = '';
-        focusedCell = null;
+        /*   focusedCell = null; */
 
         const row = getRowAndColumnIndex(focusedCellIndex).rowIndex;
         const column = getRowAndColumnIndex(focusedCellIndex).columnIndex;
         sudoku.grid.clearedGrid[row][column] = null;
 
-        focusedCellIndex = null;
+        /*  focusedCellIndex = null; */
     }
 }
 
