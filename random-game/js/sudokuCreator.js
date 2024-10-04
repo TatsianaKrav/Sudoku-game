@@ -74,7 +74,7 @@ function checkBox(row, column, grid, value) {
 
 function clearCells(grid) {
     const clearedGrid = [...grid].map(row => [...row]); // copy to have 2 grid: filled and cleared
-    let amountToClear = 1;
+    let amountToClear = 3;
 
     while (amountToClear > 0) {
         const rowRandom = Math.floor(Math.random() * 8);

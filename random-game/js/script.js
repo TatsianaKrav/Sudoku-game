@@ -42,9 +42,11 @@ function numbersHandler() {
                 focusedCell.innerText = e.target.innerText;
                 focusedCell.classList.add('numbered');
 
-                if (!sudoku.grid.clearedGrid.hasEmptyCell) {
+               /*  console.log(sudoku.hasEmptyCell()); */
+
+               /*  if (!sudoku.grid.hasEmptyCell) {
                     finishGame();
-                }
+                } */
             }
         }
     })
