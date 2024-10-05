@@ -24,12 +24,17 @@ function fillGrid(grid) {
         const val = numbers[i];
         const isValid = checkCell(emptyCell.row, emptyCell.column, grid, val);
 
-        if (isValid) {
-            grid[emptyCell.row][emptyCell.column] = val;
-            if (fillGrid(grid)) return grid; //step to another empty cell until all cells are filled
-        } else {
-            grid[emptyCell.row][emptyCell.column] = null; //make the same cell null to continue numbers loop
-        }
+        if (!isValid) continue;
+        grid[emptyCell.row][emptyCell.column] = val;
+        if (fillGrid(grid)) return true;
+        grid[emptyCell.row][emptyCell.column] = null;
+
+        /*   if (isValid) {
+              grid[emptyCell.row][emptyCell.column] = val;
+              if (fillGrid(grid)) return grid; //step to another empty cell until all cells are filled
+          } else {
+              grid[emptyCell.row][emptyCell.column] = null; //make the same cell null to continue numbers loop
+          } */
     }
 }
 
@@ -43,18 +48,22 @@ export function findEmptyCell(grid) {
 }
 
 function checkCell(row, column, grid, value) {
-    return checkRow(row, grid, value) && checkColumn(column, grid, value) &&
+    return checkRow(row, column, grid, value) && checkColumn(row, column, grid, value) &&
         checkBox(row, column, grid, value);
 }
 
 
-function checkRow(row, grid, value) {
-    return grid[row].every(item => item !== value);
+function checkRow(row, column, grid, value) {
+    for (let j = 0; j < GRID_SIZE; j++) {
+        if (grid[row][j] === value && j !== column) return false;
+    }
+
+    return true;
 }
 
-function checkColumn(column, grid, value) {
+function checkColumn(row, column, grid, value) {
     for (let i = 0; i < GRID_SIZE; i++) {
-        if (grid[i][column] === value) return false;
+        if (grid[i][column] === value && i !== row) return false;
     }
     return true;
 }
@@ -65,7 +74,7 @@ function checkBox(row, column, grid, value) {
 
     for (let i = rowInBox; i < rowInBox + BOX_SIZE; i++) {
         for (let j = columnInBox; j < columnInBox + BOX_SIZE; j++) {
-            if (grid[i][j] === value) return false;
+            if (grid[i][j] === value && i !== row && j !== column) return false;
         }
     }
 
@@ -86,5 +95,5 @@ function clearCells(grid) {
         }
     }
 
-    return { filledGrid: grid, clearedGrid: clearedGrid};
+    return { filledGrid: grid, clearedGrid: clearedGrid };
 }
