@@ -1,5 +1,5 @@
 import { Sudoku } from "./sudoku.js";
-import { GRID_SIZE, createElement, createSound, getRowAndColumnIndex, addToScore } from "./utilities.js";
+import { GRID_SIZE, createElement, createSound, getRowAndColumnIndex, addToScore, renderScoreTable } from "./utilities.js";
 
 
 
@@ -7,9 +7,14 @@ let sudoku = null;
 let focusedCell = null;
 let focusedCellIndex;
 let isPrevGame = false;
+let scores = [];
 
 window.onload = () => {
-    localStorage.removeItem('results');
+    /*   localStorage.removeItem('results'); */
+    scores = JSON.parse(localStorage.getItem('results'));
+    if (scores) {
+        renderScoreTable(scores);
+    }
 }
 
 init(false);
@@ -159,7 +164,9 @@ function finishGame() {
         iconWrapper.classList.add('won');
         iconWrapper.classList.remove('lost');
 
-        updateScore('win');
+        addToScore(scores, 'win');
+        renderScoreTable(scores);
+
     } else {
         popupMessage.innerText = "You lost";
         lostSound.play();
@@ -167,7 +174,8 @@ function finishGame() {
         iconWrapper.classList.add('lost');
         iconWrapper.classList.remove('won');
 
-        updateScore('losing');
+        addToScore(scores, 'losing');
+        renderScoreTable(scores);
     }
 }
 
@@ -248,17 +256,4 @@ function restart() {
     })
 }
 
-
-function updateScore(val) {
-    const scoreTable = document.querySelector('.scores');
-    const results = addToScore(val);
-
-    console.log(results);
-
-    const score = createElement('div', 'score');
-    scoreTable.appendChild(score);
-
-    const index = results.length - 1;
-    score.innerText = `${index + 1}. ${results[index].result}`;
-}
 

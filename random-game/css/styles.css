@@ -136,6 +136,7 @@ body {
   font-weight: bold;
   font-size: 12px;
   letter-spacing: 1px;
+  cursor: pointer;
 }
 .container .popup {
   position: fixed;
@@ -226,6 +227,7 @@ body {
   font-weight: bold;
   font-size: 12px;
   letter-spacing: 1px;
+  cursor: pointer;
   border: 2px solid white;
 }
 

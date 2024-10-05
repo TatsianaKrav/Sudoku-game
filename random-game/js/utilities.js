@@ -34,22 +34,23 @@ export function createSound(path) {
     return sound;
 }
 
-export function addToScore(value) {
-    let results = JSON.parse(localStorage.getItem('results'));
-
-    if (!results) {
-        localStorage.setItem('results', JSON.stringify([]));
-        results = JSON.parse(localStorage.getItem('results'));
+export function addToScore(arr, value) {
+    if (arr.length === 10) {
+        arr.shift();
     }
 
+    arr.push({ result: value });
+    localStorage.setItem('results', JSON.stringify(arr));
+}
 
-    if (results && results.length === 10) {
-        results.shift();
-    }
 
-    results.push({ result: value });
+export function renderScoreTable(arr) {
+    const scoresTable = document.querySelector('.scores');
+    scoresTable.innerHTML = '';
 
-    localStorage.setItem('results', JSON.stringify(results));
-
-    return results;
+    arr.forEach((score, index) => {
+        const scoreEl = createElement('div', 'score');
+        scoresTable.appendChild(scoreEl);
+        scoreEl.innerText = `${index + 1}. ${score.result}`;
+    })
 }
