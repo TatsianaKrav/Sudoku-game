@@ -31,6 +31,9 @@ function fillGrid(grid) {
             grid[emptyCell.row][emptyCell.column] = null; //make the same cell null to continue numbers loop
         }
     }
+
+
+    console.log(grid);
 }
 
 export function findEmptyCell(grid) {

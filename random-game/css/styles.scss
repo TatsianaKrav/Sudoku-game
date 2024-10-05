@@ -141,7 +141,7 @@ body {
         top: calc(50% - 125px);
         left: calc(50% - 150px);
         width: 300px;
-        height: 150px;
+        /*  height: 150px; */
         display: flex;
         align-items: center;
         justify-content: center;
@@ -161,6 +161,46 @@ body {
         &.active {
             opacity: 1;
             visibility: visible;
+        }
+
+        .winner {
+            width: 45px;
+            height: 45px;
+            opacity: 0;
+            visibility: hidden;
+            align-self: flex-start;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+
+            &.active {
+                opacity: 1;
+                visibility: visible;
+                animation: winner 4s ease-in-out 2s 1 forwards;
+            }
+        }
+
+        .winner2 {
+            width: 45px;
+            height: 45px;
+            opacity: 0;
+            visibility: hidden;
+
+            .medal {
+                opacity: 0;
+                transition: all 1s linear;
+            }
+
+            &.active {
+                visibility: visible;
+                animation: winner2 1s ease-in-out forwards;
+                animation-delay: 4s;
+
+                .medal {
+                    opacity: 1;
+                    animation: balance 2s linear infinite forwards;
+                }
+            }
         }
 
         .popup-buttons {
@@ -188,5 +228,49 @@ body {
 
     0% {
         transform: scale(1);
+    }
+}
+
+@keyframes winner {
+    0% {
+        transform: (translate(0, 0));
+    }
+
+    98% {
+        transform: (translate(300px, -150px));
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes winner2 {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes balance {
+    0% {
+        transform: translate(0);
+    }
+
+    25% {
+        transform: translate(-5px, -1px);
+    }
+
+    50% {
+        transform: translate(0);
+    }
+
+    75% {
+        transform: translate(5px, -1px);
     }
 }
