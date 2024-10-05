@@ -36,7 +36,12 @@ export function createSound(path) {
 
 export function addToScore(value) {
     let results = JSON.parse(localStorage.getItem('results'));
-    results = results.length > 0 ? results : localStorage.setItem('results', JSON.stringify([]));
+
+    if (!results) {
+        localStorage.setItem('results', JSON.stringify([]));
+        results = JSON.parse(localStorage.getItem('results'));
+    }
+
 
     if (results && results.length === 10) {
         results.shift();

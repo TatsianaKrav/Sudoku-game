@@ -61,6 +61,27 @@ body {
 
     .results {
         position: absolute;
+        top: 200px;
+        left: 10px;
+
+        p {
+            padding: 5px;
+            box-sizing: border-box;
+            cursor: pointer;
+            animation: showResults 5s linear infinite forwards;
+            margin-bottom: 15px;
+        }
+
+        .scores {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 10px;
+
+            .score {
+                font-size: 11px;
+            }
+        }
     }
 
 
@@ -172,7 +193,7 @@ body {
             left: 0;
             bottom: 0;
 
-             &.active {
+            &.active {
                 opacity: 1;
                 visibility: visible;
                 animation: winner 4s ease-in-out 1 forwards;
@@ -293,5 +314,28 @@ body {
 
     75% {
         transform: translate(5px, -1px);
+    }
+}
+
+@keyframes showResults {
+
+    0% {
+        background-color: #772e4f;
+    }
+
+    25% {
+        background-color: #db3610;
+    }
+
+    50% {
+        background-color: gray;
+    }
+
+    75% {
+        background-color: rgb(219, 212, 212);
+    }
+
+    100% {
+        background-color: #772e4f;
     }
 }

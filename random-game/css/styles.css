@@ -32,6 +32,24 @@ body {
 }
 .container .results {
   position: absolute;
+  top: 200px;
+  left: 10px;
+}
+.container .results p {
+  padding: 5px;
+  box-sizing: border-box;
+  cursor: pointer;
+  animation: showResults 5s linear infinite forwards;
+  margin-bottom: 15px;
+}
+.container .results .scores {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+.container .results .scores .score {
+  font-size: 11px;
 }
 .container .grid {
   display: grid;
@@ -255,5 +273,22 @@ body {
   }
   75% {
     transform: translate(5px, -1px);
+  }
+}
+@keyframes showResults {
+  0% {
+    background-color: #772e4f;
+  }
+  25% {
+    background-color: #db3610;
+  }
+  50% {
+    background-color: gray;
+  }
+  75% {
+    background-color: rgb(219, 212, 212);
+  }
+  100% {
+    background-color: #772e4f;
   }
 }/*# sourceMappingURL=styles.css.map */

@@ -2,11 +2,15 @@ import { Sudoku } from "./sudoku.js";
 import { GRID_SIZE, createElement, createSound, getRowAndColumnIndex, addToScore } from "./utilities.js";
 
 
-let scores = [];
+
 let sudoku = null;
 let focusedCell = null;
 let focusedCellIndex;
 let isPrevGame = false;
+
+window.onload = () => {
+    localStorage.removeItem('results');
+}
 
 startGame(false);
 
@@ -158,14 +162,15 @@ function startGame(val) {
             iconWrapper.classList.add('won');
             iconWrapper.classList.remove('lost');
 
-            addToScore('win');
+            updateScore('win');
         } else {
             popupMessage.innerText = "You lost";
             lostSound.play();
             winner.classList.remove('active');
             iconWrapper.classList.add('lost');
             iconWrapper.classList.remove('won');
-            addToScore('losing');
+
+            updateScore('losing');
         }
     }
 
@@ -244,6 +249,19 @@ function startGame(val) {
                 startGame(isPrevGame);
             }
         })
+    }
 
+
+    function updateScore(val) {
+        const scoreTable = document.querySelector('.scores');
+        const results = addToScore(val);
+
+        console.log(results);
+
+        const score = createElement('div', 'score');
+        scoreTable.appendChild(score);
+
+        const index = results.length - 1;
+        score.innerText = `${index + 1}. ${results[index].result}`;
     }
 };
