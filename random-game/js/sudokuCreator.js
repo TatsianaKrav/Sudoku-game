@@ -86,5 +86,5 @@ function clearCells(grid) {
         }
     }
 
-    return { filledGrid: grid, clearedGrid: clearedGrid };
+    return { filledGrid: grid, clearedGrid: clearedGrid};
 }
