@@ -1,20 +1,22 @@
 import { Sudoku } from "./sudoku.js";
-import { GRID_SIZE, createElement, createSound, getRowAndColumnIndex } from "./utilities.js";
+import { GRID_SIZE, createElement, createSound, getRowAndColumnIndex, addToScore } from "./utilities.js";
+
+
+let scores = [];
+let sudoku = null;
+let focusedCell = null;
+let focusedCellIndex;
+let isPrevGame = false;
 
 startGame(false);
 
 function startGame(val) {
-    let sudoku = null;
 
     if (val) {
         sudoku = JSON.parse(localStorage.getItem('prevGrid'));
     } else {
         sudoku = new Sudoku();
     }
-
-    let focusedCell = null;
-    let focusedCellIndex;
-    let isPrevGame = false;
 
     init();
 
@@ -155,12 +157,15 @@ function startGame(val) {
             winner.classList.add('active');
             iconWrapper.classList.add('won');
             iconWrapper.classList.remove('lost');
+
+            addToScore('win');
         } else {
             popupMessage.innerText = "You lost";
             lostSound.play();
             winner.classList.remove('active');
             iconWrapper.classList.add('lost');
             iconWrapper.classList.remove('won');
+            addToScore('losing');
         }
     }
 

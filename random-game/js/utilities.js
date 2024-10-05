@@ -33,3 +33,18 @@ export function createSound(path) {
 
     return sound;
 }
+
+export function addToScore(value) {
+    let results = JSON.parse(localStorage.getItem('results'));
+    results = results.length > 0 ? results : localStorage.setItem('results', JSON.stringify([]));
+
+    if (results && results.length === 10) {
+        results.shift();
+    }
+
+    results.push({ result: value });
+
+    localStorage.setItem('results', JSON.stringify(results));
+
+    return results;
+}
