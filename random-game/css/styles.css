@@ -4,10 +4,9 @@
 }
 
 @font-face {
-  font-family: "Yonezawa";
-  src: url(../assets/fonts/Yonezawa.ttf);
+  font-family: "Kashima";
+  src: url(../assets/fonts/Kashima.otf);
 }
-/* $first-color: #bf4027; */
 body {
   background: url(../assets/images/bg.jpg);
   background-position: center;
@@ -27,8 +26,8 @@ body {
   justify-content: center;
   gap: 15px;
   position: relative;
-  font-family: Yonezawa, sans-serif;
-  font-size: 12px;
+  font-family: Kashima, sans-serif;
+  font-size: 20px;
 }
 .container .results {
   position: absolute;
@@ -49,7 +48,7 @@ body {
   gap: 10px;
 }
 .container .results .scores .score {
-  font-size: 11px;
+  font-size: 18px;
 }
 .container .grid {
   display: grid;
@@ -132,9 +131,9 @@ body {
   border: 2px solid #772e4f;
   background-color: #cfb4b4;
   outline: none;
-  font-family: Yonezawa, sans-serif;
+  font-family: Kashima, sans-serif;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 18px;
   letter-spacing: 1px;
   cursor: pointer;
 }
@@ -179,7 +178,7 @@ body {
   animation: winner 3s ease-in-out 1 forwards;
 }
 .container .popup .popup-extra {
-  font-size: 10px;
+  font-size: 18px;
 }
 .container .popup .icon-wrapper {
   width: 45px;
@@ -226,9 +225,9 @@ body {
   border: 2px solid #772e4f;
   background-color: #cfb4b4;
   outline: none;
-  font-family: Yonezawa, sans-serif;
+  font-family: Kashima, sans-serif;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 18px;
   letter-spacing: 1px;
   cursor: pointer;
   border: 2px solid white;

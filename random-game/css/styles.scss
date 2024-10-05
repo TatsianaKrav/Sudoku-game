@@ -4,8 +4,8 @@
 }
 
 @font-face {
-    font-family: 'Yonezawa';
-    src: url(../assets/fonts/Yonezawa.ttf);
+    font-family: 'Kashima';
+    src: url(../assets/fonts/Kashima.otf);
 }
 
 @mixin cell {
@@ -26,14 +26,13 @@
     border: 2px solid $first-color;
     background-color: $second-color;
     outline: none;
-    font-family: Yonezawa, sans-serif;
+    font-family: Kashima, sans-serif;
     font-weight: bold;
-    font-size: 12px;
+    font-size: 18px;
     letter-spacing: 1px;
     cursor: pointer;
 }
 
-/* $first-color: #bf4027; */
 $first-color: #772e4f;
 $second-color: #cfb4b4;
 
@@ -57,8 +56,8 @@ body {
     justify-content: center;
     gap: 15px;
     position: relative;
-    font-family: Yonezawa, sans-serif;
-    font-size: 12px;
+    font-family: Kashima, sans-serif;
+    font-size: 20px;
 
     .results {
         position: absolute;
@@ -80,7 +79,7 @@ body {
             gap: 10px;
 
             .score {
-                font-size: 11px;
+                font-size: 18px;
             }
         }
     }
@@ -202,7 +201,7 @@ body {
         }
 
         .popup-extra {
-            font-size: 10px;
+            font-size: 18px;
         }
 
         .icon-wrapper {
