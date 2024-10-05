@@ -197,8 +197,12 @@ body {
             &.active {
                 opacity: 1;
                 visibility: visible;
-                animation: winner 4s ease-in-out 1 forwards;
+                animation: winner 3s ease-in-out 1 forwards;
             }
+        }
+
+        .popup-extra {
+            font-size: 10px;
         }
 
         .icon-wrapper {
@@ -235,7 +239,7 @@ body {
                 .winner2 {
                     visibility: visible;
                     animation: winner2 1s ease-in-out forwards;
-                    animation-delay: 3s;
+                    animation-delay: 2s;
 
                     .medal {
                         opacity: 1;

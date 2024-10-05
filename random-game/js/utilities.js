@@ -34,12 +34,12 @@ export function createSound(path) {
     return sound;
 }
 
-export function addToScore(arr, value) {
+export function addToScore(arr, value, gameTime) {
     if (arr.length === 10) {
         arr.shift();
     }
 
-    arr.push({ result: value });
+    arr.push({ result: value, time: gameTime });
     localStorage.setItem('results', JSON.stringify(arr));
 }
 
@@ -51,6 +51,8 @@ export function renderScoreTable(arr) {
     arr.forEach((score, index) => {
         const scoreEl = createElement('div', 'score');
         scoresTable.appendChild(scoreEl);
-        scoreEl.innerText = `${index + 1}. ${score.result}`;
+        scoreEl.innerText = `${index + 1}. ${score.result} - ${score.time}`;
     })
 }
+
+

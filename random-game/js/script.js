@@ -7,6 +7,13 @@ let focusedCell = null;
 let focusedCellIndex;
 let isPrevGame = false;
 let scores = [];
+let timerOn = false;
+let isOver = false;
+let timerId;
+let min = 0;
+let sec = 0;
+let timer = {};
+const timerEl = document.querySelector('.timer');
 
 window.onload = () => {
     scores = JSON.parse(localStorage.getItem('results'));
@@ -18,6 +25,12 @@ window.onload = () => {
 init(false);
 
 function init(val) {
+    timerOn = false;
+    isOver = false;
+    min = 0;
+    sec = 0;
+
+    timerEl.innerText = '00:00';
 
     if (val) {
         sudoku = JSON.parse(localStorage.getItem('grid'));
@@ -114,6 +127,11 @@ function setCellFocused() {
             focusedCell = e.target;
             focusedCellIndex = index;
             e.target.classList.add('focused');
+
+            if (!timerOn) {
+                timerId = initTimer();
+                timerOn = true;
+            }
         }
     })
 }
@@ -149,6 +167,7 @@ function finishGame() {
 
     const popup = document.querySelector('.popup');
     const popupMessage = document.querySelector('.popup-message');
+    const popupExtra = document.querySelector('.popup-extra');
     popup.classList.toggle('active');
 
     const winSound = createSound('assets/sounds/win2.mp3')
@@ -156,27 +175,30 @@ function finishGame() {
 
     const winner = document.querySelector('.winner');
     const iconWrapper = document.querySelector('.icon-wrapper');
+    const time = timerEl.innerText;
 
     if (isCorrect) {
         popupMessage.innerText = 'Congratilations!';
+        popupExtra.innerText = `Your time - ${time}`;
         winSound.play();
         winner.classList.add('active');
         iconWrapper.classList.add('won');
         iconWrapper.classList.remove('lost');
 
-        addToScore(scores, 'win');
-        renderScoreTable(scores);
+        addToScore(scores, 'win', time);
 
     } else {
         popupMessage.innerText = "You lost";
+        popupExtra.innerText = `Your time - ${time}`;
         lostSound.play();
         winner.classList.remove('active');
         iconWrapper.classList.add('lost');
         iconWrapper.classList.remove('won');
 
-        addToScore(scores, 'losing');
-        renderScoreTable(scores);
+        addToScore(scores, 'losing', time);   
     }
+
+    renderScoreTable(scores);
 }
 
 function checkResult() {
@@ -252,9 +274,52 @@ function restart() {
             localStorage.setItem('results', JSON.stringify(scores));
             renderScoreTable(scores);
 
+
             init(isPrevGame);
         }
     })
 }
 
 
+
+
+function initTimer() {
+    timer = setInterval(tick, 1000);
+    return timer;
+}
+
+function tick() {
+
+    const popup = document.querySelector(".popup");
+
+    if (!isOver) {
+        isOver = popup.classList.contains('active') ? true : false;
+    }
+
+    /*  if (isOver) return false; */
+    if (isOver) {
+        clearInterval(timerId);
+        return;
+    }
+
+    sec++;
+
+    if (sec >= 60) {
+        min++;
+        sec = 0;
+    }
+
+    if (sec < 10) {
+        if (min < 10) {
+            timerEl.innerText = `0${min}:0${sec}`;
+        } else {
+            timerEl.innerText = `${min}:0${sec}`;
+        }
+    } else {
+        if (min < 10) {
+            timerEl.innerText = `0${min}:${sec}`;
+        } else {
+            timerEl.innerText = `${min}:${sec}`;
+        }
+    }
+}
