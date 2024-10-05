@@ -1,6 +1,5 @@
-import { Sudoku } from "./sudoku.js";
+import { createSudoku, findEmptyCell } from "./sudokuCreator.js";
 import { GRID_SIZE, createElement, createSound, getRowAndColumnIndex, addToScore, renderScoreTable } from "./utilities.js";
-
 
 
 let sudoku = null;
@@ -10,7 +9,6 @@ let isPrevGame = false;
 let scores = [];
 
 window.onload = () => {
-    /*   localStorage.removeItem('results'); */
     scores = JSON.parse(localStorage.getItem('results'));
     if (scores) {
         renderScoreTable(scores);
@@ -22,10 +20,12 @@ init(false);
 function init(val) {
 
     if (val) {
-        sudoku = JSON.parse(localStorage.getItem('prevGrid'));
+        sudoku = JSON.parse(localStorage.getItem('grid'));
     } else {
-        sudoku = new Sudoku();
+        sudoku = createSudoku();
     }
+
+    localStorage.setItem('grid', JSON.stringify(sudoku));
 
     renderCells();
     setCellFocused();
@@ -47,8 +47,8 @@ function renderCells() {
         const row = getRowAndColumnIndex(i).rowIndex;
         const column = getRowAndColumnIndex(i).columnIndex;
 
-        if (sudoku.grid.clearedGrid[row][column] !== null) {
-            cell.innerText = sudoku.grid.clearedGrid[row][column];
+        if (sudoku.clearedGrid[row][column] !== null) {
+            cell.innerText = sudoku.clearedGrid[row][column];
             cell.classList.add('numbered');
             cell.classList.add('default');
         } else continue;
@@ -88,7 +88,7 @@ function setCellValue(val) {
 
     const row = getRowAndColumnIndex(focusedCellIndex).rowIndex;
     const column = getRowAndColumnIndex(focusedCellIndex).columnIndex;
-    sudoku.grid.clearedGrid[row][column] = +val;
+    sudoku.clearedGrid[row][column] = +val;
 
 
 
@@ -96,7 +96,7 @@ function setCellValue(val) {
     const fillSound = createSound('assets/sounds/fill.mp3');
     fillSound.play();
 
-    if (!sudoku.hasEmptyCell()) {
+    if (!findEmptyCell(sudoku.clearedGrid)) {
         finishGame();
     }
 }
@@ -125,7 +125,7 @@ function clearCell() {
 
         const row = getRowAndColumnIndex(focusedCellIndex).rowIndex;
         const column = getRowAndColumnIndex(focusedCellIndex).columnIndex;
-        sudoku.grid.clearedGrid[row][column] = null;
+        sudoku.clearedGrid[row][column] = null;
 
         const removeSound = createSound('assets/sounds/remove.mp3');
         removeSound.play();
@@ -180,8 +180,8 @@ function finishGame() {
 }
 
 function checkResult() {
-    const initialGrid = sudoku.grid.filledGrid.flat();
-    const filledGrid = sudoku.grid.clearedGrid.flat();
+    const initialGrid = sudoku.filledGrid.flat();
+    const filledGrid = sudoku.clearedGrid.flat();
 
     return JSON.stringify(initialGrid) === JSON.stringify(filledGrid);
 }
@@ -207,7 +207,7 @@ function startNextGame() {
 function showErrors() {
     const errorsBtn = document.querySelector('.errors');
     const cells = document.querySelectorAll('.cell');
-    const initialGrid = sudoku.grid.filledGrid.flat();
+    const initialGrid = sudoku.filledGrid.flat();
 
     errorsBtn.onclick = () => {
         for (let i = 0; i < initialGrid.length; i++) {
@@ -221,7 +221,7 @@ function showErrors() {
 function showSolution() {
     const solutionBtn = document.querySelector('.solution');
     const cells = document.querySelectorAll('.cell');
-    const initialGrid = sudoku.grid.filledGrid.flat();
+    const initialGrid = sudoku.filledGrid.flat();
 
     solutionBtn.onclick = () => {
         for (let i = 0; i < initialGrid.length; i++) {
@@ -236,10 +236,7 @@ function showSolution() {
 
 function restart() {
     const restartBtns = document.querySelectorAll('.restart');
-    localStorage.setItem('prevGrid', JSON.stringify(sudoku));
     isPrevGame = true;
-
-
 
     restartBtns.forEach(btn => {
         btn.onclick = () => {
