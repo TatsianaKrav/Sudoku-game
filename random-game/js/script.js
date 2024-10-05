@@ -146,8 +146,22 @@ function startGame(val) {
         const winSound = createSound('assets/sounds/win2.mp3')
         const lostSound = createSound('assets/sounds/lost.mp3')
 
-        popupMessage.innerText = isCorrect ? 'Congratilations!' : "You lost";
-        isCorrect ? winSound.play() : lostSound.play();
+        const winner = document.querySelector('.winner');
+        const iconWrapper = document.querySelector('.icon-wrapper');
+
+        if (isCorrect) {
+            popupMessage.innerText = 'Congratilations!';
+            winSound.play();
+            winner.classList.add('active');
+            iconWrapper.classList.add('won');
+            iconWrapper.classList.remove('lost');
+        } else {
+            popupMessage.innerText = "You lost";
+            lostSound.play();
+            winner.classList.remove('active');
+            iconWrapper.classList.add('lost');
+            iconWrapper.classList.remove('won');
+        }
     }
 
     function checkResult() {

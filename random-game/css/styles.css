@@ -124,7 +124,6 @@ body {
   top: calc(50% - 125px);
   left: calc(50% - 150px);
   width: 300px;
-  /*  height: 150px; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -158,24 +157,37 @@ body {
 .container .popup .winner.active {
   opacity: 1;
   visibility: visible;
-  animation: winner 4s ease-in-out 2s 1 forwards;
+  animation: winner 4s ease-in-out 1 forwards;
 }
-.container .popup .winner2 {
+.container .popup .icon-wrapper {
   width: 45px;
   height: 45px;
+  position: relative;
+}
+.container .popup .icon-wrapper .loosing {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s linear;
+  position: absolute;
+}
+.container .popup .icon-wrapper .winner2 {
   opacity: 0;
   visibility: hidden;
 }
-.container .popup .winner2 .medal {
+.container .popup .icon-wrapper .winner2 .medal {
   opacity: 0;
   transition: all 1s linear;
 }
-.container .popup .winner2.active {
+.container .popup .icon-wrapper.lost .loosing {
+  opacity: 1;
+  visibility: visible;
+}
+.container .popup .icon-wrapper.won .winner2 {
   visibility: visible;
   animation: winner2 1s ease-in-out forwards;
-  animation-delay: 4s;
+  animation-delay: 3s;
 }
-.container .popup .winner2.active .medal {
+.container .popup .icon-wrapper.won .winner2 .medal {
   opacity: 1;
   animation: balance 2s linear infinite forwards;
 }
