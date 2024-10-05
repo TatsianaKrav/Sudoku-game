@@ -248,6 +248,10 @@ function restart() {
             const grid = document.querySelector('.grid');
             grid.innerHTML = '';
 
+            scores.pop();
+            localStorage.setItem('results', JSON.stringify(scores));
+            renderScoreTable(scores);
+
             init(isPrevGame);
         }
     })
