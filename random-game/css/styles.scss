@@ -84,6 +84,13 @@ body {
         }
     }
 
+    .levels {
+        @include btn();
+        font-size: 16px;
+        position: absolute;
+        top: 60px;
+        right: 180px;
+    }
 
     .grid {
         display: grid;
@@ -114,6 +121,7 @@ body {
 
             &.default {
                 background-color: rgb(143 136 136);
+                cursor: auto;
             }
 
             &.focused:not(.default) {

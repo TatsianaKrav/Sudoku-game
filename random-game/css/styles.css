@@ -50,6 +50,23 @@ body {
 .container .results .scores .score {
   font-size: 18px;
 }
+.container .levels {
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  border: 2px solid #772e4f;
+  background-color: #cfb4b4;
+  outline: none;
+  font-family: Kashima, sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  font-size: 16px;
+  position: absolute;
+  top: 60px;
+  right: 180px;
+}
 .container .grid {
   display: grid;
   grid-template-columns: repeat(9, auto);
@@ -80,6 +97,7 @@ body {
 }
 .container .grid .cell.default {
   background-color: rgb(143, 136, 136);
+  cursor: auto;
 }
 .container .grid .cell.focused:not(.default) {
   background-color: #e7aca0;

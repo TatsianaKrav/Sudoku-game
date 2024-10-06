@@ -1,9 +1,9 @@
 import { GRID_SIZE, BOX_SIZE, shuffle } from "./utilities.js";
 
-export function createSudoku() {
+export function createSudoku(level) {
     const sudoku = createGrid();
     fillGrid(sudoku);
-    return clearCells(sudoku);
+    return clearCells(sudoku, level);
 }
 
 
@@ -81,13 +81,13 @@ function checkBox(row, column, grid, value) {
     return true;
 }
 
-function clearCells(grid) {
+function clearCells(grid, level) {
     const clearedGrid = [...grid].map(row => [...row]); // copy to have 2 grid: filled and cleared
-    let amountToClear = 3;
+    let amountToClear = level.levelValue;
 
     while (amountToClear > 0) {
-        const rowRandom = Math.floor(Math.random() * 8);
-        const columnRandom = Math.floor(Math.random() * 8);
+        const rowRandom = Math.floor(Math.random() * GRID_SIZE);
+        const columnRandom = Math.floor(Math.random() * GRID_SIZE);
 
         if (clearedGrid[rowRandom][columnRandom] !== null) {
             clearedGrid[rowRandom][columnRandom] = null;

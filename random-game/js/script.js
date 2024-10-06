@@ -13,7 +13,10 @@ let timerId;
 let min = 0;
 let sec = 0;
 let timer = {};
+let level = { levelName: 'cross-check', levelValue: 2 };
 const timerEl = document.querySelector('.timer');
+const levels = document.querySelector('.levels');
+const grid = document.querySelector('.grid');
 
 window.onload = () => {
     scores = JSON.parse(localStorage.getItem('results'));
@@ -35,7 +38,7 @@ function init(val) {
     if (val) {
         sudoku = JSON.parse(localStorage.getItem('grid'));
     } else {
-        sudoku = createSudoku();
+        sudoku = createSudoku(level);
     }
 
     localStorage.setItem('grid', JSON.stringify(sudoku));
@@ -50,8 +53,24 @@ function init(val) {
     restart();
 }
 
+levels.onchange = (e) => {
+    switch (e.target.value) {
+        case 'easy': level = { levelName: 'easy', levelValue: 27 };
+            break;
+        case 'medium': level = { levelName: 'medium', levelValue: 37 };
+            break;
+        case 'hard': level = { levelName: 'hard', levelValue: 50 };
+            break;
+        case 'cross-check': level = { levelName: 'cross-check', levelValue: 2 };
+            break;
+    }
+
+    init(false);
+}
+
+
 function renderCells() {
-    const grid = document.querySelector('.grid');
+    grid.innerHTML = "";
 
     for (let i = 0; i < GRID_SIZE * GRID_SIZE; i++) {
         const cell = createElement('div', 'cell');
@@ -179,23 +198,23 @@ function finishGame() {
 
     if (isCorrect) {
         popupMessage.innerText = 'Congratilations!';
-        popupExtra.innerText = `Your time - ${time}`;
+        popupExtra.innerText = `Your time - ${time}, level - ${level.levelName}`;
         winSound.play();
         winner.classList.add('active');
         iconWrapper.classList.add('won');
         iconWrapper.classList.remove('lost');
 
-        addToScore(scores, 'win', time);
+        addToScore(scores, 'win', time, level);
 
     } else {
         popupMessage.innerText = "You lost";
-        popupExtra.innerText = `Your time - ${time}`;
+        popupExtra.innerText = `Your time - ${time}, level - ${level.levelName}`;
         lostSound.play();
         winner.classList.remove('active');
         iconWrapper.classList.add('lost');
         iconWrapper.classList.remove('won');
 
-        addToScore(scores, 'losing', time);   
+        addToScore(scores, 'losing', time, level);
     }
 
     renderScoreTable(scores);
@@ -220,7 +239,6 @@ function startNextGame() {
     const popup = document.querySelector('.popup');
     popup.classList.remove('active');
 
-    const grid = document.querySelector('.grid');
     grid.innerHTML = '';
 
     init(false);
@@ -267,7 +285,6 @@ function restart() {
                 popup.classList.remove('active');
             }
 
-            const grid = document.querySelector('.grid');
             grid.innerHTML = '';
 
             scores.pop();
@@ -323,3 +340,9 @@ function tick() {
         }
     }
 }
+
+
+
+
+
+
