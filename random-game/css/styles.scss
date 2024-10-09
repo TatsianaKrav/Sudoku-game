@@ -31,6 +31,10 @@
     font-size: 18px;
     letter-spacing: 1px;
     cursor: pointer;
+
+    @media screen and (max-width: 938px) {
+        font-size: 16px;
+    }
 }
 
 $first-color: #772e4f;
@@ -48,21 +52,18 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 25px;
+    padding: 15px;
     box-sizing: border-box;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
+    align-items: baseline;
+    justify-content: flex-start;
+    gap: 30px;
     position: relative;
     font-family: Kashima, sans-serif;
     font-size: 20px;
 
     .results {
-        position: absolute;
-        top: 200px;
-        left: 10px;
+        align-self: flex-end;
 
         p {
             padding: 5px;
@@ -84,86 +85,102 @@ body {
         }
     }
 
-    .levels {
-        @include btn();
-        font-size: 16px;
-        position: absolute;
-        top: 60px;
-        right: 180px;
-    }
-
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(9, auto);
-        grid-template-rows: repeat(9, auto);
-        gap: 2px;
-        background-color: $first-color;
-        padding: 15px;
-
-        .cell {
-            @include cell();
-            background-color: white;
-
-
-            &:nth-child(3),
-            &:nth-child(6) {
-                margin-right: 5px;
-            }
-
-            &:nth-child(27),
-            &:nth-child(54) {
-                margin-bottom: 5px;
-            }
-
-            &.numbered {
-                background-color: $second-color;
-            }
-
-            &.default {
-                background-color: rgb(143 136 136);
-                cursor: auto;
-            }
-
-            &.focused:not(.default) {
-                background-color: #e7aca0;
-            }
-
-            &.numbered.error {
-                background-color: #db3610;
-                animation: errorMove 1s linear infinite forwards;
-            }
-        }
-    }
-
-    .numbers {
+    .main {
         display: flex;
+        flex-direction: column;
         align-items: center;
-        justify-content: space-between;
-        gap: 5px;
-
-        .number {
-            @include cell();
-            background-color: $first-color;
-            color: white;
-        }
-
-        .remove {
-            @include cell();
-            background-color: $first-color;
-            color: white;
-        }
-    }
-
-    .buttons {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        justify-content: center;
         gap: 15px;
 
-        .btn {
-            @include btn();
+        .game-info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 75%;
+
+            .levels {
+                @include btn();
+                font-size: 16px;
+            }
         }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(9, auto);
+            grid-template-rows: repeat(9, auto);
+            gap: 2px;
+            background-color: $first-color;
+            padding: 15px;
+
+            .cell {
+                @include cell();
+                background-color: white;
+
+
+                &:nth-child(3),
+                &:nth-child(6) {
+                    margin-right: 5px;
+                }
+
+                &:nth-child(27),
+                &:nth-child(54) {
+                    margin-bottom: 5px;
+                }
+
+                &.numbered {
+                    background-color: $second-color;
+                }
+
+                &.default {
+                    background-color: rgb(143 136 136);
+                    cursor: auto;
+                }
+
+                &.focused:not(.default) {
+                    background-color: #e7aca0;
+                }
+
+                &.numbered.error {
+                    background-color: #db3610;
+                    animation: errorMove 1s linear infinite forwards;
+                }
+            }
+        }
+
+        .numbers {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 5px;
+
+            .number {
+                @include cell();
+                background-color: $first-color;
+                color: white;
+            }
+
+            .remove {
+                @include cell();
+                background-color: $first-color;
+                color: white;
+            }
+        }
+
+        .buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+
+            .btn {
+                @include btn();
+            }
+        }
+
     }
+
+
 
     .popup {
         position: fixed;
@@ -350,4 +367,33 @@ body {
     100% {
         background-color: #772e4f;
     }
+}
+
+
+@media screen and (max-width: 938px) {
+    .container {
+        font-size: 18px;
+
+        .results {
+            font-size: 16px;
+            align-self: auto;
+
+            .scores {
+                .score {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .main {
+            .game-info {
+                .levels {
+                    font-size: 14px;
+                }
+            }
+        }
+
+
+    }
+
 }

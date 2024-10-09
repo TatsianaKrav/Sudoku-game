@@ -18,21 +18,18 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 25px;
+  padding: 15px;
   box-sizing: border-box;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
+  align-items: baseline;
+  justify-content: flex-start;
+  gap: 30px;
   position: relative;
   font-family: Kashima, sans-serif;
   font-size: 20px;
 }
 .container .results {
-  position: absolute;
-  top: 200px;
-  left: 10px;
+  align-self: flex-end;
 }
 .container .results p {
   padding: 5px;
@@ -50,7 +47,20 @@ body {
 .container .results .scores .score {
   font-size: 18px;
 }
-.container .levels {
+.container .main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+.container .main .game-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 75%;
+}
+.container .main .game-info .levels {
   padding: 10px 20px;
   border-radius: 10px;
   box-sizing: border-box;
@@ -63,11 +73,13 @@ body {
   letter-spacing: 1px;
   cursor: pointer;
   font-size: 16px;
-  position: absolute;
-  top: 60px;
-  right: 180px;
 }
-.container .grid {
+@media screen and (max-width: 938px) {
+  .container .main .game-info .levels {
+    font-size: 16px;
+  }
+}
+.container .main .grid {
   display: grid;
   grid-template-columns: repeat(9, auto);
   grid-template-rows: repeat(9, auto);
@@ -75,7 +87,7 @@ body {
   background-color: #772e4f;
   padding: 15px;
 }
-.container .grid .cell {
+.container .main .grid .cell {
   width: 35px;
   height: 35px;
   display: flex;
@@ -86,33 +98,33 @@ body {
   cursor: pointer;
   background-color: white;
 }
-.container .grid .cell:nth-child(3), .container .grid .cell:nth-child(6) {
+.container .main .grid .cell:nth-child(3), .container .main .grid .cell:nth-child(6) {
   margin-right: 5px;
 }
-.container .grid .cell:nth-child(27), .container .grid .cell:nth-child(54) {
+.container .main .grid .cell:nth-child(27), .container .main .grid .cell:nth-child(54) {
   margin-bottom: 5px;
 }
-.container .grid .cell.numbered {
+.container .main .grid .cell.numbered {
   background-color: #cfb4b4;
 }
-.container .grid .cell.default {
+.container .main .grid .cell.default {
   background-color: rgb(143, 136, 136);
   cursor: auto;
 }
-.container .grid .cell.focused:not(.default) {
+.container .main .grid .cell.focused:not(.default) {
   background-color: #e7aca0;
 }
-.container .grid .cell.numbered.error {
+.container .main .grid .cell.numbered.error {
   background-color: #db3610;
   animation: errorMove 1s linear infinite forwards;
 }
-.container .numbers {
+.container .main .numbers {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 5px;
 }
-.container .numbers .number {
+.container .main .numbers .number {
   width: 35px;
   height: 35px;
   display: flex;
@@ -124,7 +136,7 @@ body {
   background-color: #772e4f;
   color: white;
 }
-.container .numbers .remove {
+.container .main .numbers .remove {
   width: 35px;
   height: 35px;
   display: flex;
@@ -136,13 +148,14 @@ body {
   background-color: #772e4f;
   color: white;
 }
-.container .buttons {
+.container .main .buttons {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 15px;
 }
-.container .buttons .btn {
+.container .main .buttons .btn {
   padding: 10px 20px;
   border-radius: 10px;
   box-sizing: border-box;
@@ -154,6 +167,11 @@ body {
   font-size: 18px;
   letter-spacing: 1px;
   cursor: pointer;
+}
+@media screen and (max-width: 938px) {
+  .container .main .buttons .btn {
+    font-size: 16px;
+  }
 }
 .container .popup {
   position: fixed;
@@ -250,6 +268,11 @@ body {
   cursor: pointer;
   border: 2px solid white;
 }
+@media screen and (max-width: 938px) {
+  .container .popup .popup-buttons .popup-btn {
+    font-size: 16px;
+  }
+}
 
 @keyframes errorMove {
   0% {
@@ -312,5 +335,20 @@ body {
   }
   100% {
     background-color: #772e4f;
+  }
+}
+@media screen and (max-width: 938px) {
+  .container {
+    font-size: 18px;
+  }
+  .container .results {
+    font-size: 16px;
+    align-self: auto;
+  }
+  .container .results .scores .score {
+    font-size: 16px;
+  }
+  .container .main .game-info .levels {
+    font-size: 14px;
   }
 }/*# sourceMappingURL=styles.css.map */

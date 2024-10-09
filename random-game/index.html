@@ -15,32 +15,39 @@
             <p>10 last results:</p>
             <div class="scores"></div>
         </div>
-        <select name="select" class="levels" autofocus>
-            <option value="easy">Easy</option>
-            <option value="medium">Medium</option>
-            <option value="hard">Hard</option>
-            <option value="cross-check" selected>For cross-check</option>
-        </select>
-        <div class="timer">00:00</div>
-        <div class="grid"></div>
-        <div class="numbers">
-            <div class="number">1</div>
-            <div class="number">2</div>
-            <div class="number">3</div>
-            <div class="number">4</div>
-            <div class="number">5</div>
-            <div class="number">6</div>
-            <div class="number">7</div>
-            <div class="number">8</div>
-            <div class="number">9</div>
-            <div class="remove">x</div>
+        <div class="main">
+            <div class="game-info">
+                <div class="timer">00:00</div>
+                <select name="select" class="levels" autofocus>
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                    <option value="cross-check" selected>Cross-check</option>
+                </select>
+            </div>
+           
+            <div class="grid"></div>
+            <div class="numbers">
+                <div class="number">1</div>
+                <div class="number">2</div>
+                <div class="number">3</div>
+                <div class="number">4</div>
+                <div class="number">5</div>
+                <div class="number">6</div>
+                <div class="number">7</div>
+                <div class="number">8</div>
+                <div class="number">9</div>
+                <div class="remove">x</div>
+            </div>
+            <div class="buttons">
+                <button class="restart btn">Restart</button>
+                <button class="errors btn">Show errors</button>
+                <button class="solution btn">Solution</button>
+                <button class="next btn">Next</button>
+            </div>
         </div>
-        <div class="buttons">
-            <button class="restart btn">Restart</button>
-            <button class="errors btn">Show errors</button>
-            <button class="solution btn">Solution</button>
-            <button class="next btn">Next</button>
-        </div>
+
+
         <div class="popup">
             <p class="popup-message"></p>
             <div class="popup-extra"></div>
