@@ -18,6 +18,8 @@ let level = { levelName: 'cross-check', levelValue: 2 };
 const timerEl = document.querySelector('.timer');
 const levels = document.querySelector('.levels');
 const grid = document.querySelector('.grid');
+const winner = document.querySelector('.winner');
+const iconWrapper = document.querySelector('.icon-wrapper');
 
 window.onload = () => {
     scores = JSON.parse(localStorage.getItem('results'));
@@ -34,6 +36,13 @@ function init(val) {
     isFinished = false;
     min = 0;
     sec = 0;
+
+    if (winner.classList.contains('active')) {
+        winner.classList.remove('active');
+        iconWrapper.classList.remove('won');
+    } else {
+        iconWrapper.classList.remove('lost');
+    }
 
     timerEl.innerText = '00:00';
 
@@ -195,8 +204,6 @@ function finishGame() {
     const winSound = createSound('assets/sounds/win2.mp3')
     const lostSound = createSound('assets/sounds/lost.mp3')
 
-    const winner = document.querySelector('.winner');
-    const iconWrapper = document.querySelector('.icon-wrapper');
     const time = timerEl.innerText;
 
     if (isCorrect) {
@@ -283,7 +290,7 @@ function restart() {
 
     restartBtns.forEach(btn => {
         btn.onclick = () => {
-           clearInterval(timerId);
+            clearInterval(timerId);
 
             const popup = document.querySelector('.popup');
             if (popup.classList.contains('active')) {

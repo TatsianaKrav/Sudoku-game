@@ -310,7 +310,7 @@ body {
     transform: translate(0, 0);
   }
   98% {
-    transform: translate(300px, -150px);
+    transform: translate(300px, -230px);
   }
   100% {
     opacity: 0;
