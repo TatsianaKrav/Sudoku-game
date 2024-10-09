@@ -283,6 +283,8 @@ function restart() {
 
     restartBtns.forEach(btn => {
         btn.onclick = () => {
+           clearInterval(timerId);
+
             const popup = document.querySelector('.popup');
             if (popup.classList.contains('active')) {
                 popup.classList.remove('active');
@@ -317,7 +319,6 @@ function tick() {
         isOver = popup.classList.contains('active') ? true : false;
     }
 
-    /*  if (isOver) return false; */
     if (isOver) {
         clearInterval(timerId);
         return;
