@@ -60,6 +60,25 @@ body {
   justify-content: space-between;
   width: 75%;
 }
+.container .main .game-info .timer {
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  border: 2px solid #772e4f;
+  background-color: #cfb4b4;
+  outline: none;
+  font-family: Kashima, sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  cursor: default;
+}
+@media screen and (max-width: 938px) {
+  .container .main .game-info .timer {
+    font-size: 16px;
+  }
+}
 .container .main .game-info .levels {
   padding: 10px 20px;
   border-radius: 10px;
@@ -214,7 +233,8 @@ body {
   animation: winner 3s ease-in-out 1 forwards;
 }
 .container .popup .popup-extra {
-  font-size: 18px;
+  font-size: 16px;
+  text-align: center;
 }
 .container .popup .icon-wrapper {
   width: 45px;

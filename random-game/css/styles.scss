@@ -98,6 +98,11 @@ body {
             justify-content: space-between;
             width: 75%;
 
+            .timer {
+                @include btn();
+                cursor: default;
+            }
+
             .levels {
                 @include btn();
                 font-size: 16px;
@@ -226,7 +231,8 @@ body {
         }
 
         .popup-extra {
-            font-size: 18px;
+            font-size: 16px;
+            text-align: center;
         }
 
         .icon-wrapper {

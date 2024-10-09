@@ -9,6 +9,7 @@ let isPrevGame = false;
 let scores = [];
 let timerOn = false;
 let isOver = false;
+let isFinished = false;
 let timerId;
 let min = 0;
 let sec = 0;
@@ -30,6 +31,7 @@ init(false);
 function init(val) {
     timerOn = false;
     isOver = false;
+    isFinished = false;
     min = 0;
     sec = 0;
 
@@ -183,6 +185,7 @@ function removeCell() {
 
 function finishGame() {
     let isCorrect = checkResult();
+    isFinished = true;
 
     const popup = document.querySelector('.popup');
     const popupMessage = document.querySelector('.popup-message');
@@ -287,10 +290,11 @@ function restart() {
 
             grid.innerHTML = '';
 
-            scores.pop();
-            localStorage.setItem('results', JSON.stringify(scores));
-            renderScoreTable(scores);
-
+            if (isFinished) {
+                scores.pop();
+                localStorage.setItem('results', JSON.stringify(scores));
+                renderScoreTable(scores);
+            }
 
             init(isPrevGame);
         }
