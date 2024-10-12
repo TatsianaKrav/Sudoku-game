@@ -26,6 +26,8 @@ window.onload = () => {
     scores = JSON.parse(localStorage.getItem('results'));
     if (scores) {
         renderScoreTable(scores);
+    } else {
+        scores = [];
     }
 }
 
