@@ -110,11 +110,9 @@ function cellsValueHandler() {
 
             if (focusedCell && !focusedCell.classList.contains('numbered')) {
                 setCellValue(value);
-                const container = document.querySelector('.container');
-
+                
                 const fillSound = document.createElement('audio');
                 fillSound.setAttribute('src', '../assets/sounds/fill.mp3');
-                container.appendChild(fillSound);
                 fillSound.play();
             }
         })

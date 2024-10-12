@@ -70,6 +70,7 @@ body {
 
         .results {
             align-self: flex-end;
+            min-height: 300px;
 
             p {
                 padding: 5px;
@@ -455,7 +456,6 @@ body {
             .results {
                 font-size: 16px;
                 align-self: auto;
-                min-height: 300px;
 
                 .scores {
                     .score {
