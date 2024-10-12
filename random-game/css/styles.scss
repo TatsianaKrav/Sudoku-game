@@ -20,7 +20,7 @@
 }
 
 @mixin btn {
-    padding: 10px 20px;
+    padding: 5px 15px;
     border-radius: 10px;
     box-sizing: border-box;
     border: 2px solid $first-color;
@@ -45,146 +45,173 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 100dvh;
 }
 
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 15px;
+    padding: 15px 15px 0 15px;
     box-sizing: border-box;
     display: flex;
-    align-items: baseline;
-    justify-content: flex-start;
-    gap: 30px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
     position: relative;
     font-family: Kashima, sans-serif;
     font-size: 20px;
 
-    .results {
-        align-self: flex-end;
+    .game {
+        display: flex;
+        align-items: baseline;
+        justify-content: flex-start;
+        gap: 30px;
 
-        p {
-            padding: 5px;
-            box-sizing: border-box;
-            cursor: pointer;
-            animation: showResults 5s linear infinite forwards;
-            margin-bottom: 15px;
+        .results {
+            align-self: flex-end;
+
+            p {
+                padding: 5px;
+                box-sizing: border-box;
+                cursor: pointer;
+                animation: showResults 5s linear infinite forwards;
+                margin-bottom: 15px;
+            }
+
+            .scores {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 10px;
+
+                .score {
+                    font-size: 18px;
+                }
+            }
         }
 
-        .scores {
+        .main {
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            gap: 10px;
-
-            .score {
-                font-size: 18px;
-            }
-        }
-    }
-
-    .main {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 15px;
-
-        .game-info {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 75%;
-
-            .timer {
-                @include btn();
-                cursor: default;
-            }
-
-            .levels {
-                @include btn();
-                font-size: 16px;
-            }
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(9, auto);
-            grid-template-rows: repeat(9, auto);
-            gap: 2px;
-            background-color: $first-color;
-            padding: 15px;
-
-            .cell {
-                @include cell();
-                background-color: white;
-
-
-                &:nth-child(3),
-                &:nth-child(6) {
-                    margin-right: 5px;
-                }
-
-                &:nth-child(27),
-                &:nth-child(54) {
-                    margin-bottom: 5px;
-                }
-
-                &.numbered {
-                    background-color: $second-color;
-                }
-
-                &.default {
-                    background-color: rgb(143 136 136);
-                    cursor: auto;
-                }
-
-                &.focused:not(.default) {
-                    background-color: #e7aca0;
-                }
-
-                &.numbered.error {
-                    background-color: #db3610;
-                    animation: errorMove 1s linear infinite forwards;
-                }
-            }
-        }
-
-        .numbers {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 5px;
-
-            .number {
-                @include cell();
-                background-color: $first-color;
-                color: white;
-            }
-
-            .remove {
-                @include cell();
-                background-color: $first-color;
-                color: white;
-            }
-        }
-
-        .buttons {
-            display: flex;
             align-items: center;
             justify-content: center;
-            flex-wrap: wrap;
             gap: 15px;
 
-            .btn {
-                @include btn();
+            .game-info {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 75%;
+
+                .timer {
+                    @include btn();
+                    cursor: default;
+                }
+
+                .levels {
+                    @include btn();
+                    font-size: 16px;
+                }
+            }
+
+            .grid {
+                display: grid;
+                grid-template-columns: repeat(9, auto);
+                grid-template-rows: repeat(9, auto);
+                gap: 2px;
+                background-color: $first-color;
+                padding: 15px;
+
+                .cell {
+                    @include cell();
+                    background-color: white;
+
+
+                    &:nth-child(3),
+                    &:nth-child(6) {
+                        margin-right: 5px;
+                    }
+
+                    &:nth-child(27),
+                    &:nth-child(54) {
+                        margin-bottom: 5px;
+                    }
+
+                    &.numbered {
+                        background-color: $second-color;
+                    }
+
+                    &.default {
+                        background-color: rgb(143 136 136);
+                        cursor: auto;
+                    }
+
+                    &.focused:not(.default) {
+                        background-color: #e7aca0;
+                    }
+
+                    &.numbered.error {
+                        background-color: #db3610;
+                        animation: errorMove 1s linear infinite forwards;
+                    }
+                }
+            }
+
+            .numbers {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 5px;
+
+                .number {
+                    @include cell();
+                    background-color: $first-color;
+                    color: white;
+                }
+
+                .remove {
+                    @include cell();
+                    background-color: $first-color;
+                    color: white;
+                }
+            }
+
+            .buttons {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 15px;
+
+                .btn {
+                    @include btn();
+                }
             }
         }
     }
 
+    .footer {
+        align-self: center;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 50%;
+        font-size: 12px;
 
+        a {
+            display: block;
+            width: 25px;
+
+            img {
+                width: 100%;
+            }
+
+            &:last-child {
+                width: 35px;
+            }
+        }
+    }
 
     .popup {
         position: fixed;
@@ -379,21 +406,23 @@ body {
     .container {
         font-size: 18px;
 
-        .results {
-            font-size: 16px;
-            align-self: auto;
+        .game {
+            .results {
+                font-size: 16px;
+                align-self: auto;
 
-            .scores {
-                .score {
-                    font-size: 16px;
+                .scores {
+                    .score {
+                        font-size: 16px;
+                    }
                 }
             }
-        }
 
-        .main {
-            .game-info {
-                .levels {
-                    font-size: 14px;
+            .main {
+                .game-info {
+                    .levels {
+                        font-size: 14px;
+                    }
                 }
             }
         }

@@ -12,56 +12,62 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 100dvh;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 15px;
+  padding: 15px 15px 0 15px;
   box-sizing: border-box;
   display: flex;
-  align-items: baseline;
-  justify-content: flex-start;
-  gap: 30px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
   position: relative;
   font-family: Kashima, sans-serif;
   font-size: 20px;
 }
-.container .results {
+.container .game {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+  gap: 30px;
+}
+.container .game .results {
   align-self: flex-end;
 }
-.container .results p {
+.container .game .results p {
   padding: 5px;
   box-sizing: border-box;
   cursor: pointer;
   animation: showResults 5s linear infinite forwards;
   margin-bottom: 15px;
 }
-.container .results .scores {
+.container .game .results .scores {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 10px;
 }
-.container .results .scores .score {
+.container .game .results .scores .score {
   font-size: 18px;
 }
-.container .main {
+.container .game .main {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 15px;
 }
-.container .main .game-info {
+.container .game .main .game-info {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 75%;
 }
-.container .main .game-info .timer {
-  padding: 10px 20px;
+.container .game .main .game-info .timer {
+  padding: 5px 15px;
   border-radius: 10px;
   box-sizing: border-box;
   border: 2px solid #772e4f;
@@ -75,12 +81,12 @@ body {
   cursor: default;
 }
 @media screen and (max-width: 938px) {
-  .container .main .game-info .timer {
+  .container .game .main .game-info .timer {
     font-size: 16px;
   }
 }
-.container .main .game-info .levels {
-  padding: 10px 20px;
+.container .game .main .game-info .levels {
+  padding: 5px 15px;
   border-radius: 10px;
   box-sizing: border-box;
   border: 2px solid #772e4f;
@@ -94,11 +100,11 @@ body {
   font-size: 16px;
 }
 @media screen and (max-width: 938px) {
-  .container .main .game-info .levels {
+  .container .game .main .game-info .levels {
     font-size: 16px;
   }
 }
-.container .main .grid {
+.container .game .main .grid {
   display: grid;
   grid-template-columns: repeat(9, auto);
   grid-template-rows: repeat(9, auto);
@@ -106,7 +112,7 @@ body {
   background-color: #772e4f;
   padding: 15px;
 }
-.container .main .grid .cell {
+.container .game .main .grid .cell {
   width: 35px;
   height: 35px;
   display: flex;
@@ -117,33 +123,33 @@ body {
   cursor: pointer;
   background-color: white;
 }
-.container .main .grid .cell:nth-child(3), .container .main .grid .cell:nth-child(6) {
+.container .game .main .grid .cell:nth-child(3), .container .game .main .grid .cell:nth-child(6) {
   margin-right: 5px;
 }
-.container .main .grid .cell:nth-child(27), .container .main .grid .cell:nth-child(54) {
+.container .game .main .grid .cell:nth-child(27), .container .game .main .grid .cell:nth-child(54) {
   margin-bottom: 5px;
 }
-.container .main .grid .cell.numbered {
+.container .game .main .grid .cell.numbered {
   background-color: #cfb4b4;
 }
-.container .main .grid .cell.default {
+.container .game .main .grid .cell.default {
   background-color: rgb(143, 136, 136);
   cursor: auto;
 }
-.container .main .grid .cell.focused:not(.default) {
+.container .game .main .grid .cell.focused:not(.default) {
   background-color: #e7aca0;
 }
-.container .main .grid .cell.numbered.error {
+.container .game .main .grid .cell.numbered.error {
   background-color: #db3610;
   animation: errorMove 1s linear infinite forwards;
 }
-.container .main .numbers {
+.container .game .main .numbers {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 5px;
 }
-.container .main .numbers .number {
+.container .game .main .numbers .number {
   width: 35px;
   height: 35px;
   display: flex;
@@ -155,7 +161,7 @@ body {
   background-color: #772e4f;
   color: white;
 }
-.container .main .numbers .remove {
+.container .game .main .numbers .remove {
   width: 35px;
   height: 35px;
   display: flex;
@@ -167,15 +173,15 @@ body {
   background-color: #772e4f;
   color: white;
 }
-.container .main .buttons {
+.container .game .main .buttons {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   gap: 15px;
 }
-.container .main .buttons .btn {
-  padding: 10px 20px;
+.container .game .main .buttons .btn {
+  padding: 5px 15px;
   border-radius: 10px;
   box-sizing: border-box;
   border: 2px solid #772e4f;
@@ -188,9 +194,27 @@ body {
   cursor: pointer;
 }
 @media screen and (max-width: 938px) {
-  .container .main .buttons .btn {
+  .container .game .main .buttons .btn {
     font-size: 16px;
   }
+}
+.container .footer {
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+  font-size: 12px;
+}
+.container .footer a {
+  display: block;
+  width: 25px;
+}
+.container .footer a img {
+  width: 100%;
+}
+.container .footer a:last-child {
+  width: 35px;
 }
 .container .popup {
   position: fixed;
@@ -275,7 +299,7 @@ body {
   gap: 20px;
 }
 .container .popup .popup-buttons .popup-btn {
-  padding: 10px 20px;
+  padding: 5px 15px;
   border-radius: 10px;
   box-sizing: border-box;
   border: 2px solid #772e4f;
@@ -361,14 +385,14 @@ body {
   .container {
     font-size: 18px;
   }
-  .container .results {
+  .container .game .results {
     font-size: 16px;
     align-self: auto;
   }
-  .container .results .scores .score {
+  .container .game .results .scores .score {
     font-size: 16px;
   }
-  .container .main .game-info .levels {
+  .container .game .main .game-info .levels {
     font-size: 14px;
   }
 }/*# sourceMappingURL=styles.css.map */
