@@ -20,6 +20,7 @@ const levels = document.querySelector('.levels');
 const grid = document.querySelector('.grid');
 const winner = document.querySelector('.winner');
 const iconWrapper = document.querySelector('.icon-wrapper');
+const cherries = document.querySelectorAll('.cherry');
 
 window.onload = () => {
     scores = JSON.parse(localStorage.getItem('results'));
@@ -140,6 +141,10 @@ function setCellValue(val) {
 
     if (!findEmptyCell(sudoku.clearedGrid)) {
         finishGame();
+
+        setTimeout(() => {
+            cherries.forEach(cherry => cherry.classList.remove('end'));
+        }, 6000);
     }
 }
 
@@ -194,6 +199,7 @@ function removeCell() {
 function finishGame() {
     let isCorrect = checkResult();
     isFinished = true;
+    cherries.forEach(cherry => cherry.classList.add('end'));
 
     const popup = document.querySelector('.popup');
     const popupMessage = document.querySelector('.popup-message');
