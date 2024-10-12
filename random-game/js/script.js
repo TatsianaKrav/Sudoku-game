@@ -76,6 +76,7 @@ levels.onchange = (e) => {
             break;
     }
 
+    clearInterval(timerId);
     init(false);
 }
 
@@ -238,6 +239,7 @@ function checkResult() {
 }
 
 function nextGame() {
+    clearInterval(timerId);
     const popupNextBtn = document.querySelector('.popup-next');
     const nextBtn = document.querySelector('.next');
 
@@ -274,6 +276,7 @@ function showSolution() {
     const initialGrid = sudoku.filledGrid.flat();
 
     solutionBtn.onclick = () => {
+        clearInterval(timerId);
         for (let i = 0; i < initialGrid.length; i++) {
             if (initialGrid[i] !== +cells[i].innerText) {
                 cells[i].innerText = initialGrid[i];
