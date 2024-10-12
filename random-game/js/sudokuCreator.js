@@ -7,7 +7,6 @@ export function createSudoku(level) {
 }
 
 
-//create empty grid 9x9
 function createGrid() {
     return new Array(GRID_SIZE).fill(0).map(() => new Array(GRID_SIZE).fill(null));
 }
@@ -28,13 +27,6 @@ function fillGrid(grid) {
         grid[emptyCell.row][emptyCell.column] = val;
         if (fillGrid(grid)) return true;
         grid[emptyCell.row][emptyCell.column] = null;
-
-        /*   if (isValid) {
-              grid[emptyCell.row][emptyCell.column] = val;
-              if (fillGrid(grid)) return grid; //step to another empty cell until all cells are filled
-          } else {
-              grid[emptyCell.row][emptyCell.column] = null; //make the same cell null to continue numbers loop
-          } */
     }
 }
 
@@ -65,6 +57,7 @@ function checkColumn(row, column, grid, value) {
     for (let i = 0; i < GRID_SIZE; i++) {
         if (grid[i][column] === value && i !== row) return false;
     }
+
     return true;
 }
 
@@ -82,7 +75,7 @@ function checkBox(row, column, grid, value) {
 }
 
 function clearCells(grid, level) {
-    const clearedGrid = [...grid].map(row => [...row]); // copy to have 2 grid: filled and cleared
+    const clearedGrid = [...grid].map(row => [...row]); 
     let amountToClear = level.levelValue;
 
     while (amountToClear > 0) {

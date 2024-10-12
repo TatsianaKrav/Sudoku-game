@@ -135,8 +135,6 @@ function setCellValue(val) {
     sudoku.clearedGrid[row][column] = +val;
 
 
-
-
     const fillSound = createSound('assets/sounds/fill.mp3');
     fillSound.play();
 
@@ -252,7 +250,6 @@ function startNextGame() {
     popup.classList.remove('active');
 
     grid.innerHTML = '';
-
     init(false);
 }
 
@@ -284,7 +281,6 @@ function showSolution() {
             }
         }
     }
-
 }
 
 function restart() {
