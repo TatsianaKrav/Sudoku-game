@@ -35,6 +35,10 @@
     @media screen and (max-width: 938px) {
         font-size: 16px;
     }
+
+    @media screen and (max-width: 400px) {
+        font-size: 14px;
+    }
 }
 
 @mixin sound-icon {
@@ -42,6 +46,10 @@
     top: -10px;
     display: inline-block;
     width: 20px;
+
+    @media screen and (max-width: 400px) {
+        top: -7px;
+    }
 }
 
 $first-color: #772e4f;
@@ -532,10 +540,62 @@ body {
     }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 460px) {
     .container {
         .game {
             .main {
+                .game-info {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .container {
+        padding: 10px 10px 0 10px;
+        font-size: 16px;
+
+        .game {
+            .main {
+                .cherries {
+                    .cherry {
+                        width: 50px;
+                    }
+                }
+
+                .game-info {
+                    width: 95%;
+
+                    .timer {
+                        font-size: 14px;
+                    }
+
+                    .sound {
+                        width: 70px;
+
+                        .sound-on {
+                            width: 15px;
+                            left: -20px;
+                        }
+
+                        .sound-off {
+                            width: 15px;
+                            right: -20px;
+                        }
+
+                        .span-inner {
+                            &::before {
+                                width: 70px;
+                            }
+                        }
+                    }
+
+                    .levels {
+                        font-size: 12px;
+                    }
+                }
 
                 .grid {
                     .cell {
@@ -547,6 +607,7 @@ body {
                 .numbers {
                     flex-wrap: wrap;
                     justify-content: center;
+                    font-size: 16px;
 
                     .number,
                     .remove {

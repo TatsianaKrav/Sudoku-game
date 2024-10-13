@@ -123,6 +123,11 @@ body {
     font-size: 16px;
   }
 }
+@media screen and (max-width: 400px) {
+  .container .game .main .game-info .timer {
+    font-size: 14px;
+  }
+}
 .container .game .main .game-info .sound {
   display: inline-block;
   width: 100px;
@@ -135,12 +140,22 @@ body {
   width: 20px;
   left: -25px;
 }
+@media screen and (max-width: 400px) {
+  .container .game .main .game-info .sound .sound-on {
+    top: -7px;
+  }
+}
 .container .game .main .game-info .sound .sound-off {
   position: absolute;
   top: -10px;
   display: inline-block;
   width: 20px;
   right: -25px;
+}
+@media screen and (max-width: 400px) {
+  .container .game .main .game-info .sound .sound-off {
+    top: -7px;
+  }
 }
 .container .game .main .game-info .sound input {
   position: absolute;
@@ -197,6 +212,11 @@ body {
 @media screen and (max-width: 938px) {
   .container .game .main .game-info .levels {
     font-size: 16px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .container .game .main .game-info .levels {
+    font-size: 14px;
   }
 }
 .container .game .main .grid {
@@ -291,6 +311,11 @@ body {
 @media screen and (max-width: 938px) {
   .container .game .main .buttons .btn {
     font-size: 16px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .container .game .main .buttons .btn {
+    font-size: 14px;
   }
 }
 .container .footer {
@@ -412,6 +437,11 @@ body {
     font-size: 16px;
   }
 }
+@media screen and (max-width: 400px) {
+  .container .popup .popup-buttons .popup-btn {
+    font-size: 14px;
+  }
+}
 
 @keyframes errorMove {
   0% {
@@ -483,7 +513,42 @@ body {
     align-self: center;
   }
 }
+@media screen and (max-width: 460px) {
+  .container .game .main .game-info {
+    width: 100%;
+  }
+}
 @media screen and (max-width: 400px) {
+  .container {
+    padding: 10px 10px 0 10px;
+    font-size: 16px;
+  }
+  .container .game .main .cherries .cherry {
+    width: 50px;
+  }
+  .container .game .main .game-info {
+    width: 95%;
+  }
+  .container .game .main .game-info .timer {
+    font-size: 14px;
+  }
+  .container .game .main .game-info .sound {
+    width: 70px;
+  }
+  .container .game .main .game-info .sound .sound-on {
+    width: 15px;
+    left: -20px;
+  }
+  .container .game .main .game-info .sound .sound-off {
+    width: 15px;
+    right: -20px;
+  }
+  .container .game .main .game-info .sound .span-inner::before {
+    width: 70px;
+  }
+  .container .game .main .game-info .levels {
+    font-size: 12px;
+  }
   .container .game .main .grid .cell {
     width: 30px;
     height: 30px;
@@ -491,6 +556,7 @@ body {
   .container .game .main .numbers {
     flex-wrap: wrap;
     justify-content: center;
+    font-size: 16px;
   }
   .container .game .main .numbers .number,
   .container .game .main .numbers .remove {
