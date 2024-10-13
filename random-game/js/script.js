@@ -10,6 +10,7 @@ let scores = [];
 let timerOn = false;
 let isOver = false;
 let isFinished = false;
+let soundOff = false;
 let timerId;
 let min = 0;
 let sec = 0;
@@ -21,6 +22,7 @@ const grid = document.querySelector('.grid');
 const winner = document.querySelector('.winner');
 const iconWrapper = document.querySelector('.icon-wrapper');
 const cherries = document.querySelectorAll('.cherry');
+const soundCheck = document.getElementById('checkbox');
 
 window.onload = () => {
     scores = JSON.parse(localStorage.getItem('results'));
@@ -83,6 +85,10 @@ levels.onchange = (e) => {
     init(false);
 }
 
+soundCheck.addEventListener('change', () => {
+    soundOff = soundCheck.checked;
+})
+
 
 function renderCells() {
     grid.innerHTML = "";
@@ -110,10 +116,10 @@ function cellsValueHandler() {
 
             if (focusedCell && !focusedCell.classList.contains('numbered')) {
                 setCellValue(value);
-                
+
                 const fillSound = document.createElement('audio');
                 fillSound.setAttribute('src', '../assets/sounds/fill.mp3');
-                fillSound.play();
+                if (!soundOff) fillSound.play();
             }
         })
     })
@@ -137,7 +143,7 @@ function setCellValue(val) {
 
 
     const fillSound = createSound('assets/sounds/fill.mp3');
-    fillSound.play();
+    if (!soundOff) fillSound.play();
 
     if (!findEmptyCell(sudoku.clearedGrid)) {
         finishGame();
@@ -180,7 +186,7 @@ function clearCell() {
         sudoku.clearedGrid[row][column] = null;
 
         const removeSound = createSound('assets/sounds/remove.mp3');
-        removeSound.play();
+        if (!soundOff) removeSound.play();
     }
 }
 
@@ -214,7 +220,7 @@ function finishGame() {
     if (isCorrect) {
         popupMessage.innerText = 'Congratilations!';
         popupExtra.innerText = `Your time - ${time}, level - ${level.levelName}`;
-        winSound.play();
+        if (!soundOff) winSound.play();
         winner.classList.add('active');
         iconWrapper.classList.add('won');
         iconWrapper.classList.remove('lost');
@@ -224,7 +230,7 @@ function finishGame() {
     } else {
         popupMessage.innerText = "You lost";
         popupExtra.innerText = `Your time - ${time}, level - ${level.levelName}`;
-        lostSound.play();
+        if (!soundOff) lostSound.play();
         winner.classList.remove('active');
         iconWrapper.classList.add('lost');
         iconWrapper.classList.remove('won');
