@@ -37,6 +37,13 @@
     }
 }
 
+@mixin sound-icon {
+    position: absolute;
+    top: -10px;
+    display: inline-block;
+    width: 20px;
+}
+
 $first-color: #772e4f;
 $second-color: #cfb4b4;
 
@@ -149,11 +156,70 @@ body {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                width: 75%;
+                width: 85%;
 
                 .timer {
                     @include btn();
                     cursor: default;
+                }
+
+                .sound {
+                    display: inline-block;
+                    width: 100px;
+                    position: relative;
+
+                    .sound-on {
+                        @include sound-icon();
+                        left: -25px;
+                    }
+
+                    .sound-off {
+                        @include sound-icon();
+                        right: -25px;
+                    }
+
+                    input {
+                        position: absolute;
+                        opacity: 0;
+                        width: 0;
+                        height: 0;
+                        appearance: none;
+
+                        &:checked+.span-inner::after {
+                            left: 64px;
+                        }
+                    }
+
+                    .span-inner {
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            left: 0;
+                            top: -15px;
+                            width: 100px;
+                            height: 30px;
+                            background-color: #fff;
+                            display: block;
+                            border-radius: 20px;
+                            transition: background-color 0.3s linear;
+                            cursor: pointer;
+                        }
+
+
+                        &::after {
+                            content: "";
+                            display: block;
+                            position: absolute;
+                            width: 25px;
+                            height: 25px;
+                            border-radius: 50%;
+                            background-color: $second-color;
+                            top: -12px;
+                            left: 3px;
+                            transition: all 0.3s linear;
+                            cursor: pointer;
+                        }
+                    }
                 }
 
                 .levels {
