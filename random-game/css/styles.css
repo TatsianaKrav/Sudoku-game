@@ -12,6 +12,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  min-height: 100dvh;
 }
 
 .container {
@@ -36,13 +37,14 @@ body {
 }
 .container .game .results {
   align-self: flex-end;
+  min-height: 300px;
 }
 .container .game .results p {
   padding: 5px;
   box-sizing: border-box;
   cursor: pointer;
-  animation: showResults 5s linear infinite forwards;
   margin-bottom: 15px;
+  border-bottom: 3px solid #772e4f;
 }
 .container .game .results .scores {
   display: flex;
@@ -400,23 +402,6 @@ body {
     transform: translate(5px, -1px);
   }
 }
-@keyframes showResults {
-  0% {
-    background-color: #772e4f;
-  }
-  25% {
-    background-color: #db3610;
-  }
-  50% {
-    background-color: gray;
-  }
-  75% {
-    background-color: rgb(219, 212, 212);
-  }
-  100% {
-    background-color: #772e4f;
-  }
-}
 @media screen and (max-width: 938px) {
   .container {
     font-size: 18px;
@@ -430,6 +415,30 @@ body {
   }
   .container .game .main .game-info .levels {
     font-size: 14px;
+  }
+}
+@media screen and (max-width: 719px) {
+  .container .game {
+    flex-direction: column-reverse;
+    align-self: center;
+  }
+  .container .game .results {
+    align-self: center;
+  }
+}
+@media screen and (max-width: 400px) {
+  .container .game .main .grid .cell {
+    width: 30px;
+    height: 30px;
+  }
+  .container .game .main .numbers {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .container .game .main .numbers .number,
+  .container .game .main .numbers .remove {
+    width: 30px;
+    height: 30px;
   }
 }
 @keyframes cherry-move {
