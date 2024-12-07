@@ -116,6 +116,7 @@ body {
   font-size: 18px;
   letter-spacing: 1px;
   cursor: pointer;
+  width: 62px;
   cursor: default;
 }
 @media screen and (max-width: 938px) {
