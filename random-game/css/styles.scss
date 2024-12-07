@@ -233,6 +233,7 @@ body {
                 .levels {
                     @include btn();
                     font-size: 16px;
+                    z-index: 10;
                 }
             }
 
